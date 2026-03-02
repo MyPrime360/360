@@ -1737,35 +1737,75 @@ body {
   }
 }
 
-/* --- Carousel UX fixes: show peek + square cards --- */
+
+/* --- Carousel UX fixes: consistent square cards + controlled peek --- */
+:root{
+  --carousel-gap: 16px;
+  --carousel-pad: 14px;
+  --slide-mobile: 86%;            /* 1 card with visible peek */
+  --slide-desktop: clamp(360px, 34vw, 520px); /* consistent size across carousels */
+}
+
+/* Tracks */
 .bonuses-track, .carousel-track, #program-scroll {
-  gap: 16px;
-  padding: 0 18px 14px;
+  display: flex;
+  gap: var(--carousel-gap);
+  padding: 0 var(--carousel-pad) 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Mobile: 1 card + peek */
+/* Slides - same sizing everywhere */
 .bonuses-slide, .carousel-slide, #program-scroll > div, #program-scroll .prog-slide {
-  min-width: 84% !important;
+  flex: 0 0 var(--slide-mobile);
+  max-width: var(--slide-mobile);
+  scroll-snap-align: start;
 }
 
-/* Desktop: 2 cards + peek */
 @media (min-width: 768px) {
   .bonuses-slide, .carousel-slide, #program-scroll > div, #program-scroll .prog-slide {
-    min-width: 46% !important;
+    flex-basis: var(--slide-desktop);
+    max-width: var(--slide-desktop);
   }
 }
 
 /* Force square cards (prevents stretched rectangles) */
 .bonuses-card, .prog-card, .why-card, .what-card,
-.bonuses-slide, .carousel-slide {
+.bonuses-slide, .carousel-slide, #program-scroll > div, #program-scroll .prog-slide {
   aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 
+/* Center content without inflating height */
 .bonuses-card, .prog-card, .why-card, .what-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
+/* Vimeo / media wrappers - keep 1:1 and fill */
+.video-wrap, .media-wrap, .vimeo-wrap, .carousel-media {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+.video-wrap iframe, .media-wrap iframe, .vimeo-wrap iframe, .carousel-media iframe,
+.video-wrap video, .media-wrap video, .vimeo-wrap video, .carousel-media video,
+.video-wrap img, .media-wrap img, .vimeo-wrap img, .carousel-media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  display: block;
+}
+
+/* Optional: hide scrollbar but keep scroll */
+.bonuses-track::-webkit-scrollbar,
+.carousel-track::-webkit-scrollbar,
+#program-scroll::-webkit-scrollbar { height: 0; }
+
+
 
 </style>
 </head>
