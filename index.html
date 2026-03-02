@@ -417,7 +417,7 @@ body {
 }
 .scroll-arrow-text {
   display: block;
-  font-size: clamp(24px, 5.4vw, 32px);
+  font-size: clamp(20px, 4.5vw, 26px);
   font-weight: 900;
   background: linear-gradient(90deg, #E0197D, #6B20A8, #E0197D);
   background-size: 200% auto;
@@ -1767,50 +1767,9 @@ body {
   justify-content: center;
 }
 
-/* --- Small typography & alignment improvements --- */
-.result-prime {
-  font-size: clamp(24px, 5.5vw, 34px);
-  font-weight: 900;
-  line-height: 1.15;
-}
-
-/* PROGRAM cards: align stars consistently + larger text */
-.prog-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 18px 16px;
-}
-
-.prog-icon {
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 34px;
-  line-height: 1;
-  margin: 0 0 8px;
-}
-
-.prog-title {
-  font-size: clamp(18px, 4.2vw, 22px);
-  font-weight: 900;
-  line-height: 1.15;
-  margin: 0 0 10px;
-  min-height: 54px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.prog-body {
-  font-size: clamp(16px, 3.8vw, 19px);
-  line-height: 1.35;
-}
-
-/* Carousel snap: first slide aligns to start, next slides center */
-.bonuses-slide, .carousel-slide, #program-scroll > div, #program-scroll .prog-slide {
+/* --- Minimal carousel tweaks (do not change card sizing) --- */
+/* After first slide, snap to center so next slides sit centered */
+.bonuses-slide, .carousel-slide, #program-scroll > div {
   scroll-snap-align: center;
 }
 .bonuses-track > .bonuses-slide:first-child,
@@ -1819,14 +1778,22 @@ body {
   scroll-snap-align: start;
 }
 
-/* Show a bit more of the next bonus card (watch peek) */
+/* Show a bit more of the next bonus card (more peek of the watch) */
 .bonuses-slide {
-  min-width: 78% !important;
+  min-width: 80% !important;
 }
 @media (min-width: 768px) {
   .bonuses-slide {
     min-width: 44% !important;
   }
+}
+
+/* Slightly larger hero line + 'את בפריים שלך' line */
+.scroll-arrow-text {
+  font-size: clamp(22px, 5.0vw, 30px) !important;
+}
+.result-prime {
+  font-size: clamp(22px, 5.0vw, 32px) !important;
 }
 
 </style>
