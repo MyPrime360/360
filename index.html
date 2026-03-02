@@ -1079,7 +1079,6 @@ body {
   padding: 24px 20px;
   text-align: center;
   direction: rtl;
-  height: clamp(220px, 55vw, 320px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1198,23 +1197,23 @@ body {
 .offer-perk:last-child { border-bottom: none; }
 .offer-coupon {
   background: linear-gradient(135deg,#FFF8E1,#FFF3CD);
-  border: 2px dashed #F59E0B;
+  border: 3px dashed #F59E0B;
   border-radius: 12px;
-  padding: 12px 16px;
+  padding: 16px 20px;
   margin-top: 12px;
-  font-size: clamp(15px,3.5vw,18px);
+  font-size: clamp(22px,5vw,28px);
   color: #92400E;
-  font-weight: 700;
+  font-weight: 800;
   direction: rtl;
 }
 .offer-coupon code {
   background: #F59E0B;
   color: white;
-  padding: 3px 10px;
+  padding: 4px 14px;
   border-radius: 6px;
   font-family: monospace;
-  font-size: 1.1em;
-  letter-spacing: 1px;
+  font-size: 1.4em;
+  letter-spacing: 2px;
 }
 .btn-join {
   display: block;
@@ -1976,11 +1975,11 @@ body {
     <span style="font-size:clamp(18px,4vw,22px);font-weight:800;color:#fff;">החליקי לבונוסים נוספים</span>
     <button class="nav-btn" onclick="scrollBonuses(-1)">←</button>
   </div>
-  <div id="bonuses-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 0 16px;gap:0;">
-    <div style="min-width:82%;scroll-snap-align:start;flex-shrink:0;padding:0 4px 0 12px;">
+  <div id="bonuses-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 0 16px;gap:0;align-items:stretch;">
+    <div style="min-width:78%;scroll-snap-align:start;flex-shrink:0;padding:0 4px 0 12px;">
       <div class="bonuses-card" style="justify-content:center;gap:8px;"><div class="bonuses-card-title">הנחה מיוחדת</div><div class="bonuses-card-title" style="font-size:clamp(52px,12vw,72px);color:#E0197D;line-height:1;">35%</div><div class="bonuses-card-body" style="font-size:clamp(16px,3.5vw,18px);">לזמן מוגבל!</div></div>
     </div>
-    <div style="min-width:92%;scroll-snap-align:center;flex-shrink:0;padding:0 8px;">
+    <div style="min-width:88%;scroll-snap-align:center;flex-shrink:0;padding:0 4px;">
       <div class="bonuses-card" style="flex-direction:row;align-items:center;padding:20px;gap:16px;min-height:200px;">
         <img src="site_images/bracelet.jpg" alt="צמיד צעדים" style="width:38%;max-width:160px;border-radius:12px;flex-shrink:0;object-fit:cover;">
         <div style="flex:1;text-align:right;direction:rtl;">
@@ -1989,11 +1988,11 @@ body {
         </div>
       </div>
     </div>
-    <div style="min-width:92%;scroll-snap-align:center;flex-shrink:0;padding:0 8px;">
-      <div class="bonuses-card"><div class="bonuses-card-title">3 חודשי שימוש נוספים בתכני האפליקציה! 📱</div><div class="bonuses-card-body">התכנים יהיו זמינים למשך כמעט חצי שנה כדי שתוכלי להמשיך לצפות בתכנים ולתרגל את המשימות השונות.</div></div>
+    <div style="min-width:88%;scroll-snap-align:center;flex-shrink:0;padding:0 4px;aspect-ratio:1/1;">
+      <div class="bonuses-card" style="height:100%;"><div class="bonuses-card-title">3 חודשי שימוש נוספים בתכני האפליקציה! 📱</div><div class="bonuses-card-body">התכנים יהיו זמינים למשך כמעט חצי שנה כדי שתוכלי להמשיך לצפות בתכנים ולתרגל את המשימות השונות.</div></div>
     </div>
-    <div style="min-width:92%;scroll-snap-align:center;flex-shrink:0;padding:0 8px;">
-      <div class="bonuses-card"><div class="bonuses-card-title">חוברת מתכונים<br>דיגיטלית במתנה! 🎀</div><div class="bonuses-card-body">חוברת דיגיטלית עם מתכונים מעולים, קלים ומהירים, שמתכתבים עם הרגלי התזונה החדשים שתלמדי בתוכנית. יש שם הכל, ארוחות, נשנושים, קינוחים, וגם מתכונים צמחוניים וללא גלוטן.</div></div>
+    <div style="min-width:88%;scroll-snap-align:center;flex-shrink:0;padding:0 4px;aspect-ratio:1/1;">
+      <div class="bonuses-card" style="height:100%;"><div class="bonuses-card-title">חוברת מתכונים<br>דיגיטלית במתנה! 🎀</div><div class="bonuses-card-body">חוברת דיגיטלית עם מתכונים מעולים, קלים ומהירים, שמתכתבים עם הרגלי התזונה החדשים שתלמדי בתוכנית. יש שם הכל, ארוחות, נשנושים, קינוחים, וגם מתכונים צמחוניים וללא גלוטן.</div></div>
     </div>
   </div>
   <style>#bonuses-scroll::-webkit-scrollbar{display:none;}</style>
@@ -2002,6 +2001,38 @@ body {
   </button>
 </div>
 
+
+
+
+<!-- PROGRAM DETAILS SECTION -->
+<div class="program-section" id="program-details-section" style="display:none;">
+  <h2 class="program-title">מה את מקבלת בתוכנית הליווי<br>"מיי פריים 360"?</h2>
+  <p class="program-subtitle">תהליך ליווי מובנה לאורך <strong>10 שבועות</strong> הכולל:</p>
+  <div style="text-align:center;color:#9B70C0;margin-bottom:12px;direction:rtl;display:flex;align-items:center;justify-content:center;gap:16px;">
+    <button class="nav-btn" onclick="scrollProgram(1)">→</button>
+    <span style="font-size:clamp(17px,4vw,20px);font-weight:800;">החליקי לראות עוד</span>
+    <button class="nav-btn" onclick="scrollProgram(-1)">←</button>
+  </div>
+  <div id="program-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;height:min(85vw,480px);">
+    <!-- סרטון - סלייד 1 -->
+    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;position:relative;height:100%;overflow:hidden;">
+      <iframe src="https://player.vimeo.com/video/1169512075?badge=0&autoplay=0&loop=0&autopause=1&player_id=0&app_id=58479" style="width:100%;height:100%;border:none;display:block;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="תוכנית מיי פריים 360"></iframe>
+    </div>
+    <!-- 6 כרטיסי תוכנית -->
+    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program3.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program2.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program1.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program6.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program5.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program4.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+  </div>
+  <style>#program-scroll::-webkit-scrollbar{display:none;}</style>
+  <div style="text-align:center;padding:20px 16px 8px;">
+    <button onclick="showOfferSection()" style="display:block;width:100%;max-width:480px;margin:0 auto;background:linear-gradient(135deg,#FFD600,#F59E0B);color:#1E1030;font-family:'Heebo',sans-serif;font-size:clamp(20px,5vw,26px);font-weight:900;padding:22px 32px;border-radius:50px;border:none;cursor:pointer;box-shadow:0 6px 28px rgba(245,158,11,0.55);direction:rtl;line-height:1.3;animation:btnPulse 1s ease-in-out infinite;">
+      ✨ ספרי לי על מחיר המבצע בהצטרפות לתוכנית &#8592;
+    </button>
+  </div>
+</div>
 
 
 
@@ -2017,7 +2048,7 @@ body {
       <div class="offer-perk">✨ ניתן לשלם עד 12 תשלומים בקרדיט</div>
       <div class="offer-perk">✨ ניתן לשלם עד 2 תשלומים ללא ריבית</div>
     </div>
-    <div class="offer-coupon">יש להשתמש בקוד קופון: <code>JOIN360</code></div>
+    <div class="offer-coupon">יש להשתמש בקוד קופון: <code>ANAT35</code></div>
   </div>
   <button class="btn-join" onclick="showWhenSection()">
     אני רוצה להצטרף! 🎉
@@ -2041,7 +2072,7 @@ body {
     <div class="faq-question"><span class="faq-arrow">▾</span>אני רוצה להבין איך התוכנית עובדת </div>
     <div class="faq-answer">
       <div style="position:relative;padding-bottom:100%;height:0;border-radius:12px;overflow:hidden;margin-bottom:8px;">
-        <iframe src="https://player.vimeo.com/video/VIMEO_ID_HERE" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/1169512075?badge=0&autoplay=0&loop=0&autopause=1&player_id=0&app_id=58479" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -2104,33 +2135,6 @@ body {
 </div>
 
 
-<!-- PROGRAM DETAILS SECTION -->
-<div class="program-section" id="program-section" style="display:none;">
-  <h2 class="program-title">מה את מקבלת בתוכנית הליווי<br>"מיי פריים 360"?</h2>
-  <p class="program-subtitle">תהליך ליווי מובנה לאורך <strong>10 שבועות</strong> הכולל:</p>
-  <div style="text-align:center;color:#9B70C0;margin-bottom:12px;direction:rtl;display:flex;align-items:center;justify-content:center;gap:16px;">
-    <button class="nav-btn" onclick="scrollProgram(1)">→</button>
-    <span style="font-size:clamp(17px,4vw,20px);font-weight:800;">החליקי לראות עוד</span>
-    <button class="nav-btn" onclick="scrollProgram(-1)">←</button>
-  </div>
-  <div id="program-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;height:min(85vw,480px);">
-    <!-- סרטון - סלייד 1 -->
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;position:relative;height:100%;overflow:hidden;">
-      <iframe src="https://player.vimeo.com/video/1169512075?badge=0&autoplay=0&loop=0&autopause=1&player_id=0&app_id=58479" style="width:100%;height:100%;border:none;display:block;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="תוכנית מיי פריים 360"></iframe>
-    </div>
-    <!-- 6 כרטיסי תוכנית -->
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program3.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program2.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program1.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program6.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program5.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program4.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-  </div>
-  <style>#program-scroll::-webkit-scrollbar{display:none;}</style>
-</div>
-
-
-
 <!-- RAVPAGE FORM -->
 <div id="ravpage-form" class="ravpage-wrap" style="display:none">
   <div class="section" style="text-align:center">
@@ -2151,20 +2155,22 @@ body {
 <div class="story-section" id="story-section">
   <h2 class="story-title">הסיפור האישי של ענת</h2>
 
-  <!-- פסקה 1 + תמונה -->
+  <!-- פסקה 1 -->
   <div class="story-para">
     היי! אני ענת, בת 55, מייסדת "מיי פריים" - תוכניות ליווי לנשים בגיל המעבר,
     מרצה על אורח חיים בריא ומאמנת להתפתחות אישית.
-    אני עוסקת בתחום כבר 20 שנה ויותר וזה סיפור ההתמודדות שלי עם גיל המעבר ואיך נולד הקורס "מיי פריים 360" במיוחד עבורך:
   </div>
+
+  <!-- תמונה 1 - מלאת רוחב אחרי "ומאמנת להתפתחות אישית" -->
+  <img src="site_images/anat_portrait.jpg" alt="ענת הראל" class="story-full-img">
+
   <div class="story-para">
+    אני עוסקת בתחום כבר 20 שנה ויותר וזה סיפור ההתמודדות שלי עם גיל המעבר ואיך נולד הקורס "מיי פריים 360" במיוחד עבורך:
+    <br><br>
     במהלך הקריירה שלי הגעתי לאלפי נשים בכל דרך אפשרית – מקבוצות וסדנאות כושר, דרך תוכניות אימון אונליין וכלה בהגשת תוכניות טלוויזיה רבות, כגון: "שעת אושר", "לחיות טוב", "גוף ונפש עם ענת הראל" ועוד. בעבר הייתי פרזנטורית של מותג דגני בוקר ושל "נייקי ישראל" וכיום אני בנבחרת המשפיעניות של "מכבי שירותי בריאות", "הודי'ס" ועוד.
     <br><br>
     <strong>מאז ומעולם הרגשתי שיש לי שליחות חשובה,</strong> שאליה אני מתמסרת כל כולי – לגרום לכמה שיותר נשים להבין את ההשפעה של פעילות גופנית ותזונה מאוזנת על החיים שלהן.
   </div>
-
-  <!-- תמונה 1 - מלאת רוחב -->
-  <img src="site_images/anat_portrait.jpg" alt="ענת הראל" class="story-full-img">
 
   <!-- פסקה 2 -->
   <div class="story-para">
@@ -2680,7 +2686,7 @@ function showResult() {
   function showRavpage() {
     var lm = document.getElementById('lead-magnet-section');
     var bs = document.getElementById('bonuses-section');
-    var ps = document.getElementById('program-section');
+    var ps = document.getElementById('program-details-section');
     if (lm) lm.style.display = 'block';
     if (bs) bs.style.display = 'block';
     if (ps) ps.style.display = 'block';
