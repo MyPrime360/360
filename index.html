@@ -1007,6 +1007,31 @@ body {
   max-width: 440px;
 }
 
+/* ===== PROGRAM SECTION ===== */
+.program-section {
+  background: #1a0a2e;
+  padding: 32px 0 24px;
+  direction: rtl;
+}
+.program-title {
+  font-size: clamp(22px, 5.5vw, 32px);
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  padding: 0 16px;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+.program-subtitle {
+  font-size: clamp(17px, 4vw, 21px);
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  padding: 0 16px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+.program-subtitle strong { color: white; text-decoration: underline; }
+
 /* ===== BONUSES SECTION ===== */
 .bonuses-section {
   display: none;
@@ -1051,15 +1076,16 @@ body {
 .bonuses-card {
   background: white;
   border-radius: 20px;
-  padding: 28px 20px;
+  padding: 24px 20px;
   text-align: center;
   direction: rtl;
-  min-height: 200px;
+  height: clamp(220px, 55vw, 320px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 12px;
   box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  overflow: hidden;
 }
 .bonuses-card-title {
   font-size: clamp(22px, 5vw, 28px);
@@ -1478,25 +1504,39 @@ body {
   color: white;
 }
 .story-closing {
-  padding: 0 24px 8px;
-  text-align: center;
+  padding: 0 16px 8px;
   direction: rtl;
 }
 .story-closing-title {
-  font-size: clamp(26px, 6vw, 38px);
+  font-size: clamp(20px, 4.5vw, 28px);
   font-weight: 900;
   color: white;
-  line-height: 1.4;
+  line-height: 1.5;
   margin-bottom: 12px;
 }
 .story-closing-prime {
-  font-size: clamp(22px, 5vw, 32px);
+  font-size: clamp(24px, 5.5vw, 36px);
   font-weight: 900;
   color: #E040A0;
   line-height: 1.4;
 }
 .story-img {
   display: none;
+}
+.story-para {
+  font-size: clamp(17px, 4vw, 21px);
+  color: rgba(255,255,255,0.88);
+  line-height: 1.85;
+  direction: rtl;
+  text-align: right;
+  padding: 0 20px 24px;
+}
+.story-full-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 75vw;
+  margin-bottom: 24px;
 }
 .story-highlight {
   display: none;
@@ -1937,12 +1977,12 @@ body {
     <button class="nav-btn" onclick="scrollBonuses(-1)">←</button>
   </div>
   <div id="bonuses-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 0 16px;gap:0;">
-    <div style="min-width:88%;scroll-snap-align:start;flex-shrink:0;padding:0 4px 0 12px;">
+    <div style="min-width:82%;scroll-snap-align:start;flex-shrink:0;padding:0 4px 0 12px;">
       <div class="bonuses-card" style="justify-content:center;gap:8px;"><div class="bonuses-card-title">הנחה מיוחדת</div><div class="bonuses-card-title" style="font-size:clamp(52px,12vw,72px);color:#E0197D;line-height:1;">35%</div><div class="bonuses-card-body" style="font-size:clamp(16px,3.5vw,18px);">לזמן מוגבל!</div></div>
     </div>
     <div style="min-width:92%;scroll-snap-align:center;flex-shrink:0;padding:0 8px;">
       <div class="bonuses-card" style="flex-direction:row;align-items:center;padding:20px;gap:16px;min-height:200px;">
-        <img src="site_images/bracelet.png" alt="צמיד צעדים" style="width:38%;max-width:160px;border-radius:12px;flex-shrink:0;object-fit:cover;">
+        <img src="site_images/bracelet.jpg" alt="צמיד צעדים" style="width:38%;max-width:160px;border-radius:12px;flex-shrink:0;object-fit:cover;">
         <div style="flex:1;text-align:right;direction:rtl;">
           <div class="bonuses-card-title">צמיד צעדים במתנה 🎁</div>
           <div class="bonuses-card-body" style="margin-top:10px;">הצמיד ששומר אותך מודעת ומחויבת לתהליך. מעקב אחרי מדדי בריאות וכושר לאורך כל היום. תמיכה מלאה בעברית. נשלח אלייך החל מהשבוע 3 לתוכנית לכל כתובת בישראל.</div>
@@ -1982,7 +2022,7 @@ body {
   <button class="btn-join" onclick="showWhenSection()">
     אני רוצה להצטרף! 🎉
   </button>
-  <button class="offer-support-btn" onclick="showFaqSection()" id="faq-toggle-btn" style="margin-top:16px;display:block;width:100%;max-width:480px;margin-left:auto;margin-right:auto;text-align:center;font-size:clamp(17px,4vw,20px);">❓ יש לך שאלה? לחצי כאן</button>
+  <button class="offer-support-btn" onclick="showFaqSection()" id="faq-toggle-btn" style="margin-top:16px;display:block;width:100%;max-width:480px;margin-left:auto;margin-right:auto;text-align:center;font-size:clamp(17px,4vw,22px);">❓ יש לך שאלה? לחצי כאן</button>
 <!-- FAQ SECTION -->
 <div class="faq-section" id="faq-section" style="display:none;" >
   <h2 class="faq-section-title">שאלות ותשובות</h2>
@@ -2039,7 +2079,7 @@ body {
   <div class="offer-support">
     <div>יש לך שאלה נוספת? צרי איתנו קשר:</div>
     <div class="offer-support-links">
-      <a class="offer-support-btn" href="https://wa.me/9720547304177">📱 לחצי לשליחת וואטסאפ ל-054-7304177</a>
+      <a class="offer-support-btn" href="https://wa.me/9720547304177">📱 לחצי לשליחת וואטסאפ<br>054-7304177</a>
       <a class="offer-support-btn" href="mailto:support@myprime.co.il">📧 לחצי לשליחת מייל ל support@myprime.co.il</a>
     </div>
   </div>
@@ -2064,6 +2104,32 @@ body {
 </div>
 
 
+<!-- PROGRAM DETAILS SECTION -->
+<div class="program-section" id="program-section" style="display:none;">
+  <h2 class="program-title">מה את מקבלת בתוכנית הליווי<br>"מיי פריים 360"?</h2>
+  <p class="program-subtitle">תהליך ליווי מובנה לאורך <strong>10 שבועות</strong> הכולל:</p>
+  <div style="text-align:center;color:#9B70C0;margin-bottom:12px;direction:rtl;display:flex;align-items:center;justify-content:center;gap:16px;">
+    <button class="nav-btn" onclick="scrollProgram(1)">→</button>
+    <span style="font-size:clamp(17px,4vw,20px);font-weight:800;">החליקי לראות עוד</span>
+    <button class="nav-btn" onclick="scrollProgram(-1)">←</button>
+  </div>
+  <div id="program-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;height:min(85vw,480px);">
+    <!-- סרטון - סלייד 1 -->
+    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;position:relative;height:100%;overflow:hidden;">
+      <iframe src="https://player.vimeo.com/video/1169512075?badge=0&autoplay=0&loop=0&autopause=1&player_id=0&app_id=58479" style="width:100%;height:100%;border:none;display:block;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="תוכנית מיי פריים 360"></iframe>
+    </div>
+    <!-- 6 כרטיסי תוכנית -->
+    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program3.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program2.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program1.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program6.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program5.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program4.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+  </div>
+  <style>#program-scroll::-webkit-scrollbar{display:none;}</style>
+</div>
+
+
 
 <!-- RAVPAGE FORM -->
 <div id="ravpage-form" class="ravpage-wrap" style="display:none">
@@ -2084,56 +2150,49 @@ body {
 <!-- STORY SECTION -->
 <div class="story-section" id="story-section">
   <h2 class="story-title">הסיפור האישי של ענת</h2>
-  <div style="display:flex;align-items:center;gap:24px;padding:0 16px 32px;direction:rtl;">
-    <div style="flex:1;text-align:right;font-size:clamp(17px,4vw,21px);color:rgba(255,255,255,0.88);line-height:1.85;">
-      היי! אני ענת, בת 55, מייסדת "מיי פריים" - תוכניות ליווי לנשים בגיל המעבר,
-      מרצה על אורח חיים בריא ומאמנת להתפתחות אישית.
-      אני עוסקת בתחום כבר 20 שנה ויותר וזה סיפור ההתמודדות שלי עם גיל המעבר ואיך נולד הקורס "מיי פריים 360" במיוחד עבורך:
-    </div>
-    <img src="site_images/anat_portrait.jpg" alt="ענת הראל" style="width:38%;max-width:200px;flex-shrink:0;border-radius:16px;object-fit:cover;">
+
+  <!-- פסקה 1 + תמונה -->
+  <div class="story-para">
+    היי! אני ענת, בת 55, מייסדת "מיי פריים" - תוכניות ליווי לנשים בגיל המעבר,
+    מרצה על אורח חיים בריא ומאמנת להתפתחות אישית.
+    אני עוסקת בתחום כבר 20 שנה ויותר וזה סיפור ההתמודדות שלי עם גיל המעבר ואיך נולד הקורס "מיי פריים 360" במיוחד עבורך:
+  </div>
+  <div class="story-para">
+    במהלך הקריירה שלי הגעתי לאלפי נשים בכל דרך אפשרית – מקבוצות וסדנאות כושר, דרך תוכניות אימון אונליין וכלה בהגשת תוכניות טלוויזיה רבות, כגון: "שעת אושר", "לחיות טוב", "גוף ונפש עם ענת הראל" ועוד. בעבר הייתי פרזנטורית של מותג דגני בוקר ושל "נייקי ישראל" וכיום אני בנבחרת המשפיעניות של "מכבי שירותי בריאות", "הודי'ס" ועוד.
+    <br><br>
+    <strong>מאז ומעולם הרגשתי שיש לי שליחות חשובה,</strong> שאליה אני מתמסרת כל כולי – לגרום לכמה שיותר נשים להבין את ההשפעה של פעילות גופנית ותזונה מאוזנת על החיים שלהן.
   </div>
 
-  <!-- שורה 1: טקסט שמאל, תמונה ימין -->
-  <div class="story-row">
-    <div class="story-row-text">
-      במהלך הקריירה שלי הגעתי לאלפי נשים בכל דרך אפשרית – מקבוצות וסדנאות כושר, דרך תוכניות אימון אונליין וכלה בהגשת תוכניות טלוויזיה רבות, כגון: "שעת אושר", "לחיות טוב", "גוף ונפש עם ענת הראל" ועוד. בעבר הייתי פרזנטורית של מותג דגני בוקר ושל "נייקי ישראל" וכיום אני בנבחרת המשפיעניות של "מכבי שירותי בריאות", "הודי'ס" ועוד.
-      <br><br>
-      <strong>מאז ומעולם הרגשתי שיש לי שליחות חשובה,</strong> שאליה אני מתמסרת כל כולי – לגרום לכמה שיותר נשים להבין את ההשפעה של פעילות גופנית ותזונה מאוזנת על החיים שלהן: על הבריאות, על מצב הרוח, על המראה ועל התפקוד.
-    </div>
-    <img class="story-row-img" src="site_images/story1.jpg" onerror="this.style.display='none'" alt="ענת הראל">
+  <!-- תמונה 1 - מלאת רוחב -->
+  <img src="site_images/anat_portrait.jpg" alt="ענת הראל" class="story-full-img">
+
+  <!-- פסקה 2 -->
+  <div class="story-para">
+    באמצע שנות ה-40 לחיי, ממש כשהרגשתי בשיא – משהו השתבש. שמתי לב למצבי רוח שמשתנים בקיצוניות, יכולת הריכוז שלי ירדה, השינה שלי נהייתה הרבה פחות רציפה ואיכותית, והגוף כבר לא הגיב באותו אופן לאימונים ולתזונה שהיו חלק בלתי נפרד מהשגרה שלי.
+    <br><br>
+    לקח לי כמה חודשים של ריצות מרופא לרופא, כדי להבין שאני בסך הכול עוברת תהליך טבעי שכל אישה עוברת: שינוי הורמונלי שמתרחש בשלבים המוקדמים של גיל המעבר. הבנתי שאני לא לבד, שישנן נשים רבות שחוות יחד איתי את אותן התופעות בדיוק.
+  </div>
+  <div class="story-highlight-dark" style="margin:0 20px 24px;">
+    <strong>התחלתי לברר וגיליתי ש:</strong><br>
+    1. רוב הנשים לא מבינות שמה שעובר עליהן קשור להורמונים.<br>
+    2. רוב הנשים מחפשות את הפתרון במקום הלא נכון.<br>
+    3. רובנו מתביישות לדבר על זה — ואם אנחנו לא מדברות, איך נוכל לטפל בבעיה?
   </div>
 
-  <!-- שורה 2: תמונה שמאל, טקסט ימין -->
-  <div class="story-row reverse">
-    <div class="story-row-text">
-      באמצע שנות ה-40 לחיי, ממש כשהרגשתי בשיא – משהו השתבש. שמתי לב למצבי רוח שמשתנים בקיצוניות, יכולת הריכוז שלי ירדה, השינה שלי נהייתה הרבה פחות רציפה ואיכותית, והגוף כבר לא הגיב באותו אופן לאימונים ולתזונה שהיו חלק בלתי נפרד מהשגרה שלי.
-      <br><br>
-      לקח לי כמה חודשים של ריצות מרופא לרופא, כדי להבין שאני בסך הכול עוברת תהליך טבעי שכל אישה עוברת: שינוי הורמונלי שמתרחש בשלבים המוקדמים של גיל המעבר. הבנתי שאני לא לבד, שישנן נשים רבות שחוות יחד איתי את אותן התופעות בדיוק.
-      <br><br>
-      <div class="story-highlight-dark">
-        <strong>התחלתי לברר וגיליתי ש:</strong><br>
-        1. רוב הנשים לא מבינות שמה שעובר עליהן קשור להורמונים.<br>
-        2. רוב הנשים מחפשות את הפתרון במקום הלא נכון.<br>
-        3. רובנו מתביישות לדבר על זה — ואם אנחנו לא מדברות, איך נוכל לטפל בבעיה?
-      </div>
-    </div>
-    <img class="story-row-img" src="site_images/story2.jpg" onerror="this.style.display='none'" alt="ענת הראל">
-  </div>
+  <!-- תמונה 2 - מלאת רוחב -->
+  <img src="site_images/anat_sport.jpg" alt="ענת הראל" class="story-full-img">
 
-  <!-- שורה 3: טקסט שמאל, תמונה ימין -->
-  <div class="story-row">
-    <div class="story-row-text">
-      החלטתי ללמוד איך אפשר לעבור את זה אחרת, תוך שילוב כל מה שאני עוסקת בו כבר עשרים שנה. קראתי מחקרים, התייעצתי עם רופאות ותזונאיות מובילות ויצרתי שיטה שמטרתה לאפשר לנשים החל מטרום גיל המעבר לחיות חיים טובים יותר בכל התחומים: במראה החיצוני, בבריאות, ברמות האנרגיה, ובהתמודדות עם השינויים.
-    </div>
-    <img class="story-row-img" src="site_images/story3.jpg" onerror="this.style.display='none'" alt="ענת הראל">
+  <!-- פסקה 3 -->
+  <div class="story-para">
+    החלטתי ללמוד איך אפשר לעבור את זה אחרת, תוך שילוב כל מה שאני עוסקת בו כבר עשרים שנה. קראתי מחקרים, התייעצתי עם רופאות ותזונאיות מובילות ויצרתי שיטה שמטרתה לאפשר לנשים החל מטרום גיל המעבר לחיות חיים טובים יותר בכל התחומים: במראה החיצוני, בבריאות, ברמות האנרגיה, ובהתמודדות עם השינויים.
   </div>
 
   <!-- סיום -->
   <div class="story-closing">
     <div class="story-closing-title">
-      כיום, אני רואה שליחות אדירה בהפצת הידע שרכשתי<br>
-      והשיטות שלמדתי והתנסיתי בהן<br>
-      בתחום ההתמודדות עם שלבי גיל המעבר,<br>
+      כיום, אני רואה שליחות אדירה בהפצת הידע שרכשתי
+      והשיטות שלמדתי והתנסיתי בהן
+      בתחום ההתמודדות עם שלבי גיל המעבר,
       כי מגיע לנו להנות מהתקופה הזו –
     </div>
     <div class="story-closing-prime">תקופת הפריים שלנו.</div>
@@ -2621,8 +2680,10 @@ function showResult() {
   function showRavpage() {
     var lm = document.getElementById('lead-magnet-section');
     var bs = document.getElementById('bonuses-section');
+    var ps = document.getElementById('program-section');
     if (lm) lm.style.display = 'block';
     if (bs) bs.style.display = 'block';
+    if (ps) ps.style.display = 'block';
     setTimeout(function() {
       var target = lm || bs;
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -2697,6 +2758,12 @@ function showResult() {
 
   function scrollWhy(dir) {
     var el = document.getElementById('why-scroll');
+    if (!el) return;
+    el.scrollBy({ left: dir * el.offsetWidth, behavior: 'smooth' });
+  }
+
+  function scrollProgram(dir) {
+    var el = document.getElementById('program-scroll');
     if (!el) return;
     el.scrollBy({ left: dir * el.offsetWidth, behavior: 'smooth' });
   }
