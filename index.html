@@ -1767,28 +1767,7 @@ body {
   justify-content: center;
 }
 
-/* --- Minimal carousel tweaks (do not change card sizing) --- */
-/* After first slide, snap to center so next slides sit centered */
-.bonuses-slide, .carousel-slide, #program-scroll > div {
-  scroll-snap-align: center;
-}
-.bonuses-track > .bonuses-slide:first-child,
-.carousel-track > .carousel-slide:first-child,
-#program-scroll > div:first-child {
-  scroll-snap-align: start;
-}
-
-/* Show a bit more of the next bonus card (more peek of the watch) */
-.bonuses-slide {
-  min-width: 80% !important;
-}
-@media (min-width: 768px) {
-  .bonuses-slide {
-    min-width: 44% !important;
-  }
-}
-
-/* Slightly larger hero line + 'את בפריים שלך' line */
+/* --- Minimal text size tweaks only (no carousel behavior changes) --- */
 .scroll-arrow-text {
   font-size: clamp(22px, 5.0vw, 30px) !important;
 }
