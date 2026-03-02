@@ -65,8 +65,7 @@ body {
     max-width: 600px !important;
   }
   #testimony-scroll > div {
-      scroll-snap-align: start !important;
-min-width: 100% !important;
+    min-width: 100% !important;
   }
 }
 .hero h1 {
@@ -1695,45 +1694,21 @@ min-width: 100% !important;
   .bonuses-section {
     padding: 48px 40px 56px;
   }
-  #bonuses-scroll {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    height: auto !important;
-    overflow-x: visible !important;
-    padding: 0 !important;
-  }
-  #bonuses-scroll > div {
-      scroll-snap-align: start !important;
-min-width: 0 !important;
-    height: auto !important;
-    padding: 0 !important;
-    aspect-ratio: unset !important;
-    box-sizing: border-box;
-  }
+  
+  
   .bonuses-card {
     height: 100%;
     padding: 28px 24px;
     box-sizing: border-box;
   }
   /* Hide nav arrows on desktop for bonuses */
-  .bonuses-section > div:first-of-type {
-    display: none !important;
-  }
+  
 
   /* Program - grid layout on desktop */
   .program-section {
     padding: 48px 40px 56px;
   }
-  #program-scroll {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    height: auto !important;
-    overflow-x: visible !important;
-    border: none !important;
-    border-radius: 0 !important;
-  }
+  
   #program-scroll > div,
   #program-scroll .prog-slide {
     min-width: 0 !important;
@@ -1762,56 +1737,35 @@ min-width: 0 !important;
   }
 }
 
-
-/* ===== CAROUSEL FIXES (peek next + square slides) ===== */
-/* Testimonials carousel: show a peek of the next card + enforce square frames */
-#testimony-scroll {
-  padding: 0 16px 12px !important;
-  gap: 12px !important;
-  height: auto !important;
-}
-#testimony-scroll > div {
-  min-width: clamp(260px, 85vw, 420px) !important;
-  max-width: clamp(260px, 85vw, 420px) !important;
-  aspect-ratio: 1 / 1 !important;
-  height: auto !important;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #fff;
-}
-#testimony-scroll iframe {
-  width: 100% !important;
-  height: 100% !important;
-  border: none !important;
-  display: block;
-}
-#testimony-scroll img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  display: block;
-  background: #fff;
+/* --- Carousel UX fixes: show peek + square cards --- */
+.bonuses-track, .carousel-track, #program-scroll {
+  gap: 16px;
+  padding: 0 18px 14px;
 }
 
-/* Bonuses carousel: show a peek of the next card + enforce square cards */
-#bonuses-scroll {
-  padding: 0 16px 12px !important;
-  gap: 12px !important;
-  height: auto !important;
-  align-items: stretch !important;
+/* Mobile: 1 card + peek */
+.bonuses-slide, .carousel-slide, #program-scroll > div, #program-scroll .prog-slide {
+  min-width: 84% !important;
 }
-#bonuses-scroll > div {
-  min-width: clamp(260px, 82vw, 340px) !important;
-  max-width: clamp(260px, 82vw, 340px) !important;
-  height: auto !important;
+
+/* Desktop: 2 cards + peek */
+@media (min-width: 768px) {
+  .bonuses-slide, .carousel-slide, #program-scroll > div, #program-scroll .prog-slide {
+    min-width: 46% !important;
+  }
 }
-.bonuses-card {
-  aspect-ratio: 1 / 1 !important;
-  height: auto !important;
-  overflow: auto !important;
-  -webkit-overflow-scrolling: touch;
+
+/* Force square cards (prevents stretched rectangles) */
+.bonuses-card, .prog-card, .why-card, .what-card,
+.bonuses-slide, .carousel-slide {
+  aspect-ratio: 1 / 1;
 }
-.bonuses-card::-webkit-scrollbar { display: none; }
+
+.bonuses-card, .prog-card, .why-card, .what-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 </style>
 </head>
@@ -2952,23 +2906,11 @@ function showResult() {
   }
 
 
-  function _scrollByCard(el, dir) {
-  if (!el) return;
-  var first = el.querySelector(':scope > div');
-  if (!first) return;
-  var w = first.getBoundingClientRect().width;
-  var cs = window.getComputedStyle(el);
-  var gap = parseFloat(cs.gap || cs.columnGap || "0") || 0;
-  el.scrollBy({ left: dir * (w + gap), behavior: 'smooth' });
-}
-
-function scrollTestimony(dir) {
-  _scrollByCard(document.getElementById('testimony-scroll'), dir);
-}
-
-function scrollBonuses(dir) {
-  _scrollByCard(document.getElementById('bonuses-scroll'), dir);
-}
+  function scrollTestimony(dir) {
+    var el = document.getElementById('testimony-scroll');
+    if (!el) return;
+    el.scrollBy({ left: dir * el.offsetWidth, behavior: 'smooth' });
+  }
 
   function scrollWhy(dir) {
     var el = document.getElementById('why-scroll');
@@ -2982,7 +2924,11 @@ function scrollBonuses(dir) {
     el.scrollBy({ left: dir * el.offsetWidth, behavior: 'smooth' });
   }
 
-  
+  function scrollBonuses(dir) {
+    var el = document.getElementById('bonuses-scroll');
+    if (!el) return;
+    el.scrollBy({ left: dir * el.offsetWidth, behavior: 'smooth' });
+  }
 
   function scrollMedia(dir) {
     var el = document.getElementById('media-scroll');
