@@ -60,7 +60,7 @@ body {
     margin-left: 16px;
     margin-right: 16px;
   }
-  #why-scroll > div, #bonuses-scroll > div {
+  #why-scroll > div {
     min-width: 600px !important;
     max-width: 600px !important;
   }
@@ -1032,13 +1032,14 @@ body {
 }
 .program-subtitle strong { color: white; text-decoration: underline; }
 .prog-slide {
-  min-width: 88%;
-  scroll-snap-align: center;
+  min-width: 100%;
+  scroll-snap-align: start;
   flex-shrink: 0;
-  padding: 0 6px;
+  padding: 12px;
   height: 100%;
   display: flex;
   align-items: stretch;
+  box-sizing: border-box;
 }
 .prog-card {
   background: white;
@@ -1696,7 +1697,7 @@ body {
 <div class="hero">
   <picture>
     <source media="(min-width: 768px)" srcset="site_images/HEADERPIC1.jpg">
-    <img src="site_images/image2.jpeg" alt="MyPrime - ענת הראל" style="width:100%;display:block;">
+    <img src="site_images/header_mobile.jpg" alt="MyPrime - ענת הראל" style="width:100%;display:block;">
   </picture>
   <div class="hero-btn-wrap" style="padding: 8px 20px; background: linear-gradient(135deg, #F3E8FF, #EDE3F4); text-align:center;">
     <button class="start-btn" onclick="document.getElementById('checklist-section').scrollIntoView({behavior:'smooth', block:'start'})">
@@ -2019,12 +2020,12 @@ body {
     <span style="font-size:clamp(18px,4vw,22px);font-weight:800;color:#fff;">החליקי לבונוסים נוספים</span>
     <button class="nav-btn" onclick="scrollBonuses(-1)">←</button>
   </div>
-  <div id="bonuses-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 0 16px;gap:0;align-items:stretch;">
-    <div style="min-width:78%;scroll-snap-align:start;flex-shrink:0;padding:0 4px 0 12px;">
-      <div class="bonuses-card" style="justify-content:center;gap:8px;"><div class="bonuses-card-title">הנחה מיוחדת</div><div class="bonuses-card-title" style="font-size:clamp(52px,12vw,72px);color:#E0197D;line-height:1;">35%</div><div class="bonuses-card-body" style="font-size:clamp(16px,3.5vw,18px);">לזמן מוגבל!</div></div>
+  <div id="bonuses-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 0 8px;gap:0;height:min(82vw,380px);align-items:flex-start;">
+    <div style="min-width:82%;scroll-snap-align:start;flex-shrink:0;padding:0 4px 0 8px;height:100%;box-sizing:border-box;">
+      <div class="bonuses-card" style="justify-content:center;gap:8px;height:100%;box-sizing:border-box;"><div class="bonuses-card-title">הנחה מיוחדת</div><div class="bonuses-card-title" style="font-size:clamp(52px,12vw,72px);color:#E0197D;line-height:1;">35%</div><div class="bonuses-card-body" style="font-size:clamp(16px,3.5vw,18px);">לזמן מוגבל!</div></div>
     </div>
-    <div style="min-width:88%;scroll-snap-align:center;flex-shrink:0;padding:0 4px;">
-      <div class="bonuses-card" style="flex-direction:row;align-items:center;padding:20px;gap:16px;min-height:200px;">
+    <div style="min-width:88%;scroll-snap-align:center;flex-shrink:0;padding:0 4px;height:100%;box-sizing:border-box;">
+      <div class="bonuses-card" style="flex-direction:row;align-items:center;padding:16px;gap:12px;height:100%;box-sizing:border-box;">
         <img src="site_images/bracelet.jpg" alt="צמיד צעדים" style="width:38%;max-width:160px;border-radius:12px;flex-shrink:0;object-fit:cover;">
         <div style="flex:1;text-align:right;direction:rtl;">
           <div class="bonuses-card-title">צמיד צעדים במתנה 🎁</div>
@@ -2032,11 +2033,11 @@ body {
         </div>
       </div>
     </div>
-    <div style="min-width:88%;scroll-snap-align:center;flex-shrink:0;padding:0 4px;">
-      <div class="bonuses-card" style="height:100%;"><div class="bonuses-card-title">3 חודשי שימוש נוספים בתכני האפליקציה! 📱</div><div class="bonuses-card-body">התכנים יהיו זמינים למשך כמעט חצי שנה כדי שתוכלי להמשיך לצפות בתכנים ולתרגל את המשימות השונות.</div></div>
+    <div style="min-width:88%;scroll-snap-align:center;flex-shrink:0;padding:0 4px;height:100%;box-sizing:border-box;">
+      <div class="bonuses-card" style="height:100%;box-sizing:border-box;"><div class="bonuses-card-title">3 חודשי שימוש נוספים בתכני האפליקציה! 📱</div><div class="bonuses-card-body">התכנים יהיו זמינים למשך כמעט חצי שנה כדי שתוכלי להמשיך לצפות בתכנים ולתרגל את המשימות השונות.</div></div>
     </div>
-    <div style="min-width:88%;scroll-snap-align:center;flex-shrink:0;padding:0 4px;aspect-ratio:1/1;">
-      <div class="bonuses-card" style="height:100%;"><div class="bonuses-card-title">חוברת מתכונים<br>דיגיטלית במתנה! 🎀</div><div class="bonuses-card-body">חוברת דיגיטלית עם מתכונים מעולים, קלים ומהירים, שמתכתבים עם הרגלי התזונה החדשים שתלמדי בתוכנית. יש שם הכל, ארוחות, נשנושים, קינוחים, וגם מתכונים צמחוניים וללא גלוטן.</div></div>
+    <div style="min-width:88%;scroll-snap-align:center;flex-shrink:0;padding:0 4px;height:100%;box-sizing:border-box;">
+      <div class="bonuses-card" style="height:100%;box-sizing:border-box;"><div class="bonuses-card-title">חוברת מתכונים<br>דיגיטלית במתנה! 🎀</div><div class="bonuses-card-body">חוברת דיגיטלית עם מתכונים מעולים, קלים ומהירים, שמתכתבים עם הרגלי התזונה החדשים שתלמדי בתוכנית. יש שם הכל, ארוחות, נשנושים, קינוחים, וגם מתכונים צמחוניים וללא גלוטן.</div></div>
     </div>
   </div>
   <style>#bonuses-scroll::-webkit-scrollbar{display:none;}</style>
@@ -2054,9 +2055,10 @@ body {
     <span style="font-size:clamp(17px,4vw,20px);font-weight:800;">החליקי לראות עוד</span>
     <button class="nav-btn" onclick="scrollProgram(-1)">←</button>
   </div>
-  <div id="program-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;height:min(85vw,480px);padding:0 0 0 0;">
+  <p style="text-align:center;font-size:clamp(16px,4vw,19px);font-weight:700;color:#9B70C0;margin:0 0 8px;">▶ לחצי לצפייה בסרטון</p>
+  <div id="program-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:18px;border:2px solid #6B20A8;height:min(85vw,480px);">
     <!-- סרטון - סלייד 1 -->
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;position:relative;height:100%;overflow:hidden;">
+    <div style="min-width:85%;scroll-snap-align:start;flex-shrink:0;position:relative;height:100%;overflow:hidden;flex-shrink:0;">
       <iframe src="https://player.vimeo.com/video/1169512075?badge=0&autoplay=0&loop=0&autopause=1&player_id=0&app_id=58479" style="width:100%;height:100%;border:none;display:block;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="תוכנית מיי פריים 360"></iframe>
     </div>
     <!-- 6 כרטיסי תוכנית - styled cards -->
@@ -2136,8 +2138,9 @@ body {
   <div class="faq-item" onclick="toggleFaq(this)">
     <div class="faq-question"><span class="faq-arrow">▾</span>אני רוצה להבין איך התוכנית עובדת </div>
     <div class="faq-answer">
-      <div style="position:relative;padding-bottom:100%;height:0;border-radius:12px;overflow:hidden;margin-bottom:8px;">
-        <iframe src="https://player.vimeo.com/video/1169512075?badge=0&autoplay=0&loop=0&autopause=1&player_id=0&app_id=58479" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen></iframe>
+      <p style="text-align:center;font-weight:800;font-size:clamp(16px,4vw,20px);color:#6B20A8;margin-bottom:10px;direction:rtl;">▶ לחצי לצפייה בסרטון</p>
+      <div style="position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;margin-bottom:8px;">
+        <iframe src="https://player.vimeo.com/video/1169512075?badge=0&autoplay=0&loop=0&autopause=1&controls=1&player_id=0&app_id=58479" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
