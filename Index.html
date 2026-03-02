@@ -1,0 +1,3046 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyPrime - הערכה הורמונלית</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { max-width: 100%; overflow-x: hidden; }
+picture { display: block; line-height: 0; width: 100%; }
+body {
+  font-family: "Heebo", sans-serif;
+  background: #FDF8FC;
+  color: #1E1030;
+  direction: rtl;
+  text-align: right;
+  line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  html {
+    background: linear-gradient(160deg, #E0C8F0 0%, #F3E8FF 40%, #D9B8E8 100%);
+    min-height: 100%;
+  }
+  body {
+    max-width: 820px;
+    margin: 0 auto;
+    background: #FDF8FC;
+    box-shadow: 0 0 60px rgba(100,50,150,0.15);
+    min-height: 100vh;
+  }
+}
+
+/* ===== LOGO ===== */
+.logo-bar { display: none; }
+.logo-bar img { height: 70px; width: auto; display: block; margin: 0 auto; }
+
+/* ===== HERO ===== */
+.hero {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  background: #D9B8E8;
+}
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (min-width: 768px) {
+  .hero picture img {
+    min-height: 400px;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .result-card, .no-suffer-item, .result-prime {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  #why-scroll > div {
+    min-width: 600px !important;
+    max-width: 600px !important;
+  }
+  #testimony-scroll > div {
+    min-width: 100% !important;
+  }
+}
+.hero h1 {
+  font-size: clamp(32px, 8vw, 52px);
+  font-weight: 900;
+  color: #1E1030;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+.hero h1 em { font-style: normal; color: #E0197D; display: block; }
+.hero-sub {
+  font-size: clamp(18px, 4vw, 22px);
+  color: #1E1030;
+  max-width: 560px;
+  margin: 0 auto 10px;
+  line-height: 1.75;
+  font-weight: 800;
+}
+.start-btn {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  gap: 12px;
+  background: linear-gradient(135deg, #E0197D 0%, #B8106A 100%);
+  color: white;
+  text-decoration: none;
+  padding: 20px 38px;
+  border-radius: 50px;
+  font-family: "Heebo", sans-serif;
+  font-size: clamp(17px, 4vw, 20px);
+  border-radius: 50px;
+  font-size: clamp(18px, 4.5vw, 22px);
+  font-weight: 800;
+  box-shadow: 0 8px 28px rgba(224,25,125,0.4);
+  cursor: pointer;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { box-shadow: 0 8px 28px rgba(224,25,125,0.4); }
+  50%      { box-shadow: 0 8px 38px rgba(224,25,125,0.65); }
+}
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(5px); }
+}
+.start-btn .arrow { display: inline-block; animation: bounce 1.6s ease-in-out infinite; }
+
+/* ===== SECTIONS ===== */
+.section { padding: 36px 20px 36px 20px; max-width: 600px; margin: 0 auto; }
+.checklist-section .section { padding-right: 28px; padding-left: 28px; }
+.checklist-section .section-title, .checklist-section .section-sub { padding-right: 4px; padding-left: 4px; }
+.section-tag {
+  display: inline-block;
+  background: #FCE4F2; color: #E0197D;
+  font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: 4px 14px; border-radius: 20px; margin-bottom: 12px;
+}
+.section-title { font-size: clamp(24px, 5.5vw, 32px); font-weight: 800; color: #1E1030; line-height: 1.2; margin-bottom: 6px; padding-right: 8px; }
+.section-sub   { font-size: clamp(20px, 4.5vw, 26px); font-weight: 700; color: #1E1030; margin-bottom: 26px; padding-right: 8px; padding-left: 8px; }
+
+/* ===== QUESTIONS ===== */
+.q-wrap { background: white; border-top: 1px solid #EDE3F4; border-bottom: 1px solid #EDE3F4; padding-bottom: 20px; margin-bottom: 0; }
+.q-block { margin-bottom: 32px; }
+.q-label {
+  display: flex; align-items: center; gap: 12px;
+  font-size: clamp(24px, 5.5vw, 32px); font-weight: 800; color: #1E1030; margin-bottom: 14px; line-height: 1.2;
+}
+.q-num {
+  width: 34px; height: 34px; background: linear-gradient(135deg,#E0197D,#B8106A);
+  color: white; border-radius: 10px; display: flex; align-items: center;
+  justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0;
+}
+.opts { display: flex; flex-direction: column; gap: 10px; }
+.opt-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 20px;
+  border: 2px solid #EDE3F4;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: clamp(15px, 3.5vw, 17px);
+  color: #4A3060;
+  background: #FDF8FC;
+  font-weight: 500;
+  transition: all 0.18s;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.opt-item.selected {
+  border-color: #E0197D;
+  background: #FDF0F8;
+  color: #1E1030;
+  font-weight: 700;
+}
+.radio-dot {
+  width: 22px; height: 22px; border: 2px solid #EDE3F4;
+  border-radius: 50%; flex-shrink: 0; transition: all 0.18s;
+}
+.opt-item.selected .radio-dot {
+  background: #E0197D; border-color: #E0197D;
+  box-shadow: inset 0 0 0 4px white;
+}
+.val-msg { color: #E0197D; font-size: 14px; margin-top: 8px; font-weight: 700; display: none; }
+.val-msg.show { display: block; }
+
+/* ===== CHECKLIST ===== */
+  .checklist-wrap { background: #FDF0F8; border-top: 1px solid #EDE3F4; border-bottom: 1px solid #EDE3F4; }
+
+  .chips-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .chip-featured {
+  font-weight: 800 !important;
+}
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 12px 20px;
+    background: white;
+    border: 2px solid #D8C0F0;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: clamp(16px, 3.8vw, 19px);
+    color: #4A3060;
+    font-weight: 700;
+    transition: background 0.15s, border-color 0.15s, box-shadow 0.15s, transform 0.1s;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: 0 2px 8px rgba(139,48,204,0.10);
+    white-space: nowrap;
+  }
+
+  .chip:active {
+    transform: scale(0.93);
+  }
+
+  .chip.selected {
+    background: linear-gradient(135deg, #E0197D 0%, #B8106A 100%);
+    border-color: #E0197D;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(224,25,125,0.40);
+    transform: scale(1.05);
+  }
+
+  .chip-emoji { font-size: 16px; line-height: 1; }
+
+  .counter-pill {
+    display: flex; align-items: center; justify-content: center;
+    background: white; border: 2px solid #EDE3F4;
+    border-radius: 16px; padding: 14px 22px; margin-top: 20px;
+  }
+  .counter-text { font-size: clamp(20px, 4.5vw, 24px); color: #1E1030; font-weight: 800; }
+  .counter-num  { font-size: 34px; font-weight: 800; color: #E0197D; line-height: 1; }
+
+
+  /* ===== GAUGE ===== */
+  .score-wrap { margin-bottom: 16px; }
+  .gauge-text-row { display: flex; align-items: center; gap: 20px; text-align: right; }
+  .gauge-col { flex-shrink: 0; text-align: center; min-width: 140px; }
+  .gauge-text-col { flex: 1; text-align: right; }
+  @media (max-width: 600px) {
+    .gauge-text-row { flex-direction: column-reverse; align-items: stretch; gap: 8px; }
+    .gauge-col { min-width: unset; }
+    .gauge-text-col { text-align: center; }
+    .hero-img { width: 100%; height: auto; display: block; }
+    .logo-bar { display: none; }
+    .section { padding: 14px 0; }
+    .result-card { padding: 14px 8px; margin: 0 0 8px; max-width: 100%; border-radius: 12px; }
+    .method-box { padding: 12px 6px; }
+    .result-prime { padding: 14px 16px; margin: 0 2px 28px; }
+    .no-suffer-item { padding: 14px 12px; margin: 0 2px 8px; }
+    .result-cta-section { padding: 0 2px; }
+    .result-wrap .section { padding: 14px 2px; }
+  }
+  .score-label { font-size: 12px; font-weight: 700; color: #8A70A0; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 8px; }
+  .gauge-wrap { position: relative; width: 140px; height: 78px; margin: 0 auto 8px; }
+  .gauge-svg { width: 100%; height: 100%; }
+  .gauge-needle {
+    transform-origin: 110px 110px;
+    transform: rotate(-85deg);
+  }
+  .score-badge {
+    display: inline-block; padding: 8px 24px; border-radius: 20px;
+    font-size: 15px; font-weight: 800; margin-top: 6px;
+  }
+  .score-badge.low    { background: #FFF4E6; color: #C05000; }
+  .score-badge.medium { background: #FFE4CC; color: #C04000; }
+  .score-badge.high   { background: #FEE2E2; color: #DC2626; }
+
+  /* ===== PROFILE ===== */
+  .profile-box { margin-top: 20px; text-align: right; }
+  .profile-title { font-size: 14px; font-weight: 700; color: #4A3060; margin-bottom: 10px; letter-spacing: 0.5px; }
+  .profile-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; background: #FDF8FC;
+    border-radius: 12px; margin-bottom: 8px;
+    font-size: 14px; color: #4A3060; font-weight: 500;
+    border-right: 3px solid #E0197D;
+  }
+  .profile-item-emoji { font-size: 18px; flex-shrink: 0; }
+
+  /* ===== CTA ===== */
+.cta-wrap { background: linear-gradient(135deg, #F3E8FF, #EDE3F4); border-top: 3px solid #C89EE8; border-bottom: 3px solid #C89EE8; padding: 40px 20px; text-align: center; margin: 0; }
+.btn-main {
+  display: inline-block;
+  background: linear-gradient(135deg, #E0197D 0%, #B8106A 100%);
+  color: white; font-family: "Heebo", sans-serif;
+  font-size: clamp(22px, 5vw, 28px); font-weight: 800;
+  padding: 18px 40px; border-radius: 50px; border: none; cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 8px 28px rgba(224,25,125,0.38);
+  transition: all 0.25s; width: 100%; max-width: 440px; text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.cta-note { font-size: 14px; color: #8A70A0; margin-top: 12px; }
+
+/* ===== RESULT ===== */
+.result-wrap { display: none; background: linear-gradient(160deg,#FDF0F8 0%,#F0E0FF 100%); padding: 40px 4px; }
+.result-wrap.on { display: block; animation: fadeup 0.5s ease; }
+@media (min-width: 768px) {
+  .result-wrap { padding: 40px 12px; }
+  .result-cta-section { padding: 0 12px; }
+  .result-prime { margin: 0 8px 14px; }
+}
+@keyframes fadeup { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+
+.stage-header {
+  text-align: right; margin-bottom: 6px;
+}
+.stage-headline {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 10px;
+}
+.stage-headline-text {
+  font-size: clamp(26px, 6vw, 34px); font-weight: 900;
+  color: #1E1030; line-height: 1.2;
+}
+.stage-headline-text .stage-label {
+  color: #8A70A0;
+}
+.stage-emoji-inline { font-size: 28px; flex-shrink: 0; }
+.merged-stage-desc {
+  font-size: clamp(18px, 4vw, 22px); color: #4A3060; line-height: 1.65; font-weight: 500;
+  margin-bottom: 4px;
+}
+.merged-divider {
+  height: 1px; background: #EDE3F4; margin: 18px 0;
+}
+
+.result-card {
+  background: white; border-radius: 20px; padding: 28px 6px;
+  max-width: 100%; margin: 0 2px 20px;
+  box-shadow: 0 8px 40px rgba(139,48,204,0.12);
+  border: 2px solid #EDE3F4; text-align: center;
+}
+.result-emoji { font-size: 52px; margin-bottom: 12px; }
+.result-title { font-size: clamp(18px,4vw,22px); font-weight: 900; color: #E0197D; margin-bottom: 8px; line-height: 1.3; }
+.result-text  { font-size: clamp(18px, 4vw, 22px); color: #4A3060; line-height: 1.8; text-align: right; }
+.stat-box {
+  display: none; align-items: center; gap: 16px;
+  background: linear-gradient(135deg,#FDF0F8,#F0E0FF);
+  border: 2px solid #EDE3F4; border-radius: 16px;
+  padding: 18px 20px; margin-top: 20px; text-align: right;
+}
+.stat-box.on { display: flex; }
+.stat-num  { font-size: 40px; font-weight: 800; color: #E0197D; flex-shrink: 0; line-height: 1; }
+.stat-desc { font-size: 15px; color: #4A3060; font-weight: 500; line-height: 1.5; }
+.disclaimer { font-size: 12px; color: #8A70A0; margin-top: 18px; font-style: italic; }
+
+.result-cta-section { max-width: 600px; margin: 0 auto; text-align: center; }
+.result-hook { font-size: clamp(20px,5vw,26px); font-weight: 800; color: #1E1030; margin-bottom: 10px; line-height: 1.3; }
+.result-hook-sub { font-size: clamp(15px,3.5vw,17px); color: #4A3060; margin-bottom: 28px; line-height: 1.7; }
+.no-suffer-list { margin-bottom: 24px; text-align: right; }
+.no-suffer-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 14px 16px; margin: 0 2px 8px;
+  background: white; border-radius: 14px;
+  border-right: 4px solid #E0197D;
+  font-size: clamp(20px, 4.5vw, 24px); font-weight: 700; color: #1E1030;
+  box-shadow: 0 2px 8px rgba(224,25,125,0.08);
+  animation: fadeup 0.4s ease both;
+}
+.no-suffer-item .ns-emoji { font-size: 20px; flex-shrink: 0; }
+.result-prime {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  padding: 10px 20px; margin: 0 2px 14px;
+  background: linear-gradient(135deg, #FCE4F2 0%, #EDE0FF 100%);
+  border: 2px solid #E0197D;
+  border-radius: 18px;
+  font-size: clamp(26px, 6vw, 38px); font-weight: 900;
+  color: #1E1030; text-align: center;
+  line-height: 1.3;
+  box-shadow: 0 4px 18px rgba(224,25,125,0.18);
+}
+.btn-purple {
+  display: inline-block;
+  background: linear-gradient(135deg,#8B30CC,#6B20A8);
+  color: white; font-family: "Heebo", sans-serif;
+  font-size: clamp(17px,4vw,20px); font-weight: 800;
+  padding: 18px 40px; border-radius: 50px; border: none; cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 8px 28px rgba(139,48,204,0.38);
+  transition: all 0.25s; width: 100%; max-width: 440px; text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.result-cta-note { font-size: 14px; color: #8A70A0; margin-top: 12px; }
+.method-box {
+  background: #F8F0FF; border: 1.5px solid #D8C0F0;
+  border-radius: 16px; padding: 20px 22px; margin: 16px 0 20px;
+  text-align: right;
+}
+.method-intro {
+  font-size: clamp(18px,4.5vw,22px); font-weight: 900;
+  color: #1E1030; margin-bottom: 14px; line-height: 1.4;
+}
+.method-list {
+  list-style: none; padding: 0; margin: 0 0 8px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.method-list li {
+  display: flex; align-items: center; gap: 10px;
+  font-size: clamp(18px,4.5vw,22px); font-weight: 700; color: #4A3060;
+}
+.method-list li::before {
+  content: "✓"; color: #E0197D; font-weight: 900; font-size: 16px; flex-shrink: 0;
+}
+.method-more {
+  font-size: clamp(18px,4.5vw,22px); color: #4A3060; margin-top: 8px; font-weight: 700;
+}
+.cta-question {
+  font-size: clamp(26px, 6vw, 38px); font-weight: 900;
+  color: #1E1030; margin-bottom: 18px; text-align: center;
+}
+
+
+/* ===== SCROLL ARROW ===== */
+.scroll-arrow-wrap {
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+.scroll-arrow-text {
+  display: block;
+  font-size: clamp(24px, 5.4vw, 32px);
+  font-weight: 900;
+  background: linear-gradient(90deg, #E0197D, #6B20A8, #E0197D);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 2.5s linear infinite;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+.scroll-arrow-icon {
+  font-size: clamp(24px, 4vw, 32px);
+  color: #E0197D;
+  animation: bounce 1.2s ease-in-out infinite;
+  line-height: 1;
+}
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ===== CIRCLE ANIMATION ===== */
+.circle-anim-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+  
+  .circle-anim-wrap .inner-body { display: flex; align-items: center; justify-content: center; background: white; }
+  
+  .scene {
+    position: relative;
+    width: min(90vw, 360px);
+    height: calc(min(90vw, 360px) * 0.953);
+  }
+
+  .piece {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .piece img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: fill;
+  }
+
+  /* Each piece clips exactly its circle from the full image */
+  .p-top {
+    clip-path: circle(31% at 48% 32%);
+    opacity: 0;
+  }
+  .circle-scene-active .p-top {
+    animation: flyTop 0.85s cubic-bezier(.2,1.3,.5,1) 0s both;
+  }
+  .p-left {
+    clip-path: circle(33% at 25% 65%);
+    opacity: 0;
+  }
+  .circle-scene-active .p-left {
+    animation: flyLeft 0.85s cubic-bezier(.2,1.3,.5,1) 0.15s both;
+  }
+  .p-right {
+    clip-path: circle(31% at 67% 66%);
+    opacity: 0;
+  }
+  .circle-scene-active .p-right {
+    animation: flyRight 0.85s cubic-bezier(.2,1.3,.5,1) 0.3s both;
+  }
+
+  @keyframes flyTop {
+    0%   { transform: translateY(-280px) scale(0.5); opacity: 0; }
+    100% { transform: none; opacity: 1; }
+  }
+  @keyframes flyLeft {
+    0%   { transform: translate(-280px, 150px) scale(0.5); opacity: 0; }
+    100% { transform: none; opacity: 1; }
+  }
+  @keyframes flyRight {
+    0%   { transform: translate(280px, 150px) scale(0.5); opacity: 0; }
+    100% { transform: none; opacity: 1; }
+  }
+
+
+.highlight-habit {
+  background: linear-gradient(90deg, #E0197D, #6B20A8, #E0197D);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 2.5s linear infinite;
+  font-weight: 900;
+}
+.p2-extra-box {
+  background: linear-gradient(135deg, #FF6B8A, #E0197D);
+  border-radius: 0 0 16px 16px;
+  padding: 14px 16px;
+  margin: 16px -16px -24px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.p2-extra-box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.arrow-bounce {
+  display: inline-block;
+  animation: arrowBounce 0.8s ease-in-out infinite;
+}
+@keyframes arrowBounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-8px); }
+}
+.p2-extra-text {
+  color: white;
+  font-size: clamp(18px, 4.5vw, 22px);
+  font-weight: 800;
+  text-align: center;
+  margin: 0;
+}
+.p2-secret-box {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  overflow: hidden;
+  padding-bottom: 24px;
+}
+.p2-secret-box.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ===== TESTIMONIALS CAROUSEL ===== */
+.testimonials-section {
+  margin-bottom: 24px;
+}
+.testimonials-title {
+  font-size: clamp(22px, 5vw, 28px);
+  font-weight: 900;
+  color: #1E1030;
+  text-align: center;
+  margin-bottom: 12px;
+  direction: rtl;
+}
+.carousel-wrap {
+  position: relative;
+  background: white;
+  border-radius: 18px;
+  border: 2px solid #E0197D;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(224,25,125,0.1);
+}
+.carousel-track {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-slide {
+  min-width: 100%;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+.carousel-slide iframe {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border: none;
+  display: block;
+}
+.carousel-slide img {
+  width: 100%;
+  display: block;
+}
+.carousel-slide .slide-placeholder {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: linear-gradient(135deg, #FCE4F2, #EDE0FF);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #6B20A8;
+  font-weight: 700;
+  font-size: 16px;
+  gap: 8px;
+}
+.carousel-slide .slide-placeholder .ph-icon { font-size: 40px; }
+/* Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 0 8px;
+  background: white;
+}
+.carousel-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #DDD;
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.carousel-dot.active {
+  background: #E0197D;
+  transform: scale(1.3);
+}
+/* Nav buttons for carousels */
+.nav-btn {
+  background: #6B20A8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 1;
+  vertical-align: middle;
+  transition: background 0.2s;
+}
+.nav-btn:hover { background: #8B30C8; }
+
+/* Swipe hint */
+.swipe-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #9B70C0;
+  margin-top: 6px;
+  animation: fadeHint 3s ease 1s forwards;
+  opacity: 1;
+}
+.swipe-hint-arrow {
+  font-size: 18px;
+  animation: swipeAnim 1.5s ease-in-out infinite;
+}
+@keyframes swipeAnim {
+  0%, 100% { transform: translateX(0); opacity: 1; }
+  50% { transform: translateX(-12px); opacity: 0.4; }
+}
+@keyframes fadeHint {
+  0%, 80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ===== WHY SECTION ===== */
+.why-section {
+  background: white;
+  padding: 0 0 32px;
+}
+.why-section.visible { display: block; }
+.why-title {
+  font-size: clamp(24px, 5.5vw, 32px);
+  font-weight: 900;
+  color: #6B20A8;
+  text-align: center;
+  padding: 24px 16px 16px;
+  direction: rtl;
+  line-height: 1.3;
+}
+.why-carousel-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.why-track {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.why-track::-webkit-scrollbar { display: none; }
+.why-slide {
+  min-width: 100%;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  padding: 4px 6px 16px;
+}
+.why-card {
+  background: #6B20A8;
+  border-radius: 20px;
+  padding: 28px 20px;
+  direction: rtl;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  box-shadow: 0 6px 24px rgba(107,32,168,0.25);
+  animation: cardPulse 0.4s ease;
+}
+@keyframes cardPulse {
+  0% { transform: scale(0.97); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.why-card-title {
+  font-size: clamp(24px, 5.5vw, 32px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.3;
+}
+.why-card-body {
+  font-size: clamp(18px, 4.2vw, 22px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.5;
+}
+.why-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 0 4px;
+}
+.why-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #DDD;
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.why-dot.active {
+  background: #6B20A8;
+  transform: scale(1.35);
+}
+.why-swipe-hint {
+  text-align: center;
+  font-size: 13px;
+  color: #9B70C0;
+  margin-top: 4px;
+  direction: rtl;
+}
+.why-swipe-hint .sh-arrow {
+  display: inline-block;
+  animation: swipeAnim 1.5s ease-in-out infinite;
+}
+.why-progress {
+  text-align: center;
+  font-size: 13px;
+  color: #9B70C0;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.btn-main.pulse-ready {
+  animation: btnPulse 1s ease-in-out infinite;
+}
+@keyframes btnPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 20px rgba(224,25,125,0.4); }
+  50% { transform: scale(1.07); box-shadow: 0 8px 32px rgba(224,25,125,0.7); }
+}
+
+/* ===== MEDIA SECTION ===== */
+.media-section {
+  padding: 32px 0 16px;
+  background: white;
+}
+.media-title {
+  font-size: clamp(24px, 5.5vw, 32px);
+  font-weight: 900;
+  color: #1E1030;
+  text-align: center;
+  margin-bottom: 6px;
+  direction: rtl;
+  padding: 0 16px;
+}
+.media-subtitle {
+  font-size: clamp(15px, 3.5vw, 18px);
+  color: #9B70C0;
+  text-align: center;
+  margin-bottom: 16px;
+  direction: rtl;
+}
+.media-carousel-wrap {
+  position: relative;
+  overflow: hidden;
+  padding: 0 8px;
+}
+.media-track {
+  display: flex;
+  transition: transform 0.35s ease;
+  will-change: transform;
+  cursor: grab;
+  align-items: stretch;
+}
+.media-track:active { cursor: grabbing; }
+.media-slide {
+  min-width: 88%;
+  box-sizing: border-box;
+  padding: 4px 6px 12px;
+}
+.media-card {
+  background: #F8F0FF;
+  border-radius: 18px;
+  border: 2px solid #EDE0FF;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(107,32,168,0.1);
+}
+.media-card iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+.media-card .media-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #EDE0FF 0%, #FCE4F2 100%);
+  color: #6B20A8;
+  font-weight: 700;
+  font-size: clamp(14px, 3.5vw, 17px);
+  text-align: center;
+  padding: 16px;
+  direction: rtl;
+}
+.media-card .media-placeholder .ph-logo {
+  font-size: 38px;
+}
+.media-card .media-placeholder .ph-source {
+  font-size: 12px;
+  color: #9B70C0;
+  font-weight: 500;
+}
+.media-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0 6px;
+}
+.media-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #DDD;
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.media-dot.active {
+  background: #6B20A8;
+  transform: scale(1.3);
+}
+.media-swipe-hint {
+  text-align: center;
+  font-size: 13px;
+  color: #9B70C0;
+  margin-top: 4px;
+  direction: rtl;
+}
+.media-swipe-hint .msh-arrow {
+  display: inline-block;
+  animation: swipeAnim 1.5s ease-in-out infinite;
+}
+
+/* ===== PRE-CTA SECTION ===== */
+.precta-section {
+  background: linear-gradient(135deg, #8B30CC, #6B20A8);
+  padding: 36px 12px 40px;
+  text-align: center;
+  direction: rtl;
+}
+.precta-headline {
+  font-size: clamp(26px, 6vw, 36px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.precta-headline span.accent { color: #FFD600; }
+.precta-syms {
+  font-size: clamp(17px, 4vw, 21px);
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 24px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+.precta-syms .sym-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 3px 12px;
+  margin: 3px 4px;
+  font-size: clamp(15px, 3.5vw, 18px);
+}
+.btn-precta {
+  display: inline-block;
+  background: linear-gradient(135deg, #F472B6 0%, #E0197D 100%);
+  color: white;
+  font-family: "Heebo", sans-serif;
+  font-size: clamp(20px, 5vw, 26px);
+  font-weight: 900;
+  padding: 22px 32px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 28px rgba(224,25,125,0.5);
+  width: 100%;
+  max-width: 480px;
+  transition: transform 0.2s;
+  direction: rtl;
+  line-height: 1.3;
+}
+.btn-precta.pulse-ready {
+  animation: btnPulse 1s ease-in-out infinite;
+}
+
+/* ===== LEAD MAGNET SECTION ===== */
+.lead-magnet-section {
+  background: linear-gradient(135deg, #2D1060 0%, #4A1080 100%);
+  padding: 40px 8px;
+  text-align: center;
+  direction: rtl;
+}
+.lead-magnet-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+.lead-magnet-emoji {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+.lead-magnet-title {
+  font-size: clamp(24px, 5.5vw, 32px);
+  font-weight: 900;
+  color: white;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+.lead-magnet-text {
+  font-size: clamp(18px, 4.2vw, 22px);
+  color: #E8D5FF;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+.lead-magnet-cta {
+  font-size: clamp(20px, 5vw, 26px);
+  font-weight: 900;
+  color: white;
+  margin-bottom: 16px;
+  direction: rtl;
+}
+.lead-magnet-btn {
+  background: linear-gradient(135deg, #FFD600, #F59E0B);
+  color: #1E1030;
+  border: none;
+  border-radius: 50px;
+  font-family: "Heebo", sans-serif;
+  font-size: clamp(18px, 4.5vw, 22px);
+  font-weight: 900;
+  padding: 18px 36px;
+  cursor: pointer;
+  box-shadow: 0 6px 28px rgba(245,158,11,0.5);
+  animation: btnPulse 1s ease-in-out infinite;
+  width: 100%;
+  max-width: 440px;
+}
+
+/* ===== PROGRAM SECTION ===== */
+.program-section {
+  background: #1a0a2e;
+  padding: 32px 0 24px;
+  direction: rtl;
+}
+.program-title {
+  font-size: clamp(22px, 5.5vw, 32px);
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  padding: 0 16px;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+.program-subtitle {
+  font-size: clamp(17px, 4vw, 21px);
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  padding: 0 16px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+.program-subtitle strong { color: white; text-decoration: underline; }
+.prog-slide {
+  min-width: 100%;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  padding: 12px;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.prog-card {
+  overflow: auto;
+}
+.prog-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+  direction: rtl;
+  text-align: right;
+  width: 100%;
+}
+.prog-icon { font-size: 32px; text-align: center; }
+.prog-title {
+  font-size: clamp(20px, 5vw, 26px);
+  font-weight: 900;
+  color: #6B20A8;
+  line-height: 1.35;
+  text-align: center;
+}
+.prog-body {
+  font-size: clamp(15px, 3.8vw, 18px);
+  color: #1E1030;
+  line-height: 1.65;
+  font-weight: 500;
+}
+/* First program slide peeks next */
+#program-scroll .prog-slide:first-of-type {
+  scroll-snap-align: start;
+}
+
+/* ===== BONUSES SECTION ===== */
+.bonuses-section {
+  display: none;
+  background: #E0197D;
+  padding: 36px 12px 40px;
+  direction: rtl;
+  text-align: center;
+}
+.bonuses-title {
+  font-size: clamp(28px, 6.5vw, 40px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.bonuses-intro {
+  font-size: clamp(18px, 4vw, 22px);
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.bonuses-carousel-wrap {
+  overflow: hidden;
+}
+.bonuses-track {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.bonuses-track::-webkit-scrollbar { display: none; }
+.bonuses-slide {
+  min-width: 100%;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  padding: 4px 6px 12px;
+  flex-shrink: 0;
+}
+.bonuses-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px 20px;
+  text-align: center;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  overflow: visible;
+}
+.bonuses-card-title {
+  font-size: clamp(18px, 4.5vw, 24px);
+  font-weight: 900;
+  color: #6B20A8;
+  line-height: 1.25;
+}
+.bonuses-card-body {
+  font-size: clamp(13px, 3.2vw, 16px);
+  color: #1E1030;
+  line-height: 1.6;
+  font-weight: 500;
+}
+.bonuses-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 0 6px;
+}
+.bonuses-dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.bonuses-dot.active {
+  background: white;
+  transform: scale(1.3);
+}
+.bonuses-swipe-hint {
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 24px;
+  direction: rtl;
+}
+.bonuses-swipe-hint .bsh-arrow {
+  display: inline-block;
+  animation: swipeAnim 1.5s ease-in-out infinite;
+}
+
+/* ===== OFFER SECTION ===== */
+.offer-section {
+  display: none;
+  background: linear-gradient(160deg, #1a0a2e 0%, #3D0F6B 100%);
+  padding: 40px 12px;
+  direction: rtl;
+  text-align: center;
+}
+.offer-section.visible { display: block; animation: fadeup 0.5s ease; }
+.offer-badge {
+  display: inline-block;
+  background: #E0197D;
+  color: white;
+  font-size: clamp(22px, 5vw, 28px);
+  font-weight: 900;
+  padding: 12px 28px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.offer-title {
+  font-size: clamp(28px, 6.5vw, 40px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+.offer-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px 20px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.offer-price-old {
+  font-size: clamp(18px,4vw,22px);
+  color: #9B70C0;
+  text-decoration: line-through;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.offer-price-new {
+  font-size: clamp(42px,10vw,60px);
+  font-weight: 900;
+  color: #E0197D;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.offer-price-sub {
+  font-size: clamp(15px,3.5vw,18px);
+  color: #6B20A8;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.offer-perks {
+  text-align: right;
+  margin-bottom: 8px;
+}
+.offer-perk {
+  font-size: clamp(16px,3.8vw,19px);
+  color: #1E1030;
+  font-weight: 600;
+  padding: 6px 0;
+  border-bottom: 1px solid #F0E0FF;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.offer-perk:last-child { border-bottom: none; }
+.offer-coupon {
+  background: linear-gradient(135deg,#FFF8E1,#FFF3CD);
+  border: 3px dashed #F59E0B;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-top: 12px;
+  font-size: clamp(22px,5vw,28px);
+  color: #92400E;
+  font-weight: 800;
+  direction: rtl;
+}
+.offer-coupon code {
+  background: #F59E0B;
+  color: white;
+  padding: 4px 14px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 1.4em;
+  letter-spacing: 2px;
+}
+.btn-join {
+  display: block;
+  background: linear-gradient(135deg, #22C55E, #16A34A);
+  color: white;
+  font-family: "Heebo", sans-serif;
+  font-size: clamp(24px, 6vw, 32px);
+  font-weight: 900;
+  padding: 24px 32px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(34,197,94,0.45);
+  width: 100%;
+  direction: rtl;
+  line-height: 1.3;
+  animation: btnPulse 1s ease-in-out infinite;
+  margin-top: 8px;
+}
+.offer-support {
+  margin-top: 24px;
+  color: rgba(255,255,255,0.85);
+  font-size: clamp(15px,3.5vw,18px);
+  font-weight: 600;
+}
+.offer-support-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.offer-support-btn {
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: white;
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: clamp(17px,4vw,22px);
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  direction: rtl;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== WHEN SECTION ===== */
+.when-section {
+  display: none;
+  background: #6B20A8;
+  padding: 40px 20px;
+  direction: rtl;
+  text-align: center;
+}
+.when-section.visible { display: block; animation: fadeup 0.5s ease; }
+.when-title {
+  font-size: clamp(30px, 7vw, 44px);
+  font-weight: 900;
+  color: white;
+  margin-bottom: 20px;
+}
+.when-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px 20px;
+  margin-bottom: 20px;
+}
+.when-card-text {
+  font-size: clamp(20px, 5vw, 26px);
+  color: #4A3060;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.when-card-text strong { color: #6B20A8; }
+.when-card-sub {
+  font-size: clamp(15px, 3.5vw, 18px);
+  color: #6B20A8;
+  line-height: 1.6;
+}
+
+/* ===== CANCEL SECTION ===== */
+.cancel-section {
+  display: none;
+  padding: 40px 12px;
+  background: #1E1E1E;
+  direction: rtl;
+  text-align: center;
+}
+.cancel-section.visible { display: block; animation: fadeup 0.5s ease; }
+.cancel-card {
+  background: #2A2A2A;
+  border-radius: 20px;
+  padding: 28px 20px;
+  margin-bottom: 20px;
+  border: 1px solid #444;
+}
+.cancel-title {
+  font-size: clamp(24px, 5.5vw, 32px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+.cancel-body {
+  font-size: clamp(18px, 4.2vw, 22px);
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+}
+.cancel-badge {
+  display: inline-block;
+  background: #F59E0B;
+  color: #1E1030;
+  font-size: clamp(18px, 4.5vw, 24px);
+  font-weight: 900;
+  padding: 16px 28px;
+  border-radius: 16px;
+  margin-top: 8px;
+  box-shadow: 0 6px 24px rgba(245,158,11,0.4);
+}
+
+/* ===== FAQ SECTION ===== */
+.faq-section {
+  background: white;
+  padding: 40px 16px;
+  direction: rtl;
+  text-align: right;
+}
+.faq-section-title {
+  font-size: clamp(28px, 6.5vw, 38px);
+  font-weight: 900;
+  color: #1E1030;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.faq-item {
+  border-bottom: 1px solid #EDE3F4;
+  margin-bottom: 4px;
+  direction: rtl;
+  text-align: right;
+}
+.faq-question {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 4px;
+  cursor: pointer;
+  font-size: clamp(18px, 4.2vw, 22px);
+  font-weight: 800;
+  color: #1E1030;
+  gap: 12px;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  text-align: right;
+  direction: rtl;
+  width: 100%;
+}
+.faq-question:active { opacity: 0.8; }
+.faq-arrow {
+  flex-shrink: 0;
+  font-size: 20px;
+  color: #6B20A8;
+  transition: transform 0.3s;
+  display: inline-block;
+  margin-right: auto;
+}
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+  text-align: right;
+  font-size: clamp(16px, 3.8vw, 19px);
+  color: #4A3060;
+  line-height: 1.75;
+  padding: 0 4px;
+}
+.faq-item.open .faq-answer {
+  max-height: 600px;
+  padding: 0 4px 16px;
+}
+.faq-cancel-badge {
+  display: inline-block;
+  background: #F59E0B;
+  color: #1E1030;
+  font-weight: 900;
+  font-size: clamp(15px,3.5vw,18px);
+  padding: 10px 20px;
+  border-radius: 12px;
+  margin-top: 12px;
+}
+
+/* ===== STORY SECTION ===== */
+.story-btn-wrap {
+  background: white;
+  padding: 28px 20px;
+  text-align: center;
+  direction: rtl;
+}
+.btn-story {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #6B20A8, #8B30CC);
+  color: white;
+  font-family: "Heebo", sans-serif;
+  font-size: clamp(20px, 4.5vw, 26px);
+  font-weight: 900;
+  padding: 20px 32px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(107,32,168,0.4);
+  direction: rtl;
+  line-height: 1.3;
+}
+.story-section {
+  display: none;
+  background: #2a2a2a;
+  padding: 48px 0 56px;
+  direction: rtl;
+}
+.story-section.visible { display: block; animation: fadeup 0.5s ease; }
+.story-title {
+  font-size: clamp(28px, 6.5vw, 44px);
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  margin-bottom: 8px;
+  direction: rtl;
+  padding: 0 20px;
+}
+.story-intro {
+  font-size: clamp(17px, 4vw, 21px);
+  color: rgba(255,255,255,0.88);
+  line-height: 1.85;
+  text-align: center;
+  padding: 0 24px;
+  margin-bottom: 40px;
+  direction: rtl;
+}
+.story-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 0 20px 36px;
+  direction: rtl;
+}
+.story-row.reverse {
+  flex-direction: row-reverse;
+}
+.story-row-text {
+  flex: 1;
+  font-size: clamp(16px, 3.8vw, 20px);
+  color: rgba(255,255,255,0.88);
+  line-height: 1.85;
+  direction: rtl;
+  text-align: right;
+}
+.story-row-text strong {
+  color: white;
+  font-weight: 800;
+}
+.story-row-img {
+  flex-shrink: 0;
+  width: 42%;
+  max-width: 320px;
+  border-radius: 16px;
+  object-fit: cover;
+  aspect-ratio: 3/4;
+}
+.story-highlight-dark {
+  font-size: clamp(17px, 4vw, 21px);
+  color: rgba(255,255,255,0.9);
+  line-height: 1.9;
+  direction: rtl;
+  text-align: right;
+  margin-top: 12px;
+}
+.story-highlight-dark strong {
+  color: white;
+}
+.story-closing {
+  padding: 0 16px 8px;
+  direction: rtl;
+}
+.story-closing-title {
+  font-size: clamp(20px, 4.5vw, 28px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.story-closing-prime {
+  font-size: clamp(24px, 5.5vw, 36px);
+  font-weight: 900;
+  color: #E040A0;
+  line-height: 1.4;
+}
+.story-img {
+  display: none;
+}
+.story-para {
+  font-size: clamp(17px, 4vw, 21px);
+  color: rgba(255,255,255,0.88);
+  line-height: 1.85;
+  direction: rtl;
+  text-align: right;
+  padding: 0 20px 24px;
+}
+.story-full-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 75vw;
+  margin-bottom: 24px;
+}
+.story-highlight {
+  display: none;
+}
+.story-text {
+  display: none;
+}
+.btn-join-story {
+  display: block;
+  background: linear-gradient(135deg, #22C55E, #16A34A);
+  color: white;
+  font-family: "Heebo", sans-serif;
+  font-size: clamp(24px, 6vw, 32px);
+  font-weight: 900;
+  padding: 24px 32px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(34,197,94,0.45);
+  width: 100%;
+  direction: rtl;
+  line-height: 1.3;
+  animation: btnPulse 1s ease-in-out infinite;
+  margin-top: 28px;
+}
+
+.media-card {
+  position: relative;
+}
+.media-card .iframe-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 10;
+  cursor: grab;
+  background: transparent;
+}
+.media-card .iframe-overlay.hidden {
+  display: none;
+}
+/* ===== FOOTER ===== */
+
+/* ===== PAGE 2 ===== */
+.program-wrap { }
+.p2-hero {
+  background: linear-gradient(135deg, #FCE4F2 0%, #EDE0FF 100%);
+  padding: 28px 6px 24px;
+  text-align: center;
+}
+.p2-tag {
+  display: inline-block;
+  background: #E0197D; color: white;
+  font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+  padding: 4px 14px; border-radius: 20px; margin-bottom: 16px;
+}
+.p2-title {
+  font-size: clamp(26px, 6vw, 38px); font-weight: 900;
+  color: #1E1030; line-height: 1.25; margin-bottom: 10px;
+}
+.p2-subtitle {
+  font-size: clamp(26px, 6vw, 38px); color: #4A3060;
+  line-height: 1.4; font-weight: 400; margin-bottom: 12px;
+}
+.p2-section {
+  background: white; max-width: 680px;
+  margin: 0 auto; padding: 0 4px 16px;
+}
+.p2-block { margin-bottom: 4px; }
+.p2-block-title {
+  font-size: clamp(20px, 5vw, 26px); font-weight: 900;
+  color: #6B20A8; margin-bottom: 6px;
+}
+.p2-block-title--pink { color: #E0197D; }
+.p2-list {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.p2-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: clamp(18px, 4.5vw, 22px); color: #1E1030; line-height: 1.4;
+  text-align: right;
+}
+.p2-check { flex-shrink: 0; font-size: 18px; }
+.p2-divider { height: 1px; background: #EDE3F4; margin: 14px 0; }
+.p2-cta-wrap { text-align: center; margin-top: 16px; }
+.p2-secret-box {
+  background: linear-gradient(135deg, #FCE4F2 0%, #EDE0FF 100%);
+  border: 2px solid #E0197D;
+  border-radius: 18px;
+  padding: 24px 16px;
+  margin-bottom: 20px;
+}
+.p2-cta-q {
+  font-size: clamp(22px, 5vw, 30px); font-weight: 900;
+  color: #1E1030; margin-bottom: 20px;
+}
+.p2-cta-btn {
+  font-size: clamp(17px, 4vw, 20px); padding: 18px 40px;
+}
+.ravpage-wrap {
+  background: linear-gradient(135deg, #FCE4F2 0%, #EDE0FF 100%);
+  padding: 40px 24px;
+}
+.ravpage-title {
+  font-size: clamp(20px, 4.5vw, 26px); font-weight: 900;
+  color: #1E1030; margin-bottom: 24px;
+}
+.footer { text-align:center; padding:24px; font-size:12px; color:#8A70A0; background:#FDF8FC; border-top:1px solid #EDE3F4; }
+
+/* ===== DESKTOP OVERRIDES ===== */
+@media (min-width: 768px) {
+  /* Bonuses - grid layout on desktop */
+  .bonuses-section {
+    padding: 48px 40px 56px;
+  }
+  
+  
+  .bonuses-card {
+    height: 100%;
+    padding: 28px 24px;
+    box-sizing: border-box;
+  }
+  /* Hide nav arrows on desktop for bonuses */
+  
+
+  /* Program - grid layout on desktop */
+  .program-section {
+    padding: 48px 40px 56px;
+  }
+  
+  #program-scroll > div,
+  #program-scroll .prog-slide {
+    min-width: 0 !important;
+    height: auto !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+  }
+  .prog-slide {
+    min-width: 0 !important;
+  }
+  .prog-card {
+    padding: 28px 24px;
+    height: 100%;
+  }
+  /* Video takes full row on desktop */
+  #program-scroll > div:first-child {
+    grid-column: 1 / -1;
+    height: 400px !important;
+  }
+  /* Hide nav arrows on desktop for program */
+  .program-section > div:nth-child(2) {
+    display: none !important;
+  }
+  .program-section > p {
+    display: none !important;
+  }
+}
+
+/* --- Carousel UX fixes: show peek + square cards --- */
+.bonuses-track, .carousel-track, #program-scroll {
+  gap: 16px;
+  padding: 0 18px 14px;
+}
+
+/* Mobile: 1 card + peek */
+.bonuses-slide, .carousel-slide, #program-scroll > div, #program-scroll .prog-slide {
+  min-width: 84% !important;
+}
+
+/* Desktop: 2 cards + peek */
+@media (min-width: 768px) {
+  .bonuses-slide, .carousel-slide, #program-scroll > div, #program-scroll .prog-slide {
+    min-width: 46% !important;
+  }
+}
+
+/* Force square cards (prevents stretched rectangles) */
+.bonuses-card, .prog-card, .why-card, .what-card,
+.bonuses-slide, .carousel-slide {
+  aspect-ratio: 1 / 1;
+}
+
+.bonuses-card, .prog-card, .why-card, .what-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* --- Small typography & alignment improvements --- */
+.result-prime {
+  font-size: clamp(24px, 5.5vw, 34px);
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+/* PROGRAM cards: align stars consistently + larger text */
+.prog-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 18px 16px;
+}
+
+.prog-icon {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  line-height: 1;
+  margin: 0 0 8px;
+}
+
+.prog-title {
+  font-size: clamp(18px, 4.2vw, 22px);
+  font-weight: 900;
+  line-height: 1.15;
+  margin: 0 0 10px;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prog-body {
+  font-size: clamp(16px, 3.8vw, 19px);
+  line-height: 1.35;
+}
+
+/* Carousel snap: first slide aligns to start, next slides center */
+.bonuses-slide, .carousel-slide, #program-scroll > div, #program-scroll .prog-slide {
+  scroll-snap-align: center;
+}
+.bonuses-track > .bonuses-slide:first-child,
+.carousel-track > .carousel-slide:first-child,
+#program-scroll > div:first-child {
+  scroll-snap-align: start;
+}
+
+/* Show a bit more of the next bonus card (watch peek) */
+.bonuses-slide {
+  min-width: 78% !important;
+}
+@media (min-width: 768px) {
+  .bonuses-slide {
+    min-width: 44% !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- LOGO -->
+<div class="logo-bar">
+  <img src="site_images/image1.jpeg" alt="MyPrime">
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <picture>
+    <source media="(min-width: 768px)" srcset="site_images/HEADERPIC1.jpg">
+    <img src="site_images/header_mobile.jpg" alt="MyPrime - ענת הראל" style="width:100%;display:block;">
+  </picture>
+  <div class="hero-btn-wrap" style="padding: 8px 20px; background: linear-gradient(135deg, #F3E8FF, #EDE3F4); text-align:center;">
+    <button class="start-btn" onclick="document.getElementById('checklist-section').scrollIntoView({behavior:'smooth', block:'start'})">
+      <span>מוכנה? בואי נתחיל</span>
+      <span class="arrow">&#8595;</span>
+    </button>
+  </div>
+</div>
+
+<!-- QUESTIONS -->
+<!-- CHECKLIST -->
+<div class="checklist-wrap" id="checklist-section">
+  <div class="section">
+    
+    <div class="q-label"><span class="q-num">1</span>ספרי לי על התסמינים שמפריעים לך:</div>
+    <p class="section-sub">מה מוכר לך בתקופה האחרונה?</p>
+    <div class="chips-grid" id="symptoms-grid">
+      <div class="chip chip-featured" data-cat="body" data-label="השמנה בטנית" onclick="toggleSym(this)"><span class="chip-emoji">🫃</span>השמנה בטנית 🔥</div>
+      <div class="chip chip-featured" data-cat="energy" data-label="שינה גרועה" onclick="toggleSym(this)"><span class="chip-emoji">😴</span>שינה גרועה 🔥</div>
+      <div class="chip chip-featured" data-cat="mood" data-label="שינויי מצב רוח" onclick="toggleSym(this)"><span class="chip-emoji">🌊</span>מצבי רוח 🔥</div>
+      <div class="chip chip-featured" data-cat="body" data-label="עלייה במשקל" onclick="toggleSym(this)"><span class="chip-emoji">⚖️</span>עלייה במשקל 🔥</div>
+
+      <div class="chip" data-cat="vaso" data-label="גלי חום" onclick="toggleSym(this)"><span class="chip-emoji">🌡️</span>גלי חום</div>
+      <div class="chip" data-cat="vaso" data-label="הזעות לילה" onclick="toggleSym(this)"><span class="chip-emoji">😰</span>הזעות לילה</div>
+      <div class="chip" data-cat="energy" data-label="עייפות מתמשכת" onclick="toggleSym(this)"><span class="chip-emoji">😴</span>עייפות מתמשכת</div>
+      <div class="chip" data-cat="energy" data-label="שינה-גרועה-dup" style="display:none" onclick="toggleSym(this)"><span class="chip-emoji">🌙</span>שינה גרועה</div>
+      <div class="chip" data-cat="mood" data-label="עצבנות" onclick="toggleSym(this)"><span class="chip-emoji">😤</span>עצבנות</div>
+      <div class="chip" data-cat="mood" data-label="חרדה" onclick="toggleSym(this)"><span class="chip-emoji">😟</span>חרדה</div>
+      <div class="chip" data-cat="mood" data-label="שינויי-מצב-רוח-dup" style="display:none" onclick="toggleSym(this)"><span class="chip-emoji">🌀</span>שינויי מצב רוח</div>
+      <div class="chip" data-cat="mood" data-label="ירידה במצב רוח" onclick="toggleSym(this)"><span class="chip-emoji">😞</span>ירידה במצב רוח</div>
+      <div class="chip" data-cat="cognitive" data-label="ערפול מחשבתי" onclick="toggleSym(this)"><span class="chip-emoji">🧠</span>ערפול מחשבתי</div>
+      <div class="chip" data-cat="cognitive" data-label="קושי להתרכז" onclick="toggleSym(this)"><span class="chip-emoji">💭</span>קושי להתרכז</div>
+      <div class="chip" data-cat="body" data-label="כאבי מפרקים" onclick="toggleSym(this)"><span class="chip-emoji">🦴</span>כאבי מפרקים</div>
+      <div class="chip" data-cat="body" data-label="ירידה בכוח" onclick="toggleSym(this)"><span class="chip-emoji">💪</span>ירידה בכוח</div>
+      <div class="chip" data-cat="body" data-label="נפיחות" onclick="toggleSym(this)"><span class="chip-emoji">🫧</span>נפיחות</div>
+      <div class="chip" data-cat="skin" data-label="יובש בעור" onclick="toggleSym(this)"><span class="chip-emoji">💧</span>יובש בעור</div>
+      <div class="chip" data-cat="skin" data-label="יובש בנרתיק" onclick="toggleSym(this)"><span class="chip-emoji">💧</span>יובש בנרתיק</div>
+      <div class="chip" data-cat="skin" data-label="שינויים בעור ובשיער" onclick="toggleSym(this)"><span class="chip-emoji">🔥</span>שינויים בעור ובשיער</div>
+      <div class="chip" data-cat="vaso" data-label="דפיקות לב" onclick="toggleSym(this)"><span class="chip-emoji">💓</span>דפיקות לב</div>
+      <div class="chip" data-cat="libido" data-label="ירידה בחשק המיני" onclick="toggleSym(this)"><span class="chip-emoji">❤️</span>ירידה בחשק המיני</div>
+    </div>
+    <div class="counter-pill">
+      <span class="counter-text">מספר התסמינים שסימנת: <span class="counter-num" id="sym-count">0</span></span>
+    </div>
+  </div>
+</div>
+
+
+<div class="q-wrap" id="questions">
+  <div class="section">
+    
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">2</span>מה טווח הגיל שלך?</div>
+      <div class="opts" id="age-opts">
+        <div class="opt-item" onclick="selectOpt('age','38_49',this)"><div class="radio-dot"></div> 38 עד 49</div>
+        <div class="opt-item" onclick="selectOpt('age','50_59',this)"><div class="radio-dot"></div> 50 עד 59</div>
+        <div class="opt-item" onclick="selectOpt('age','60_69',this)"><div class="radio-dot"></div> 60 עד 69</div>
+        <div class="opt-item" onclick="selectOpt('age','over70',this)"><div class="radio-dot"></div> 70 פלוס</div>
+      </div>
+      <p class="val-msg" id="val-age">בחרי גיל כדי להמשיך</p>
+    </div>
+    <div class="q-block">
+      <div class="q-label"><span class="q-num">3</span>מה קורה עם המחזור שלך?</div>
+      <div class="opts" id="cycle-opts">
+        <div class="opt-item" onclick="selectOpt('cycle','regular',this)"><div class="radio-dot"></div> עדיין יש לי מחזור (סדיר או לא סדיר)</div>
+        <div class="opt-item" onclick="selectOpt('cycle','menopause',this)"><div class="radio-dot"></div> לא היה לי מחזור כבר יותר משנה</div>
+      </div>
+      <p class="val-msg" id="val-cycle">סמני את מצב המחזור כדי להמשיך</p>
+    </div>
+  </div>
+</div>
+<!-- CTA -->
+<div class="cta-wrap">
+  <button class="btn-main" onclick="showResult()">גלי עכשיו מה הגוף שלך מנסה להגיד לך &#8592;</button>
+  <p class="val-msg" id="val-main" style="text-align:center;margin-top:10px;"></p>
+</div>
+
+<!-- RESULT -->
+<div class="result-wrap" id="result">
+  <div class="section" style="padding-top:0">
+
+    <div class="result-card">
+      <!-- stage header inside merged card -->
+      <div class="stage-header" id="stage-header">
+        <div class="stage-headline">
+          <span class="stage-emoji-inline" id="merged-emoji"></span>
+          <div class="stage-headline-text">
+            <span class="stage-label">השלב שלך: </span><span id="merged-stage-name"></span>
+          </div>
+        </div>
+        <div class="merged-stage-desc" id="merged-stage-desc"></div>
+      </div>
+      <div class="merged-divider"></div>
+      <div class="score-wrap" id="score-wrap">
+        <div class="gauge-text-row">
+          <div class="gauge-col">
+            <div class="score-label">עוצמת ההשפעה</div>
+            <div class="gauge-wrap">
+          <svg class="gauge-svg" viewBox="0 0 220 120" style="overflow:visible">
+            <!-- background arc segments: green / orange / red -->
+            <path d="M 20 110 A 90 90 0 0 1 73 27" fill="none" stroke="#FECBA1" stroke-width="18" stroke-linecap="round"/>
+            <path d="M 73 27 A 90 90 0 0 1 147 27" fill="none" stroke="#F97316" stroke-width="18" stroke-linecap="round"/>
+            <path d="M 147 27 A 90 90 0 0 1 200 110" fill="none" stroke="#DC2626" stroke-width="18" stroke-linecap="round"/>
+            <!-- needle -->
+            <line id="gauge-needle" x1="110" y1="110" x2="110" y2="30" stroke="#1E1030" stroke-width="3" stroke-linecap="round" class="gauge-needle"/>
+            <!-- center dot -->
+            <circle cx="110" cy="110" r="7" fill="#1E1030"/>
+          </svg>
+        </div>
+            <div class="score-badge" id="score-badge"></div>
+          </div>
+          <div class="gauge-text-col">
+            <div class="result-title" id="res-title"></div>
+            <p class="result-text" id="res-text"></p>
+          </div>
+        </div>
+      <div class="stat-box" id="stat-box">
+        <div class="stat-num">80%</div>
+        <div class="stat-desc">מהנשים שמילאו הערכה זו סימנו יותר מ-5 תסמינים - את ממש לא לבד</div>
+      </div>
+    </div>
+
+    <div class="result-cta-section">
+      <div class="no-suffer-list" id="no-suffer-list"></div>
+      <p class="result-prime" style="justify-content:center;text-align:center;">את בפריים שלך<br>ומגיע לך ליהנות מהחיים!</p>
+      <div class="scroll-arrow-wrap">
+        <span class="scroll-arrow-text">יש מה לעשות וזה לא מסובך כמו שאת חושבת<br>יודעת למה?</span>
+        <div class="scroll-arrow-icon">&#8595;</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PROGRAM SECTION -->
+<div id="program-section" class="program-wrap">
+
+  <div class="p2-hero">
+    <h2 class="p2-title" id="p2-title">כי פיתחתי שיטה שעזרה עד היום לאלפי נשים בדיוק בשלב שלך להתמודד עם:</h2>
+    <p class="p2-subtitle" id="p2-subtitle"><strong>ועוד תופעות של השינוי ההורמונלי.</strong></p>
+    <p class="cta-question" style="margin-top:24px;">רוצה לדעת איך זה עובד?</p>
+    <button class="btn-purple" onclick="document.getElementById('p2-details').scrollIntoView({behavior:'smooth'})">כן! אני רוצה לדעת! &#8592;</button>
+  </div>
+
+  <div class="p2-section" id="p2-details">
+    <div class="circle-anim-wrap">
+      <div class="scene" id="circle-scene">
+  <div class="piece p-top"><img src="site_images/image3.png"></div>
+  <div class="piece p-left"><img src="site_images/image4.png"></div>
+  <div class="piece p-right"><img src="site_images/image5.png"></div>
+</div>
+    </div>
+
+
+    <div class="p2-block">
+      <h3 class="p2-block-title">10 שבועות של ליווי הדרגתי הכולל:</h3>
+      <ul class="p2-list">
+        <li><span class="p2-check">✅</span><span><strong>תרכשי הרגלי תזונה קלים ליישום,</strong> בלי תפריטים קשיחים ובלי איסורים.</span></li>
+        <li><span class="p2-check">✅</span><span><strong>תקבלי הנחיות ברורות לאימוני כוח קצרים מהבית,</strong> שמתאימים גם למתחילות וגם למנוסות.</span></li>
+        <li><span class="p2-check">✅</span><span><strong>תתרגלי איתי כלים לניהול רמות סטרס ושיפור השינה.</strong></span></li>
+      </ul>
+    </div>
+
+    <div class="p2-divider"></div>
+
+    <div class="p2-block">
+      <h3 class="p2-block-title p2-block-title--pink">והכי חשוב:</h3>
+      <ul class="p2-list">
+        <li><span class="p2-check">✅</span><span><strong>בלי הרעבה ובלי אימונים מתישים.</strong></span></li>
+        <li><span class="p2-check">✅</span><span><strong>גישה מותאמת לטרום/גיל המעבר</strong> – לתוצאות שנשארות לכל החיים.</span></li>
+        <li><span class="p2-check">✅</span><span><strong>שיטה שמייצרת הצלחה</strong> – עם ליווי של ענת הראל ותזונאית ומעקב יומיומי.</span></li>
+      </ul>
+    </div>
+
+    <div class="testimonials-section">
+      <div class="testimonials-title">תשמעי מה הן אומרות 🎙️</div>
+      <div style="text-align:center;color:#9B70C0;margin-bottom:12px;direction:rtl;display:flex;align-items:center;justify-content:center;gap:16px;">
+        <button class="nav-btn" onclick="scrollTestimony(1)">→</button>
+        <span style="font-size:clamp(18px,4vw,22px);font-weight:800;">החליקי לשמוע עוד עדויות</span>
+        <button class="nav-btn" onclick="scrollTestimony(-1)">←</button>
+      </div>
+      <div id="testimony-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:18px;border:2px solid #E0197D;height:min(75vw,420px);">
+        <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;position:relative;height:100%;overflow:hidden;">
+          <iframe src="https://player.vimeo.com/video/1169277162?badge=0&autoplay=0&loop=0&autopause=1&loop=0&player_id=0&app_id=58479" style="width:100%;height:100%;border:none;display:block;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="עדות 1"></iframe>
+        </div>
+        <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#fff;"><img src="site_images/testimony1.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+        <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#fff;"><img src="site_images/testimony2.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+        <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#fff;"><img src="site_images/testimony3.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+        <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#fff;"><img src="site_images/testimony4.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+        <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#fff;"><img src="site_images/testimony5.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+        <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#fff;"><img src="site_images/testimony6.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+        <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#fff;"><img src="site_images/testimony7.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+        <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#fff;"><img src="site_images/testimony8.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+        <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#fff;"><img src="site_images/testimony9.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+        <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#fff;"><img src="site_images/testimony10.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+        <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#fff;"><img src="site_images/testimony11.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+        <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#fff;"><img src="site_images/testimony12.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+      </div>
+      <style>#testimony-scroll::-webkit-scrollbar{display:none;}</style>
+    </div>
+
+    <div class="p2-cta-wrap">
+      <div class="p2-secret-box" id="secret-box">
+        <p class="p2-cta-q">🔑 מה הסוד להצלחה של אלפי נשים?<br>ואיך הן מצליחות להתמיד ולראות תוצאות?<br><span class="highlight-habit">לימוד הרגלים שנשארים לכל החיים!</span></p>
+        <div class="p2-extra-box" id="extra-box" onclick="showWhySection()" style="cursor:pointer">
+          <p class="p2-extra-text">גם אני רוצה ללמוד איך עושים את זה <span class="arrow-bounce">←</span></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- WHY SECTION -->
+<div id="why-section" class="why-section">
+  <h2 class="why-title">למה השיטה של מיי פריים מצליחה?</h2>
+  <div style="text-align:center;color:#9B70C0;margin-bottom:12px;direction:rtl;display:flex;align-items:center;justify-content:center;gap:16px;">
+    <button class="nav-btn" onclick="scrollWhy(1)">→</button>
+    <span style="font-size:clamp(18px,4vw,22px);font-weight:800;">החליקי כדי להבין יותר</span>
+    <button class="nav-btn" onclick="scrollWhy(-1)">←</button>
+  </div>
+  <div id="why-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 16px 16px;">
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;flex-shrink:0;padding:0 8px;">
+      <div class="why-card"><div class="why-card-title">לדעת זה לא מספיק. צריך ליישם!</div><div class="why-card-body">לשם כך אני עוטפת אותך בליווי גם בקבוצת וואטסאפ אינטימית וגם בקבוצת פייסבוק.</div></div>
+    </div>
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;flex-shrink:0;padding:0 8px;">
+      <div class="why-card"><div class="why-card-title">מתי שנוח לך, איפה שנוח לך ובקצב החיים שלך</div><div class="why-card-body">כל התכנים נמצאים באפליקציה, אצלך בנייד או בטאבלט, ואת יכולה להשתמש בה בכל יום ושעה שנוח לך.</div></div>
+    </div>
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;flex-shrink:0;padding:0 8px;">
+      <div class="why-card"><div class="why-card-title">הכל קורה בהדרגה ובכדי לא לייצר עליך עומס</div><div class="why-card-body">השיטה נבנתה בצורה הכי מחשבתית שיש ובהתאמה לכל רמת כושר התחלתי.</div></div>
+    </div>
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;flex-shrink:0;padding:0 8px;">
+      <div class="why-card"><div class="why-card-title">שיטה קלה ופשוטה</div><div class="why-card-body">שלא צורכת הרבה זמן<br>ללא הרעבה עצמית<br>וללא אימונים ארוכים ומפרכים.</div></div>
+    </div>
+  </div>
+  <style>#why-scroll::-webkit-scrollbar{display:none;}</style>
+
+</div>
+
+
+<!-- MEDIA SECTION -->
+<div class="media-section">
+  <h2 class="media-title">מדברים עלינו במדיה 📣</h2>
+  <div class="media-subtitle" style="font-size:clamp(20px,4.5vw,26px);font-weight:800;direction:rtl;text-align:center;color:#9B70C0;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:16px;">
+    <button class="nav-btn" onclick="scrollMedia(1)">→</button>
+    <span>החליקי לצפייה</span>
+    <button class="nav-btn" onclick="scrollMedia(-1)">←</button>
+  </div>
+
+  <!-- Simple scroll carousel -->
+  <div id="media-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px;padding:0 16px 12px;">
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;border-radius:18px;overflow:hidden;flex-shrink:0;">
+      <iframe src="https://player.vimeo.com/video/1169298167?badge=0&autoplay=0&loop=0&autopause=1&loop=0&player_id=0&app_id=58479" style="width:100%;height:100%;border:none;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;border-radius:18px;overflow:hidden;flex-shrink:0;">
+      <iframe src="https://player.vimeo.com/video/1169325165?badge=0&autoplay=0&loop=0&autopause=1&loop=0&player_id=0&app_id=58479" style="width:100%;height:100%;border:none;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;border-radius:18px;overflow:hidden;flex-shrink:0;">
+      <iframe src="https://player.vimeo.com/video/1169301995?badge=0&autoplay=0&loop=0&autopause=1&loop=0&player_id=0&app_id=58479" style="width:100%;height:100%;border:none;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;border-radius:18px;overflow:hidden;flex-shrink:0;">
+      <img src="site_images/media_ynet.jpg" alt="כתבה ב-Ynet" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;border-radius:18px;overflow:hidden;flex-shrink:0;">
+      <img src="site_images/media_ynet2.jpg" alt="כתבה ב-Ynet" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;border-radius:18px;overflow:hidden;flex-shrink:0;">
+      <img src="site_images/media_yediot.jpg" alt="כתבה בידיעות אחרונות" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+  </div>
+  <style>
+    #media-scroll::-webkit-scrollbar{display:none;}
+    @media (min-width: 768px) {
+      #media-scroll > div { min-width: 600px !important; max-width: 600px !important; }
+    }
+  </style>
+
+</div>
+
+<!-- PRE-CTA SECTION -->
+<div class="precta-section" id="precta-section">
+  <div class="precta-headline">
+    <span class="accent">גם את תצליחי! 🌟</span><br>
+    רוצה להתחיל ולראות שינוי אמיתי<br>שנשאר לכל החיים?<br>
+    <span id="precta-imagine-text"></span>
+  </div>
+  <div class="precta-syms" id="precta-syms"></div>
+  <button class="btn-precta pulse-ready" onclick="showRavpage()">
+    כן! אני רוצה לקבל פרטים &#8592;
+  </button>
+</div>
+
+
+<!-- BONUSES SECTION -->
+<!-- LEAD MAGNET SECTION -->
+<div class="lead-magnet-section" id="lead-magnet-section" style="display:none;">
+  <div class="lead-magnet-inner">
+    <div style="display:flex;align-items:center;justify-content:flex-end;gap:10px;direction:rtl;margin-bottom:12px;">
+      <h2 class="lead-magnet-title" style="margin:0;">רגע לפני שנגיע לבונוסים ולמבצע...</h2>
+      <span style="font-size:36px;line-height:1;flex-shrink:0;">🎁</span>
+    </div>
+    <p class="lead-magnet-text">נשים שמגיעות מוכנות לתהליך מצליחות יותר.<br>לכן אני רוצה לשלוח לך, <strong style="color:white;">בחינם לגמרי</strong>, את המדריך שלי על תוספי התזונה החיוניים לגיל 40-50+ וגם טיפים <strong style="color:white;">חינמיים</strong> שיעזרו לך להתחיל את השינוי.</p>
+    <div class="lead-magnet-cta">הצטרפי עכשיו לקבלת המדריך ⬇️</div>
+    <div id="lead-magnet-form" style="margin-top:16px;">
+      <script type='text/javascript' src='//form2.ravpage.co.il/2375fb805f8e18ff04d86bb648f1329769A17E8B' charset='UTF-8'></script>
+      <div style="text-align:center;margin-top:16px;">
+        <button onclick="document.getElementById('bonuses-section').scrollIntoView({behavior:'smooth'})" style="background:transparent;border:none;color:#C8A8E0;font-family:'Heebo',sans-serif;font-size:15px;cursor:pointer;text-decoration:underline;">רוצה לדלג ←</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bonuses-section" id="bonuses-section" style="display:none;">
+  <h2 class="bonuses-title">בונוסים שווים<br>למצטרפות! 🎁</h2>
+  <div style="text-align:center;margin-bottom:12px;direction:rtl;display:flex;align-items:center;justify-content:center;gap:16px;">
+    <button class="nav-btn" onclick="scrollBonuses(1)">→</button>
+    <span style="font-size:clamp(18px,4vw,22px);font-weight:800;color:#fff;">החליקי לבונוסים נוספים</span>
+    <button class="nav-btn" onclick="scrollBonuses(-1)">←</button>
+  </div>
+  <div id="bonuses-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 0 8px;gap:0;height:min(72vw,340px);align-items:stretch;">
+    <div style="min-width:82%;scroll-snap-align:start;flex-shrink:0;padding:0 4px 0 8px;height:100%;box-sizing:border-box;">
+      <div class="bonuses-card" style="justify-content:center;gap:8px;height:100%;box-sizing:border-box;"><div class="bonuses-card-title">הנחה מיוחדת</div><div class="bonuses-card-title" style="font-size:clamp(52px,12vw,72px);color:#E0197D;line-height:1;">35%</div><div class="bonuses-card-body" style="font-size:clamp(16px,3.5vw,18px);">לזמן מוגבל!</div></div>
+    </div>
+    <div style="min-width:88%;scroll-snap-align:center;flex-shrink:0;padding:0 4px;height:100%;box-sizing:border-box;">
+      <div class="bonuses-card" style="flex-direction:row;align-items:center;padding:16px;gap:12px;height:100%;box-sizing:border-box;">
+        <img src="site_images/bracelet.jpg" alt="צמיד צעדים" style="width:38%;max-width:160px;border-radius:12px;flex-shrink:0;object-fit:cover;">
+        <div style="flex:1;text-align:right;direction:rtl;">
+          <div class="bonuses-card-title">צמיד צעדים במתנה 🎁</div>
+          <div class="bonuses-card-body" style="margin-top:10px;">הצמיד ששומר אותך מודעת ומחויבת לתהליך. מעקב אחרי מדדי בריאות וכושר לאורך כל היום. תמיכה מלאה בעברית. נשלח אלייך החל מהשבוע 3 לתוכנית לכל כתובת בישראל.</div>
+        </div>
+      </div>
+    </div>
+    <div style="min-width:88%;scroll-snap-align:center;flex-shrink:0;padding:0 4px;height:100%;box-sizing:border-box;">
+      <div class="bonuses-card" style="height:100%;box-sizing:border-box;"><div class="bonuses-card-title">3 חודשי שימוש נוספים בתכני האפליקציה! 📱</div><div class="bonuses-card-body">התכנים יהיו זמינים למשך כמעט חצי שנה כדי שתוכלי להמשיך לצפות בתכנים ולתרגל את המשימות השונות.</div></div>
+    </div>
+    <div style="min-width:88%;scroll-snap-align:center;flex-shrink:0;padding:0 4px;height:100%;box-sizing:border-box;">
+      <div class="bonuses-card" style="height:100%;box-sizing:border-box;"><div class="bonuses-card-title">חוברת מתכונים<br>דיגיטלית במתנה! 🎀</div><div class="bonuses-card-body">חוברת דיגיטלית עם מתכונים מעולים, קלים ומהירים, שמתכתבים עם הרגלי התזונה החדשים שתלמדי בתוכנית. יש שם הכל, ארוחות, נשנושים, קינוחים, וגם מתכונים צמחוניים וללא גלוטן.</div></div>
+    </div>
+  </div>
+  <style>#bonuses-scroll::-webkit-scrollbar{display:none;}</style>
+</div>
+
+
+
+
+<!-- PROGRAM DETAILS SECTION -->
+<div class="program-section" id="program-details-section" style="display:none;">
+  <h2 class="program-title">מה את מקבלת בתוכנית הליווי<br>"מיי פריים 360"?</h2>
+  <p class="program-subtitle">תהליך ליווי מובנה לאורך <strong>10 שבועות</strong> הכולל:</p>
+  <div style="text-align:center;color:#9B70C0;margin-bottom:12px;direction:rtl;display:flex;align-items:center;justify-content:center;gap:16px;">
+    <button class="nav-btn" onclick="scrollProgram(1)">→</button>
+    <span style="font-size:clamp(17px,4vw,20px);font-weight:800;">החליקי לראות עוד</span>
+    <button class="nav-btn" onclick="scrollProgram(-1)">←</button>
+  </div>
+  <p style="text-align:center;font-size:clamp(16px,4vw,19px);font-weight:700;color:#9B70C0;margin:0 0 8px;">▶ לחצי לצפייה בסרטון</p>
+  <div id="program-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:18px;border:2px solid #6B20A8;height:min(85vw,480px);">
+    <!-- סרטון - סלייד 1 -->
+    <div style="min-width:85%;scroll-snap-align:start;flex-shrink:0;position:relative;height:100%;overflow:hidden;flex-shrink:0;">
+      <iframe src="https://player.vimeo.com/video/1169512075?badge=0&autoplay=0&loop=0&autopause=1&loop=0&player_id=0&app_id=58479" style="width:100%;height:100%;border:none;display:block;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="תוכנית מיי פריים 360"></iframe>
+    </div>
+    <!-- 6 כרטיסי תוכנית - styled cards -->
+    <div class="prog-slide"><div class="prog-card">
+      <div class="prog-icon">⭐</div>
+      <div class="prog-title">ליווי יומימי<br>בוואטסאפ עם ענת הראל ותזונאית קלינית</div>
+      <div class="prog-body">תמיכה ועזרה עם כל שאלה בקבוצה קטנה ואינטימית, עם ענת הראל ותזונאית קלינית למענה מקצועי ושוטף.</div>
+    </div></div>
+    <div class="prog-slide"><div class="prog-card">
+      <div class="prog-icon">⭐</div>
+      <div class="prog-title">אימוני כוח מותאמים  למתחילות מ-0 ולמתקדמות</div>
+      <div class="prog-body">נתרגל יחד אימוני חיטוב קצרים ופשוטים, שיתנו מענה למה שהגוף שלך זקוק לו.</div>
+    </div></div>
+    <div class="prog-slide"><div class="prog-card">
+      <div class="prog-icon">⭐</div>
+      <div class="prog-title">תוכנית תזונה מותאמת לגיל המעבר בלי תפריטים קשיחים</div>
+      <div class="prog-body">תלמדי כיצד להתאים את התזונה היומית שלך לשינויים ההורמונליים ותקבלי כלים לבניית הרגלים לכל החיים.</div>
+    </div></div>
+    <div class="prog-slide"><div class="prog-card">
+      <div class="prog-icon">⭐</div>
+      <div class="prog-title">מעקב התקדמות</div>
+      <div class="prog-body"><strong>מתקשה להתמיד?</strong> יצרנו עבורך מעקב התקדמות שיעזור לך להתמיד ויאפשר לך לראות את ההתקדמות שלך לאורך זמן.</div>
+    </div></div>
+    <div class="prog-slide"><div class="prog-card">
+      <div class="prog-icon">⭐</div>
+      <div class="prog-title">כלים לניהול סטרס ושיפור שינה</div>
+      <div class="prog-body">נתרגל יחד כלים לניהול סטרס ודפוסי חשיבה להתמודדות עם מצבי רוח משתנים, הפרעות בשינה, חרדות ועצבנות יתר.</div>
+    </div></div>
+    <div class="prog-slide"><div class="prog-card">
+      <div class="prog-icon">⭐</div>
+      <div class="prog-title">מידע רפואי מד"ר נועה חובב</div>
+      <div class="prog-body">לקחת או לא לקחת הורמונים? כל המידע שחשוב להתנהלות בראיאות, בהתייעצות עם ד"ר נועה חובב, רופאת גיל המעבר.</div>
+    </div></div>
+  </div>
+  <style>#program-scroll::-webkit-scrollbar{display:none;}</style>
+  <div style="text-align:center;padding:20px 16px 8px;">
+    <button onclick="showOfferSection()" style="display:block;width:100%;max-width:480px;margin:0 auto;background:linear-gradient(135deg,#FFD600,#F59E0B);color:#1E1030;font-family:'Heebo',sans-serif;font-size:clamp(20px,5vw,26px);font-weight:900;padding:22px 32px;border-radius:50px;border:none;cursor:pointer;box-shadow:0 6px 28px rgba(245,158,11,0.55);direction:rtl;line-height:1.3;animation:btnPulse 1s ease-in-out infinite;">
+      ✨ ספרי לי על מחיר המבצע בהצטרפות לתוכנית &#8592;
+    </button>
+  </div>
+</div>
+
+
+
+<!-- OFFER SECTION -->
+<div class="offer-section" id="offer-section">
+  <div class="offer-badge">✨ מבצע לזמן מוגבל</div>
+  <h2 class="offer-title">תוכנית "מיי פריים 360"<br>עכשיו במבצע!</h2>
+  <div class="offer-card">
+    <div class="offer-price-old">במקום 2,900 ₪</div>
+    <div class="offer-price-new">1,884 ₪</div>
+    <div class="offer-price-sub">הנחה של כ-35% — לזמן מוגבל!</div>
+    <div class="offer-perks">
+      <div class="offer-perk">✨ ניתן לשלם עד 12 תשלומים בקרדיט</div>
+      <div class="offer-perk">✨ ניתן לשלם עד 2 תשלומים ללא ריבית</div>
+    </div>
+    <div class="offer-coupon">יש להשתמש בקוד קופון: <code>ANAT35</code></div>
+  </div>
+  <button class="btn-join" onclick="showWhenSection()">
+    אני רוצה להצטרף! 🎉
+  </button>
+  <button class="offer-support-btn" onclick="showFaqSection()" id="faq-toggle-btn" style="margin-top:16px;display:block;width:100%;max-width:480px;margin-left:auto;margin-right:auto;text-align:center;font-size:clamp(17px,4vw,22px);">❓ יש לך שאלה? לחצי כאן</button>
+<!-- FAQ SECTION -->
+<div class="faq-section" id="faq-section" style="display:none;" >
+  <h2 class="faq-section-title">שאלות ותשובות</h2>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-question"><span class="faq-arrow">▾</span>רוצה להצטרף אבל לא בטוחה? </div>
+    <div class="faq-answer">אם תרצי לבטל תוך 14 ימים מיום תחילת התוכנית, פני אלינו ותקבלי את כספך בחזרה — ללא שאלות!<br><br><span class="faq-cancel-badge">אחריות מלאה ל-14 ימים 💛</span></div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-question"><span class="faq-arrow">▾</span>מתי מתחילים? </div>
+    <div class="faq-answer">מחזור חדש מתחיל בכל יום א'. הרשמי עכשיו והתחילי ביום ראשון הקרוב! במידה ותהיי מעוניינת להתחיל במועד מאוחר יותר — תוכלי לבקש זאת במהלך תהליך ההרשמה.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-question"><span class="faq-arrow">▾</span>אני רוצה להבין איך התוכנית עובדת </div>
+    <div class="faq-answer">
+      <p style="text-align:center;font-weight:800;font-size:clamp(16px,4vw,20px);color:#6B20A8;margin-bottom:10px;direction:rtl;">▶ לחצי לצפייה בסרטון</p>
+      <div style="position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;margin-bottom:8px;">
+        <iframe src="https://player.vimeo.com/video/1169512075?badge=0&autoplay=0&loop=0&autopause=1&controls=1&player_id=0&app_id=58479" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-question"><span class="faq-arrow">▾</span>האם יש תפריטים? </div>
+    <div class="faq-answer">לא. בתוכנית אין תפריטים קבועים מראש. תפריטים בדרך כלל לא מחזיקים לאורך זמן — הם מגבילים, יוצרים תחושת "אסור", וברגע שיוצאים מהם חוזרים לאותו מקום. במקום זה תקבלי הרגלי תזונה ברורים + דוגמאות מעשיות וליווי בקבוצה שיעזרו לך לבנות אכילה שמתאימה לך ולחיים שלך.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-question"><span class="faq-arrow">▾</span>האם יש התאמה לצמחוניות וטבעוניות? </div>
+    <div class="faq-answer">כן. יש התאמות לצמחוניות ולטבעוניות, והדיאטנית מלווה ועוזרת לבנות תזונה שמתאימה לך בפועל — כולל חלבון, ארוחות ורעיונות יומיומיים.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-question"><span class="faq-arrow">▾</span>מה צריך לצורך התוכנית? </div>
+    <div class="faq-answer">רק זוג משקולות יד פשוטות בעלות נמוכה לבית. את כל הנחיות לגבי איזה משקל לבחור ואיזה משקל מתאים לך — תקבלי בשבוע הראשון של התוכנית.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-question"><span class="faq-arrow">▾</span>ואם לא אצליח להתמיד? </div>
+    <div class="faq-answer">קודם כל, זה פחד ממש נפוץ — והרבה נשים מגיעות בדיוק משם. משמעת התוכנית בנויה כדי שלא תצטרכי בנייה מהדרגתית, עם משימות קצרות וברורות, וליווי בקבוצה שמחזיק אותך גם בימים פחות טובים. והכי חשוב — לא צריך 100%. צריך רצף של צעדים קטנים.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-question"><span class="faq-arrow">▾</span>האם התוכנית מתאימה גם למי שלא בכושר בכלל? </div>
+    <div class="faq-answer">כן. היא בנויה גם למי שמתחילה מאפס — עם משימות פשוטות בהדרגה, שמאפשר לגוף להסתגל, והליווי בקבוצה עוזר לך להתקדם בלי לחץ ובלי להישבר.</div>
+  </div>
+
+</div>
+
+  <button class="btn-join pulse-ready" id="btn-join-2" onclick="showWhenSection()" style="margin-top:8px;display:none;">
+    אני רוצה להצטרף! 🎉
+  </button>
+  <div class="offer-support">
+    <div>יש לך שאלה נוספת? צרי איתנו קשר:</div>
+    <div class="offer-support-links">
+      <a class="offer-support-btn" href="https://wa.me/9720547304177">📱 לחצי לשליחת וואטסאפ<br>054-7304177</a>
+      <a class="offer-support-btn" href="mailto:support@myprime.co.il">📧 לחצי לשליחת מייל ל support@myprime.co.il</a>
+    </div>
+  </div>
+  <div style="margin-top:16px;">
+    <button class="btn-story" onclick="showStory()" style="width:100%;max-width:480px;">
+      📖 הסיפור האישי שלי
+    </button>
+  </div>
+</div>
+
+<!-- WHEN SECTION -->
+<div class="when-section" id="when-section" style="display:none!important;">
+  <h2 class="when-title">מתי מתחילים? 🚀</h2>
+  <div class="when-card">
+    <div class="when-card-text">מחזור חדש מתחיל בכל יום א'.</div>
+    <div class="when-card-text"><strong>הרשמי עכשיו והתחילי ביום ראשון הקרוב!</strong></div>
+    <div class="when-card-sub">במידה ותהיי מעוניינת להתחיל במועד מאוחר יותר — תוכלי לבקש זאת במהלך תהליך ההרשמה.</div>
+  </div>
+  <button class="btn-join" onclick="window.open('https://secure.cardcom.solutions/EA/EA5/Fuqf61nPWki3bJ9QL1Yrw/Intro','_blank')" style="margin-top:0;">
+    אני רוצה להצטרף! 🎉
+  </button>
+</div>
+
+
+<!-- RAVPAGE FORM -->
+<div id="ravpage-form" class="ravpage-wrap" style="display:none">
+  <div class="section" style="text-align:center">
+    <h3 class="ravpage-title">השאירי פרטים ונחזור אלייך</h3>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type='text/javascript' src='//form2.ravpage.co.il/2375fb805f8e18ff04d86bb648f1329769A17E8B' charset='UTF-8'></script>
+  </div>
+</div>
+
+
+<!-- STORY BUTTON -->
+<div class="story-btn-wrap" id="story-btn-wrap" style="display:none;">
+  <button class="btn-story" onclick="showStory()">
+    📖 הסיפור האישי שלי
+  </button>
+</div>
+
+<!-- STORY SECTION -->
+<div class="story-section" id="story-section">
+  <h2 class="story-title">הסיפור האישי של ענת</h2>
+
+  <!-- פסקה 1 -->
+  <div class="story-para">
+    היי! אני ענת, בת 55, מייסדת "מיי פריים" - תוכניות ליווי לנשים בגיל המעבר,
+    מרצה על אורח חיים בריא ומאמנת להתפתחות אישית.
+  </div>
+
+  <!-- תמונה 1 - מלאת רוחב אחרי "ומאמנת להתפתחות אישית" -->
+  <img src="site_images/anat_portrait.jpg" alt="ענת הראל" class="story-full-img">
+
+  <div class="story-para">
+    אני עוסקת בתחום כבר 20 שנה ויותר וזה סיפור ההתמודדות שלי עם גיל המעבר ואיך נולד הקורס "מיי פריים 360" במיוחד עבורך:
+    <br><br>
+    במהלך הקריירה שלי הגעתי לאלפי נשים בכל דרך אפשרית – מקבוצות וסדנאות כושר, דרך תוכניות אימון אונליין וכלה בהגשת תוכניות טלוויזיה רבות, כגון: "שעת אושר", "לחיות טוב", "גוף ונפש עם ענת הראל" ועוד. בעבר הייתי פרזנטורית של מותג דגני בוקר ושל "נייקי ישראל" וכיום אני בנבחרת המשפיעניות של "מכבי שירותי בריאות", "הודי'ס" ועוד.
+    <br><br>
+    <strong>מאז ומעולם הרגשתי שיש לי שליחות חשובה,</strong> שאליה אני מתמסרת כל כולי – לגרום לכמה שיותר נשים להבין את ההשפעה של פעילות גופנית ותזונה מאוזנת על החיים שלהן.
+  </div>
+
+  <!-- פסקה 2 -->
+  <div class="story-para">
+    באמצע שנות ה-40 לחיי, ממש כשהרגשתי בשיא – משהו השתבש. שמתי לב למצבי רוח שמשתנים בקיצוניות, יכולת הריכוז שלי ירדה, השינה שלי נהייתה הרבה פחות רציפה ואיכותית, והגוף כבר לא הגיב באותו אופן לאימונים ולתזונה שהיו חלק בלתי נפרד מהשגרה שלי.
+    <br><br>
+    לקח לי כמה חודשים של ריצות מרופא לרופא, כדי להבין שאני בסך הכול עוברת תהליך טבעי שכל אישה עוברת: שינוי הורמונלי שמתרחש בשלבים המוקדמים של גיל המעבר. הבנתי שאני לא לבד, שישנן נשים רבות שחוות יחד איתי את אותן התופעות בדיוק.
+  </div>
+  <div class="story-highlight-dark" style="margin:0 20px 24px;">
+    <strong>התחלתי לברר וגיליתי ש:</strong><br>
+    1. רוב הנשים לא מבינות שמה שעובר עליהן קשור להורמונים.<br>
+    2. רוב הנשים מחפשות את הפתרון במקום הלא נכון.<br>
+    3. רובנו מתביישות לדבר על זה — ואם אנחנו לא מדברות, איך נוכל לטפל בבעיה?
+  </div>
+
+  <!-- תמונה 2 - מלאת רוחב -->
+  <img src="site_images/anat_sport.jpg" alt="ענת הראל" class="story-full-img">
+
+  <!-- פסקה 3 -->
+  <div class="story-para">
+    החלטתי ללמוד איך אפשר לעבור את זה אחרת, תוך שילוב כל מה שאני עוסקת בו כבר עשרים שנה. קראתי מחקרים, התייעצתי עם רופאות ותזונאיות מובילות ויצרתי שיטה שמטרתה לאפשר לנשים החל מטרום גיל המעבר לחיות חיים טובים יותר בכל התחומים: במראה החיצוני, בבריאות, ברמות האנרגיה, ובהתמודדות עם השינויים.
+  </div>
+
+  <!-- סיום -->
+  <div class="story-closing">
+    <div class="story-closing-title">
+      כיום, אני רואה שליחות אדירה בהפצת הידע שרכשתי
+      והשיטות שלמדתי והתנסיתי בהן
+      בתחום ההתמודדות עם שלבי גיל המעבר,
+      כי מגיע לנו להנות מהתקופה הזו –
+    </div>
+    <div class="story-closing-prime">תקופת הפריים שלנו.</div>
+  </div>
+
+  <div style="text-align:center;padding:24px 20px 8px;">
+    <button class="btn-join-story" onclick="showWhenSection()">
+      אני רוצה להירשם! 🎉
+    </button>
+  </div>
+</div>
+
+<div class="footer">&#169; 2025 MyPrime &middot; כל הזכויות שמורות &middot; זהו כלי מידע בלבד ואינו מהווה ייעוץ רפואי</div>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+// State
+var answers = { age: null, cycle: null };
+
+function selectOpt(group, value, el) {
+  answers[group] = value;
+  var container = el.parentElement;
+  var items = container.getElementsByClassName('opt-item');
+  for (var i = 0; i < items.length; i++) {
+    items[i].classList.remove('selected');
+  }
+  el.classList.add('selected');
+  document.getElementById('val-' + group).classList.remove('show');
+  // Auto scroll
+  if (group === 'age') {
+    setTimeout(function() {
+      var cycleBlock = document.getElementById('cycle-opts').closest('.q-block'); var y = cycleBlock.getBoundingClientRect().top + window.pageYOffset - (window.innerHeight * 0.1); window.scrollTo({top: y, behavior: 'smooth'});
+      checkPulseBtn();
+    }, 200);
+  } else if (group === 'cycle') {
+    // First expand spacer so button has room to scroll into
+    var spacer = document.getElementById('cta-spacer');
+    if (spacer) spacer.style.height = '50vh';
+    setTimeout(function() {
+      checkPulseBtn();
+      var btn = document.querySelector('.btn-main');
+      if (btn) {
+        var btnBottom = btn.getBoundingClientRect().bottom + window.pageYOffset;
+        var y = btnBottom - (window.innerHeight * 0.85);
+        window.scrollTo({top: y, behavior: 'smooth'});
+      }
+    }, 100);
+  }
+}
+
+function toggleSym(el) {
+  el.classList.toggle('selected');
+  var count = document.querySelectorAll('#symptoms-grid .chip.selected').length;
+  document.getElementById('sym-count').textContent = count;
+  // Proportional scroll based on chip position on screen
+  var rect = el.getBoundingClientRect();
+  var ratio = rect.top / window.innerHeight;
+  var scrollAmt = Math.round(80 + ratio * 180);
+  window.scrollBy({ top: scrollAmt, behavior: 'smooth' });
+}
+
+function showLeadForm() {
+  document.getElementById('lead-magnet-btn-wrap').style.display = 'none';
+  document.getElementById('lead-magnet-form').style.display = 'block';
+  document.getElementById('lead-magnet-form').scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+function showResult() {
+  var btn = document.querySelector('.btn-main');
+  if (btn) btn.classList.remove('pulse-ready');
+  var spacer = document.getElementById('cta-spacer');
+  if (spacer) spacer.style.height = '0';
+
+  var valid = true;
+  if (!answers.age) { document.getElementById('val-age').classList.add('show'); valid = false; }
+  if (!answers.cycle) { document.getElementById('val-cycle').classList.add('show'); valid = false; }
+  if (!valid) { document.getElementById('questions').scrollIntoView({behavior:'smooth'}); return; }
+
+  var chips = document.querySelectorAll('#symptoms-grid .chip.selected');
+  var count = chips.length;
+
+  // Count by category
+  var cats = { vaso:0, energy:0, mood:0, cognitive:0, body:0, skin:0, libido:0 };
+  chips.forEach(function(c) { var cat = c.getAttribute('data-cat'); if (cats[cat] !== undefined) cats[cat]++; });
+
+  // Score out of 100 (20 chips * 5 = 100)
+  // Gauge needle: 0-1 chips = green (left), 2-4 = yellow (center), 5+ = red zone (right, gets stronger)
+  // -85 = far left, 0 = center, +85 = far right
+  var rotation;
+  if (count === 0) { rotation = -85; }
+  else if (count === 1) { rotation = -60; }
+  else if (count <= 4) { rotation = Math.round(-40 + (count - 2) * 20); }
+  else { rotation = Math.min(85, Math.round((count - 5) * 14)); }
+  
+  // Reset needle to left, then animate when gauge scrolls into view
+  var needle = document.getElementById('gauge-needle');
+  needle.style.transition = 'none';
+  needle.style.transform = 'rotate(-85deg)';
+  
+  var observer = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting) {
+      setTimeout(function() {
+        needle.style.transition = 'transform 1.4s cubic-bezier(0.34, 1.3, 0.64, 1)';
+        needle.style.transform = 'rotate(' + rotation + 'deg)';
+      }, 200);
+      observer.disconnect();
+    }
+  }, { threshold: 0.5 });
+  observer.observe(document.getElementById('score-wrap'));
+
+  // Badge
+  var badge = document.getElementById('score-badge');
+  var score = count * 5;
+  if (count <= 1) { badge.textContent = 'השפעה חלקית'; badge.className = 'score-badge low'; }
+  else if (count <= 4) { badge.textContent = 'השפעה בינונית'; badge.className = 'score-badge medium'; }
+  else { badge.textContent = 'הגוף שלך מדבר אלייך 🔊'; badge.className = 'score-badge high'; }
+
+  // Smart stage logic using age + cycle
+  var age = answers.age;   // under40 / 40_45 / 45_50 / 50_55 / over55
+  var cycle = answers.cycle; // regular / menopause
+
+  if (cycle === 'menopause') {
+    // No period > 12 months
+    if (age === '38_49' || age === 'under38') {
+      // Young + no period = possible early/premature menopause
+      document.getElementById('merged-emoji').textContent = '';
+      document.getElementById('merged-stage-name').textContent = 'מנופאוזה';
+      document.getElementById('merged-stage-desc').textContent = 'המחזור הפסיק - זה שלב מתקדם של גיל המעבר. הגוף כבר בעיצומו של השינוי ההורמונלי ויש כמה כלים משמעותיים כדי להרגיש ולהראות כמו שאת חולמת.';
+    } else if (age === '50_59') {
+      document.getElementById('merged-emoji').textContent = '';
+      document.getElementById('merged-stage-name').textContent = 'מנופאוזה';
+      document.getElementById('merged-stage-desc').textContent = 'המחזור הפסיק - זה שלב מתקדם של גיל המעבר. הגוף כבר בעיצומו של השינוי ההורמונלי ויש כמה כלים משמעותיים כדי להרגיש ולהראות כמו שאת חולמת.';
+    } else {
+      document.getElementById('merged-emoji').textContent = '';
+      document.getElementById('merged-stage-name').textContent = 'מנופאוזה';
+      document.getElementById('merged-stage-desc').textContent = 'המחזור הפסיק - זה שלב מתקדם של גיל המעבר. הגוף כבר בעיצומו של השינוי ההורמונלי ויש כמה כלים משמעותיים כדי להרגיש ולהראות כמו שאת חולמת.';
+    }
+
+  } else {
+    // Still has period (regular or irregular)
+    if (age === '38_49') {
+      // Young + regular = very early signs, not peri yet
+      document.getElementById('merged-emoji').textContent = '';
+        document.getElementById('merged-stage-name').textContent = 'פרי-מנופאוזה (טרום גיל המעבר)';
+        document.getElementById('merged-stage-desc').textContent = 'בגיל הזה עם מחזור סדיר, את בשלב הפרי-מנופאוזה (טרום גיל המעבר) - הגוף מתחיל לשנות את האיזון ההורמונלי שלו גם כשהמחזור עדיין קיים. התסמינים שסימנת הם בדיוק הסימן לכך.';
+    } else if (age === '50_59') {
+      // Classic peri range
+      document.getElementById('merged-emoji').textContent = '';
+      document.getElementById('merged-stage-name').textContent = 'פרי-מנופאוזה (טרום גיל המעבר)';
+      document.getElementById('merged-stage-desc').textContent = 'הגיל והמחזור מצביעים על פרי-מנופאוזה (טרום גיל המעבר) - התקופה שבה הורמונים מתחילים להשתנות. זה יכול להימשך כמה שנים, ורוב התסמינים מגיעים דווקא בשלב הזה.';
+    } else {
+      // 60_69/over70 + still has period = unusualion it
+      document.getElementById('merged-emoji').textContent = '';
+      document.getElementById('merged-stage-name').textContent = 'מנופאוזה';
+      document.getElementById('merged-stage-desc').textContent = 'המחזור הפסיק - זה שלב מתקדם של גיל המעבר. הגוף כבר בעיצומו של השינוי ההורמונלי ויש כמה כלים משמעותיים כדי להרגיש ולהראות כמו שאת חולמת.';
+    }
+  }
+
+  // Find dominant category
+  var dominant = Object.keys(cats).reduce(function(a,b){ return cats[a]>=cats[b]?a:b });
+  
+
+  // Result title + text by score
+  var title, text;
+  if (score <= 25) {
+    title = 'כמה סימנים ראשוניים';
+    text = 'הגוף שלך מתחיל לשלוח סימנים. זה השלב הכי טוב להבין מה קורה ולהתחיל לעבוד עם הגוף - לפני שהתסמינים מחמירים.';
+  } else if (score <= 55) {
+    title = 'השינוי ההורמונלי כבר משפיע עלייך';
+    text = 'את מרגישה את זה, ויש סיבה. הגוף שלך עובר שינוי משמעותי ויש לו מה לומר לך. החדשות הטובות - יש מה לעשות עם זה, ועכשיו זה הזמן.';
+  } else {
+    title = 'עומס תסמינים משמעותי';
+    text = 'את מתמודדת עם הרבה מאוד. את לא צריכה להמשיך ככה ולחשוב שזה "רק גיל". יש גישה שמסבירה את כל מה שאת מרגישה ונותנת לך כלים אמיתיים להרגיש שוב בשליטה.';
+  }
+
+  document.getElementById('res-title').textContent = title;
+  document.getElementById('res-text').textContent = text;
+
+  // No-suffer messages based on selected chips
+  // ============================================
+  // משפטים קבועים לכל תסמין - ערוך בקובץ myprime-messages.docx
+  // ============================================
+  var chipMessages = {
+    'גלי חום':              { emoji: '🌡️', text: 'את לא חייבת לחיות עם גלי חום שמפתיעים אותך בכל רגע!' },
+    'הזעות לילה':           { emoji: '😰', text: 'את לא חייבת להתעורר בלילה רטובה מזיעה!' },
+    'עייפות מתמשכת':        { emoji: '😴', text: 'את לא חייבת להיות עייפה כל היום גם אחרי שינה מלאה!' },
+    'שינה גרועה':           { emoji: '🌙', text: 'את לא חייבת לסבול מלילות ללא שינה!' },
+    'עצבנות':               { emoji: '😤', text: 'את לא חייבת לסבול מעצבנות שבאה משום מקום!' },
+    'חרדה':                 { emoji: '😟', text: 'את לא חייבת לחיות עם חרדה שלא הייתה לך קודם!' },
+    'שינויי מצב רוח':       { emoji: '🌀', text: 'את לא חייבת לסבול ממצבי רוח שמשתלטים עלייך!' },
+    'ירידה במצב רוח':       { emoji: '😞', text: 'את לא חייבת לוותר על השמחה והאנרגיה שהיו לך!' },
+    'ערפול מחשבתי':         { emoji: '🧠', text: 'את לא חייבת לוותר על הריכוז שלך!' },
+    'קושי להתרכז':          { emoji: '💭', text: 'את לא חייבת לאבד מילים באמצע משפט!' },
+    'עלייה במשקל':          { emoji: '⚖️', text: 'את לא חייבת לחיות עם משקל עודף !' },
+    'השמנה בטנית':          { emoji: '🫃', text: 'את לא חייבת לקבל את העליה בהיקף הבטן כמובן מאליו !' },
+    'כאבי מפרקים':          { emoji: '🦴', text: 'את לא חייבת לסבול מכאבים שמגבילים אותך!' },
+    'ירידה בכוח':           { emoji: '💪', text: 'את לא חייבת לוותר על הכוח והחוזק שהיו לך!' },
+    'נפיחות':               { emoji: '🫧', text: 'את לא חייבת לסבול מנפיחות שמופיעה ללא סיבה!' },
+    'יובש בעור':            { emoji: '💧', text: 'את לא חייבת לסבול מעור יבש ששום קרם לא עוזר לו!' },
+    'יובש בנרתיק':          { emoji: '💧', text: 'את לא חייבת לסבול מאי-נוחות שמגבילה אותך!' },
+    'שינויים בעור ובשיער':  { emoji: '🔥', text: 'את לא חייבת לקבל את השינויים בעור ובשיער שלך!' },
+    'דפיקות לב':            { emoji: '💓', text: 'את לא חייבת לחיות עם דפיקות לב שמפחידות אותך!' },
+    'ירידה בחשק המיני':     { emoji: '❤️', text: 'את לא חייבת לוותר על החשק, על הקרבה, על ההנאה!' },
+  };
+  // ============================================
+
+  // Build messages from selected chips
+  var sufferList = document.getElementById('no-suffer-list');
+  sufferList.innerHTML = '';
+  var selectedChips = document.querySelectorAll('#symptoms-grid .chip.selected');
+  var shown = 0;
+  selectedChips.forEach(function(chip, i) {
+    if (shown >= 5) return; // max 5 messages
+    var label = chip.getAttribute('data-label');
+    var msg = chipMessages[label];
+    if (msg) {
+      var div = document.createElement('div');
+      div.className = 'no-suffer-item';
+      div.style.animationDelay = (i * 0.08) + 's';
+      div.innerHTML = '<span class="ns-emoji">' + msg.emoji + '</span>' + msg.text;
+      sufferList.appendChild(div);
+      shown++;
+    }
+  });
+  if (shown === 0) {
+    var div = document.createElement('div');
+    div.className = 'no-suffer-item';
+    div.innerHTML = '<span class="ns-emoji">✨</span>את לא חייבת לקבל את השינויים שהגוף שלך עובר - יש מה לעשות!';
+    sufferList.appendChild(div);
+  }
+
+
+
+  // Build method list from user's selected symptoms
+  var methodLabels = {
+    'עלייה במשקל':         'עלייה במשקל ושומן בטני',
+    'השמנה בטנית':         'עלייה במשקל ושומן בטני',
+    'שינה גרועה':          'שינה גרועה ועייפות',
+    'עייפות מתמשכת':       'שינה גרועה ועייפות',
+    'שינויי מצב רוח':      'מצבי רוח ועצבנות',
+    'עצבנות':              'מצבי רוח ועצבנות',
+    'ירידה במצב רוח':      'מצבי רוח ועצבנות',
+    'חרדה':                'חרדה ומצבי רוח',
+    'גלי חום':             'גלי חום והזעות לילה',
+    'הזעות לילה':          'גלי חום והזעות לילה',
+    'ערפול מחשבתי':        'ערפול מחשבתי וקשיי ריכוז',
+    'קושי להתרכז':         'ערפול מחשבתי וקשיי ריכוז',
+    'כאבי מפרקים':         'כאבי מפרקים ושרירים',
+    'ירידה בכוח':          'ירידה בכוח ואנרגיה',
+    'יובש בעור':           'יובש בעור ובגוף',
+    'יובש בנרתיק':         'יובש ואי-נוחות',
+    'שינויים בעור ובשיער': 'שינויים בעור ובשיער',
+    'דפיקות לב':           'דפיקות לב ואי-שקט',
+    'ירידה בחשק המיני':    'ירידה בחשק המיני',
+    'נפיחות':              'נפיחות ואי-נוחות',
+  };
+  var addedItems = new Set();
+  document.querySelectorAll('#symptoms-grid .chip.selected').forEach(function(chip) {
+    if (addedItems.size >= 4) return;
+    var label = chip.getAttribute('data-label');
+    var item = methodLabels[label];
+    if (item && !addedItems.has(item)) addedItems.add(item);
+  });
+
+  if (count > 5) { document.getElementById('stat-box').classList.add('on'); }
+
+  var resultEl = document.getElementById('result');
+  resultEl.classList.add('on');
+  // Update method-intro AFTER result is visible
+  var ageLabels = {
+    '38_49':   'אחרי גיל 38',
+    '50_59':   'אחרי גיל 50',
+    '60_69':   'אחרי גיל 60',
+    'over70':  'אחרי גיל 70'
+  };
+  var ageText = ageLabels[answers.age] || 'אחרי גיל 40';
+  var introEl = document.getElementById('method-intro');
+  if (introEl) {
+    introEl.textContent = 'גלי את השיטה שעזרה לאלפי נשים בדיוק כמוך ' + ageText + ' להתמודד עם:';
+  }
+  var p2El = document.getElementById('p2-title');
+  if (p2El) {
+    p2El.innerHTML = 'כי פיתחתי שיטה שעזרה עד היום לאלפי נשים בדיוק בשלב שלך להתמודד עם:';
+  }
+  // Build p2-subtitle from selected symptoms + priority fallbacks
+  var p2Sub = document.getElementById('p2-subtitle');
+  if (p2Sub) {
+    var p2Items = [];
+    var p2Added = new Set();
+    var p2Priority = ['עלייה במשקל ושומן בטני', 'שינה גרועה ועייפות', 'מצבי רוח ועצבנות'];
+    // First add user selections
+    document.querySelectorAll('#symptoms-grid .chip.selected').forEach(function(chip) {
+      if (p2Items.length >= 4) return;
+      var label = chip.getAttribute('data-label');
+      var item = methodLabels[label];
+      if (item && !p2Added.has(item)) { p2Added.add(item); p2Items.push(item); }
+    });
+    // Then fill with priority items
+    p2Priority.forEach(function(item) {
+      if (p2Items.length >= 5) return;
+      if (!p2Added.has(item)) { p2Added.add(item); p2Items.push(item); }
+    });
+    p2Sub.innerHTML = p2Items.join(', ') + ' <strong>ועוד תופעות של השינוי ההורמונלי.</strong>';
+  }
+  setTimeout(function() { resultEl.scrollIntoView({behavior:'smooth'}); }, 100);
+  showPreCTA();
+}
+
+
+
+
+  // Circle animation trigger
+  var circleScene = document.getElementById('circle-scene');
+  if (circleScene) {
+    var circleObs = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) {
+        circleScene.classList.add('circle-scene-active');
+        circleObs.disconnect();
+      }
+    }, { threshold: 0.3 });
+    circleObs.observe(circleScene);
+  }
+
+  // Secret box animation
+  var secretBox = document.getElementById('secret-box');
+  var extraBox = document.getElementById('extra-box');
+  if (secretBox) {
+    var secretObs = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) {
+        secretBox.classList.add('visible');
+        setTimeout(function() {
+          if (extraBox) extraBox.classList.add('visible');
+        }, 600);
+        secretObs.disconnect();
+      }
+    }, { threshold: 0.3 });
+    secretObs.observe(secretBox);
+  }
+
+  // ===== CAROUSEL (testimony) =====
+  var carouselTrack = document.getElementById('carousel-track');
+  window.currentSlide = 0;
+  var totalSlides = 13;
+
+  window.goToSlide = function(n) {
+    if (!carouselTrack) return;
+    window.currentSlide = Math.max(0, Math.min(n, totalSlides - 1));
+    carouselTrack.scrollTo({ left: window.currentSlide * carouselTrack.clientWidth, behavior: 'smooth' });
+    document.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === window.currentSlide);
+    });
+  }
+
+  if (carouselTrack) {
+    carouselTrack.addEventListener('scroll', function() {
+      var idx = Math.round(carouselTrack.scrollLeft / carouselTrack.clientWidth);
+      if (idx !== window.currentSlide) {
+        window.currentSlide = idx;
+        document.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+          d.classList.toggle('active', i === idx);
+        });
+      }
+    }, { passive: true });
+  }
+
+  // ===== WHY CAROUSEL =====
+  var whyTrack = document.getElementById('why-track');
+  window.whyCurrent = 0;
+  var whyTotal = 4;
+
+  window.goToWhy = function(n) {
+    if (!whyTrack) return;
+    window.whyCurrent = Math.max(0, Math.min(n, whyTotal - 1));
+    whyTrack.scrollTo({ left: window.whyCurrent * whyTrack.clientWidth, behavior: 'smooth' });
+    document.querySelectorAll('.why-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === window.whyCurrent);
+    });
+    var prog = document.getElementById('why-progress');
+    if (prog) prog.textContent = (window.whyCurrent + 1) + ' / ' + whyTotal;
+  }
+
+  if (whyTrack) {
+    whyTrack.addEventListener('scroll', function() {
+      var idx = Math.round(whyTrack.scrollLeft / whyTrack.clientWidth);
+      if (idx !== window.whyCurrent) {
+        window.whyCurrent = idx;
+        document.querySelectorAll('.why-dot').forEach(function(d, i) {
+          d.classList.toggle('active', i === idx);
+        });
+        var prog = document.getElementById('why-progress');
+        if (prog) prog.textContent = (idx + 1) + ' / ' + whyTotal;
+      }
+    }, { passive: true });
+  }
+
+  function showWhySection() {
+    var ws = document.getElementById('why-section');
+    if (ws) {
+      ws.classList.add('visible');
+      ws.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+
+  // ===== MEDIA CAROUSEL =====
+  var mediaTrack = document.getElementById('media-track');
+  var mediaCurrent = 0;
+  var mediaTotal = 4;
+  var mediaStartX = 0;
+  var mediaDragging = false;
+
+  function goToMedia(n) {
+    mediaCurrent = Math.max(0, Math.min(n, mediaTotal - 1));
+    mediaTrack.style.transform = 'translateX(' + (mediaCurrent * -(100 * (88/100))) + "%)'";
+    document.querySelectorAll('.media-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === mediaCurrent);
+    });
+  }
+
+  if (mediaTrack) {
+    var slideWidth = 88;
+    mediaTrack.addEventListener('touchstart', function(e) { mediaStartX = e.touches[0].clientX; mediaDragging = true; }, { passive: true });
+    mediaTrack.addEventListener('touchend', function(e) {
+      var diff = mediaStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) < 10) {
+        // It's a tap - hide the overlay on current slide to allow play
+        var overlays = document.querySelectorAll('.iframe-overlay');
+        overlays.forEach(function(o) { o.classList.add('hidden'); });
+      }
+    }, { passive: true });
+    mediaTrack.addEventListener('touchend', function(e) {
+      if (!mediaDragging) return;
+      var diff = mediaStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) goToMedia(diff > 0 ? mediaCurrent - 1 : mediaCurrent + 1);
+      mediaDragging = false;
+    });
+    mediaTrack.addEventListener('mousedown', function(e) { mediaStartX = e.clientX; mediaDragging = true; });
+    window.addEventListener('mouseup', function(e) {
+      if (!mediaDragging) return;
+      var diff = mediaStartX - e.clientX;
+      if (Math.abs(diff) > 40) goToMedia(diff > 0 ? mediaCurrent - 1 : mediaCurrent + 1);
+      mediaDragging = false;
+    });
+  }
+
+
+  function showPreCTA() {
+    var section = document.getElementById('precta-section');
+    if (!section) return;
+    // Build symptoms list - up to 3, prioritize weight/belly
+    var selected = Array.from(document.querySelectorAll('#symptoms-grid .chip.selected'));
+    var labels = selected.map(function(el) { return el.getAttribute('data-label'); });
+    // Prioritize השמנה בטנית / עלייה במשקל
+    var priority = ['השמנה בטנית','עלייה במשקל'];
+    var sorted = [];
+    priority.forEach(function(p) { if (labels.indexOf(p) > -1) sorted.push(p); });
+    labels.forEach(function(l) { if (sorted.indexOf(l) === -1) sorted.push(l); });
+    var top3 = sorted.slice(0, 3);
+    var symsEl = document.getElementById('precta-syms');
+    // Build imagine text
+    var priority2 = ['השמנה בטנית','עלייה במשקל','שינה גרועה'];
+    var sorted2 = [];
+    priority2.forEach(function(p) { if (labels.indexOf(p) > -1) sorted2.push(p); });
+    labels.forEach(function(l) { if (sorted2.indexOf(l) === -1) sorted2.push(l); });
+    var top3imagine = sorted2.slice(0, 3);
+    var imagineEl = document.getElementById('precta-imagine-text');
+    if (imagineEl) {
+      if (top3imagine.length > 0) {
+        function addVav(word) {
+          var first = word.charAt(0);
+          // ו' מלאה לפני אותיות בומפ + שוא נח (approximation)
+          var needsFullVav = ['ו','ב','מ','פ'].indexOf(first) > -1;
+          return (needsFullVav ? 'ו' : 'ו') + word;
+        }
+        var joined = top3imagine.length === 1 ? top3imagine[0] :
+          top3imagine.length === 2 ? top3imagine[0] + ' ' + addVav(top3imagine[1]) :
+          top3imagine[0] + ', ' + top3imagine[1] + ' ' + addVav(top3imagine[2]);
+        imagineEl.innerHTML = '<br><span style="font-size:clamp(26px,6vw,36px);color:#FFD600;font-weight:400;">🌈 דמייני איך מרגיש להיות בלי ' + joined + '</span>';
+      } else {
+        imagineEl.innerHTML = '';
+      }
+    }
+    symsEl.innerHTML = '';
+  }
+
+  function showRavpage() {
+    var lm = document.getElementById('lead-magnet-section');
+    var bs = document.getElementById('bonuses-section');
+    var ps = document.getElementById('program-details-section');
+    if (lm) lm.style.display = 'block';
+    if (bs) bs.style.display = 'block';
+    if (ps) ps.style.display = 'block';
+    setTimeout(function() {
+      var target = lm || bs;
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+  function showRavpageReal() {
+    var rf = document.getElementById('ravpage-form');
+    var sb = document.getElementById('story-btn-wrap');
+    if (rf) { rf.style.display = 'block'; setTimeout(function() { rf.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100); }
+    if (sb) sb.style.display = 'block';
+  }
+  function showOfferSection() {
+    var s = document.getElementById('offer-section');
+    if (s) { s.classList.add('visible'); setTimeout(function() { s.scrollIntoView({behavior:'smooth', block:'start'}); }, 100); }
+  }
+  function showWhenSection() {
+    // PAYMENT LINK - replace with actual URL when ready
+    window.open('https://secure.cardcom.solutions/EA/EA5/Fuqf61nPWki3bJ9QL1Yrw/Intro', '_blank');
+  }
+  function showCancelSection() {
+    var s = document.getElementById('cancel-section');
+    if (s) { s.style.display = 'block'; s.classList.add('visible'); setTimeout(function() { s.scrollIntoView({behavior:'smooth', block:'start'}); }, 100); }
+  }
+
+
+  // ===== BONUSES CAROUSEL =====
+  var bonusesTrack = document.getElementById('bonuses-track');
+  window.bonusesCurrent = 0;
+  var bonusesTotal = 4;
+
+  window.goToBonuses = function(n) {
+    if (!bonusesTrack) return;
+    window.bonusesCurrent = Math.max(0, Math.min(n, bonusesTotal - 1));
+    bonusesTrack.scrollTo({ left: window.bonusesCurrent * bonusesTrack.clientWidth, behavior: 'smooth' });
+    document.querySelectorAll('.bonuses-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === window.bonusesCurrent);
+    });
+  }
+
+  if (bonusesTrack) {
+    bonusesTrack.addEventListener('scroll', function() {
+      var idx = Math.round(bonusesTrack.scrollLeft / bonusesTrack.clientWidth);
+      if (idx !== window.bonusesCurrent) {
+        window.bonusesCurrent = idx;
+        document.querySelectorAll('.bonuses-dot').forEach(function(d, i) {
+          d.classList.toggle('active', i === idx);
+        });
+      }
+    }, { passive: true });
+  }
+
+
+
+  function showFaqSection() {
+    var faq = document.getElementById('faq-section');
+    var btn = document.getElementById('faq-toggle-btn');
+    var btn2 = document.getElementById('btn-join-2');
+    if (!faq) return;
+    var isHidden = faq.style.display === 'none';
+    faq.style.display = isHidden ? 'block' : 'none';
+    if (btn2) btn2.style.display = isHidden ? 'block' : 'none';
+    if (btn) btn.textContent = isHidden ? '✖ סגרי שאלות ותשובות' : '❓ יש לך שאלה? לחצי כאן';
+    if (isHidden) setTimeout(function() { faq.scrollIntoView({behavior:'smooth', block:'start'}); }, 100);
+  }
+
+
+  function scrollTestimony(dir) {
+    var el = document.getElementById('testimony-scroll');
+    if (!el) return;
+    el.scrollBy({ left: dir * el.offsetWidth, behavior: 'smooth' });
+  }
+
+  function scrollWhy(dir) {
+    var el = document.getElementById('why-scroll');
+    if (!el) return;
+    el.scrollBy({ left: dir * el.offsetWidth, behavior: 'smooth' });
+  }
+
+  function scrollProgram(dir) {
+    var el = document.getElementById('program-scroll');
+    if (!el) return;
+    el.scrollBy({ left: dir * el.offsetWidth, behavior: 'smooth' });
+  }
+
+  function scrollBonuses(dir) {
+    var el = document.getElementById('bonuses-scroll');
+    if (!el) return;
+    el.scrollBy({ left: dir * el.offsetWidth, behavior: 'smooth' });
+  }
+
+  function scrollMedia(dir) {
+    var el = document.getElementById('media-scroll');
+    if (!el) return;
+    var slideW = el.offsetWidth * 0.85 + 12;
+    el.scrollBy({ left: dir * slideW, behavior: 'smooth' });
+  }
+
+  function showStory() {
+    var s = document.getElementById('story-section');
+    if (!s) return;
+    s.style.display = 'block';
+    s.classList.add('visible');
+    setTimeout(function() { s.scrollIntoView({behavior:'smooth', block:'start'}); }, 100);
+  }
+
+  function toggleFaq(el) {
+    var isOpen = el.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(item) { item.classList.remove('open'); });
+    if (!isOpen) el.classList.add('open');
+  }
+
+  function checkPulseBtn() {
+    if (answers.age && answers.cycle) {
+      var btn = document.querySelector('.btn-main');
+      if (btn && !btn.classList.contains('pulse-ready')) {
+        btn.classList.add('pulse-ready');
+               setTimeout(function() {
+          var y = btn.getBoundingClientRect().top + window.pageYOffset - (window.innerHeight * 0.4);
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }, 150);
+      }
+    }
+  }
+
+
+  // Force-disable looping on Vimeo embeds (even if Vimeo settings toggle loop on)
+  try {
+    if (typeof Vimeo !== 'undefined' && Vimeo.Player) {
+      document.querySelectorAll('iframe[src*="player.vimeo.com/video/"]').forEach(function(iframe) {
+        try {
+          var p = new Vimeo.Player(iframe);
+          p.setLoop(false);
+        } catch (e) {}
+      });
+    }
+  } catch (e) {}
+
+</script>
+
+</body>
+
+</html>
