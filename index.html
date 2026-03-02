@@ -1031,6 +1031,46 @@ body {
   line-height: 1.6;
 }
 .program-subtitle strong { color: white; text-decoration: underline; }
+.prog-slide {
+  min-width: 88%;
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  padding: 0 6px;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+.prog-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+  direction: rtl;
+  text-align: right;
+  width: 100%;
+}
+.prog-icon { font-size: 32px; text-align: center; }
+.prog-title {
+  font-size: clamp(20px, 5vw, 26px);
+  font-weight: 900;
+  color: #6B20A8;
+  line-height: 1.35;
+  text-align: center;
+}
+.prog-body {
+  font-size: clamp(15px, 3.8vw, 18px);
+  color: #1E1030;
+  line-height: 1.65;
+  font-weight: 500;
+}
+/* First program slide peeks next */
+#program-scroll .prog-slide:first-of-type {
+  scroll-snap-align: start;
+}
 
 /* ===== BONUSES SECTION ===== */
 .bonuses-section {
@@ -1955,9 +1995,13 @@ body {
 <!-- LEAD MAGNET SECTION -->
 <div class="lead-magnet-section" id="lead-magnet-section" style="display:none;">
   <div class="lead-magnet-inner">
-    <div class="lead-magnet-emoji">🎁</div>
-    <h2 class="lead-magnet-title">רגע לפני שנגיע לבונוסים ולמבצע...</h2>
-    <p class="lead-magnet-text">נשים שמגיעות מוכנות לתהליך מצליחות יותר.<br>לכן אני רוצה לשלוח לך, <strong style="color:white;">בחינם לגמרי</strong>, את המדריך שלי על תוספי התזונה החיוניים לגיל 40-50+ וגם טיפים <strong style="color:white;">חינמיים</strong> שיעזרו לך להתחיל את השינוי עוד לפני שהצטרפת לתוכנית.</p>
+    <div style="display:flex;align-items:center;gap:16px;direction:rtl;margin-bottom:16px;">
+      <div style="flex:1;text-align:right;">
+        <h2 class="lead-magnet-title" style="text-align:right;margin-bottom:10px;">רגע לפני שנגיע לבונוסים ולמבצע...</h2>
+        <p class="lead-magnet-text" style="margin-bottom:0;">נשים שמגיעות מוכנות לתהליך מצליחות יותר.<br>לכן אני רוצה לשלוח לך, <strong style="color:white;">בחינם לגמרי</strong>, את המדריך שלי על תוספי התזונה החיוניים לגיל 40-50+ וגם טיפים <strong style="color:white;">חינמיים</strong> שיעזרו לך להתחיל את השינוי.</p>
+      </div>
+      <div style="flex-shrink:0;font-size:80px;line-height:1;">🎁</div>
+    </div>
     <div class="lead-magnet-cta">הצטרפי עכשיו לקבלת המדריך ⬇️</div>
     <div id="lead-magnet-form" style="margin-top:16px;">
       <script type='text/javascript' src='//form2.ravpage.co.il/2375fb805f8e18ff04d86bb648f1329769A17E8B' charset='UTF-8'></script>
@@ -1988,7 +2032,7 @@ body {
         </div>
       </div>
     </div>
-    <div style="min-width:88%;scroll-snap-align:center;flex-shrink:0;padding:0 4px;aspect-ratio:1/1;">
+    <div style="min-width:88%;scroll-snap-align:center;flex-shrink:0;padding:0 4px;">
       <div class="bonuses-card" style="height:100%;"><div class="bonuses-card-title">3 חודשי שימוש נוספים בתכני האפליקציה! 📱</div><div class="bonuses-card-body">התכנים יהיו זמינים למשך כמעט חצי שנה כדי שתוכלי להמשיך לצפות בתכנים ולתרגל את המשימות השונות.</div></div>
     </div>
     <div style="min-width:88%;scroll-snap-align:center;flex-shrink:0;padding:0 4px;aspect-ratio:1/1;">
@@ -1996,9 +2040,6 @@ body {
     </div>
   </div>
   <style>#bonuses-scroll::-webkit-scrollbar{display:none;}</style>
-  <button onclick="showOfferSection()" style="margin-top:16px;display:block;width:100%;max-width:480px;margin-left:auto;margin-right:auto;background:linear-gradient(135deg,#FFD600,#F59E0B);color:#1E1030;font-family:'Heebo',sans-serif;font-size:clamp(20px,5vw,26px);font-weight:900;padding:22px 32px;border-radius:50px;border:none;cursor:pointer;box-shadow:0 6px 28px rgba(245,158,11,0.55);direction:rtl;line-height:1.3;animation:btnPulse 1s ease-in-out infinite;">
-    ✨ ספרי לי על מחיר המבצע בהצטרפות לתוכנית &#8592;
-  </button>
 </div>
 
 
@@ -2013,18 +2054,42 @@ body {
     <span style="font-size:clamp(17px,4vw,20px);font-weight:800;">החליקי לראות עוד</span>
     <button class="nav-btn" onclick="scrollProgram(-1)">←</button>
   </div>
-  <div id="program-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;height:min(85vw,480px);">
+  <div id="program-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;height:min(85vw,480px);padding:0 0 0 0;">
     <!-- סרטון - סלייד 1 -->
     <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;position:relative;height:100%;overflow:hidden;">
       <iframe src="https://player.vimeo.com/video/1169512075?badge=0&autoplay=0&loop=0&autopause=1&player_id=0&app_id=58479" style="width:100%;height:100%;border:none;display:block;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="תוכנית מיי פריים 360"></iframe>
     </div>
-    <!-- 6 כרטיסי תוכנית -->
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program3.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program2.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program1.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program6.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program5.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:#1a0a2e;"><img src="site_images/program4.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+    <!-- 6 כרטיסי תוכנית - styled cards -->
+    <div class="prog-slide"><div class="prog-card">
+      <div class="prog-icon">⭐</div>
+      <div class="prog-title">ליווי יומימי<br>בוואטסאפ עם ענת הראל ותזונאית קלינית</div>
+      <div class="prog-body">תמיכה ועזרה עם כל שאלה בקבוצה קטנה ואינטימית, עם ענת הראל ותזונאית קלינית למענה מקצועי ושוטף.</div>
+    </div></div>
+    <div class="prog-slide"><div class="prog-card">
+      <div class="prog-icon">⭐</div>
+      <div class="prog-title">אימוני כוח מותאמים למתחילות ולמתקדמות</div>
+      <div class="prog-body">נתרגל יחד אימוני חיטוב קצרים ופשוטים, שיתנו מענה למה שהגוף שלך זקוק לו.</div>
+    </div></div>
+    <div class="prog-slide"><div class="prog-card">
+      <div class="prog-icon">⭐</div>
+      <div class="prog-title">תוכנית תזונה מותאמת לגיל המעבר בלי תפריטים קשיחים</div>
+      <div class="prog-body">תלמדי כיצד להתאים את התזונה היומית שלך לשינויים ההורמונליים ותקבלי כלים לבניית הרגלים לכל החיים.</div>
+    </div></div>
+    <div class="prog-slide"><div class="prog-card">
+      <div class="prog-icon">⭐</div>
+      <div class="prog-title">מעקב התקדמות</div>
+      <div class="prog-body"><strong>מתקשה להתמיד?</strong> יצרנו עבורך מעקב התקדמות שיעזור לך להתמיד ויאפשר לך לראות את ההתקדמות שלך לאורך זמן.</div>
+    </div></div>
+    <div class="prog-slide"><div class="prog-card">
+      <div class="prog-icon">⭐</div>
+      <div class="prog-title">כלים לניהול סטרס ושיפור שינה</div>
+      <div class="prog-body">נתרגל יחד כלים לניהול סטרס ודפוסי חשיבה להתמודדות עם מצבי רוח משתנים, הפרעות בשינה, חרדות ועצבנות יתר.</div>
+    </div></div>
+    <div class="prog-slide"><div class="prog-card">
+      <div class="prog-icon">⭐</div>
+      <div class="prog-title">מידע רפואי מד"ר נועה חובב</div>
+      <div class="prog-body">לקחת או לא לקחת הורמונים? כל המידע שחשוב להתנהלות בראיאות, בהתייעצות עם ד"ר נועה חובב, רופאת גיל המעבר.</div>
+    </div></div>
   </div>
   <style>#program-scroll::-webkit-scrollbar{display:none;}</style>
   <div style="text-align:center;padding:20px 16px 8px;">
