@@ -2067,6 +2067,21 @@ html.a11y-bigtext body {
   font-size: 112%;
 }
 
+
+/* Desktop tweak: make "למה השיטה של MyPrime מצליחה" cards smaller (desktop only) */
+@media (min-width: 900px){
+  #why-scroll > div{
+    min-width: 520px !important;
+    max-width: 520px !important;
+  }
+  .why-card{
+    min-height: 190px;
+    padding: 18px 18px;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -3297,7 +3312,7 @@ function showResult() {
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">גרסה: 2026-03-03 10:35 - index_with_footer_v11_a11y_and_desktop_bonuses.html</span>
+    <span class="footer-version">גרסה: 2026-03-03 11:10 - index.html</span>
   </nav>
 </footer>
 
