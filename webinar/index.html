@@ -17,6 +17,10 @@ body {
   text-align: right;
 }
 
+/* LAYOUT SAFE AREA (avoid fixed CTA overlap) */
+body { padding-bottom: 96px; }
+@media (min-width: 768px) { body { padding-bottom: 72px; } }
+
 @media (min-width: 768px) {
   html {
     background: linear-gradient(160deg, #E0C8F0 0%, #F3E8FF 40%, #D9B8E8 100%);
@@ -719,8 +723,10 @@ body {
   left: 14px;
   right: 14px;
   width: calc(100% - 28px);
-  transform: none;
-  background: linear-gradient(135deg, #E0197D 0%, #B8106A 100%);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: box-shadow;
+background: linear-gradient(135deg, #E0197D 0%, #B8106A 100%);
   color: white;
   border: none;
   border-radius: 50px;
@@ -735,29 +741,36 @@ body {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
-  animation: pulse 1.5s ease-in-out infinite;
+  animation: pulseShadow 1.5s ease-in-out infinite;
   line-height: 1.4;
   text-align: center;
 }
 
 @media (min-width: 768px) {
   .floating-btn {
-    display: none !important;
+    display: block !important;
+    left: auto;
+    right: 20px;
+    width: auto;
+    max-width: 420px;
+    padding: 16px 26px;
   }
 }
-
 .floating-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 32px rgba(224, 25, 125, 0.5);
   animation: none;
 }
 
-@keyframes pulse {
+@keyframes pulseShadow {
   0%, 100% {
-    box-shadow: 0 8px 24px rgba(224, 25, 125, 0.3);
-    transform: scale(1);
+    box-shadow: 0 8px 24px rgba(224, 25, 125, 0.30);
   }
   50% {
+    box-shadow: 0 12px 40px rgba(224, 25, 125, 0.55);
+  }
+}
+50% {
     box-shadow: 0 12px 40px rgba(224, 25, 125, 0.6);
     transform: scale(1.02);
   }
@@ -1258,16 +1271,21 @@ function showResults() {
 
 updateCountdown();
 
-// ENSURE BUTTON IS VISIBLE
+// ENSURE BUTTON IS VISIBLE (runs on load, mobile + desktop)
 document.addEventListener('DOMContentLoaded', function() {
   const btn = document.querySelector('.floating-btn');
-  if (btn) {
-    btn.style.display = 'block !important';
-    btn.style.visibility = 'visible !important';
-    btn.style.opacity = '1 !important';
-  }
-});
+  if (!btn) return;
 
+  btn.style.display = 'block';
+  btn.style.visibility = 'visible';
+  btn.style.opacity = '1';
+
+  // Force repaint (helps on some mobile browsers)
+  void btn.offsetHeight;
+  requestAnimationFrame(function() {
+    btn.style.transform = 'translateZ(0)';
+  });
+});
 // MODAL FUNCTIONS
 function openFormModal() {
   document.getElementById('formModal').classList.add('show');
