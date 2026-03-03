@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyPrime - הערכה הורמונלית</title>
+<title>ענת הראל MyPrime</title>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -2082,7 +2082,37 @@ html.a11y-bigtext body {
   }
 }
 
+/* --- Desktop-only fix: WHY carousel sizing without clipping --- */
+@media (min-width: 1024px) {
+  #why-scroll {
+    padding: 0 24px 16px !important;
+    gap: 18px !important;
+    scroll-padding-left: 24px;
+    scroll-padding-right: 24px;
+  }
+
+  /* Make slides slightly smaller but safe */
+  #why-scroll > div {
+    min-width: 520px !important;
+    max-width: 520px !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    scroll-snap-align: center;
+  }
+
+  /* Ensure inner card has enough padding so text never touches edges */
+  .why-card {
+    padding: 44px 46px !important;
+    box-sizing: border-box;
+  }
+}
+
 </style>
+
+<link rel="icon" type="image/png" sizes="32x32" href="site_images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="site_images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="site_images/apple-touch-icon.png">
+
 </head>
 <body>
 
@@ -3312,7 +3342,7 @@ function showResult() {
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">גרסה: 2026-03-03 11:10 - index.html</span>
+    <span class="footer-version">גרסה: 2026-03-03 11:45 - index_with_footer_v14_why_desktop_fix.html</span>
   </nav>
 </footer>
 
