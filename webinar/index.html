@@ -732,15 +732,15 @@ body {
   box-shadow: 0 8px 24px rgba(224, 25, 125, 0.3);
   z-index: 99;
   transition: all 0.3s;
-  display: none;
+  display: block;
   animation: pulse 2s infinite;
   line-height: 1.3;
   text-align: center;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   .floating-btn {
-    display: block;
+    display: none;
   }
 }
 
@@ -856,7 +856,7 @@ body {
 <body>
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">indexW13</div>
+<div class="version-indicator">indexW15</div>
 
 <!-- HERO HEADER -->
 <div class="hero-header">
