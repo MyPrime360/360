@@ -1814,6 +1814,54 @@ body {
   opacity: 0.55;
 }
 
+
+
+.footer-brand {
+  color: #fff;
+  opacity: 0.9;
+  font-weight: 800;
+}
+
+/* --- Carousel polish: desktop bonuses spacing + mobile program height --- */
+
+/* BONUSES carousel: desktop spacing should not look like two islands */
+@media (min-width: 768px) {
+  .bonuses-track {
+    justify-content: flex-start;
+    gap: 22px;
+  }
+  .bonuses-slide {
+    flex: 0 0 420px;       /* consistent card width */
+    min-width: 420px !important;
+    max-width: 420px;
+  }
+}
+
+/* PROGRAM carousel: mobile had overly tall/empty slides */
+@media (max-width: 767px) {
+  #program-scroll {
+    height: clamp(280px, 65vw, 380px) !important;
+  }
+  #program-scroll > div {
+    height: 100%;
+  }
+  .prog-card {
+    height: 100%;
+    justify-content: flex-start;
+    padding-top: 22px;
+  }
+  .prog-icon {
+    margin-top: 0;
+  }
+}
+
+
+
+.footer-version {
+  color: #cfcfcf;
+  opacity: 0.85;
+  font-weight: 600;
+}
 </style>
 </head>
 <body>
@@ -2184,7 +2232,7 @@ body {
     <button class="nav-btn" onclick="scrollProgram(-1)">←</button>
   </div>
   <p style="text-align:center;font-size:clamp(16px,4vw,19px);font-weight:700;color:#9B70C0;margin:0 0 8px;">▶ לחצי לצפייה בסרטון</p>
-  <div id="program-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:18px;border:2px solid #6B20A8;height:min(65vw,420px);">
+  <div id="program-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:18px;border:2px solid #6B20A8;height:clamp(280px, 65vw, 380px);">
     <!-- סרטון - סלייד 1 -->
     <div style="min-width:85%;scroll-snap-align:start;flex-shrink:0;position:relative;height:100%;overflow:hidden;flex-shrink:0;">
       <iframe src="https://player.vimeo.com/video/1169512075?badge=0&autoplay=0&loop=0&autopause=1&loop=0&player_id=0&app_id=58479" style="width:100%;height:100%;border:none;display:block;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="תוכנית מיי פריים 360"></iframe>
@@ -3029,13 +3077,22 @@ function showResult() {
 
 <footer class="site-footer">
   <nav class="footer-links" aria-label="קישורים משפטיים">
+
     <a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a7%d7%95%d7%a7%d7%99%d7%96/" target="_blank" rel="noopener">מדיניות קוקיז</a>
     <span class="footer-sep">|</span>
     <a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank" rel="noopener">מדיניות פרטיות</a>
     <span class="footer-sep">|</span>
     <a href="https://myprime.co.il/%d7%94%d7%a6%d7%94%d7%a8%d7%aa-%d7%a0%d7%92%d7%99%d7%a9%d7%95%d7%aa/" target="_blank" rel="noopener">הצהרת נגישות</a>
     <span class="footer-sep">|</span>
+    <a href="https://myprime.co.il/%d7%aa%d7%a7%d7%a0%d7%95%d7%9f/" target="_blank" rel="noopener">תקנון האתר</a>
+    <span class="footer-sep">|</span>
     <a href="https://myprime.ravpage.co.il/BITUL?_gl=1*nmbnyj*_gcl_au*MjA1MjM0MDAyNC4xNzY3Njk0MTE0" target="_blank" rel="noopener">ביטול עסקה</a>
+    <span class="footer-sep">|</span>
+    <span class="footer-brand">my prime ענת הראל</span>
+
+  
+    <span class="footer-sep">|</span>
+    <span class="footer-version">גרסה: 2026-03-03 08:45 - index_with_footer_v4_version_tag.html</span>
   </nav>
 </footer>
 
