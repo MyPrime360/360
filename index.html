@@ -2107,6 +2107,19 @@ html.a11y-bigtext body {
   }
 }
 
+/* --- Desktop-only: WHY carousel show full first card (no clipping) --- */
+@media (min-width: 1024px) {
+  #why-scroll {
+    padding: 0 28px 16px !important;
+    scroll-padding-left: 28px;
+    scroll-padding-right: 28px;
+  }
+  #why-scroll > div {
+    scroll-snap-align: start !important; /* avoids centering that clips first card */
+    padding: 0 8px !important;           /* restore safe side spacing */
+  }
+}
+
 </style>
 
 <link rel="icon" type="image/png" sizes="32x32" href="site_images/favicon-32.png">
@@ -3342,7 +3355,7 @@ function showResult() {
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">גרסה: 2026-03-03 11:45 - index_with_footer_v14_why_desktop_fix.html</span>
+    <span class="footer-version">גרסה: 2026-03-03 12:05 - index_with_footer_v15_why_no_clipping.html</span>
   </nav>
 </footer>
 
