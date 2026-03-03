@@ -733,6 +733,8 @@ body {
   z-index: 9999;
   transition: all 0.3s;
   display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   animation: pulse 1.5s ease-in-out infinite;
   line-height: 1.4;
   text-align: center;
@@ -860,15 +862,13 @@ body {
 <body>
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">indexW25</div>
+<div class="version-indicator">indexW29</div>
 
 <!-- HERO HEADER -->
 <div class="hero-header">
   <div class="hero-container">
     <div class="hero-content">
-      <div style="position: relative;">
-        <img src="../site_images/anat_webinar_mobile.png" alt="ננת הראל" style="position: absolute; left: -80px; top: -60px; width: 120px; height: auto; opacity: 0.9;">
-      </div>
+      <img src="../site_images/anat_webinar_mobile.png" alt="ננת הראל" style="width: 100px; height: auto; margin-right: 12px; float: left;">
       <h1>מהי השיטה שעוזרת לאלפי נשים להחזיר את הגוף שנים אחורה תוך 10 שבועות ?!</h1>
       <p>הכל הולך להשתנות... בואי להדרכה <em>חינם</em> שתגלה לך את הסודות להתמודדות בריאה עם עלייה במשקל, השמנה בטנית, הפרעות בשינה ועייפות כרונית!</p>
       <p>שרייני מקום במפגש הקרוב ו<strong>קבלי כבר עכשיו כלים פרקטיים</strong> בחינם [לזמן מוגבל]👇</p>
@@ -1277,6 +1277,16 @@ function showResults() {
 }
 
 updateCountdown();
+
+// ENSURE BUTTON IS VISIBLE
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.querySelector('.floating-btn');
+  if (btn) {
+    btn.style.display = 'block !important';
+    btn.style.visibility = 'visible !important';
+    btn.style.opacity = '1 !important';
+  }
+});
 
 // MODAL FUNCTIONS
 function openFormModal() {
