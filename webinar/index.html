@@ -1,1 +1,578 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ווביניר בחינם - ענת הראל MyPrime</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { max-width: 100%; overflow-x: hidden; }
 
+body {
+  font-family: "Heebo", sans-serif;
+  background: #FDF8FC;
+  color: #1E1030;
+  direction: rtl;
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  html {
+    background: linear-gradient(160deg, #E0C8F0 0%, #F3E8FF 40%, #D9B8E8 100%);
+    min-height: 100%;
+  }
+  body {
+    padding: 20px;
+  }
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-bottom: 1px solid #EDE3F4;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .header {
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 900;
+  color: #E0197D;
+  margin-bottom: 12px;
+}
+
+.countdown {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FCE4F2;
+  padding: 8px 12px;
+  border-radius: 8px;
+  min-width: 50px;
+}
+
+.countdown-num {
+  font-size: 18px;
+  font-weight: 900;
+  color: #E0197D;
+}
+
+.countdown-label {
+  font-size: 10px;
+  color: #4A3060;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* MAIN CONTAINER */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  min-height: calc(100vh - 150px);
+}
+
+@media (min-width: 1024px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 60px rgba(100,50,150,0.15);
+    border-radius: 0 0 8px 8px;
+  }
+}
+
+/* LEFT COLUMN */
+.left-column {
+  background: linear-gradient(135deg, #F3E8FF 0%, #EDE3F4 100%);
+  padding: 40px 28px 140px;
+  flex: 1;
+  overflow-y: auto;
+  max-height: calc(100vh - 150px);
+}
+
+@media (min-width: 1024px) {
+  .left-column {
+    padding: 50px 36px;
+    max-height: none;
+  }
+}
+
+/* RIGHT COLUMN */
+.right-column {
+  background: linear-gradient(180deg, #D9B8E8 0%, #E0C8F0 100%);
+  display: none;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .right-column {
+    display: flex;
+    height: auto;
+  }
+}
+
+.right-column img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  font-size: 80px;
+  opacity: 0.3;
+}
+
+/* COPY */
+.copy-section {
+  margin-bottom: 28px;
+}
+
+.copy-section h1 {
+  font-size: clamp(22px, 5vw, 36px);
+  font-weight: 900;
+  color: #1E1030;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.copy-section strong {
+  color: #E0197D;
+}
+
+.copy-section p {
+  font-size: clamp(13px, 3.5vw, 15px);
+  color: #4A3060;
+  line-height: 1.7;
+}
+
+/* URGENCY */
+.urgency-box {
+  background: linear-gradient(135deg, #FCE4F2, #EDE0FF);
+  border: 2px solid #E0197D;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.urgency-box h4 {
+  font-size: clamp(13px, 3.5vw, 15px);
+  color: #E0197D;
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+
+.urgency-box p {
+  font-size: 12px;
+  color: #4A3060;
+  margin: 0;
+}
+
+/* QUESTIONS */
+.questions-section {
+  margin-bottom: 24px;
+}
+
+.question-group {
+  margin-bottom: 20px;
+}
+
+.question-header {
+  font-size: clamp(13px, 3.5vw, 15px);
+  font-weight: 800;
+  color: #1E1030;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.q-number {
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(135deg, #E0197D, #B8106A);
+  color: white;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* CHIPS */
+.chips-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.chip {
+  padding: 8px 14px;
+  border: 2px solid #D8C0F0;
+  border-radius: 100px;
+  background: white;
+  color: #4A3060;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: clamp(11px, 3vw, 13px);
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.chip:hover {
+  border-color: #E0197D;
+}
+
+.chip.active {
+  background: linear-gradient(135deg, #E0197D 0%, #B8106A 100%);
+  border-color: #E0197D;
+  color: white;
+}
+
+/* OPTIONS */
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option {
+  padding: 12px 14px;
+  border: 2px solid #EDE3F4;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #FDF8FC;
+  color: #4A3060;
+  font-weight: 500;
+  transition: all 0.2s;
+  text-align: right;
+  font-size: clamp(12px, 3.3vw, 14px);
+}
+
+.option:hover {
+  border-color: #E0197D;
+}
+
+.option.active {
+  border-color: #E0197D;
+  background: linear-gradient(135deg, #E0197D 0%, #B8106A 100%);
+  color: white;
+  font-weight: 700;
+}
+
+/* FORM DESKTOP */
+.form-desktop {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #EDE3F4;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .form-desktop {
+    display: block;
+  }
+}
+
+.form-desktop h3 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1E1030;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.form-field {
+  margin-bottom: 10px;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #EDE3F4;
+  border-radius: 8px;
+  font-family: "Heebo", sans-serif;
+  font-size: 13px;
+  text-align: right;
+  direction: rtl;
+}
+
+.form-field input:focus {
+  outline: none;
+  border-color: #E0197D;
+  box-shadow: 0 0 8px rgba(224,25,125,0.15);
+}
+
+.form-desktop button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #E0197D 0%, #B8106A 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: "Heebo", sans-serif;
+  font-size: 13px;
+  margin-top: 8px;
+  transition: all 0.3s;
+}
+
+.form-desktop button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(224,25,125,0.3);
+}
+
+/* STICKY FORM MOBILE */
+.sticky-form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 3px solid #E0197D;
+  padding: 14px 16px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 -4px 16px rgba(224, 25, 125, 0.15);
+}
+
+@media (min-width: 1024px) {
+  .sticky-form {
+    display: none;
+  }
+}
+
+.sticky-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #EDE3F4;
+  border-radius: 8px;
+  font-family: "Heebo", sans-serif;
+  font-size: 16px;
+  text-align: right;
+  direction: rtl;
+}
+
+.sticky-form button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #E0197D 0%, #B8106A 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: "Heebo", sans-serif;
+  font-size: 15px;
+}
+
+/* FOOTER */
+.footer {
+  background: #1E1030;
+  padding: 16px 20px;
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+}
+
+.footer a {
+  color: #E0197D;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">MyPrime ✨</div>
+  <div class="countdown">
+    <div class="countdown-item">
+      <div class="countdown-num" id="hours">24</div>
+      <div class="countdown-label">שעות</div>
+    </div>
+    <div class="countdown-item">
+      <div class="countdown-num" id="minutes">47</div>
+      <div class="countdown-label">דקות</div>
+    </div>
+    <div class="countdown-item">
+      <div class="countdown-num" id="seconds">18</div>
+      <div class="countdown-label">שניות</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTAINER -->
+<div class="main-container">
+  
+  <!-- LEFT COLUMN -->
+  <div class="left-column">
+    
+    <!-- COPY -->
+    <div class="copy-section">
+      <h1>מהי השיטה שלי להוצאת <strong>נשים מ"תא המתנה"</strong>?</h1>
+      <p>הסוד להחלפה קבועה ללא דיאטות קשות, בלי כוח הנחשק, בתוך 10 שבועות בלבד.</p>
+    </div>
+
+    <!-- URGENCY -->
+    <div class="urgency-box">
+      <h4>⏰ רק עוד 24 שעות לרישום</h4>
+      <p>מקומות מוגבלים - רק 100 נשים ראשונות</p>
+    </div>
+
+    <!-- QUESTIONS -->
+    <div class="questions-section">
+      
+      <!-- Q1 SYMPTOMS -->
+      <div class="question-group">
+        <div class="question-header">
+          <div class="q-number">1</div>
+          <span>אילו תסמינים מוכרים לך?</span>
+        </div>
+        <div class="chips-list">
+          <div class="chip" onclick="toggleChip(this)">השמנה בטנית 🫃</div>
+          <div class="chip" onclick="toggleChip(this)">שינה גרועה 😴</div>
+          <div class="chip" onclick="toggleChip(this)">עלייה במשקל ⚖️</div>
+          <div class="chip" onclick="toggleChip(this)">מצבי רוח 🌊</div>
+          <div class="chip" onclick="toggleChip(this)">עייפות 😤</div>
+          <div class="chip" onclick="toggleChip(this)">חרדה 😟</div>
+          <div class="chip" onclick="toggleChip(this)">ערפול מחשבתי 🧠</div>
+          <div class="chip" onclick="toggleChip(this)">דפיקות לב 💓</div>
+        </div>
+      </div>
+
+      <!-- Q2 AGE -->
+      <div class="question-group">
+        <div class="question-header">
+          <div class="q-number">2</div>
+          <span>מה טווח הגיל שלך?</span>
+        </div>
+        <div class="options-list">
+          <div class="option" onclick="selectOption(this)">38 עד 49</div>
+          <div class="option" onclick="selectOption(this)">50 עד 59</div>
+          <div class="option" onclick="selectOption(this)">60 עד 69</div>
+          <div class="option" onclick="selectOption(this)">70 ומעלה</div>
+        </div>
+      </div>
+
+      <!-- Q3 CYCLE -->
+      <div class="question-group">
+        <div class="question-header">
+          <div class="q-number">3</div>
+          <span>מה קורה עם המחזור שלך?</span>
+        </div>
+        <div class="options-list">
+          <div class="option" onclick="selectOption(this)">עדיין יש לי מחזור</div>
+          <div class="option" onclick="selectOption(this)">לא היה לי מחזור יותר משנה</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FORM DESKTOP -->
+    <div class="form-desktop">
+      <h3>הרשמי לווביניר בחינם</h3>
+      <div class="form-field">
+        <input type="text" placeholder="שם">
+      </div>
+      <div class="form-field">
+        <input type="email" placeholder="אימייל">
+      </div>
+      <div class="form-field">
+        <input type="tel" placeholder="טלפון">
+      </div>
+      <button onclick="handleSubmit()">שריינו לי מקום ←</button>
+    </div>
+
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="right-column">
+    <img src="../site_images/anath-hero.jpg" alt="ענת הראל" onerror="this.style.display='none'">
+  </div>
+
+</div>
+
+<!-- STICKY FORM MOBILE -->
+<div class="sticky-form">
+  <input type="text" placeholder="שם">
+  <input type="email" placeholder="אימייל">
+  <input type="tel" placeholder="טלפון">
+  <button onclick="handleSubmit()">הרשמי ← </button>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>© 2024 MyPrime. כל הזכויות שמורות.</p>
+</div>
+
+<script>
+function updateCountdown() {
+  const targetDate = new Date();
+  targetDate.setHours(targetDate.getHours() + 24);
+
+  function tick() {
+    const now = new Date();
+    const diff = targetDate - now;
+
+    if (diff > 0) {
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+  }
+
+  tick();
+  setInterval(tick, 1000);
+}
+
+function toggleChip(el) {
+  el.classList.toggle('active');
+}
+
+function selectOption(el) {
+  const container = el.parentElement;
+  container.querySelectorAll('.option').forEach(opt => opt.classList.remove('active'));
+  el.classList.add('active');
+}
+
+function handleSubmit() {
+  alert('תודה על ההרשמה! קישור הווביניר נשלח לאימייל שלך.');
+}
+
+updateCountdown();
+</script>
+
+</body>
+</html>
