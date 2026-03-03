@@ -1946,6 +1946,26 @@ body {
   }
 }
 
+/* --- Desktop-only: make BONUSES carousel behave like WHY carousel --- */
+@media (min-width: 768px) {
+  #bonuses-scroll {
+    padding: 0 16px 16px !important;
+    gap: 16px !important;
+    height: 340px !important;
+    align-items: stretch !important;
+    scroll-padding-left: 16px;
+    scroll-padding-right: 16px;
+  }
+
+  /* Override inline min-width:% on slides so they don't become huge on desktop */
+  #bonuses-scroll > div {
+    min-width: 520px !important;
+    max-width: 520px !important;
+    padding: 0 8px !important;
+    scroll-snap-align: center;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -3176,7 +3196,7 @@ function showResult() {
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">גרסה: 2026-03-03 09:55 - index_with_footer_v9_desktop_bonuses_fixed.html</span>
+    <span class="footer-version">גרסה: 2026-03-03 10:15 - index_with_footer_v10_desktop_bonuses_like_why.html</span>
   </nav>
 </footer>
 
