@@ -2346,13 +2346,7 @@ html.a11y-bigtext body {
     
 
 <!-- FORM MODAL -->
-<div class="form-modal" id="formModal">
-  <div class="modal-content">
-    <button class="modal-close" onclick="closeFormModal()">✕</button>
-    <h3 class="modal-title">הרשמי לווביניר בחינם</h3>
-    <script type='text/javascript' src='//form2.ravpage.co.il/1b0e492b9a5b531f34cc8cd4d88208b369A6AD36' charset='UTF-8'></script>
-  </div>
-</div>
+
 
 <!-- STICKY FORM (BOTTOM FIXED - DESKTOP ONLY) -->
 <div class="sticky-form">
@@ -2983,11 +2977,23 @@ function showResult() {
 // MODAL FUNCTIONS
 function openFormModal() {
   var modal = document.getElementById('formModal');
-  if (modal) {
-    modal.classList.add('show');
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+  if (!modal) return;
+
+  modal.classList.add('show');
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+
+  // Load Ravpage form into the modal only on first open (avoids conflicts with multiple embeds)
+  var mount = document.getElementById('ravpage-modal-mount');
+  if (mount && !mount.dataset.loaded) {
+    mount.dataset.loaded = '1';
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.charset = 'UTF-8';
+    script.src = '//form2.ravpage.co.il/1b0e492b9a5b531f34cc8cd4d88208b369A6AD36';
+    mount.appendChild(script);
   }
+}
 }
 
 function closeFormModal() {
