@@ -708,16 +708,14 @@ body {
   padding: 6px 12px;
   font-size: 11px;
   font-weight: 700;
-  z-index: 2147483647;
+  z-index: 1001;
   border-radius: 0 0 8px 0;
 }
 
 /* FLOATING BUTTON MOBILE */
 .floating-btn {
   position: fixed;
-  /* iOS safe area + ensure visible above browser bars */
-  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
-
+  bottom: 20px;
   left: 14px;
   right: 14px;
   width: calc(100% - 28px);
@@ -732,28 +730,19 @@ body {
   font-size: 15px;
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(224, 25, 125, 0.3);
-  z-index: 2147483647;
+  z-index: 9999;
   transition: all 0.3s;
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
-  animation: pulseShadow 1.5s ease-in-out infinite;
+  animation: pulse 1.5s ease-in-out infinite;
   line-height: 1.4;
   text-align: center;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: box-shadow;
 }
-
 
 @media (min-width: 768px) {
   .floating-btn {
-    display: block !important;
-    left: auto;
-    right: 20px;
-    width: auto;
-    max-width: 420px;
-    padding: 16px 26px;
+    display: none !important;
   }
 }
 
@@ -763,11 +752,11 @@ body {
   animation: none;
 }
 
-@keyframes pulseShadow {
-  0%, 100% { box-shadow: 0 8px 24px rgba(224, 25, 125, 0.30); }
-  50% { box-shadow: 0 12px 40px rgba(224, 25, 125, 0.55); }
-}
-
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(224, 25, 125, 0.3);
+    transform: scale(1);
+  }
   50% {
     box-shadow: 0 12px 40px rgba(224, 25, 125, 0.6);
     transform: scale(1.02);
@@ -778,9 +767,65 @@ body {
 .form-modal {
   display: none;
   position: fixed;
-  /* iOS safe area + ensure visible above browser bars */
-  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  overflow-y: auto;
+}
 
+.form-modal.show {
+  display: block;
+}
+
+.modal-content {
+  background: white;
+  margin: 40px auto;
+  padding: 24px;
+  border-radius: 16px;
+  max-width: 500px;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #8A70A0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  color: #E0197D;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1E1030;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -817,7 +862,7 @@ body {
 <body>
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">indexW32</div>
+<div class="version-indicator">indexW35</div>
 
 <!-- HERO HEADER - MOBILE ONLY -->
 <div style="width: 100%; max-height: 280px; overflow: hidden; background: linear-gradient(135deg, #FCE4F2 0%, #EDE0FF 100%); display: block;">
@@ -830,11 +875,19 @@ body {
   <!-- URGENCY -->
   <div class="urgency-box">
     <h4>⏰ רק עוד 24 שעות לרישום</h4>
-    <p>מקומות מוגבלים - רק 100 נשים ראשונות</p>
+    <h3 style="font-size: 18px; font-weight: 800; color: #1E1030; margin: 16px 0; line-height: 1.5;">
+      בואי להדרכה <em style="color: #E0197D; font-style: italic;">חינם</em> שתגלה לך את הסודות להתמודדות בריאה עם עלייה במשקל, השמנה בטנית, הפרעות בשינה ועייפות כרונית!
+    </h3>
+    
+    <button class="btn-register" onclick="openFormModal()" style="width: 100%; padding: 16px 24px; background: linear-gradient(135deg, #E0197D 0%, #B8106A 100%); color: white; border: none; border-radius: 50px; font-weight: 800; font-size: 15px; cursor: pointer; margin-top: 16px; animation: pulse 1.5s ease-in-out infinite; box-shadow: 0 8px 24px rgba(224, 25, 125, 0.3);">
+      לחצי והרשמי עכשיו למפגש ולטיפים בחינם
+    </button>
   </div>
 
   <!-- QUESTIONS -->
   <div class="questions-section">
+    
+    <h2 style="font-size: 20px; font-weight: 800; color: #1E1030; text-align: right; margin-bottom: 24px;">איך תדעי אם המפגש יכול לעזור לך?</h2>
     
     <div class="question-group">
       <div class="question-header">
@@ -1008,8 +1061,6 @@ body {
 <div class="sticky-form">
   <script type='text/javascript' src='//form2.ravpage.co.il/1b0e492b9a5b531f34cc8cd4d88208b369A6AD36' charset='UTF-8'></script>
 </div>
-
-<!-- FLOATING BUTTON (CREATED VIA JS) -->
 
 <!-- FOOTER -->
 <div class="footer">
@@ -1212,31 +1263,44 @@ function showResults() {
 
 updateCountdown();
 
-// CREATE + ENSURE FLOATING BUTTON IS VISIBLE (mobile + desktop)
-document.addEventListener('DOMContentLoaded', function() {
-  // If a floating button already exists (e.g. cached HTML), reuse it
-  var btn = document.querySelector('.floating-btn');
-  if (!btn) {
-    btn = document.createElement('button');
-    btn.className = 'floating-btn';
-    btn.type = 'button';
-    btn.textContent = 'לחצי והרשמי עכשיו למפגש ולטיפים בחינם';
-    btn.addEventListener('click', openFormModal);
-    document.body.appendChild(btn);
+// UPDATE PROGRAM SECTION TITLE WITH SELECTED SYMPTOMS
+function updateProgramTitle() {
+  const selectedChips = document.querySelectorAll('.chip.active');
+  const p2Title = document.querySelector('.p2-title');
+  
+  if (selectedChips.length > 0) {
+    let symptomsText = '';
+    selectedChips.forEach((chip, index) => {
+      const label = chip.textContent.trim();
+      if (index < 3) { // הראשונות 3 תסמינים
+        symptomsText += label + ', ';
+      }
+    });
+    
+    symptomsText = symptomsText.slice(0, -2); // הסרת הפסיק האחרון
+    
+    p2Title.textContent = `כי פיתחתי שיטה שעזרה עד היום לאלפי נשים בדיוק בשלב שלך להתמודד עם: ${symptomsText} ועוד תופעות של השינוי ההורמונלי.`;
   }
+}
 
-  // Force visible
-  btn.style.display = 'block';
-  btn.style.visibility = 'visible';
-  btn.style.opacity = '1';
-
-  // Force repaint (important for some iOS/Safari/WebView cases)
-  void btn.offsetHeight;
-  requestAnimationFrame(function() {
-    btn.style.transform = 'translateZ(0)';
-    btn.style.webkitTransform = 'translateZ(0)';
+// Update title when chips are selected
+document.addEventListener('DOMContentLoaded', function() {
+  const chips = document.querySelectorAll('.chip');
+  chips.forEach(chip => {
+    chip.addEventListener('click', updateProgramTitle);
   });
 });
+
+// ENSURE BUTTON IS VISIBLE
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.querySelector('.floating-btn');
+  if (btn) {
+    btn.style.display = 'block !important';
+    btn.style.visibility = 'visible !important';
+    btn.style.opacity = '1 !important';
+  }
+});
+
 // MODAL FUNCTIONS
 function openFormModal() {
   document.getElementById('formModal').classList.add('show');
