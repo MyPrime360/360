@@ -708,15 +708,19 @@ body {
   color: white;
   border: none;
   border-radius: 50px;
-  padding: 14px 32px;
+  padding: 14px 24px;
   font-family: "Heebo", sans-serif;
   font-weight: 800;
-  font-size: 15px;
+  font-size: 13px;
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(224, 25, 125, 0.3);
   z-index: 99;
   transition: all 0.3s;
   display: none;
+  animation: pulse 2s infinite;
+  line-height: 1.3;
+  text-align: center;
+  max-width: 160px;
 }
 
 @media (max-width: 767px) {
@@ -728,6 +732,16 @@ body {
 .floating-btn:hover {
   transform: translateX(-50%) translateY(-3px);
   box-shadow: 0 12px 32px rgba(224, 25, 125, 0.4);
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(224, 25, 125, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 40px rgba(224, 25, 125, 0.6);
+  }
 }
 
 /* MODAL */
@@ -1026,7 +1040,7 @@ body {
 </div>
 
 <!-- FLOATING BUTTON MOBILE -->
-<button class="floating-btn" onclick="openFormModal()">הרשמי לווביניר ←</button>
+<button class="floating-btn" onclick="openFormModal()">לחצי והרשמי עכשיו למפגש ולקבלת טיפים בחינם</button>
 
 <!-- FORM MODAL -->
 <div class="form-modal" id="formModal">
