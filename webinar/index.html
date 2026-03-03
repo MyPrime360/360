@@ -2155,12 +2155,12 @@ html.a11y-bigtext body {
 .start-btn-main{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#8B30CC 0%,#6B20A8 100%);color:white;padding:18px 38px;border-radius:50px;font-family:"Heebo",sans-serif;font-size:clamp(18px,4.5vw,22px);font-weight:800;box-shadow:0 8px 28px rgba(139,48,204,0.4);cursor:pointer;border:none;margin-top:16px;transition:all 0.3s ease;animation:pulse 2.5s ease-in-out infinite}
 .start-btn-main:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(139,48,204,0.5)}
 .start-btn-main .arrow{display:inline-block;animation:bounce 1.6s ease-in-out infinite}
-.webinar-urgency-box{background:linear-gradient(135deg,#FCE4F2 0%,#EDE0FF 100%);border:3px solid #E0197D;border-radius:20px;padding:16px 20px;margin:16px 8px;text-align:center;box-shadow:0 8px 24px rgba(224,25,125,0.2)}
+.webinar-urgency-box{background:linear-gradient(135deg,#FCE4F2 0%,#EDE0FF 100%);border:3px solid #8B30CC;border-radius:20px;padding:16px 20px;margin:16px 8px;text-align:center;box-shadow:0 8px 24px rgba(224,25,125,0.2)}
 @media (min-width:768px){.webinar-urgency-box{max-width:95%;margin:16px auto;padding:20px 20px}}
 .urgency-timer{font-size:clamp(24px,5.5vw,32px);color:#E0197D;font-weight:900;margin-bottom:8px;letter-spacing:0}
-.urgency-title{font-size:clamp(16px,4.2vw,20px);font-weight:800;color:#1E1030;line-height:1.6;margin-bottom:8px}
+.urgency-title{font-size:clamp(18px,4.5vw,22px);font-weight:800;color:#1E1030;line-height:1.5;margin-bottom:8px}
 .highlight-pink{color:#E0197D;font-style:italic;font-weight:900}
-.urgency-cta-btn{width:100%;max-width:500px;padding:18px 32px;background:linear-gradient(135deg,#E0197D 0%,#B8106A 100%);color:white;border:none;border-radius:50px;font-family:"Heebo",sans-serif;font-size:clamp(16px,4vw,18px);font-weight:800;cursor:pointer;box-shadow:0 8px 28px rgba(224,25,125,0.4);transition:all 0.3s ease;animation:pulse-grow 2s ease-in-out infinite}
+.urgency-cta-btn{width:100%;max-width:500px;padding:18px 32px;background:linear-gradient(135deg,#8B30CC 0%,#6B20A8 100%);color:white;border:none;border-radius:50px;font-family:"Heebo",sans-serif;font-size:clamp(16px,4vw,18px);font-weight:800;cursor:pointer;box-shadow:0 8px 28px rgba(224,25,125,0.4);transition:all 0.3s ease;animation:pulse-grow 2s ease-in-out infinite}
 .urgency-cta-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(224,25,125,0.5)}
 @keyframes pulse-grow{0%,100%{transform:scale(1);box-shadow:0 8px 28px rgba(224,25,125,0.4)}50%{transform:scale(1.05);box-shadow:0 12px 36px rgba(224,25,125,0.6)}}
 .p2-final-cta{text-align:center;padding:12px 20px;margin-top:8px}
@@ -2190,17 +2190,17 @@ html.a11y-bigtext body {
 <body>
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW60A</div>
+<div class="version-indicator">INDEXW62A</div>
 
 
 <div class="hero">
   <div style="width: 100%; max-height: 280px; overflow: hidden; background: linear-gradient(135deg, #FCE4F2 0%, #EDE0FF 100%); display: block;">
     <img src="../site_images/web_header_mob.jpg" alt="MyPrime Webinar" style="width: 100%; height: auto; display: block; object-fit: cover;">
   </div></div><div class="webinar-urgency-box">
-  <div class="urgency-timer">שעות אחרונות לרישום למפגש הקרוב</div>
+  <div class="urgency-timer">מקומות אחרונים במפגש החינמי הקרוב!</div>
   
   <h3 class="urgency-title">
-    בואי להדרכה <span class="highlight-pink">חינם</span> שתגלה לך את הסודות להתמודדות בריאה עם עלייה במשקל, השמנה בטנית, הפרעות בשינה ועייפות כרונית!
+    בואי להדרכה חינמית שתגלה לך את הסודות להתמודדות בריאה עם עלייה במשקל, השמנה בטנית, הפרעות בשינה ועייפות כרונית!
   </h3>
   
   <button class="urgency-cta-btn" onclick="openFormModal()">
@@ -2979,6 +2979,33 @@ function showResult() {
       });
     }
   } catch (e) {}
+
+// MODAL FUNCTIONS
+function openFormModal() {
+  var modal = document.getElementById('formModal');
+  if (modal) {
+    modal.classList.add('show');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeFormModal() {
+  var modal = document.getElementById('formModal');
+  if (modal) {
+    modal.classList.remove('show');
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+}
+
+// Close modal when clicking outside
+window.addEventListener('click', function(event) {
+  var modal = document.getElementById('formModal');
+  if (event.target === modal) {
+    closeFormModal();
+  }
+});
 
 </script>
 
