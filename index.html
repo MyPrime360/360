@@ -1862,6 +1862,37 @@ body {
   opacity: 0.85;
   font-weight: 600;
 }
+
+/* --- Mobile-only fixes: remove inner scrollbars + slightly larger program slides --- */
+@media (max-width: 767px) {
+  /* Slightly larger than the previous clamp, but still controlled */
+  #program-scroll {
+    height: clamp(300px, 70vw, 420px) !important;
+  }
+
+  /* Prevent horizontal/vertical inner scrollbars in cards */
+  #program-scroll > div,
+  .prog-card,
+  .prog-card * {
+    box-sizing: border-box;
+  }
+
+  #program-scroll > div,
+  .prog-card {
+    overflow: hidden;
+  }
+
+  /* Media should always fit the card width */
+  .prog-card img,
+  .prog-card iframe,
+  .prog-card video {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto;
+    display: block;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -3092,7 +3123,7 @@ function showResult() {
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">גרסה: 2026-03-03 08:45 - index_with_footer_v4_version_tag.html</span>
+    <span class="footer-version">גרסה: 2026-03-03 09:05 - index_with_footer_v6_mobile_scrollbar_fix.html</span>
   </nav>
 </footer>
 
