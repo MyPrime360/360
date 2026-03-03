@@ -1928,6 +1928,24 @@ body {
   }
 }
 
+/* --- Desktop-only: BONUSES carousel layout fix (remove big empty gaps) --- */
+@media (min-width: 768px) {
+  .bonuses-track {
+    justify-content: flex-start !important;
+    gap: 18px !important;
+    padding: 0 44px 14px !important;
+    scroll-padding-left: 44px;
+    scroll-padding-right: 44px;
+  }
+
+  .bonuses-slide {
+    flex: 0 0 360px !important;
+    min-width: 360px !important;
+    max-width: 360px !important;
+    scroll-snap-align: start;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -3158,7 +3176,7 @@ function showResult() {
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">גרסה: 2026-03-03 09:35 - index_with_footer_v8_mobile_program_more_height.html</span>
+    <span class="footer-version">גרסה: 2026-03-03 09:55 - index_with_footer_v9_desktop_bonuses_fixed.html</span>
   </nav>
 </footer>
 
