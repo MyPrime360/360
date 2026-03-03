@@ -730,7 +730,7 @@ body {
   font-size: 15px;
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(224, 25, 125, 0.3);
-  z-index: 99;
+  z-index: 9999;
   transition: all 0.3s;
   display: block !important;
   animation: pulse 1.5s ease-in-out infinite;
@@ -827,12 +827,14 @@ body {
   text-align: center;
 }
 
-/* HIDE STICKY FORM ON MOBILE */
+/* HIDE STICKY FORM COMPLETELY ON MOBILE */
 @media (max-width: 767px) {
   .sticky-form {
     display: none !important;
   }
 }
+
+/* STICKY FORM (DESKTOP ONLY) */
 
 /* FOOTER */
 .footer {
@@ -858,7 +860,7 @@ body {
 <body>
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">indexW16</div>
+<div class="version-indicator">indexW19</div>
 
 <!-- HERO HEADER -->
 <div class="hero-header">
@@ -868,6 +870,9 @@ body {
     </div>
 
     <div class="hero-content">
+      <div style="position: relative;">
+        <img src="anat_header.png" alt="ננת הראל" style="position: absolute; left: -80px; top: -60px; width: 120px; height: auto; opacity: 0.9;">
+      </div>
       <h1>מהי השיטה שעוזרת לאלפי נשים להחזיר את הגוף שנים אחורה תוך 10 שבועות ?!</h1>
       <p>הכל הולך להשתנות... בואי להדרכה <em>חינם</em> שתגלה לך את הסודות להתמודדות בריאה עם עלייה במשקל, השמנה בטנית, הפרעות בשינה ועייפות כרונית!</p>
       <p>שרייני מקום במפגש הקרוב ו<strong>קבלי כבר עכשיו כלים פרקטיים</strong> בחינם [לזמן מוגבל]👇</p>
@@ -1060,7 +1065,7 @@ body {
 </div>
 
 <!-- FLOATING BUTTON MOBILE -->
-<button class="floating-btn" onclick="openFormModal()">לחצי והרשמי עכשיו למפגש ולקבלת טיפים בחינם</button>
+<button class="floating-btn" onclick="openFormModal()">לחצי כאן והרשמי עכשיו 👇</button>
 
 <!-- FORM MODAL -->
 <div class="form-modal" id="formModal">
