@@ -1893,6 +1893,19 @@ body {
   }
 }
 
+/* --- Desktop-only: tighten BONUSES spacing (no other changes) --- */
+@media (min-width: 768px) {
+  .bonuses-track {
+    justify-content: center !important;
+    gap: 18px !important;
+  }
+  .bonuses-slide {
+    flex: 0 0 380px;
+    min-width: 380px !important;
+    max-width: 380px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -3123,7 +3136,7 @@ function showResult() {
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">גרסה: 2026-03-03 09:05 - index_with_footer_v6_mobile_scrollbar_fix.html</span>
+    <span class="footer-version">גרסה: 2026-03-03 09:20 - index_with_footer_v7_desktop_bonuses_spacing.html</span>
   </nav>
 </footer>
 
