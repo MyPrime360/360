@@ -1966,6 +1966,107 @@ body {
   }
 }
 
+/* --- Desktop-only: BONUSES show 2 cards per view (no big gaps) --- */
+@media (min-width: 1024px) {
+  #bonuses-scroll {
+    padding: 0 16px 10px !important;
+    gap: 16px !important;
+    height: 340px !important;
+    scroll-padding-left: 16px;
+    scroll-padding-right: 16px;
+  }
+  #bonuses-scroll > div {
+    min-width: calc((100% - 16px) / 2) !important;
+    max-width: calc((100% - 16px) / 2) !important;
+    padding: 0 !important;
+    scroll-snap-align: start !important;
+  }
+}
+
+
+
+/* --- Accessibility widget (simple) --- */
+.a11y-fab {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 9999;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 14px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.a11y-panel {
+  position: fixed;
+  right: 14px;
+  bottom: 70px;
+  z-index: 9999;
+  width: min(320px, calc(100vw - 28px));
+  background: #fff;
+  color: #111;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.28);
+  padding: 14px;
+  display: none;
+  direction: rtl;
+}
+
+.a11y-panel.open { display: block; }
+
+.a11y-title {
+  font-weight: 900;
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+
+.a11y-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.a11y-row button {
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.a11y-close {
+  background: #eee;
+}
+
+.a11y-action {
+  background: #6a1bb9;
+  color: #fff;
+}
+
+.a11y-muted {
+  font-size: 12px;
+  opacity: 0.75;
+  margin-top: 8px;
+  line-height: 1.35;
+}
+
+/* A11y modes */
+html.a11y-contrast body {
+  filter: contrast(1.15) saturate(1.05);
+}
+
+html.a11y-underline a {
+  text-decoration: underline !important;
+}
+
+html.a11y-bigtext body {
+  font-size: 112%;
+}
+
 </style>
 </head>
 <body>
@@ -3196,9 +3297,38 @@ function showResult() {
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">גרסה: 2026-03-03 10:15 - index_with_footer_v10_desktop_bonuses_like_why.html</span>
+    <span class="footer-version">גרסה: 2026-03-03 10:35 - index_with_footer_v11_a11y_and_desktop_bonuses.html</span>
   </nav>
 </footer>
+
+
+<button class="a11y-fab" id="a11yFab" aria-label="נגישות">נגישות</button>
+
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="אפשרויות נגישות" aria-modal="false">
+  <div class="a11y-title">נגישות בקליק</div>
+
+  <div class="a11y-row">
+    <span>הגדלת טקסט</span>
+    <button class="a11y-action" id="a11yBigText">הפעלה</button>
+  </div>
+
+  <div class="a11y-row">
+    <span>ניגודיות גבוהה</span>
+    <button class="a11y-action" id="a11yContrast">הפעלה</button>
+  </div>
+
+  <div class="a11y-row">
+    <span>הדגשת קישורים</span>
+    <button class="a11y-action" id="a11yUnderline">הפעלה</button>
+  </div>
+
+  <div class="a11y-row">
+    <button class="a11y-close" id="a11yReset">איפוס</button>
+    <button class="a11y-close" id="a11yClose">סגירה</button>
+  </div>
+
+  <div class="a11y-muted">הכפתור מוסיף אפשרויות עזר בסיסיות. לנגישות מלאה נדרש גם מבנה תקין, טקסטים חלופיים וניווט מקלדת.</div>
+</div>
 
 </body>
 
