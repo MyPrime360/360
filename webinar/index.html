@@ -2185,12 +2185,44 @@ html.a11y-bigtext body {
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
   display: inline-block;
 }
+
+/* HIDDEN FORM SECTION */
+.hidden-form-section {
+  display: none;
+  background: linear-gradient(135deg, #FCE4F2 0%, #F3E8FF 50%, #EDE0FF 100%);
+  padding: 32px 20px;
+  margin: 16px 8px;
+  border: 3px solid #8B30CC;
+  border-radius: 20px;
+  animation: slideDown 0.5s ease-out;
+}
+.hidden-form-section.show {
+  display: block;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hidden-form-title {
+  font-size: clamp(24px, 5.5vw, 30px);
+  font-weight: 900;
+  color: #8B30CC;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.hidden-form-subtitle {
+  font-size: clamp(16px, 4vw, 18px);
+  font-weight: 700;
+  color: #1E1030;
+  text-align: center;
+  margin-bottom: 20px;
+}
 </style>
 </head>
 <body>
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW62A</div>
+<div class="version-indicator">INDEXW66A</div>
 
 
 <div class="hero">
@@ -2988,32 +3020,24 @@ function showResult() {
     }
   } catch (e) {}
 
-// MODAL FUNCTIONS
-function openFormModal() {
-  var modal = document.getElementById('formModal');
-  if (modal) {
-    modal.classList.add('show');
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+// FORM REVEAL FUNCTION
+function showHiddenForm() {
+  var formSection = document.getElementById('hiddenFormSection');
+  if (formSection) {
+    formSection.classList.add('show');
+    setTimeout(function() {
+      formSection.scrollIntoView({behavior: 'smooth', block: 'center'});
+    }, 100);
   }
+}
+
+function openFormModal() {
+  showHiddenForm();
 }
 
 function closeFormModal() {
-  var modal = document.getElementById('formModal');
-  if (modal) {
-    modal.classList.remove('show');
-    modal.style.display = 'none';
-    document.body.style.overflow = '';
-  }
+  // Not needed
 }
-
-// Close modal when clicking outside
-window.addEventListener('click', function(event) {
-  var modal = document.getElementById('formModal');
-  if (event.target === modal) {
-    closeFormModal();
-  }
-});
 
 </script>
 
