@@ -2166,12 +2166,12 @@ html.a11y-bigtext body {
 .urgency-cta-btn{width:100%;max-width:500px;padding:18px 32px;background:linear-gradient(135deg,#9D4EDD 0%,#7209B7 100%);color:white;border:none;border-radius:50px;font-family:"Heebo",sans-serif;font-size:clamp(18px,4.5vw,22px);font-weight:800;cursor:pointer;box-shadow:0 8px 32px rgba(157,78,221,0.6),0 0 20px rgba(157,78,221,0.4);transition:all 0.3s ease;animation:pulse-glow 2s ease-in-out infinite}
 .urgency-cta-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(157,78,221,0.7),0 0 30px rgba(157,78,221,0.5)}
 @keyframes pulse-glow{0%,100%{transform:scale(1);box-shadow:0 8px 32px rgba(157,78,221,0.6),0 0 20px rgba(157,78,221,0.4)}50%{transform:scale(1.05);box-shadow:0 12px 40px rgba(157,78,221,0.8),0 0 30px rgba(157,78,221,0.6)}}
-.p2-final-cta{text-align:center;padding:12px 20px;margin-top:8px}
+.p2-final-cta{text-align:center;padding:12px 20px;margin-top:8px;margin-bottom:0}
 .p2-final-question{font-size:clamp(26px,6vw,34px);font-weight:900;color:#E0197D;margin-bottom:6px;line-height:1.3}
 @keyframes gradient-shift{0%,100%{background-position:0% center}50%{background-position:100% center}}
 .arrow-down{font-size:48px;color:#E0197D;margin:6px 0;animation:bounce-arrow 1.5s ease-in-out infinite}
 @keyframes bounce-arrow{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
-.final-form-section{background:transparent;padding:48px 20px;margin:0;width:100%;border-top:none;border-bottom:none}
+.final-form-section{background:transparent;padding:20px 20px 48px 20px;margin:0;width:100%;border-top:none;border-bottom:none}
 @media (min-width:768px){.final-form-section{padding:60px 40px}}
 .form-container{max-width:700px;margin:0 auto;background:linear-gradient(135deg,#9D4EDD 0%,#7209B7 100%);padding:32px 24px;border-radius:20px;box-shadow:0 12px 40px rgba(224,25,125,0.2);border:2px solid rgba(255,255,255,0.3)}
 @media (min-width:768px){.form-container{padding:40px 48px}}
@@ -2270,19 +2270,26 @@ html.a11y-bigtext body {
 .media-section{background:linear-gradient(135deg,#FDF8FC 0%,#F3E8FF 100%);padding:32px 20px;text-align:center}.media-title{font-size:clamp(28px,6vw,36px);font-weight:900;color:#1E1030;margin-bottom:16px}.nav-btn{background:#9B70C0;color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:22px;cursor:pointer;box-shadow:0 4px 12px rgba(155,112,192,0.3);transition:all 0.3s}.nav-btn:hover{background:#7209B7;transform:scale(1.1)}
 .hidden-form-section .embedded-form{background:linear-gradient(135deg,#9D4EDD 0%,#7209B7 100%);padding:20px;border-radius:12px;border:2px solid rgba(255,255,255,0.3)}
 
+
+
+/* Reduce space between p2-final-cta and form */
+.p2-final-cta + .final-form-section {
+  margin-top: -30px !important;
+}
+
 /* Fix header image clipping on desktop */
 @media (min-width: 768px) {
   .hero {
-    max-height: none !important;
     height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
     overflow: visible !important;
   }
-  .hero img,
-  .hero picture,
-  .hero source {
-    object-fit: contain !important;
-    max-height: none !important;
+  .hero img {
+    width: 100% !important;
     height: auto !important;
+    object-fit: cover !important;
+    display: block !important;
   }
 }
 </style>
@@ -2290,7 +2297,7 @@ html.a11y-bigtext body {
 <body>
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW110A</div>
+<div class="version-indicator">INDEXW112A</div>
 
 
 <div class="hero">
@@ -2450,7 +2457,7 @@ html.a11y-bigtext body {
 
   <div class="p2-hero">
     <h2 class="p2-title" id="p2-title">כי פיתחתי שיטה שעזרה עד היום לאלפי נשים בדיוק בשלב שלך להתמודד עם:</h2>
-    <p class="p2-subtitle" id="p2-subtitle"><strong>ועוד תופעות של השינוי ההורמונלי.</strong></p><div class="p2-final-cta"><p class="p2-final-question">כמה את חשובה לך?</p><p class="p2-final-question">הקדישי לעצמך שעה אחת מזמנך ותעשי צעד ראשון ומשמעותי</p></div>
+    <p class="p2-subtitle" id="p2-subtitle"><strong>ועוד תופעות של השינוי ההורמונלי.</strong></p><div class="p2-final-cta"><p class="p2-final-question">כמה את חשובה לך?</p><p class="p2-final-question">הקדישי לעצמך שעה אחת מזמנך ותעשי צעד ראשון ומשמעותי!</p></div>
 
 <div class="final-form-section">
   <div class="form-container">
@@ -2550,7 +2557,7 @@ html.a11y-bigtext body {
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW110A</span>
+    <span class="footer-version">INDEXW112A</span>
   </nav>
 </footer>
 
