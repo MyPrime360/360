@@ -2308,7 +2308,7 @@ html.a11y-bigtext body {
 <body>
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW117A</div>
+<div class="version-indicator">INDEXW119A</div>
 
 
 <div class="hero">
@@ -2571,7 +2571,7 @@ html.a11y-bigtext body {
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW117A</span>
+    <span class="footer-version">INDEXW119A</span>
   </nav>
 </footer>
 
@@ -2725,15 +2725,16 @@ function showResult() {
 
   // Result title + text by score
   var title, text;
-  if (score <= 25) {
+  if (score <= 10) {
     title = 'כמה סימנים ראשוניים';
     text = 'הגוף שלך מתחיל לשלוח סימנים. זה השלב הכי טוב להבין מה קורה ולהתחיל לעבוד עם הגוף - לפני שהתסמינים מחמירים.';
-  } else if (score <= 55) {
+  } else if (score <= 20) {
     title = 'השינוי ההורמונלי כבר משפיע עלייך';
     text = 'את מרגישה את זה, ויש סיבה. הגוף שלך עובר שינוי משמעותי ויש לו מה לומר לך. החדשות הטובות - יש מה לעשות עם זה, ועכשיו זה הזמן.';
   } else {
     title = 'עומס תסמינים משמעותי';
-    text = 'את מתמודדת עם הרבה מאוד. את לא צריכה להמשיך ככה ולחשוב שזה "רק גיל". יש גישה שמסבירה את כל מה שאת מרגישה ונותנת לך כלים אמיתיים להרגיש שוב בשליטה.';
+    text = 'את מתמודדת עם הרבה מאוד ואת לא חייבת להרגיש ככה !
+יש שיטה שמבינה את כל מה שהגוף שלך עובר עכשיו ומייצרת עבורך כלים להחזיר את השליטה על הגוף שלך.';
   }
 
   document.getElementById('res-title').textContent = title;
