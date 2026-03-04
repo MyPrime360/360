@@ -41,6 +41,7 @@ body {
 .logo-bar img { height: 70px; width: auto; display: block; margin: 0 auto; }
 
 /* ===== HERO ===== */
+
 .hero {
   padding: 0;
   margin: 0;
@@ -54,6 +55,7 @@ body {
   height: auto;
   display: block;
 }
+
 @media (min-width: 768px) {
   .hero picture img {
     min-height: 400px;
@@ -2277,23 +2279,28 @@ html.a11y-bigtext body {
   margin-top: -30px !important;
 }
 
-/* COMPLETE FIX for header image on desktop */
+/* Fix header image clipping on desktop */
 @media (min-width: 768px) {
-  .hero,
-  .hero picture,
-  .hero img {
+  .hero {
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
     overflow: visible !important;
-    display: block !important;
-  }
-  .hero {
-    aspect-ratio: unset !important;
   }
   .hero img {
     width: 100% !important;
-    object-fit: contain !important;
+    height: auto !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+}
+
+/* Hero CSS from sales page */
+@media (min-width: 768px) {
+  .hero picture img {
+    min-height: 400px;
+    object-fit: cover;
+    object-position: center top;
   }
 }
 </style>
@@ -2301,13 +2308,15 @@ html.a11y-bigtext body {
 <body>
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW113A</div>
+<div class="version-indicator">INDEXW116A</div>
 
 
 <div class="hero">
-  <div style="width: 100%; max-height: 280px; overflow: hidden; background: linear-gradient(135deg, #FCE4F2 0%, #EDE0FF 100%); display: block;">
-    <img src="../site_images/web_header_mob.jpg" alt="MyPrime Webinar" style="width: 100%; height: auto; display: block; object-fit: cover;">
-  </div></div><div class="webinar-urgency-box">
+  <picture>
+    <source media="(min-width: 768px)" srcset="../site_images/HEADERPIC-W.jpg">
+    <img src="../site_images/web_header_mob.jpg" alt="MyPrime - ענת הראל" style="width:100%;display:block;">
+  </picture>
+</div>/div><div class="webinar-urgency-box">
   <div class="urgency-timer">⏰ מקומות אחרונים במפגש החינמי הקרוב!</div>
   
   <h3 class="urgency-title">
@@ -2561,7 +2570,7 @@ html.a11y-bigtext body {
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW113A</span>
+    <span class="footer-version">INDEXW116A</span>
   </nav>
 </footer>
 
