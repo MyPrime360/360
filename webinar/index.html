@@ -286,8 +286,8 @@ body {
 .btn-main {
   display: inline-block;
   background: linear-gradient(135deg, #E0197D 0%, #B8106A 100%);
-  color: #1E1030; font-family: "Heebo", sans-serif;
-  font-size: clamp(22px, 5vw, 28px); font-weight: 800;
+  color: white !important; font-family: "Heebo", sans-serif;
+  font-size: clamp(22px, 5vw, 28px); font-weight: 900 !important;
   padding: 18px 40px; border-radius: 50px; border: none; cursor: pointer;
   transition: transform 0.2s;
   box-shadow: 0 8px 28px rgba(224,25,125,0.38);
@@ -2734,7 +2734,7 @@ function closeCookiePopup() {
 
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW233A-GITHUB</div>
+<div class="version-indicator">INDEXW234A-GITHUB</div>
 
 
 <div class="hero">
@@ -3797,7 +3797,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW233A-GITHUB</span>
+    <span class="footer-version">INDEXW234A-GITHUB</span>
   </nav>
 </footer>
 
@@ -3833,7 +3833,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
       </div>
     </div>
     
-    <button class="exit-popup-btn" onclick="stayAndRegister()">גלי עכשיו מה הגוף שלך<br>מנסה להגיד לך ←</button>
+    <button class="exit-popup-btn" onclick="stayAndRegister()">כן! אני רוצה להירשם למפגש 🎁</button>
     
     <div class="exit-popup-close-text" onclick="closeExitPopup()">לא תודה, אני מעדיפה לעזוב</div>
   </div>
@@ -3865,16 +3865,33 @@ function closeExitPopup() {
 
 function stayAndRegister() {
   closeExitPopup();
-  // Scroll to first form or registration button
-  var firstForm = document.querySelector('.form-container, .embedded-form, .btn-main');
-  if (firstForm) {
-    firstForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    // Small delay then focus/click
+  
+  // First, click the "גלי עכשיו" button to show results
+  var revealBtn = document.querySelector('.btn-main');
+  if (revealBtn && revealBtn.textContent.includes('גלי עכשיו')) {
+    revealBtn.click();
+    
+    // Wait for results to show, then scroll to form
     setTimeout(function() {
-      if (firstForm.tagName === 'BUTTON' || firstForm.classList.contains('btn-main')) {
-        firstForm.click();
+      var form = document.querySelector('.embedded-form, .form-container, input[type="text"], input[type="email"]');
+      if (form) {
+        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Focus first input if it's a form field
+        if (form.tagName === 'INPUT') {
+          setTimeout(function() { form.focus(); }, 500);
+        }
       }
-    }, 500);
+    }, 1000);
+  } else {
+    // If already on results, just scroll to form
+    var form = document.querySelector('.embedded-form, .form-container, input[type="text"], input[type="email"]');
+    if (form) {
+      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (form.tagName === 'INPUT') {
+        setTimeout(function() { form.focus(); }, 500);
+      }
+    }
   }
 }
 
