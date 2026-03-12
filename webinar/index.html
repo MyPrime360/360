@@ -2353,6 +2353,102 @@ html.a11y-bigtext body {
   transform: translateY(-2px);
   transition: all 0.3s ease;
 }
+
+/* Cookie Banner */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(30, 16, 48, 0.95);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 20px;
+  z-index: 10000;
+  display: none;
+  border-top: 2px solid rgba(233, 30, 99, 0.5);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+
+.cookie-banner.show {
+  display: block;
+  animation: slideUp 0.4s ease-out;
+}
+
+.cookie-banner.hide {
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(100%); opacity: 0; }
+}
+
+.cookie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cookie-text {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.6;
+  min-width: 250px;
+}
+
+.cookie-text a {
+  color: #e91e63;
+  text-decoration: underline;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.cookie-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.cookie-accept {
+  background: #e91e63;
+  color: white;
+}
+
+.cookie-accept:hover {
+  background: #c2185b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.4);
+}
+
+@media (max-width: 768px) {
+  .cookie-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .cookie-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 </style>
 <!-- Accessibility Code for "myprime.co.il" -->
 <script>
@@ -3463,5 +3559,43 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 </footer>
 
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"afcd9eb843fe458ca7f4d86d6e7adbe6","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
+<!-- Cookie Banner -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      אתר זה משתמש בקוקיז על מנת לשפר את חווית הגלישה שלך. המשך גלישה באתר מהווה הסכמה לשימוש בקוכיז בהתאם ל<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a7%d7%95%d7%a7%d7%99%d7%96/" target="_blank">מדיניות הקוקיז</a> ו<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות הפרטיות</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">הבנתי</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Cookie Banner Logic
+function acceptCookies() {
+  var banner = document.getElementById('cookieBanner');
+  banner.classList.add('hide');
+  
+  // Save to localStorage that user accepted
+  localStorage.setItem('cookiesAccepted', 'true');
+  
+  // Remove banner after animation
+  setTimeout(function() {
+    banner.style.display = 'none';
+  }, 400);
+}
+
+// Show banner if not accepted yet
+window.addEventListener('load', function() {
+  var accepted = localStorage.getItem('cookiesAccepted');
+  if (!accepted) {
+    var banner = document.getElementById('cookieBanner');
+    banner.classList.add('show');
+  }
+});
+</script>
+
 </body>
 </html>
