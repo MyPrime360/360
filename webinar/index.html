@@ -2476,15 +2476,60 @@ html.a11y-bigtext body {
 
 /* DESKTOP RESPONSIVE - AGGRESSIVE OVERRIDE */
 
-@media (min-width: 1024px) {
-  /* Force body to scale */
+/* Small laptops (13-15 inch) - 1024px to 1440px */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  body {
+    zoom: 1.2 !important;
+    -moz-transform: scale(1.2) !important;
+    -moz-transform-origin: 0 0 !important;
+  }
+  
+  .cookie-popup {
+    zoom: 0.7 !important;
+    -moz-transform: scale(0.7) !important;
+  }
+  
+  .cookie-popup-text {
+    font-size: 11px !important;
+  }
+  
+  .cookie-popup-btn {
+    font-size: 11px !important;
+    padding: 5px 12px !important;
+  }
+}
+
+/* Medium screens (15-17 inch) - 1441px to 1920px */
+@media (min-width: 1441px) and (max-width: 1920px) {
+  body {
+    zoom: 1.35 !important;
+    -moz-transform: scale(1.35) !important;
+    -moz-transform-origin: 0 0 !important;
+  }
+  
+  .cookie-popup {
+    zoom: 0.65 !important;
+    -moz-transform: scale(0.65) !important;
+  }
+  
+  .cookie-popup-text {
+    font-size: 11px !important;
+  }
+  
+  .cookie-popup-btn {
+    font-size: 11px !important;
+    padding: 5px 12px !important;
+  }
+}
+
+/* Large screens (20+ inch) - above 1920px */
+@media (min-width: 1921px) {
   body {
     zoom: 1.5 !important;
     -moz-transform: scale(1.5) !important;
     -moz-transform-origin: 0 0 !important;
   }
   
-  /* Cookie banner - KEEP SMALL */
   .cookie-popup {
     zoom: 0.6 !important;
     -moz-transform: scale(0.6) !important;
@@ -2771,7 +2816,7 @@ function closeCookiePopup() {
 
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW241A-GITHUB</div>
+<div class="version-indicator">INDEXW242A-GITHUB</div>
 
 
 <div class="hero">
@@ -3834,7 +3879,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW241A-GITHUB</span>
+    <span class="footer-version">INDEXW242A-GITHUB</span>
   </nav>
 </footer>
 
