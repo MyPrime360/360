@@ -2676,6 +2676,19 @@ html.a11y-bigtext body {
   }
 }
 
+
+
+.exit-popup-form {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.exit-popup-form iframe {
+  width: 100% !important;
+  min-height: 400px;
+  border: none;
+}
+
 </style>
 <!-- Accessibility Code for "myprime.co.il" -->
 <script>
@@ -2734,7 +2747,7 @@ function closeCookiePopup() {
 
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW235A-GITHUB</div>
+<div class="version-indicator">INDEXW236A-GITHUB</div>
 
 
 <div class="hero">
@@ -3797,7 +3810,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW235A-GITHUB</span>
+    <span class="footer-version">INDEXW236A-GITHUB</span>
   </nav>
 </footer>
 
@@ -3815,16 +3828,11 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
   <div class="exit-popup">
     <button class="exit-popup-close" onclick="closeExitPopup()">×</button>
     
-    <div class="exit-popup-emoji">😮</div>
+    <div class="exit-popup-emoji">🎁</div>
     
     <div class="exit-popup-title">רגע! לפני שאת הולכת...</div>
     
-    <div class="exit-popup-subtitle">את עומדת לפספס משהו מיוחד! 💝</div>
-    
-    <div class="exit-popup-text">
-      המפגש החינמי שלנו יעזור לך להתמודד עם הסימנים שחווית<br>
-      ולגלות פתרונות טבעיים שעובדים באמת
-    </div>
+    <div class="exit-popup-subtitle">שמרי מקום במפגש החינמי שלנו!</div>
     
     <div class="exit-popup-gift">
       <div class="exit-popup-gift-title">📢 מתנה שימושית למשתתפות המפגש</div>
@@ -3833,9 +3841,16 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
       </div>
     </div>
     
-    <button class="exit-popup-btn" onclick="stayAndRegister()">כן! אני רוצה להירשם למפגש 🎁</button>
+    <div class="exit-popup-text" style="margin-top: 15px; margin-bottom: 20px;">
+      מלאי את הפרטים ונשמור לך מקום במפגש שיעזור לך להתמודד עם הסימנים שחווית
+    </div>
     
-    <div class="exit-popup-close-text" onclick="closeExitPopup()">לא תודה, אני מעדיפה לעזוב</div>
+    <!-- Embedded RavPage Form -->
+    <div class="exit-popup-form">
+      <script type="text/javascript" src="//form2.ravpage.co.il/1b0e492b9a5b531f34cc8cd4d88208b369A6AD36" charset="UTF-8"></script>
+    </div>
+    
+    <div class="exit-popup-close-text" onclick="closeExitPopup()" style="margin-top: 15px;">לא תודה, אני מעדיפה לעזוב</div>
   </div>
 </div>
 
@@ -3863,46 +3878,7 @@ function closeExitPopup() {
   document.body.style.overflow = '';
 }
 
-function stayAndRegister() {
-  closeExitPopup();
-  
-  // First, click the "גלי עכשיו" button to show results
-  var revealBtn = document.querySelector('.btn-main');
-  if (revealBtn && revealBtn.textContent.includes('גלי עכשיו')) {
-    revealBtn.click();
-    
-    // Wait for results to show, then scroll to the RAVPAGE FORM
-    setTimeout(function() {
-      // Look for the actual form section (after results)
-      var formSection = document.querySelector('.hidden-form-section, .final-form-section');
-      
-      if (formSection) {
-        // Scroll to the form section
-        formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        
-        // Try to focus the first input in the iframe after scrolling
-        setTimeout(function() {
-          var firstInput = formSection.querySelector('input[type="text"], input[type="email"], input[type="tel"]');
-          if (firstInput) {
-            firstInput.focus();
-          }
-        }, 1000);
-      } else {
-        // Fallback: just scroll to embedded-form
-        var form = document.querySelector('.embedded-form');
-        if (form) {
-          form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    }, 1200);
-  } else {
-    // If already on results, scroll to form section
-    var formSection = document.querySelector('.hidden-form-section, .final-form-section, .embedded-form');
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-}
+// Function no longer needed - form is in popup
 
 // Close popup when clicking outside
 document.getElementById('exitPopup').addEventListener('click', function(e) {
