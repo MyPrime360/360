@@ -2734,7 +2734,7 @@ function closeCookiePopup() {
 
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW234A-GITHUB</div>
+<div class="version-indicator">INDEXW235A-GITHUB</div>
 
 
 <div class="hero">
@@ -3797,7 +3797,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW234A-GITHUB</span>
+    <span class="footer-version">INDEXW235A-GITHUB</span>
   </nav>
 </footer>
 
@@ -3871,26 +3871,35 @@ function stayAndRegister() {
   if (revealBtn && revealBtn.textContent.includes('גלי עכשיו')) {
     revealBtn.click();
     
-    // Wait for results to show, then scroll to form
+    // Wait for results to show, then scroll to the RAVPAGE FORM
     setTimeout(function() {
-      var form = document.querySelector('.embedded-form, .form-container, input[type="text"], input[type="email"]');
-      if (form) {
-        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Look for the actual form section (after results)
+      var formSection = document.querySelector('.hidden-form-section, .final-form-section');
+      
+      if (formSection) {
+        // Scroll to the form section
+        formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         
-        // Focus first input if it's a form field
-        if (form.tagName === 'INPUT') {
-          setTimeout(function() { form.focus(); }, 500);
+        // Try to focus the first input in the iframe after scrolling
+        setTimeout(function() {
+          var firstInput = formSection.querySelector('input[type="text"], input[type="email"], input[type="tel"]');
+          if (firstInput) {
+            firstInput.focus();
+          }
+        }, 1000);
+      } else {
+        // Fallback: just scroll to embedded-form
+        var form = document.querySelector('.embedded-form');
+        if (form) {
+          form.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }
-    }, 1000);
+    }, 1200);
   } else {
-    // If already on results, just scroll to form
-    var form = document.querySelector('.embedded-form, .form-container, input[type="text"], input[type="email"]');
-    if (form) {
-      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      if (form.tagName === 'INPUT') {
-        setTimeout(function() { form.focus(); }, 500);
-      }
+    // If already on results, scroll to form section
+    var formSection = document.querySelector('.hidden-form-section, .final-form-section, .embedded-form');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 }
