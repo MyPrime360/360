@@ -2368,11 +2368,12 @@ html.a11y-bigtext body {
 
 /* Cookie Banner - Subtle Bottom */
 .cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(30, 16, 48, 0.95);
+  position: fixed !important;
+  bottom: 0 !important;
+  top: auto !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(233, 30, 99, 0.3);
   box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
@@ -2394,7 +2395,7 @@ html.a11y-bigtext body {
   flex: 1;
   font-size: 13px;
   line-height: 1.5;
-  color: white;
+  color: #333;
 }
 
 .cookie-text a {
@@ -2503,7 +2504,7 @@ function closeCookieBanner() {
 
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW221A-GITHUB</div>
+<div class="version-indicator">INDEXW222A-GITHUB</div>
 
 
 <div class="hero">
@@ -3566,7 +3567,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW221A-GITHUB</span>
+    <span class="footer-version">INDEXW222A-GITHUB</span>
   </nav>
 </footer>
 
