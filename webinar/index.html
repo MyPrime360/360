@@ -2363,88 +2363,82 @@ html.a11y-bigtext body {
 }
 
 
-/* Cookie Popup */
-.cookie-overlay {
+
+
+
+/* Cookie Banner - Subtle Bottom */
+.cookie-banner {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 999998;
-  display: block;
-}
-
-.cookie-popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  padding: 30px;
-  max-width: 500px;
-  width: 90%;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(233, 30, 99, 0.3);
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
   z-index: 999999;
   display: block;
-  animation: popIn 0.3s ease-out;
+  padding: 12px 20px;
 }
 
-@keyframes popIn {
-  from { 
-    transform: translate(-50%, -50%) scale(0.8);
-    opacity: 0;
-  }
-  to { 
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
+.cookie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
-.cookie-popup-title {
-  font-size: 24px;
-  font-weight: 900;
-  color: #1E1030;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.cookie-popup-text {
-  font-size: 15px;
-  line-height: 1.7;
+.cookie-text {
+  flex: 1;
+  font-size: 13px;
+  line-height: 1.5;
   color: #333;
-  margin-bottom: 24px;
-  text-align: center;
 }
 
-.cookie-popup-text a {
+.cookie-text a {
   color: #e91e63;
   text-decoration: underline;
   font-weight: 600;
 }
 
-.cookie-popup-btn {
-  width: 100%;
-  padding: 16px;
+.cookie-btn {
+  padding: 8px 20px;
   background: #e91e63;
   color: white;
   border: none;
-  border-radius: 12px;
-  font-size: 18px;
-  font-weight: 800;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-.cookie-popup-btn:hover {
+.cookie-btn:hover {
   background: #c2185b;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.4);
+  transform: translateY(-1px);
 }
 
 .cookie-hidden {
   display: none !important;
+}
+
+@media (max-width: 768px) {
+  .cookie-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .cookie-text {
+    font-size: 12px;
+  }
+  
+  .cookie-btn {
+    width: 100%;
+  }
 }
 
 </style>
@@ -2487,26 +2481,29 @@ window.interdeal = {
 
 </head>
 <body>
-<!-- Cookie Popup -->
-<div class="cookie-overlay" id="cookieOverlay"></div>
-<div class="cookie-popup" id="cookiePopup">
-  <div class="cookie-popup-title">🍪 שימוש בעוגיות</div>
-  <div class="cookie-popup-text">
-    אתר זה משתמש בקוקיז וטכנולוגיות דומות למטרות ניטור, תחזוקה, שיפור האתר וכן התאמת התכנים והפרסום, בהתאם ל<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות הפרטיות</a>.
+
+<!-- Cookie Banner -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      אתר זה משתמש בקוקיז וטכנולוגיות דומות למטרות ניטור, תחזוקה, שיפור האתר וכן התאמת התכנים והפרסום, בהתאם ל<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות הפרטיות</a>.
+    </div>
+    <button class="cookie-btn" onclick="closeCookieBanner()">הבנתי</button>
   </div>
-  <button class="cookie-popup-btn" onclick="closeCookiePopup()">הבנתי</button>
 </div>
 
 <script>
-function closeCookiePopup() {
-  document.getElementById('cookiePopup').classList.add('cookie-hidden');
-  document.getElementById('cookieOverlay').classList.add('cookie-hidden');
+function closeCookieBanner() {
+  document.getElementById('cookieBanner').classList.add('cookie-hidden');
 }
 </script>
 
 
+
+
+
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW218A-GITHUB</div>
+<div class="version-indicator">INDEXW220A-GITHUB</div>
 
 
 <div class="hero">
@@ -3569,7 +3566,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW218A-GITHUB</span>
+    <span class="footer-version">INDEXW220A-GITHUB</span>
   </nav>
 </footer>
 
