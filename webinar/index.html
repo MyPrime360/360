@@ -2365,15 +2365,12 @@ html.a11y-bigtext body {
   color: white;
   padding: 20px;
   z-index: 999999;
-  display: none;
+  display: block;
   border-top: 2px solid rgba(233, 30, 99, 0.5);
   box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
 }
 
-.cookie-banner.show {
-  display: block;
-  animation: slideUp 0.4s ease-out;
-}
+
 
 .cookie-banner.hide {
   animation: slideDown 0.4s ease-out;
@@ -2491,7 +2488,7 @@ window.interdeal = {
 <body>
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW215A-GITHUB</div>
+<div class="version-indicator">INDEXW216A-GITHUB</div>
 
 
 <div class="hero">
@@ -3554,7 +3551,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW215A-GITHUB</span>
+    <span class="footer-version">INDEXW216A-GITHUB</span>
   </nav>
 </footer>
 
@@ -3586,23 +3583,7 @@ function acceptCookies() {
   }, 400);
 }
 
-// Show banner on EVERY page load
-(function() {
-  // Show banner as soon as DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      var banner = document.getElementById('cookieBanner');
-      if (banner) {
-        banner.classList.add('show');
-      }
-    });
-  } else {
-    var banner = document.getElementById('cookieBanner');
-    if (banner) {
-      banner.classList.add('show');
-    }
-  }
-})();
+// Banner shows by default (display: block in CSS)
 </script>
 
 </body>
