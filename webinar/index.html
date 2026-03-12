@@ -2491,7 +2491,7 @@ window.interdeal = {
 <body>
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW214A-GITHUB</div>
+<div class="version-indicator">INDEXW215A-GITHUB</div>
 
 
 <div class="hero">
@@ -3554,7 +3554,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW214A-GITHUB</span>
+    <span class="footer-version">INDEXW215A-GITHUB</span>
   </nav>
 </footer>
 
@@ -3564,7 +3564,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 <div class="cookie-banner" id="cookieBanner">
   <div class="cookie-content">
     <div class="cookie-text">
-      אתר זה משתמש בקוקיז על מנת לשפר את חווית הגלישה שלך. המשך גלישה באתר מהווה הסכמה לשימוש בקוכיז בהתאם ל<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a7%d7%95%d7%a7%d7%99%d7%96/" target="_blank">מדיניות הקוקיז</a> ו<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות הפרטיות</a>.
+      אתר זה משתמש בקוקיז וטכנולוגיות דומות למטרות ניטור, תחזוקה, שיפור האתר וכן התאמת התכנים והפרסום, בהתאם ל<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות הפרטיות</a>.
     </div>
     <div class="cookie-buttons">
       <button class="cookie-btn cookie-accept" onclick="acceptCookies()">הבנתי</button>
@@ -3578,8 +3578,7 @@ function acceptCookies() {
   var banner = document.getElementById('cookieBanner');
   banner.classList.add('hide');
   
-  // Save to localStorage that user accepted
-  localStorage.setItem('cookiesAccepted', 'true');
+  // Just hide - no localStorage (will show again on next visit)
   
   // Remove banner after animation
   setTimeout(function() {
@@ -3587,23 +3586,20 @@ function acceptCookies() {
   }, 400);
 }
 
-// Show banner immediately if not accepted yet
+// Show banner on EVERY page load
 (function() {
-  var accepted = localStorage.getItem('cookiesAccepted');
-  if (!accepted) {
-    // Show banner as soon as DOM is ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() {
-        var banner = document.getElementById('cookieBanner');
-        if (banner) {
-          banner.classList.add('show');
-        }
-      });
-    } else {
+  // Show banner as soon as DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
       var banner = document.getElementById('cookieBanner');
       if (banner) {
         banner.classList.add('show');
       }
+    });
+  } else {
+    var banner = document.getElementById('cookieBanner');
+    if (banner) {
+      banner.classList.add('show');
     }
   }
 })();
