@@ -2628,11 +2628,13 @@ html.a11y-bigtext body {
   width: 100%;
   padding: 18px;
   background: #e91e63;
-  color: white;
+  color: #ffffff !important;
   border: none;
   border-radius: 12px;
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 900;
+  font-family: "Heebo", sans-serif;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 15px;
@@ -2732,7 +2734,7 @@ function closeCookiePopup() {
 
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW231A-GITHUB</div>
+<div class="version-indicator">INDEXW233A-GITHUB</div>
 
 
 <div class="hero">
@@ -3795,7 +3797,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW231A-GITHUB</span>
+    <span class="footer-version">INDEXW233A-GITHUB</span>
   </nav>
 </footer>
 
@@ -3831,7 +3833,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
       </div>
     </div>
     
-    <button class="exit-popup-btn" onclick="stayAndRegister()">כן! אני רוצה להירשם למפגש 🎁</button>
+    <button class="exit-popup-btn" onclick="stayAndRegister()">גלי עכשיו מה הגוף שלך<br>מנסה להגיד לך ←</button>
     
     <div class="exit-popup-close-text" onclick="closeExitPopup()">לא תודה, אני מעדיפה לעזוב</div>
   </div>
@@ -3882,6 +3884,27 @@ document.getElementById('exitPopup').addEventListener('click', function(e) {
     closeExitPopup();
   }
 });
+
+
+
+
+
+
+// Mobile: Back Button Detection
+if (window.innerWidth < 768) {
+  window.addEventListener('popstate', function(event) {
+    if (!exitPopupShown && !exitPopupClosed) {
+      event.preventDefault();
+      showExitPopup();
+      // Push state again so they can close the popup and still go back
+      history.pushState(null, null, window.location.href);
+    }
+  });
+  
+  // Push initial state
+  history.pushState(null, null, window.location.href);
+}
+
 </script>
 
 </body>
