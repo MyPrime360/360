@@ -2364,7 +2364,7 @@ html.a11y-bigtext body {
   backdrop-filter: blur(10px);
   color: white;
   padding: 20px;
-  z-index: 10000;
+  z-index: 999999;
   display: none;
   border-top: 2px solid rgba(233, 30, 99, 0.5);
   box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
@@ -2491,7 +2491,7 @@ window.interdeal = {
 <body>
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW210A</div>
+<div class="version-indicator">INDEXW214A-GITHUB</div>
 
 
 <div class="hero">
@@ -3554,7 +3554,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW210A</span>
+    <span class="footer-version">INDEXW214A-GITHUB</span>
   </nav>
 </footer>
 
@@ -3587,14 +3587,26 @@ function acceptCookies() {
   }, 400);
 }
 
-// Show banner if not accepted yet
-window.addEventListener('load', function() {
+// Show banner immediately if not accepted yet
+(function() {
   var accepted = localStorage.getItem('cookiesAccepted');
   if (!accepted) {
-    var banner = document.getElementById('cookieBanner');
-    banner.classList.add('show');
+    // Show banner as soon as DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        var banner = document.getElementById('cookieBanner');
+        if (banner) {
+          banner.classList.add('show');
+        }
+      });
+    } else {
+      var banner = document.getElementById('cookieBanner');
+      if (banner) {
+        banner.classList.add('show');
+      }
+    }
   }
-});
+})();
 </script>
 
 </body>
