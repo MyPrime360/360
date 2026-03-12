@@ -672,6 +672,7 @@ body {
   justify-content: center;
   gap: 6px;
   font-size: 11px;
+  font-weight: 700;
   color: #9B70C0;
   margin-top: 6px;
   animation: fadeHint 3s ease 1s forwards;
@@ -775,6 +776,7 @@ body {
 .why-swipe-hint {
   text-align: center;
   font-size: 11px;
+  font-weight: 700;
   color: #9B70C0;
   margin-top: 4px;
   direction: rtl;
@@ -786,6 +788,7 @@ body {
 .why-progress {
   text-align: center;
   font-size: 11px;
+  font-weight: 700;
   color: #9B70C0;
   margin-top: 6px;
   font-weight: 600;
@@ -900,6 +903,7 @@ body {
 .media-swipe-hint {
   text-align: center;
   font-size: 11px;
+  font-weight: 700;
   color: #9B70C0;
   margin-top: 4px;
   direction: rtl;
@@ -1167,6 +1171,7 @@ body {
 }
 .bonuses-swipe-hint {
   font-size: 11px;
+  font-weight: 700;
   color: rgba(255,255,255,0.8);
   margin-bottom: 24px;
   direction: rtl;
@@ -2139,6 +2144,7 @@ html.a11y-bigtext body {
   border-radius: 6px;
   font-size: 11px;
   font-weight: 700;
+  font-weight: 700;
   z-index: 999999;
   font-family: "Heebo", sans-serif;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
@@ -2268,6 +2274,7 @@ html.a11y-bigtext body {
   opacity: 0.85;
   font-weight: 600;
   font-size: 11px;
+  font-weight: 700;
 }
 .media-section{background:linear-gradient(135deg,#FDF8FC 0%,#F3E8FF 100%);padding:32px 20px;text-align:center}.media-title{font-size:clamp(28px,6vw,36px);font-weight:900;color:#1E1030;margin-bottom:16px}.nav-btn{background:#9B70C0;color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:22px;cursor:pointer;box-shadow:0 4px 12px rgba(155,112,192,0.3);transition:all 0.3s}.nav-btn:hover{background:#7209B7;transform:scale(1.1)}
 .hidden-form-section .embedded-form{background:linear-gradient(135deg,#9D4EDD 0%,#7209B7 100%);padding:20px;border-radius:12px;border:2px solid rgba(255,255,255,0.3)}
@@ -2460,6 +2467,7 @@ html.a11y-bigtext body {
   
   .cookie-popup-text {
     font-size: 11px;
+  font-weight: 700;
     text-align: center;
   }
 }
@@ -2585,6 +2593,7 @@ html.a11y-bigtext body {
   font-size: 20px;
   font-weight: 900;
   color: #1E1030;
+  margin-top: 0;
   margin-bottom: 6px;
   line-height: 1.3;
 }
@@ -2598,6 +2607,7 @@ html.a11y-bigtext body {
 
 .exit-popup-text {
   font-size: 11px;
+  font-weight: 700;
   line-height: 1.4;
   color: #333;
   margin-bottom: 10px;
@@ -2607,7 +2617,7 @@ html.a11y-bigtext body {
   background: linear-gradient(135deg, #E0C8F0 0%, #D9B8E8 100%);
   padding: 10px;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   border: 2px solid #e91e63;
 }
 
@@ -2620,6 +2630,7 @@ html.a11y-bigtext body {
 
 .exit-popup-gift-text {
   font-size: 12px;
+  font-weight: 700;
   line-height: 1.3;
   color: #1E1030;
 }
@@ -2648,6 +2659,7 @@ html.a11y-bigtext body {
 
 .exit-popup-close-text {
   font-size: 11px;
+  font-weight: 700;
   color: #999;
   cursor: pointer;
   text-decoration: underline;
@@ -2679,7 +2691,7 @@ html.a11y-bigtext body {
 
 
 .exit-popup-form {
-  margin: 8px 0;
+  margin: 5px 0 8px 0;
   width: 100%;
   background: linear-gradient(135deg, #E0C8F0 0%, #D9B8E8 100%);
   padding: 10px;
@@ -2754,7 +2766,7 @@ function closeCookiePopup() {
 
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW238A-GITHUB</div>
+<div class="version-indicator">INDEXW239A-GITHUB</div>
 
 
 <div class="hero">
@@ -3817,7 +3829,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW238A-GITHUB</span>
+    <span class="footer-version">INDEXW239A-GITHUB</span>
   </nav>
 </footer>
 
@@ -3835,20 +3847,18 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
   <div class="exit-popup">
     <button class="exit-popup-close" onclick="closeExitPopup()">×</button>
     
-    <div class="exit-popup-emoji">🎁</div>
-    
     <div class="exit-popup-title">רגע! לפני שאת הולכת...</div>
     
     <div class="exit-popup-subtitle">שמרי מקום במפגש החינמי שלנו!</div>
     
     <div class="exit-popup-gift">
-      <div class="exit-popup-gift-title">📢 מתנה שימושית למשתתפות המפגש</div>
+      <div class="exit-popup-gift-title">🎁 מתנה שימושית למשתתפות המפגש</div>
       <div class="exit-popup-gift-text">
         מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה יכול להיות רלוונטי בגיל שלנו
       </div>
     </div>
     
-    <div class="exit-popup-text" style="margin-top: 15px; margin-bottom: 20px;">
+    <div class="exit-popup-text" style="margin-top: 5px; margin-bottom: 5px;">
       מלאי את הפרטים ונשמור לך מקום במפגש שיעזור לך להתמודד עם הסימנים שחווית
     </div>
     
