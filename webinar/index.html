@@ -2564,14 +2564,17 @@ html.a11y-bigtext body {
 
 .exit-popup-close {
   position: absolute;
-  top: 15px;
-  left: 15px;
-  background: #f0f0f0;
-  border: none;
-  width: 35px;
-  height: 35px;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #e91e63;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  font-size: 20px;
+  font-size: 22px;
+  color: #e91e63;
+  font-weight: 900;
+  line-height: 1;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -2580,8 +2583,10 @@ html.a11y-bigtext body {
 }
 
 .exit-popup-close:hover {
-  background: #e0e0e0;
-  transform: rotate(90deg);
+  background: #e91e63;
+  color: white;
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.4);
 }
 
 .exit-popup-emoji {
@@ -2766,7 +2771,7 @@ function closeCookiePopup() {
 
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW239A-GITHUB</div>
+<div class="version-indicator">INDEXW241A-GITHUB</div>
 
 
 <div class="hero">
@@ -3829,7 +3834,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW239A-GITHUB</span>
+    <span class="footer-version">INDEXW241A-GITHUB</span>
   </nav>
 </footer>
 
@@ -3866,8 +3871,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
     <div class="exit-popup-form">
       <script type="text/javascript" src="//form2.ravpage.co.il/1b0e492b9a5b531f34cc8cd4d88208b369A6AD36" charset="UTF-8"></script>
     </div>
-    
-    <div class="exit-popup-close-text" onclick="closeExitPopup()" style="margin-top: 15px;">לא תודה, אני מעדיפה לעזוב</div>
+
   </div>
 </div>
 
