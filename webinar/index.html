@@ -2354,96 +2354,97 @@ html.a11y-bigtext body {
   transition: all 0.3s ease;
 }
 
-/* Cookie Banner */
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(30, 16, 48, 0.95);
-  backdrop-filter: blur(10px);
-  color: white;
-  padding: 20px;
-  z-index: 999999;
-  display: block;
-  border-top: 2px solid rgba(233, 30, 99, 0.5);
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
-}
 
-
-
-.cookie-banner.hide {
-  animation: slideDown 0.4s ease-out;
-}
-
-@keyframes slideUp {
-  from { transform: translateY(100%); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes slideDown {
-  from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(100%); opacity: 0; }
-}
-
-.cookie-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.cookie-text {
-  flex: 1;
-  font-size: 14px;
-  line-height: 1.6;
-  min-width: 250px;
-}
-
-.cookie-text a {
-  color: #e91e63;
-  text-decoration: underline;
-}
-
-.cookie-buttons {
-  display: flex;
-  gap: 12px;
-}
-
-.cookie-btn {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-weight: 700;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s ease;
-}
-
-.cookie-accept {
-  background: #e91e63;
-  color: white;
-}
-
-.cookie-accept:hover {
-  background: #c2185b;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.4);
-}
-
-@media (max-width: 768px) {
-  .cookie-content {
-    flex-direction: column;
-    text-align: center;
-  }
   
   .cookie-buttons {
     width: 100%;
     justify-content: center;
   }
+}
+
+
+/* Cookie Popup */
+.cookie-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999998;
+  display: block;
+}
+
+.cookie-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  z-index: 999999;
+  display: block;
+  animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+  from { 
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  to { 
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.cookie-popup-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: #1E1030;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.cookie-popup-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.cookie-popup-text a {
+  color: #e91e63;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.cookie-popup-btn {
+  width: 100%;
+  padding: 16px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cookie-popup-btn:hover {
+  background: #c2185b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.4);
+}
+
+.cookie-hidden {
+  display: none !important;
 }
 
 </style>
@@ -2488,7 +2489,7 @@ window.interdeal = {
 <body>
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW216A-GITHUB</div>
+<div class="version-indicator">INDEXW217A-GITHUB</div>
 
 
 <div class="hero">
@@ -3551,39 +3552,30 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW216A-GITHUB</span>
+    <span class="footer-version">INDEXW217A-GITHUB</span>
   </nav>
 </footer>
 
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"afcd9eb843fe458ca7f4d86d6e7adbe6","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 
-<!-- Cookie Banner -->
-<div class="cookie-banner" id="cookieBanner">
-  <div class="cookie-content">
-    <div class="cookie-text">
-      אתר זה משתמש בקוקיז וטכנולוגיות דומות למטרות ניטור, תחזוקה, שיפור האתר וכן התאמת התכנים והפרסום, בהתאם ל<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות הפרטיות</a>.
-    </div>
-    <div class="cookie-buttons">
-      <button class="cookie-btn cookie-accept" onclick="acceptCookies()">הבנתי</button>
-    </div>
+
+
+
+<!-- Cookie Popup -->
+<div class="cookie-overlay" id="cookieOverlay"></div>
+<div class="cookie-popup" id="cookiePopup">
+  <div class="cookie-popup-title">🍪 שימוש בעוגיות</div>
+  <div class="cookie-popup-text">
+    אתר זה משתמש בקוקיז וטכנולוגיות דומות למטרות ניטור, תחזוקה, שיפור האתר וכן התאמת התכנים והפרסום, בהתאם ל<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות הפרטיות</a>.
   </div>
+  <button class="cookie-popup-btn" onclick="closeCookiePopup()">הבנתי</button>
 </div>
 
 <script>
-// Cookie Banner Logic
-function acceptCookies() {
-  var banner = document.getElementById('cookieBanner');
-  banner.classList.add('hide');
-  
-  // Just hide - no localStorage (will show again on next visit)
-  
-  // Remove banner after animation
-  setTimeout(function() {
-    banner.style.display = 'none';
-  }, 400);
+function closeCookiePopup() {
+  document.getElementById('cookiePopup').classList.add('cookie-hidden');
+  document.getElementById('cookieOverlay').classList.add('cookie-hidden');
 }
-
-// Banner shows by default (display: block in CSS)
 </script>
 
 </body>
