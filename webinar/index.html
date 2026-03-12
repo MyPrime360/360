@@ -2487,9 +2487,26 @@ window.interdeal = {
 
 </head>
 <body>
+<!-- Cookie Popup -->
+<div class="cookie-overlay" id="cookieOverlay"></div>
+<div class="cookie-popup" id="cookiePopup">
+  <div class="cookie-popup-title">🍪 שימוש בעוגיות</div>
+  <div class="cookie-popup-text">
+    אתר זה משתמש בקוקיז וטכנולוגיות דומות למטרות ניטור, תחזוקה, שיפור האתר וכן התאמת התכנים והפרסום, בהתאם ל<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות הפרטיות</a>.
+  </div>
+  <button class="cookie-popup-btn" onclick="closeCookiePopup()">הבנתי</button>
+</div>
+
+<script>
+function closeCookiePopup() {
+  document.getElementById('cookiePopup').classList.add('cookie-hidden');
+  document.getElementById('cookieOverlay').classList.add('cookie-hidden');
+}
+</script>
+
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW217A-GITHUB</div>
+<div class="version-indicator">INDEXW218A-GITHUB</div>
 
 
 <div class="hero">
@@ -3552,7 +3569,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW217A-GITHUB</span>
+    <span class="footer-version">INDEXW218A-GITHUB</span>
   </nav>
 </footer>
 
@@ -3561,22 +3578,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
 
 
-<!-- Cookie Popup -->
-<div class="cookie-overlay" id="cookieOverlay"></div>
-<div class="cookie-popup" id="cookiePopup">
-  <div class="cookie-popup-title">🍪 שימוש בעוגיות</div>
-  <div class="cookie-popup-text">
-    אתר זה משתמש בקוקיז וטכנולוגיות דומות למטרות ניטור, תחזוקה, שיפור האתר וכן התאמת התכנים והפרסום, בהתאם ל<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות הפרטיות</a>.
-  </div>
-  <button class="cookie-popup-btn" onclick="closeCookiePopup()">הבנתי</button>
-</div>
 
-<script>
-function closeCookiePopup() {
-  document.getElementById('cookiePopup').classList.add('cookie-hidden');
-  document.getElementById('cookieOverlay').classList.add('cookie-hidden');
-}
-</script>
 
 </body>
 </html>
