@@ -2799,7 +2799,7 @@ window.interdeal = {
 
 </head>
 <body>
-<div class="version-indicator">INDEXW248A-GITHUB-GITHUB</div>
+<div class="version-indicator">INDEXW249A-GITHUB-GITHUB</div>
 
 <!-- Cookie Popup -->
 <div class="cookie-overlay" id="cookieOverlay"></div>
@@ -3789,6 +3789,10 @@ function showHiddenForm() {
 }
 
 function openFormModal() {
+  // User clicked register button - save flag
+  localStorage.setItem('user_clicked_register', 'true');
+  console.log('User clicked register button - will not show exit popup');
+  
   showHiddenForm();
 }
 
@@ -3882,7 +3886,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW248A-GITHUB</span>
+    <span class="footer-version">INDEXW249A-GITHUB</span>
   </nav>
 </footer>
 
@@ -3984,6 +3988,12 @@ document.addEventListener('mouseleave', function(e) {
 });
 
 function showExitPopup() {
+  // Check if user clicked register button
+  if (localStorage.getItem('user_clicked_register') === 'true') {
+    console.log('User clicked register button - not showing exit popup');
+    return;
+  }
+  
   // Check if form was already submitted (from localStorage or postMessage)
   if (formSubmittedFlag || localStorage.getItem('ravpage_form_submitted') === 'true') {
     console.log('Form already submitted - not showing exit popup');
