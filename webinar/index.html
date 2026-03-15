@@ -2134,21 +2134,7 @@ html.a11y-bigtext body {
 
 
 /* VERSION INDICATOR */
-.version-indicator {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  background: rgba(224, 25, 125, 0.9);
-  color: #1E1030;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  font-weight: 700;
-  z-index: 999999;
-  font-family: "Heebo", sans-serif;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
+
 
 @media (max-width: 768px) {
   .version-indicator {
@@ -2758,6 +2744,21 @@ html.a11y-bigtext body {
   transform-origin: top;
 }
 
+
+
+.version-indicator {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background: #e91e63;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 800;
+  z-index: 99999;
+}
+
 </style>
 <!-- Accessibility Code for "myprime.co.il" -->
 <script>
@@ -2798,6 +2799,8 @@ window.interdeal = {
 
 </head>
 <body>
+<div class="version-indicator">INDEXW248A-GITHUB-GITHUB</div>
+
 <!-- Cookie Popup -->
 <div class="cookie-overlay" id="cookieOverlay"></div>
 <div class="cookie-popup" id="cookiePopup">
@@ -2816,7 +2819,7 @@ function closeCookiePopup() {
 
 
 <!-- VERSION INDICATOR -->
-<div class="version-indicator">INDEXW246A-GITHUB</div>
+
 
 
 <div class="hero">
@@ -3879,7 +3882,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW246A-GITHUB</span>
+    <span class="footer-version">INDEXW248A-GITHUB</span>
   </nav>
 </footer>
 
@@ -3925,6 +3928,54 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 var exitPopupShown = false;
 var exitPopupClosed = false;
 
+
+// Try to detect RavPage form submission
+var formSubmittedFlag = false;
+
+// Method 1: Listen for postMessage from RavPage iframe
+window.addEventListener('message', function(event) {
+  // Check if message is from RavPage
+  if (event.origin.includes('ravpage.co.il')) {
+    console.log('RavPage message:', event.data);
+    
+    // Check for common submission signals
+    if (event.data && (
+        event.data.type === 'formSubmitted' ||
+        event.data.type === 'formSuccess' ||
+        event.data.success === true ||
+        event.data.submitted === true ||
+        JSON.stringify(event.data).includes('success') ||
+        JSON.stringify(event.data).includes('submit')
+    )) {
+      formSubmittedFlag = true;
+      localStorage.setItem('ravpage_form_submitted', 'true');
+      console.log('Form submitted detected via postMessage!');
+    }
+  }
+});
+
+// Method 2: Monitor iframe loads (might indicate form submission)
+var iframeLoadCount = 0;
+setTimeout(function() {
+  var iframes = document.querySelectorAll('iframe[src*="ravpage"]');
+  iframes.forEach(function(iframe) {
+    iframe.addEventListener('load', function() {
+      iframeLoadCount++;
+      // If iframe loads more than once, might be form submission
+      if (iframeLoadCount > 1) {
+        console.log('RavPage iframe reloaded - possible form submission');
+        // Don't set flag yet - need to be sure
+      }
+    });
+  });
+}, 2000);
+
+// Method 3: Check localStorage on page load
+if (localStorage.getItem('ravpage_form_submitted') === 'true') {
+  formSubmittedFlag = true;
+}
+
+
 document.addEventListener('mouseleave', function(e) {
   // Only trigger when mouse leaves at the top (trying to close tab/window)
   if (e.clientY < 10 && !exitPopupShown && !exitPopupClosed) {
@@ -3933,6 +3984,29 @@ document.addEventListener('mouseleave', function(e) {
 });
 
 function showExitPopup() {
+  // Check if form was already submitted (from localStorage or postMessage)
+  if (formSubmittedFlag || localStorage.getItem('ravpage_form_submitted') === 'true') {
+    console.log('Form already submitted - not showing exit popup');
+    return;
+  }
+  
+  // Check if user has filled any form field
+  var formFilled = false;
+  
+  // Check all text inputs, emails, tels
+  var inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="name"]');
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].value && inputs[i].value.trim().length > 0) {
+      formFilled = true;
+      break;
+    }
+  }
+  
+  // If form was filled, don't show popup
+  if (formFilled) {
+    return;
+  }
+  
   exitPopupShown = true;
   document.getElementById('exitPopup').classList.add('show');
   document.body.style.overflow = 'hidden';
