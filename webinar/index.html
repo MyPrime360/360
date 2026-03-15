@@ -2799,7 +2799,7 @@ window.interdeal = {
 
 </head>
 <body>
-<div class="version-indicator">INDEXW249A-GITHUB-GITHUB</div>
+<div class="version-indicator">INDEXW250A-GITHUB-GITHUB</div>
 
 <!-- Cookie Popup -->
 <div class="cookie-overlay" id="cookieOverlay"></div>
@@ -3886,7 +3886,7 @@ function scrollMedia(dir){var el=document.getElementById("media-scroll");if(!el)
 
   
     <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW249A-GITHUB</span>
+    <span class="footer-version">INDEXW250A-GITHUB</span>
   </nav>
 </footer>
 
@@ -4055,6 +4055,17 @@ if (window.innerWidth < 768) {
   
   // Push initial state
   history.pushState(null, null, window.location.href);
+}
+
+
+
+// DEBUG: Function to reset all flags (call from console)
+function resetExitPopup() {
+  localStorage.removeItem('user_clicked_register');
+  localStorage.removeItem('ravpage_form_submitted');
+  exitPopupShown = false;
+  exitPopupClosed = false;
+  console.log('Exit popup flags reset! Refresh page to test.');
 }
 
 </script>
