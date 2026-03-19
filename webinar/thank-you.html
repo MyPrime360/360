@@ -452,7 +452,7 @@ body {
 
 <!-- LOGO BAR -->
 <div class="logo-bar">
-  <img src="../site_images/image1.jpg" alt="MyPrime ענת הראל" />
+  <img src="../site_images/image1.jpeg" alt="MyPrime ענת הראל" />
 </div>
 
 <!-- HERO THANK YOU -->
@@ -500,14 +500,14 @@ body {
         </div>
       </div>
 
-      <a id="add-to-cal-link" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%D7%9E%D7%A4%D7%92%D7%A9+%D7%96%D7%95%D7%9D+%D7%A2%D7%9D+%D7%A2%D7%A0%D7%AA+%D7%94%D7%A8%D7%90%D7%9C+%E2%80%93+MyPrime&dates=20260324T170000Z%2F20260324T180000Z&details=%D7%9E%D7%A4%D7%92%D7%A9+%D7%97%D7%99%D7%A0%D7%9E%D7%99+%E2%80%93+%D7%A7%D7%99%D7%A9%D7%95%D7%A8+%D7%99%D7%99%D7%A9%D7%9C%D7%97+%D7%91%D7%9E%D7%99%D7%99%D7%9C&ctz=Asia%2FJerusalem" class="add-to-cal-btn" target="_blank" rel="noopener">
+      <a id="add-to-cal-link" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%D7%9E%D7%A4%D7%92%D7%A9+%D7%96%D7%95%D7%9D+%D7%A2%D7%9D+%D7%A2%D7%A0%D7%AA+%D7%94%D7%A8%D7%90%D7%9C+%E2%80%93+MyPrime&dates=20260324T180000Z%2F20260324T190000Z&details=%D7%9E%D7%A4%D7%92%D7%A9+%D7%97%D7%99%D7%A0%D7%9E%D7%99+%E2%80%93+%D7%A7%D7%99%D7%A9%D7%95%D7%A8+%D7%99%D7%99%D7%A9%D7%9C%D7%97+%D7%91%D7%9E%D7%99%D7%99%D7%9C" class="add-to-cal-btn" target="_blank" rel="noopener">
         <svg class="cal-icon" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="2" y="4" width="22" height="20" rx="4" stroke="#E0197D" stroke-width="2"/>
           <path d="M2 9h22" stroke="#E0197D" stroke-width="2"/>
           <path d="M8 2v4M18 2v4" stroke="#E0197D" stroke-width="2" stroke-linecap="round"/>
           <path d="M13 14v4M11 16h4" stroke="#E0197D" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        📅 שמרי את המועד ביומן שלך!
+        לחצי כאן ושמרי את המועד ביומן שלך!
       </a>
 
     </div>
@@ -583,88 +583,42 @@ body {
   </nav>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // ============================================================
-// שליפת מועד הזום מיומן Google
+// שליפת מועד הזום מ-ManyChat דרך Apps Script Proxy
 // ============================================================
-// הגדרות – עדכנו לפי הצורך:
-var CALENDAR_ID = 'YOUR_GOOGLE_CALENDAR_ID@group.calendar.google.com'; // ← החליפו ב-ID של היומן
-var API_KEY     = 'YOUR_GOOGLE_CALENDAR_API_KEY';                       // ← הכניסו מפתח API של Google
-var EVENT_KEYWORD = 'זום';  // מילת מפתח לחיפוש האירוע ביומן (שנו אם צריך)
+var PROXY_URL        = 'https://script.google.com/macros/s/AKfycbxoONA1LOg1keUGWjDC3vlSeLN25xEfnA9JfarOvYkxrb8i0Z5vgcvzfZtYdu2mwvuPAA/exec';
+var DEFAULT_DATE     = 'שלישי / 24.3.26';
+var DEFAULT_TIME     = '20:00';
+var DEFAULT_CAL_LINK = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=%D7%9E%D7%A4%D7%92%D7%A9%20%D7%96%D7%95%D7%9D%20%D7%A2%D7%9D%20%D7%A2%D7%A0%D7%AA%20%D7%94%D7%A8%D7%90%D7%9C%20%E2%80%93%20MyPrime&dates=20260324T180000Z%2F20260324T190000Z&details=%D7%9E%D7%A4%D7%92%D7%A9%20%D7%97%D7%99%D7%A0%D7%9E%D7%99%20%E2%80%93%20%D7%A7%D7%99%D7%A9%D7%95%D7%A8%20%D7%99%D7%99%D7%A9%D7%9C%D7%97%20%D7%91%D7%9E%D7%99%D7%99%D7%9C';
 
-// תאריך ברירת מחדל (שמציגים כשאין חיבור ליומן או שהAPI לא הוגדר)
-var DEFAULT_DATE_DISPLAY = 'שלישי / 24.3.26';
-var DEFAULT_TIME_DISPLAY = '20:00';
-var DEFAULT_EVENT_DATE   = '20260324';   // פורמט YYYYMMDD לקישור יומן Google
-var DEFAULT_EVENT_TIME   = '200000';     // פורמט HHmmss לקישור יומן Google
-var DEFAULT_EVENT_TITLE  = 'מפגש זום עם ענת הראל – MyPrime';
-var DEFAULT_EVENT_DETAILS = 'מפגש חינמי – קישור יישלח במייל';
-
-function hebrewDay(d) {
-  var days = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
-  return days[d.getDay()];
-}
-function pad(n) { return String(n).padStart(2,'0'); }
-
-function buildGCalLink(dateStr, timeStr, title, details) {
-  // dateStr = YYYYMMDD, timeStr = HHmmss (Israel time)
-  // Google Calendar expects UTC – Israel is UTC+3 in summer (March), so subtract 3 hours
-  var startHour = parseInt(timeStr.substring(0,2)) - 3;
-  var startUTC = dateStr + 'T' + pad(startHour) + timeStr.substring(2);
-  var endHour = startHour + 1;
-  var endUTC = dateStr + 'T' + pad(endHour) + timeStr.substring(2);
-  return 'https://calendar.google.com/calendar/render?action=TEMPLATE'
-    + '&text=' + encodeURIComponent(title)
-    + '&dates=' + startUTC + 'Z' + '%2F' + endUTC + 'Z'
-    + '&details=' + encodeURIComponent(details);
-}
-
-function setEventDisplay(dateDisplay, timeDisplay, gcalLink) {
+function setEventDisplay(dateDisplay, timeDisplay, calLink) {
   var dateEl = document.getElementById('date-display');
   var timeEl = document.getElementById('event-time');
-  var calLink = document.getElementById('add-to-cal-link');
+  var calEl  = document.getElementById('add-to-cal-link');
   if (dateEl) dateEl.textContent = dateDisplay;
   if (timeEl) timeEl.textContent = timeDisplay;
-  if (calLink) calLink.href = gcalLink;
+  if (calEl)  calEl.href = calLink;
 }
 
-function loadDefaultEvent() {
-  var link = buildGCalLink(DEFAULT_EVENT_DATE, DEFAULT_EVENT_TIME, DEFAULT_EVENT_TITLE, DEFAULT_EVENT_DETAILS);
-  setEventDisplay(DEFAULT_DATE_DISPLAY, DEFAULT_TIME_DISPLAY, link);
+function loadDefault() {
+  setEventDisplay(DEFAULT_DATE, DEFAULT_TIME, DEFAULT_CAL_LINK);
 }
 
-function fetchZoomEventFromCalendar() {
-  // אם לא הוגדרו API_KEY ו-CALENDAR_ID אמיתיים – משתמשים בברירת מחדל
-  if (!API_KEY || API_KEY === 'YOUR_GOOGLE_CALENDAR_API_KEY' ||
-      !CALENDAR_ID || CALENDAR_ID.indexOf('YOUR_') === 0) {
-    loadDefaultEvent();
-    return;
-  }
+// קריאה ל-Apps Script Proxy
+fetch(PROXY_URL)
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data.success) {
+      setEventDisplay(data.dateDisplay, data.timeDisplay, data.calLink);
+    } else {
+      loadDefault();
+    }
+  })
+  .catch(function() {
+    loadDefault();
+  });
+</script>
 
-  var now = new Date().toISOString();
-  var url = 'https://www.googleapis.com/calendar/v3/calendars/'
-    + encodeURIComponent(CALENDAR_ID)
-    + '/events?key=' + API_KEY
-    + '&timeMin=' + encodeURIComponent(now)
-    + '&maxResults=10'
-    + '&singleEvents=true'
-    + '&orderBy=startTime'
-    + '&q=' + encodeURIComponent(EVENT_KEYWORD);
-
-  // Show loading state
-  var dateEl = document.getElementById('date-display');
-  if (dateEl) { dateEl.className = 'loading'; dateEl.textContent = 'טוען...'; }
-
-  fetch(url)
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      if (!data.items || data.items.length === 0) { loadDefaultEvent(); return; }
-      var ev = data.items[0];
-      var startRaw = ev.start.dateTime || ev.start.date;
-      var d = new Date(startRaw);
-      var dayName = hebrewDay(d);
-      var dateDisplay = dayName + ' / ' + pad(d.getDate()) + '.' + pad(d.getMonth()+1) + '.' + String(d.getFullYear()).slice(-2);
-      var timeDisplay = pad(d.getHours()) + ':' + pad(d.getMinutes());
-      var dateStr = String(d.getFullYear()) + pad(d.getMonth()+1) + pad(d.getDate());
-      var timeStr = pad(d.getHours()) + pad(d.getMinutes()) + '00';
-      var link = buildGCalLink(dateStr, timeStr, ev.summar
+</body>
+</html>
