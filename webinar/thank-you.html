@@ -276,6 +276,37 @@ body {
   font-weight: 800;
 }
 
+/* ===== CAL BUTTONS ===== */
+.cal-buttons-wrap {
+  margin-top: 16px;
+  position: relative;
+}
+.cal-dropdown {
+  display: none;
+  flex-direction: column;
+  background: white;
+  border: 2px solid #EDE3F4;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 8px;
+  box-shadow: 0 8px 24px rgba(139,48,204,0.12);
+  animation: fadeUp 0.2s ease both;
+}
+.cal-dropdown.open { display: flex; }
+.cal-option {
+  padding: 14px 20px;
+  font-family: "Heebo", sans-serif;
+  font-size: clamp(15px, 3.5vw, 17px);
+  font-weight: 700;
+  color: #1E1030;
+  text-decoration: none;
+  text-align: right;
+  border-bottom: 1px solid #EDE3F4;
+  transition: background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.cal-option:last-child { border-bottom: none; }
+.cal-option:hover { background: #FDF0F8; }
 /* ===== ADD TO CAL BUTTON ===== */
 .add-to-cal-btn {
   display: flex;
@@ -298,13 +329,21 @@ body {
   animation: calPulse 2.5s ease-in-out infinite;
   -webkit-tap-highlight-color: transparent;
 }
-@keyframes calPulse {
+.add-to-cal-btn--outline {
+  background: white;
+  color: #E0197D;
+  box-shadow: none;
+  border: 2px solid #E0197D;
+  animation: none;
+}
+.add-to-cal-btn--outline:hover {
+  background: #FDF0F8;
+}
   0%,100% { transform: scale(1); box-shadow: 0 8px 28px rgba(224,25,125,0.4); }
   50%      { transform: scale(1.04); box-shadow: 0 10px 36px rgba(224,25,125,0.6); }
 }
 .add-to-cal-btn .cal-icon {
-  width: 24px; height: 24px;
-  filter: brightness(0) invert(1);
+  width: 24px; height: 24px; flex-shrink: 0;
 }
 
 /* ===== WHAT'S NEXT SECTION ===== */
@@ -475,10 +514,13 @@ body {
   </div>
   <p class="sub">ההרשמה שלך התקבלה בהצלחה!<br>בקרוב תקבלי ווטסאפ ומייל עם כל הפרטים.</p>
 
-  <div style="background: linear-gradient(135deg, #FCE4F2 0%, #EDE0FF 100%); border: 2px solid #E0197D; border-radius: 16px; padding: 16px 18px; text-align: center; margin-top: 20px;">
-    <div style="font-size: clamp(17px, 4vw, 21px); font-weight: 800; color: #1E1030; line-height: 1.6;">
-      📢 מתנה שימושית למשתתפות המפגש 📢<br>
-      <span style="font-size: clamp(15px, 3.5vw, 18px); font-weight: 600; color: #4A3060;">מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה יכול להיות רלוונטי בגיל שלנו</span>
+  <div style="background: linear-gradient(135deg, #FCE4F2 0%, #EDE0FF 100%); border: 2px solid #E0197D; border-radius: 16px; overflow: hidden; text-align: center; margin-top: 20px;">
+    <img src="../site_images/TZUNA.jpg" alt="מדריך תוספי תזונה" style="width:100%;max-height:220px;object-fit:cover;object-position:center top;display:block;">
+    <div style="padding: 14px 18px;">
+      <div style="font-size: clamp(17px, 4vw, 21px); font-weight: 800; color: #1E1030; line-height: 1.6;">
+        📢 מתנה שימושית למשתתפות המפגש 📢<br>
+        <span style="font-size: clamp(15px, 3.5vw, 18px); font-weight: 600; color: #4A3060;">מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה יכול להיות רלוונטי בגיל שלנו</span>
+      </div>
     </div>
   </div>
 </div>
@@ -515,15 +557,22 @@ body {
         </div>
       </div>
 
-      <a id="add-to-cal-link" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%D7%9E%D7%A4%D7%92%D7%A9+%D7%96%D7%95%D7%9D+%D7%A2%D7%9D+%D7%A2%D7%A0%D7%AA+%D7%94%D7%A8%D7%90%D7%9C+%E2%80%93+MyPrime&dates=20260324T180000Z%2F20260324T190000Z&details=%D7%9E%D7%A4%D7%92%D7%A9+%D7%97%D7%99%D7%A0%D7%9E%D7%99+%E2%80%93+%D7%A7%D7%99%D7%A9%D7%95%D7%A8+%D7%99%D7%99%D7%A9%D7%9C%D7%97+%D7%91%D7%9E%D7%99%D7%99%D7%9C" class="add-to-cal-btn" target="_blank" rel="noopener">
-        <svg class="cal-icon" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="4" width="22" height="20" rx="4" stroke="#E0197D" stroke-width="2"/>
-          <path d="M2 9h22" stroke="#E0197D" stroke-width="2"/>
-          <path d="M8 2v4M18 2v4" stroke="#E0197D" stroke-width="2" stroke-linecap="round"/>
-          <path d="M13 14v4M11 16h4" stroke="#E0197D" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        לחצי כאן ושמרי את המועד ביומן שלך!
-      </a>
+      <div class="cal-buttons-wrap">
+        <button class="add-to-cal-btn" onclick="toggleCalMenu(event)">
+          <svg width="24" height="24" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px;flex-shrink:0;">
+            <rect x="2" y="4" width="22" height="20" rx="4" stroke="white" stroke-width="2"/>
+            <path d="M2 9h22" stroke="white" stroke-width="2"/>
+            <path d="M8 2v4M18 2v4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M13 14v4M11 16h4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          לחצי כאן ושמרי את המועד ביומן שלך!
+        </button>
+        <div class="cal-dropdown" id="cal-dropdown">
+          <a id="cal-google" href="#" class="cal-option" target="_blank" rel="noopener">📅 יומן Google</a>
+          <a id="cal-outlook" href="#" class="cal-option" target="_blank" rel="noopener">📅 יומן Outlook</a>
+          <a id="cal-ics" href="#" class="cal-option" download="webinar-anat.ics">📱 יומן iPhone / Apple</a>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -591,22 +640,69 @@ body {
 // ============================================================
 // שליפת מועד הזום מ-ManyChat דרך Apps Script Proxy
 // ============================================================
-var PROXY_URL        = 'https://script.google.com/macros/s/AKfycbxoONA1LOg1keUGWjDC3vlSeLN25xEfnA9JfarOvYkxrb8i0Z5vgcvzfZtYdu2mwvuPAA/exec';
-var DEFAULT_DATE     = 'טוען...';
-var DEFAULT_TIME     = 'טוען...';
-var DEFAULT_CAL_LINK = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=%D7%9E%D7%A4%D7%92%D7%A9%20%D7%96%D7%95%D7%9D%20%D7%A2%D7%9D%20%D7%A2%D7%A0%D7%AA%20%D7%94%D7%A8%D7%90%D7%9C%20%E2%80%93%20MyPrime&dates=20260324T180000Z%2F20260324T190000Z&details=%D7%9E%D7%A4%D7%92%D7%A9%20%D7%97%D7%99%D7%A0%D7%9E%D7%99%20%E2%80%93%20%D7%A7%D7%99%D7%A9%D7%95%D7%A8%20%D7%99%D7%99%D7%A9%D7%9C%D7%97%20%D7%91%D7%9E%D7%99%D7%99%D7%9C';
+function toggleCalMenu(e) {
+  e.stopPropagation();
+  var menu = document.getElementById('cal-dropdown');
+  menu.classList.toggle('open');
+}
+document.addEventListener('click', function() {
+  var menu = document.getElementById('cal-dropdown');
+  if (menu) menu.classList.remove('open');
+});
+
+var PROXY_URL    = 'https://script.google.com/macros/s/AKfycbxoONA1LOg1keUGWjDC3vlSeLN25xEfnA9JfarOvYkxrb8i0Z5vgcvzfZtYdu2mwvuPAA/exec';
+var DEFAULT_DATE = 'טוען...';
+var DEFAULT_TIME = 'טוען...';
+
+function buildOutlookLink(calLink) {
+  // ממיר לינק Google ל-Outlook Online
+  return calLink.replace('https://calendar.google.com/calendar/render?action=TEMPLATE', 'https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent')
+    .replace('&text=', '&subject=')
+    .replace('&details=', '&body=');
+}
+
+function buildICSContent(dateDisplay, timeDisplay, calLink) {
+  // שולף תאריכים מהלינק
+  var datesMatch = calLink.match(/dates=([^&]+)/);
+  if (!datesMatch) return null;
+  var dates = decodeURIComponent(datesMatch[1]).split('/');
+  var dtstart = dates[0];
+  var dtend   = dates[1];
+  var title   = decodeURIComponent((calLink.match(/text=([^&]+)/) || [])[1] || 'מפגש זום');
+  var details = decodeURIComponent((calLink.match(/details=([^&]+)/) || [])[1] || '');
+  return 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART:' + dtstart + '\r\nDTEND:' + dtend + '\r\nSUMMARY:' + title + '\r\nDESCRIPTION:' + details + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+}
 
 function setEventDisplay(dateDisplay, timeDisplay, calLink) {
-  var dateEl = document.getElementById('date-display');
-  var timeEl = document.getElementById('event-time');
-  var calEl  = document.getElementById('add-to-cal-link');
+  var dateEl   = document.getElementById('date-display');
+  var timeEl   = document.getElementById('event-time');
+  var googleEl = document.getElementById('cal-google');
+  var outlookEl= document.getElementById('cal-outlook');
+  var icsEl    = document.getElementById('cal-ics');
+
   if (dateEl) dateEl.textContent = dateDisplay;
   if (timeEl) timeEl.textContent = timeDisplay;
-  if (calEl)  calEl.href = calLink;
+
+  if (googleEl && calLink && calLink !== '#') {
+    googleEl.href = calLink;
+  }
+  if (outlookEl && calLink && calLink !== '#') {
+    outlookEl.href = buildOutlookLink(calLink);
+  }
+  if (icsEl && calLink && calLink !== '#') {
+    var ics = buildICSContent(dateDisplay, timeDisplay, calLink);
+    if (ics) {
+      var blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+      icsEl.href = URL.createObjectURL(blob);
+    }
+  }
 }
 
 function loadDefault() {
-  setEventDisplay(DEFAULT_DATE, DEFAULT_TIME, DEFAULT_CAL_LINK);
+  var dateEl = document.getElementById('date-display');
+  var timeEl = document.getElementById('event-time');
+  if (dateEl) dateEl.textContent = DEFAULT_DATE;
+  if (timeEl) timeEl.textContent = DEFAULT_TIME;
 }
 
 // קריאה ל-Apps Script Proxy
