@@ -10,22 +10,23 @@
   gtag('config', 'G-X6TKRSCNKS');
 </script>
 
-<!-- ============================================================
-     הדביקו כאן את קוד הפיקסל שלכם (Meta Pixel / כל פיקסל אחר)
-     ============================================================ -->
-<!-- META PIXEL CODE - START -->
-<!-- <script>
+<!-- Meta Pixel Code -->
+<script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-...
-}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'YOUR_PIXEL_ID');
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1274182393235524');
+fbq('track', 'PageView');
 fbq('track', 'Lead');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=Lead&noscript=1"/></noscript> -->
-<!-- META PIXEL CODE - END -->
+src="https://www.facebook.com/tr?id=1274182393235524&ev=Lead&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
 
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -74,7 +75,7 @@ body {
 /* ===== HERO THANK YOU ===== */
 .hero-ty {
   background: linear-gradient(160deg, #F3E8FF 0%, #FDF0F8 60%, #EDE3F4 100%);
-  padding: 40px 20px 36px;
+  padding: 20px 20px 24px;
   position: relative;
   overflow: hidden;
 }
@@ -95,28 +96,37 @@ body {
   pointer-events: none;
 }
 
+.hero-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 10px;
+  animation: fadeUp 0.7s 0.1s ease both;
+}
 .checkmark-anim {
-  width: 80px; height: 80px;
-  background: linear-gradient(135deg, #E0197D 0%, #B8106A 100%);
+  width: 56px; height: 56px;
+  background: white;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 20px;
-  box-shadow: 0 8px 28px rgba(224,25,125,0.35);
-  animation: popIn 0.6s cubic-bezier(.2,1.3,.5,1) both;
+  flex-shrink: 0;
+  font-size: 34px;
+  box-shadow: 0 6px 20px rgba(224,25,125,0.25);
+  animation: popIn 0.6s cubic-bezier(.2,1.4,.5,1) both;
 }
 @keyframes popIn {
-  0% { transform: scale(0); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  0%   { transform: scale(0) rotate(-180deg); opacity: 0; }
+  70%  { transform: scale(1.15) rotate(8deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
 }
-.checkmark-anim svg { width: 42px; height: 42px; }
 
 .hero-ty h1 {
-  font-size: clamp(30px, 7vw, 46px);
+  font-size: clamp(24px, 6vw, 38px);
   font-weight: 900;
   color: #1E1030;
   line-height: 1.2;
-  margin-bottom: 10px;
-  animation: fadeUp 0.7s 0.2s ease both;
+  margin-bottom: 0;
+  text-align: right;
 }
 .hero-ty h1 em { font-style: normal; color: #E0197D; }
 .hero-ty .sub {
@@ -273,26 +283,28 @@ body {
   justify-content: center;
   gap: 10px;
   width: 100%;
-  background: white;
-  color: #1E1030;
-  border: 2px solid #EDE3F4;
-  border-radius: 14px;
-  padding: 14px 20px;
+  background: linear-gradient(135deg, #E0197D 0%, #B8106A 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 20px;
   font-family: "Heebo", sans-serif;
-  font-size: clamp(15px, 3.5vw, 17px);
-  font-weight: 700;
+  font-size: clamp(16px, 3.8vw, 19px);
+  font-weight: 800;
   cursor: pointer;
   text-decoration: none;
   margin-top: 16px;
-  transition: all 0.2s;
+  box-shadow: 0 8px 28px rgba(224,25,125,0.4);
+  animation: calPulse 2.5s ease-in-out infinite;
   -webkit-tap-highlight-color: transparent;
 }
-.add-to-cal-btn:hover {
-  border-color: #C89EE8;
-  background: #F8F0FF;
+@keyframes calPulse {
+  0%,100% { transform: scale(1); box-shadow: 0 8px 28px rgba(224,25,125,0.4); }
+  50%      { transform: scale(1.04); box-shadow: 0 10px 36px rgba(224,25,125,0.6); }
 }
 .add-to-cal-btn .cal-icon {
-  width: 26px; height: 26px;
+  width: 24px; height: 24px;
+  filter: brightness(0) invert(1);
 }
 
 /* ===== WHAT'S NEXT SECTION ===== */
@@ -411,11 +423,11 @@ body {
   box-shadow: 0 4px 14px rgba(37,211,102,0.30);
 }
 .contact-link.email {
-  background: white;
-  color: #1E1030;
-  border: 2px solid #EDE3F4;
+  background: linear-gradient(135deg, #E0197D 0%, #B8106A 100%);
+  color: white;
+  box-shadow: 0 4px 14px rgba(224,25,125,0.30);
 }
-.contact-link.email:hover { border-color: #C89EE8; }
+.contact-link.email svg { stroke: white; }
 
 /* ===== SIGN OFF ===== */
 .sign-off {
@@ -457,30 +469,33 @@ body {
 
 <!-- HERO THANK YOU -->
 <div class="hero-ty">
-  <div class="checkmark-anim">
-    <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8 21L17 30L34 13" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+  <div class="hero-title-row">
+    <div class="checkmark-anim">🌷</div>
+    <h1>תודה שנרשמת<br>למפגש הזום עם <em>ענת</em></h1>
   </div>
-  <h1>תודה שנרשמת<br>לזום עם <em>ענת</em> 🌷</h1>
   <p class="sub">ההרשמה שלך התקבלה בהצלחה!<br>בקרוב תקבלי ווטסאפ ומייל עם כל הפרטים.</p>
+
+  <div style="background: linear-gradient(135deg, #FCE4F2 0%, #EDE0FF 100%); border: 2px solid #E0197D; border-radius: 16px; padding: 16px 18px; text-align: center; margin-top: 20px;">
+    <div style="font-size: clamp(17px, 4vw, 21px); font-weight: 800; color: #1E1030; line-height: 1.6;">
+      📢 מתנה שימושית למשתתפות המפגש 📢<br>
+      <span style="font-size: clamp(15px, 3.5vw, 18px); font-weight: 600; color: #4A3060;">מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה יכול להיות רלוונטי בגיל שלנו</span>
+    </div>
+  </div>
 </div>
-
-
 
 <!-- EVENT DETAILS -->
 <div class="event-section">
-  <div class="event-label">⏰ פרטי המפגש</div>
 
   <div class="event-card">
-    <div class="event-card-header">מפגש הזום יערך ב:</div>
+    <div class="event-card-header">⏰ פרטי המפגש</div>
     <div class="event-card-body">
 
       <div class="event-detail">
         <div class="event-icon">🗓️</div>
         <div class="event-detail-text">
           <div class="event-detail-label">יום ותאריך</div>
-          <div class="event-detail-value"><span class="date-highlight" id="date-display">שלישי / 24.3.26</span></div>
+          <div class="event-detail-value"><span class="date-highlight" id="date-display">טוען...</span></div>
+          <div style="font-size:clamp(13px,3vw,14px);color:#8A70A0;font-weight:500;margin-top:4px;">(אם תרצי מועד אחר, תוכלי לשנות במענה לווטסאפ שתקבלי לאחר הרישום)</div>
         </div>
       </div>
 
@@ -488,7 +503,7 @@ body {
         <div class="event-icon">🕗</div>
         <div class="event-detail-text">
           <div class="event-detail-label">שעה</div>
-          <div class="event-detail-value" id="event-time">20:00</div>
+          <div class="event-detail-value" id="event-time">טוען...</div>
         </div>
       </div>
 
@@ -496,7 +511,7 @@ body {
         <div class="event-icon">💻</div>
         <div class="event-detail-text">
           <div class="event-detail-label">פלטפורמה</div>
-          <div class="event-detail-value">זום – הקישור יישלח במייל בשבוע הקרוב,<br>ובווטסאפ כחצי שעה לפני תחילת המפגש<br><span style="font-size:clamp(13px,3vw,15px);color:#8A70A0;font-weight:500;">(אם תרצי מועד אחר, תוכלי לשנות במענה לווטסאפ שתקבלי לאחר הרישום)</span></div>
+          <div class="event-detail-value">זום – הקישור יישלח במייל בזמן הקרוב,<br>ובווטסאפ כחצי שעה לפני תחילת המפגש</div>
         </div>
       </div>
 
@@ -515,24 +530,13 @@ body {
 
 </div>
 
-<!-- GIFT REMINDER -->
-<div style="padding: 0 16px 4px; max-width: 600px; margin: 0 auto;">
-  <div style="background: linear-gradient(135deg, #FCE4F2 0%, #EDE0FF 100%); border: 2px solid #E0197D; border-radius: 16px; padding: 16px 18px; text-align: center;">
-    <div style="font-size: clamp(15px, 3.5vw, 17px); font-weight: 800; color: #1E1030; line-height: 1.6;">
-      📢 מתנה שימושית למשתתפות המפגש 📢<br>
-      <span style="font-weight: 600; color: #4A3060;">מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה יכול להיות רלוונטי בגיל שלנו</span>
-    </div>
-  </div>
-</div>
-
 <!-- SPAM NOTE -->
 <div class="spam-note">
   <div class="spam-box">
     <div class="spam-icon">⚠️</div>
     <div class="spam-text">
       <strong>לא הגיע המייל?</strong><br>
-      בדקי האם המייל הגיע באופן אוטומטי לתקיית ה'ספאם' (SPAM), 'עדכונים', או 'קידומי מכירות'.<br><br>
-      ובמידה ולא קיבלת את המייל תוך 24 שעות ממועד ההרשמה – צרי קשר
+      בדקי האם המייל הגיע באופן אוטומטי לתקיית ה'ספאם' (SPAM), 'עדכונים', או 'קידומי מכירות'.
     </div>
   </div>
 </div>
@@ -541,11 +545,11 @@ body {
 <div class="contact-section">
   <div class="contact-title">ניתן ליצור איתנו קשר באמצעות:</div>
   <div class="contact-row">
-    <a href="https://wa.me/972548847666" class="contact-link whatsapp" target="_blank" rel="noopener">
+    <a href="https://wa.me/972547304177" class="contact-link whatsapp" target="_blank" rel="noopener">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
       </svg>
-      וואטסאפ 054-8847666
+      וואטסאפ 054-7304177
     </a>
     <a href="mailto:support@myprime.co.il" class="contact-link email">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E0197D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
@@ -588,8 +592,8 @@ body {
 // שליפת מועד הזום מ-ManyChat דרך Apps Script Proxy
 // ============================================================
 var PROXY_URL        = 'https://script.google.com/macros/s/AKfycbxoONA1LOg1keUGWjDC3vlSeLN25xEfnA9JfarOvYkxrb8i0Z5vgcvzfZtYdu2mwvuPAA/exec';
-var DEFAULT_DATE     = 'שלישי / 24.3.26';
-var DEFAULT_TIME     = '20:00';
+var DEFAULT_DATE     = 'טוען...';
+var DEFAULT_TIME     = 'טוען...';
 var DEFAULT_CAL_LINK = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=%D7%9E%D7%A4%D7%92%D7%A9%20%D7%96%D7%95%D7%9D%20%D7%A2%D7%9D%20%D7%A2%D7%A0%D7%AA%20%D7%94%D7%A8%D7%90%D7%9C%20%E2%80%93%20MyPrime&dates=20260324T180000Z%2F20260324T190000Z&details=%D7%9E%D7%A4%D7%92%D7%A9%20%D7%97%D7%99%D7%A0%D7%9E%D7%99%20%E2%80%93%20%D7%A7%D7%99%D7%A9%D7%95%D7%A8%20%D7%99%D7%99%D7%A9%D7%9C%D7%97%20%D7%91%D7%9E%D7%99%D7%99%D7%9C';
 
 function setEventDisplay(dateDisplay, timeDisplay, calLink) {
