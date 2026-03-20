@@ -63,6 +63,12 @@ body {
   }
 }
 
+/* ===== GIFT IMAGE ===== */
+.gift-img { width: 130px; }
+@media (min-width: 391px) and (max-width: 430px) { .gift-img { width: 155px; } }
+@media (min-width: 431px) and (max-width: 767px) { .gift-img { width: 170px; } }
+@media (min-width: 768px) { .gift-img { width: 200px; } }
+
 /* DESKTOP RESPONSIVE */
 @media (min-width: 1024px) and (max-width: 1440px) {
   body {
@@ -538,13 +544,13 @@ body {
   <p class="sub">ההרשמה שלך התקבלה בהצלחה!<br>בקרוב תקבלי ווטסאפ ומייל עם כל הפרטים.</p>
 
   <div style="background: linear-gradient(135deg, #FCE4F2 0%, #EDE0FF 100%); border: 2px solid #E0197D; border-radius: 16px; overflow: hidden; text-align: center; margin-top: 20px; margin-left: -4px; margin-right: -4px; display: flex; align-items: stretch; gap: 0;">
-    <div style="flex: 1; padding: 14px 16px 14px 8px; text-align: right;">
-      <div style="font-size: clamp(17px, 4.5vw, 24px); font-weight: 800; color: #1E1030; line-height: 1.5; margin-bottom: 6px;">
+    <div style="flex: 1; padding: 14px 14px 14px 6px; text-align: right; min-width: 0;">
+      <div style="font-size: clamp(16px, 4vw, 24px); font-weight: 800; color: #1E1030; line-height: 1.4; margin-bottom: 6px;">
         📢 מתנה שימושית למשתתפות המפגש
       </div>
-      <div style="font-size: clamp(14px, 3.5vw, 20px); font-weight: 600; color: #4A3060; line-height: 1.6;">מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה יכול להיות רלוונטי בגיל שלנו</div>
+      <div style="font-size: clamp(13px, 3.2vw, 20px); font-weight: 600; color: #4A3060; line-height: 1.5;">מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה יכול להיות רלוונטי בגיל שלנו</div>
     </div>
-    <img src="../site_images/TZUNA.jpg" alt="מדריך תוספי תזונה" style="width:143px;object-fit:cover;object-position:center top;display:block;flex-shrink:0;align-self:stretch;">
+    <img src="../site_images/TZUNA.jpg" alt="מדריך תוספי תזונה" class="gift-img" style="object-fit:cover;object-position:center top;display:block;flex-shrink:0;align-self:stretch;">
   </div>
 </div>
 
