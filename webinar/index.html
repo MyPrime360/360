@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-<!-- Microsoft Clarity -->
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -9,7 +8,6 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "w3v658be6s");
 </script>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X6TKRSCNKS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -18,7 +16,6 @@
   gtag('config', 'G-X6TKRSCNKS');
 </script>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>מפגש זום חינם - ענת הראל MyPrime</title>
 <link rel="icon" type="image/png" sizes="32x32" href="/360/site_images/favicon-32.png">
@@ -26,1839 +23,475 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/360/site_images/apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-/* ===== RESET & BASE ===== */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { max-width: 100%; overflow-x: hidden; }
-picture { display: block; line-height: 0; width: 100%; }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{max-width:100%;overflow-x:hidden}
+picture{display:block;line-height:0;width:100%}
 
-:root {
-  --bg-dark: #0D0D0D;
-  --bg-section: #141414;
-  --bg-card: #1A1A1A;
-  --pink: #F0A0B8;
-  --pink-hot: #E91E63;
-  --pink-light: #FADADD;
-  --pink-pale: rgba(240,160,184,0.08);
-  --white: #FFFFFF;
-  --white-soft: rgba(255,255,255,0.88);
-  --white-muted: rgba(255,255,255,0.55);
-  --gray-border: rgba(255,255,255,0.08);
-  --shadow-card: 0 8px 40px rgba(0,0,0,0.4);
-  --shadow-btn: 0 8px 32px rgba(233,30,99,0.35);
-  --radius-lg: 20px;
-  --radius-md: 14px;
-  --radius-sm: 8px;
-  --radius-pill: 50px;
-  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+:root{
+  --white:#FFFFFF;--off-white:#FAFAFA;--bg-warm:#FFF8F6;
+  --black:#111111;--text:#1A1A1A;--text-light:#555;--text-muted:#888;
+  --pink:#F5B5C4;--pink-med:#E8899E;--pink-hot:#E24A76;
+  --pink-bg:rgba(245,181,196,0.12);--pink-bg-s:rgba(245,181,196,0.25);
+  --border:rgba(0,0,0,0.06);--border-pink:rgba(245,181,196,0.4);
+  --sh-soft:0 2px 20px rgba(0,0,0,0.06);--sh-card:0 4px 30px rgba(0,0,0,0.08);
+  --sh-btn:0 6px 24px rgba(226,74,118,0.3);
+  --r-lg:20px;--r-md:14px;--r-pill:50px;
+  --ease:0.3s cubic-bezier(0.4,0,0.2,1);--bounce:0.4s cubic-bezier(0.34,1.56,0.64,1);
 }
 
-body {
-  font-family: "Heebo", sans-serif;
-  background: var(--bg-dark);
-  color: var(--white);
-  direction: rtl;
-  text-align: center;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
+body{font-family:"Heebo",sans-serif;background:var(--white);color:var(--text);direction:rtl;text-align:center;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:72px}
+@media(min-width:768px){html{background:#F0F0F0}body{max-width:820px;margin:0 auto;box-shadow:0 0 60px rgba(0,0,0,0.08);min-height:100vh}}
 
-@media (min-width: 768px) {
-  html { background: #000; }
-  body {
-    max-width: 820px;
-    margin: 0 auto;
-    box-shadow: 0 0 80px rgba(0,0,0,0.6);
-    min-height: 100vh;
-  }
-}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
 
-/* ===== SCROLL ANIMATIONS ===== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.fade-in-delay-1 { transition-delay: 0.1s; }
-.fade-in-delay-2 { transition-delay: 0.2s; }
-.fade-in-delay-3 { transition-delay: 0.3s; }
+/* STICKY BAR */
+.sticky-bar{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:12px 16px;box-shadow:0 -4px 20px rgba(0,0,0,0.15)}
+.sticky-bar-brand{font-size:14px;font-weight:900;color:var(--white);letter-spacing:0.5px}
+.sticky-bar-btn{background:var(--pink);color:var(--black);border:none;border-radius:var(--r-pill);padding:10px 28px;font-family:"Heebo",sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:transform var(--bounce),background var(--ease)}
+.sticky-bar-btn:hover{transform:scale(1.05);background:var(--pink-med)}
+.sticky-bar-btn:active{transform:scale(0.96)}
+.sticky-bar-menu{font-size:14px;font-weight:700;color:var(--white);display:flex;align-items:center;gap:6px;cursor:pointer;background:none;border:none}
 
-/* ===== HERO ===== */
-.hero {
-  position: relative;
-  width: 100%;
-  line-height: 0;
-  overflow: hidden;
-  background: var(--bg-dark);
-}
-.hero-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-@media (min-width: 768px) {
-  .hero picture img {
-    min-height: 400px;
-    object-fit: cover;
-    object-position: center top;
-  }
-}
+/* HERO */
+.hero{position:relative;width:100%;line-height:0;overflow:hidden;background:var(--black)}
+.hero-img{width:100%;height:auto;display:block}
+@media(min-width:768px){.hero picture img{min-height:400px;object-fit:cover;object-position:center top}}
 
-/* ===== URGENCY BOX ===== */
-.webinar-urgency-box {
-  background: linear-gradient(135deg, rgba(240,160,184,0.12) 0%, rgba(233,30,99,0.08) 100%);
-  border: 2px solid rgba(240,160,184,0.25);
-  border-radius: var(--radius-lg);
-  padding: 28px 20px;
-  margin: 20px 12px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-  transition: box-shadow var(--transition-base);
-}
-.webinar-urgency-box:hover {
-  box-shadow: 0 4px 30px rgba(240,160,184,0.15);
-}
-@media (min-width: 768px) {
-  .webinar-urgency-box { max-width: 95%; margin: 20px auto; padding: 32px 28px; }
-}
-.urgency-timer {
-  font-size: clamp(22px, 5vw, 30px);
-  color: var(--pink);
-  line-height: 1.2;
-  font-weight: 900;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-}
-.urgency-title {
-  font-size: clamp(17px, 4vw, 21px);
-  font-weight: 700;
-  color: var(--white-soft);
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-.urgency-cta-btn {
-  width: 100%;
-  max-width: 500px;
-  padding: 18px 32px;
-  background: var(--pink-hot);
-  color: var(--white);
-  border: none;
-  border-radius: var(--radius-pill);
-  font-family: "Heebo", sans-serif;
-  font-size: clamp(18px, 4.5vw, 22px);
-  font-weight: 800;
-  cursor: pointer;
-  box-shadow: var(--shadow-btn);
-  transition: transform var(--transition-bounce), box-shadow var(--transition-base);
-}
-.urgency-cta-btn:hover {
-  transform: scale(1.04) translateY(-2px);
-  box-shadow: 0 12px 40px rgba(233,30,99,0.5);
-}
-.urgency-cta-btn:active {
-  transform: scale(0.97);
-}
+/* URGENCY */
+.urgency-section{background:var(--white);padding:40px 20px 32px;text-align:center}
+.urgency-tag{display:inline-block;background:var(--pink-bg-s);color:var(--pink-hot);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:16px}
+.urgency-headline{font-size:clamp(28px,7vw,42px);font-weight:900;color:var(--black);line-height:1.15;margin-bottom:6px;letter-spacing:-0.03em}
+.urgency-headline em{font-style:normal;color:var(--pink-hot)}
+.urgency-sub{font-size:clamp(16px,3.8vw,20px);color:var(--text-light);font-weight:500;line-height:1.6;margin-bottom:24px;max-width:520px;margin-left:auto;margin-right:auto}
+.btn-pink{display:inline-block;background:var(--pink);color:var(--black);font-family:"Heebo",sans-serif;font-size:clamp(17px,4.2vw,20px);font-weight:800;padding:16px 40px;border-radius:var(--r-pill);border:none;cursor:pointer;box-shadow:var(--sh-btn);transition:transform var(--bounce),box-shadow var(--ease);-webkit-tap-highlight-color:transparent}
+.btn-pink:hover{transform:scale(1.04) translateY(-2px);box-shadow:0 10px 32px rgba(226,74,118,0.4)}
+.btn-pink:active{transform:scale(0.97)}
 
-/* ===== HIDDEN FORM SECTION ===== */
-.hidden-form-section {
-  display: none;
-  background: linear-gradient(135deg, rgba(240,160,184,0.08) 0%, rgba(233,30,99,0.05) 100%);
-  padding: 24px 16px;
-  margin: 16px 12px;
-  border: 2px solid rgba(240,160,184,0.2);
-  border-radius: var(--radius-lg);
-  animation: slideDown 0.5s ease-out;
-}
-.hidden-form-section.show { display: block; }
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.hidden-form-title {
-  font-size: clamp(22px, 5vw, 28px);
-  font-weight: 900;
-  color: var(--pink);
-  text-align: center;
-  margin: 0 0 4px 0;
-  line-height: 1.0;
-}
-.hidden-form-subtitle {
-  font-size: clamp(15px, 3.8vw, 18px);
-  font-weight: 700;
-  color: var(--white-soft);
-  text-align: center;
-  margin: 0 0 8px 0;
-}
-.hidden-form-gift {
-  font-size: clamp(15px, 3.8vw, 17px);
-  font-weight: 700;
-  color: var(--white-soft);
-  text-align: center;
-  margin: 12px 0 16px 0;
-  line-height: 1.4;
-}
-.hidden-form-gift strong { font-weight: 900; color: var(--white); }
-.hidden-form-section .embedded-form {
-  background: rgba(240,160,184,0.08);
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid rgba(240,160,184,0.15);
-}
+/* HIDDEN FORM */
+.hidden-form-section{display:none;background:var(--bg-warm);padding:28px 16px;margin:0 12px 20px;border:2px solid var(--border-pink);border-radius:var(--r-lg);animation:slideDown 0.5s ease-out}
+.hidden-form-section.show{display:block}
+@keyframes slideDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+.hidden-form-title{font-size:clamp(22px,5vw,28px);font-weight:900;color:var(--black);margin-bottom:6px;line-height:1.1}
+.hidden-form-subtitle{font-size:clamp(15px,3.5vw,17px);font-weight:600;color:var(--text-light);margin-bottom:8px}
+.hidden-form-gift{font-size:clamp(14px,3.5vw,16px);font-weight:600;color:var(--text-light);margin:10px 0 16px;line-height:1.5}
+.hidden-form-gift strong{font-weight:900;color:var(--text)}
+.hidden-form-section .embedded-form{background:var(--white);padding:16px;border-radius:12px;border:1px solid var(--border)}
 
-/* ===== INTRO SECTION ===== */
-.intro-section {
-  padding: 40px 20px;
-  text-align: center;
-  background: var(--bg-section);
-  width: 100%;
-  margin: 0;
-  border-top: 1px solid var(--gray-border);
-  border-bottom: 1px solid var(--gray-border);
-}
-@media (min-width: 768px) { .intro-section { padding: 48px 40px; } }
-.intro-title {
-  font-size: clamp(24px, 5.5vw, 32px);
-  font-weight: 900;
-  color: var(--pink);
-  margin-bottom: 8px;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-.intro-subtitle {
-  font-size: clamp(17px, 4vw, 21px);
-  font-weight: 600;
-  color: var(--white-muted);
-  margin-bottom: 4px;
-  line-height: 1.4;
-}
-.start-btn-main {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--pink-hot);
-  color: var(--white);
-  padding: 18px 38px;
-  border-radius: var(--radius-pill);
-  font-family: "Heebo", sans-serif;
-  font-size: clamp(18px, 4.5vw, 22px);
-  font-weight: 800;
-  box-shadow: var(--shadow-btn);
-  cursor: pointer;
-  border: none;
-  margin-top: 20px;
-  transition: transform var(--transition-bounce), box-shadow var(--transition-base);
-  -webkit-tap-highlight-color: transparent;
-}
-.start-btn-main:hover {
-  transform: scale(1.04) translateY(-2px);
-  box-shadow: 0 12px 40px rgba(233,30,99,0.5);
-}
-.start-btn-main:active { transform: scale(0.97); }
-.start-btn-main .arrow {
-  display: inline-block;
-  animation: bounce 1.6s ease-in-out infinite;
-}
-@keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(5px); }
-}
+/* INTRO */
+.intro-section{padding:48px 20px 40px;background:var(--off-white);border-top:1px solid var(--border)}
+@media(min-width:768px){.intro-section{padding:56px 40px 48px}}
+.intro-title{font-size:clamp(26px,6vw,36px);font-weight:900;color:var(--black);margin-bottom:10px;line-height:1.15;letter-spacing:-0.03em}
+.intro-subtitle{font-size:clamp(16px,4vw,20px);font-weight:500;color:var(--text-light);margin-bottom:4px;line-height:1.5}
+.start-btn{display:inline-flex;align-items:center;gap:10px;background:var(--pink);color:var(--black);padding:16px 36px;border-radius:var(--r-pill);font-family:"Heebo",sans-serif;font-size:clamp(17px,4.2vw,20px);font-weight:800;border:none;cursor:pointer;margin-top:24px;box-shadow:var(--sh-btn);transition:transform var(--bounce);-webkit-tap-highlight-color:transparent}
+.start-btn:hover{transform:scale(1.04) translateY(-2px)}
+.start-btn:active{transform:scale(0.97)}
+.start-btn .arrow{display:inline-block;animation:bounce 1.6s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 
-/* ===== SECTIONS GLOBAL ===== */
-.section {
-  padding: 36px 16px;
-  max-width: 600px;
-  margin: 0 auto;
-}
+/* CHECKLIST */
+.checklist-wrap{background:var(--white);padding:36px 16px 24px;border-top:1px solid var(--border)}
+.section{max-width:600px;margin:0 auto}
+.q-label{display:flex;align-items:center;gap:12px;font-size:clamp(22px,5vw,28px);font-weight:900;color:var(--black);margin-bottom:14px;line-height:1.2}
+.q-num{width:36px;height:36px;background:var(--pink);color:var(--black);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;flex-shrink:0}
+.section-sub{font-size:clamp(15px,3.5vw,18px);font-weight:500;color:var(--text-muted);margin-bottom:20px}
+.chips-grid{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:11px 18px;background:var(--white);border:2px solid #E8E0E4;border-radius:100px;cursor:pointer;font-size:clamp(14px,3.4vw,17px);color:var(--text);font-weight:600;transition:all var(--ease),transform 0.15s;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;white-space:nowrap}
+.chip:hover{border-color:var(--pink-med);background:var(--pink-bg)}
+.chip:active{transform:scale(0.95)}
+.chip.selected{background:var(--pink);border-color:var(--pink);color:var(--black);font-weight:700;box-shadow:0 3px 14px rgba(245,181,196,0.4);transform:scale(1.04)}
+.chip-featured{font-weight:800 !important}
+.chip-emoji{font-size:15px;line-height:1}
+.counter-pill{display:flex;align-items:center;justify-content:center;background:var(--off-white);border:2px solid var(--border);border-radius:16px;padding:14px 22px;margin-top:20px}
+.counter-text{font-size:clamp(17px,4vw,20px);color:var(--text);font-weight:700}
+.counter-num{font-size:32px;font-weight:900;color:var(--pink-hot);line-height:1}
 
-/* ===== CHECKLIST / SYMPTOMS ===== */
-.checklist-wrap {
-  background: var(--bg-section);
-  border-top: 1px solid var(--gray-border);
-  border-bottom: 1px solid var(--gray-border);
-  padding-bottom: 20px;
-}
+/* QUESTIONS */
+.q-wrap{background:var(--off-white);border-top:1px solid var(--border);padding:32px 16px 20px}
+.q-block{margin-bottom:32px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt-item{display:flex;align-items:center;gap:14px;padding:16px 20px;border:2px solid #E8E0E4;border-radius:16px;cursor:pointer;font-size:clamp(15px,3.5vw,17px);color:var(--text-light);background:var(--white);font-weight:500;transition:all var(--ease);user-select:none;-webkit-tap-highlight-color:transparent}
+.opt-item:hover{border-color:var(--pink-med)}
+.opt-item.selected{border-color:var(--pink-hot);background:var(--pink-bg);color:var(--text);font-weight:700}
+.radio-dot{width:22px;height:22px;border:2px solid #D0C8CC;border-radius:50%;flex-shrink:0;transition:all var(--ease)}
+.opt-item.selected .radio-dot{background:var(--pink-hot);border-color:var(--pink-hot);box-shadow:inset 0 0 0 4px var(--white)}
+.val-msg{color:var(--pink-hot);font-size:14px;margin-top:8px;font-weight:700;display:none}
+.val-msg.show{display:block}
 
-.q-label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: clamp(22px, 5vw, 28px);
-  font-weight: 800;
-  color: var(--white);
-  margin-bottom: 14px;
-  line-height: 1.2;
-}
-.q-num {
-  width: 36px; height: 36px;
-  background: var(--pink-hot);
-  color: var(--white);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px; font-weight: 800; flex-shrink: 0;
-}
-.section-sub {
-  font-size: clamp(16px, 4vw, 20px);
-  font-weight: 500;
-  color: var(--white-muted);
-  margin-bottom: 20px;
-  padding: 0 8px;
-}
+/* CTA */
+.cta-wrap{background:var(--bg-warm);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:40px 20px;text-align:center}
+.btn-main{display:inline-block;background:var(--pink);color:var(--black) !important;font-family:"Heebo",sans-serif;font-size:clamp(19px,4.5vw,24px);font-weight:900 !important;padding:18px 40px;border-radius:var(--r-pill);border:none;cursor:pointer;box-shadow:var(--sh-btn);transition:transform var(--bounce),box-shadow var(--ease);width:100%;max-width:440px;-webkit-tap-highlight-color:transparent}
+.btn-main:hover{transform:scale(1.04) translateY(-2px)}
+.btn-main:active{transform:scale(0.97)}
+.btn-main.pulse-ready{animation:btnPulse 1.2s ease-in-out infinite}
+@keyframes btnPulse{0%,100%{transform:scale(1);box-shadow:0 4px 20px rgba(226,74,118,0.3)}50%{transform:scale(1.06);box-shadow:0 8px 36px rgba(226,74,118,0.5)}}
 
-.chips-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 12px 18px;
-  background: var(--bg-card);
-  border: 2px solid rgba(255,255,255,0.1);
-  border-radius: 100px;
-  cursor: pointer;
-  font-size: clamp(15px, 3.6vw, 18px);
-  color: var(--white-soft);
-  font-weight: 600;
-  transition: all var(--transition-base), transform 0.15s;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  white-space: nowrap;
-}
-.chip:hover {
-  border-color: rgba(240,160,184,0.4);
-  box-shadow: 0 4px 16px rgba(240,160,184,0.1);
-}
-.chip:active { transform: scale(0.95); }
-.chip.selected {
-  background: var(--pink-hot);
-  border-color: var(--pink-hot);
-  color: var(--white);
-  font-weight: 700;
-  box-shadow: 0 4px 20px rgba(233,30,99,0.4);
-  transform: scale(1.04);
-}
-.chip-featured { font-weight: 800 !important; }
-.chip-emoji { font-size: 16px; line-height: 1; }
+/* RESULT */
+.result-wrap{display:none;background:var(--white);padding:40px 12px}
+.result-wrap.on{display:block;animation:fadeup 0.6s ease}
+@keyframes fadeup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.result-card{background:var(--white);border-radius:var(--r-lg);padding:28px 16px;margin:0 auto 20px;max-width:600px;box-shadow:var(--sh-card);border:1px solid var(--border);transition:box-shadow var(--ease)}
+.result-card:hover{box-shadow:0 8px 40px rgba(0,0,0,0.12)}
+.stage-headline{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.stage-headline-text{font-size:clamp(22px,5vw,28px);font-weight:900;color:var(--black);line-height:1.2}
+.stage-headline-text .stage-label{color:var(--text-muted)}
+.stage-emoji-inline{font-size:28px;flex-shrink:0}
+.merged-stage-desc{font-size:clamp(15px,3.5vw,18px);color:var(--text-light);line-height:1.7;font-weight:500}
+.merged-divider{height:1px;background:var(--border);margin:18px 0}
+.score-wrap{margin-bottom:16px}
+.gauge-text-row{display:flex;align-items:center;gap:20px}
+.gauge-col{flex-shrink:0;text-align:center;min-width:140px}
+.gauge-text-col{flex:1;text-align:center}
+@media(max-width:600px){.gauge-text-row{flex-direction:column-reverse;align-items:stretch;gap:8px}.gauge-col{min-width:unset}}
+.score-label{font-size:10px;font-weight:800;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.gauge-wrap{position:relative;width:140px;height:78px;margin:0 auto 8px}
+.gauge-svg{width:100%;height:100%}
+.gauge-needle{transform-origin:110px 110px;transform:rotate(-85deg)}
+.score-badge{display:inline-block;padding:8px 24px;border-radius:20px;font-size:14px;font-weight:800;margin-top:6px}
+.score-badge.low{background:#FFF4E6;color:#C05000}
+.score-badge.medium{background:#FFE4CC;color:#C04000}
+.score-badge.high{background:#FDE8EE;color:var(--pink-hot)}
+.result-title{font-size:clamp(17px,4vw,21px);font-weight:900;color:var(--pink-hot);margin-bottom:8px;line-height:1.3}
+.result-text{font-size:clamp(15px,3.5vw,18px);color:var(--text-light);line-height:1.75}
+.stat-box{display:none;align-items:center;gap:16px;background:var(--pink-bg);border:1px solid var(--border-pink);border-radius:16px;padding:18px 20px;margin-top:20px}
+.stat-box.on{display:flex}
+.stat-num{font-size:40px;font-weight:800;color:var(--pink-hot);flex-shrink:0;line-height:1}
+.stat-desc{font-size:14px;color:var(--text-light);font-weight:500;line-height:1.5}
+.no-suffer-list{margin-bottom:24px;max-width:600px;margin-left:auto;margin-right:auto}
+.no-suffer-item{display:flex;align-items:center;gap:10px;padding:16px 18px;margin:0 0 10px;background:var(--white);border-radius:var(--r-md);border-right:4px solid var(--pink-hot);font-size:clamp(16px,3.8vw,19px);font-weight:700;color:var(--text);box-shadow:var(--sh-soft);animation:fadeup 0.4s ease both;transition:box-shadow var(--ease),transform var(--ease)}
+.no-suffer-item:hover{box-shadow:0 4px 20px rgba(226,74,118,0.12);transform:translateX(-4px)}
+.no-suffer-item .ns-emoji{font-size:20px;flex-shrink:0}
+.result-prime{display:flex;align-items:center;justify-content:center;padding:14px 20px;margin:0 0 20px;background:var(--pink-bg);border:2px solid var(--pink);border-radius:18px;font-size:clamp(22px,5vw,30px) !important;font-weight:900;color:var(--text);line-height:1.3}
+.scroll-arrow-wrap{text-align:center;margin-top:24px}
+.scroll-arrow-text{font-size:clamp(17px,4vw,22px);font-weight:800;color:var(--text);line-height:1.4;margin-bottom:8px;display:block}
+.scroll-arrow-icon{font-size:28px;color:var(--pink-hot);animation:bounce 1.2s ease-in-out infinite}
 
-.counter-pill {
-  display: flex; align-items: center; justify-content: center;
-  background: var(--bg-card);
-  border: 2px solid var(--gray-border);
-  border-radius: 16px; padding: 14px 22px; margin-top: 20px;
-}
-.counter-text {
-  font-size: clamp(18px, 4vw, 22px);
-  color: var(--white);
-  font-weight: 700;
-}
-.counter-num {
-  font-size: 34px; font-weight: 900;
-  color: var(--pink-hot);
-  line-height: 1;
-}
+/* P2 */
+.p2-hero{background:var(--off-white);padding:40px 16px 28px;border-top:1px solid var(--border)}
+.p2-title{font-size:clamp(22px,5.5vw,30px);font-weight:900;color:var(--black);line-height:1.3;margin-bottom:12px}
+.p2-subtitle{font-size:clamp(16px,4vw,20px);color:var(--text-light);line-height:1.55;font-weight:500;margin-bottom:12px}
+.p2-subtitle strong{color:var(--pink-hot);text-decoration:underline}
+.p2-final-cta{padding:16px 20px;margin-top:8px}
+.p2-final-question{font-size:clamp(22px,5.5vw,30px);font-weight:900;color:var(--black);margin-bottom:8px;line-height:1.25}
+.p2-final-question em{font-style:normal;color:var(--pink-hot)}
 
-/* ===== QUESTIONS ===== */
-.q-wrap {
-  background: var(--bg-dark);
-  border-top: 1px solid var(--gray-border);
-  border-bottom: 1px solid var(--gray-border);
-  padding-bottom: 20px;
-}
-.q-block { margin-bottom: 32px; }
-.opts { display: flex; flex-direction: column; gap: 10px; }
-.opt-item {
-  display: flex; align-items: center; gap: 14px;
-  padding: 16px 20px;
-  border: 2px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  cursor: pointer;
-  font-size: clamp(15px, 3.5vw, 17px);
-  color: var(--white-muted);
-  background: var(--bg-card);
-  font-weight: 500;
-  transition: all var(--transition-base);
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-.opt-item:hover {
-  border-color: rgba(240,160,184,0.3);
-}
-.opt-item.selected {
-  border-color: var(--pink-hot);
-  background: rgba(233,30,99,0.1);
-  color: var(--white);
-  font-weight: 700;
-}
-.radio-dot {
-  width: 22px; height: 22px;
-  border: 2px solid rgba(255,255,255,0.2);
-  border-radius: 50%; flex-shrink: 0;
-  transition: all var(--transition-base);
-}
-.opt-item.selected .radio-dot {
-  background: var(--pink-hot);
-  border-color: var(--pink-hot);
-  box-shadow: inset 0 0 0 4px var(--bg-card);
-}
-.val-msg {
-  color: var(--pink-hot);
-  font-size: 14px;
-  margin-top: 8px;
-  font-weight: 700;
-  display: none;
-}
-.val-msg.show { display: block; }
+/* FORMS */
+.final-form-section{padding:24px 16px 48px;width:100%;background:var(--white)}
+@media(min-width:768px){.final-form-section{padding:40px 32px}}
+.form-container{max-width:620px;margin:0 auto;background:var(--off-white);padding:32px 20px;border-radius:var(--r-lg);box-shadow:var(--sh-card);border:1px solid var(--border);transition:box-shadow var(--ease)}
+.form-container:hover{box-shadow:0 8px 40px rgba(0,0,0,0.1)}
+@media(min-width:768px){.form-container{padding:40px 48px}}
+.form-title{font-size:clamp(22px,5.5vw,28px);font-weight:900;color:var(--black);margin-bottom:10px;line-height:1.15}
+.form-subtitle{font-size:clamp(14px,3.5vw,17px);font-weight:600;color:var(--text-muted);margin-bottom:24px;line-height:1.4}
+.embedded-form{max-width:100%;margin:0;padding:0}
 
-/* ===== CTA WRAP ===== */
-.cta-wrap {
-  background: linear-gradient(135deg, rgba(240,160,184,0.1), rgba(233,30,99,0.06));
-  border-top: 1px solid rgba(240,160,184,0.15);
-  border-bottom: 1px solid rgba(240,160,184,0.15);
-  padding: 40px 20px;
-  text-align: center;
-}
-.btn-main {
-  display: inline-block;
-  background: var(--pink-hot);
-  color: var(--white) !important;
-  font-family: "Heebo", sans-serif;
-  font-size: clamp(20px, 5vw, 26px);
-  font-weight: 900 !important;
-  padding: 20px 40px;
-  border-radius: var(--radius-pill);
-  border: none; cursor: pointer;
-  box-shadow: var(--shadow-btn);
-  transition: transform var(--transition-bounce), box-shadow var(--transition-base);
-  width: 100%; max-width: 440px;
-  -webkit-tap-highlight-color: transparent;
-}
-.btn-main:hover {
-  transform: scale(1.04) translateY(-2px);
-  box-shadow: 0 12px 40px rgba(233,30,99,0.5);
-}
-.btn-main:active { transform: scale(0.97); }
-.btn-main.pulse-ready {
-  animation: btnPulse 1.2s ease-in-out infinite;
-}
-@keyframes btnPulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 4px 20px rgba(233,30,99,0.4); }
-  50% { transform: scale(1.06); box-shadow: 0 8px 36px rgba(233,30,99,0.6); }
-}
+/* MEDIA */
+.media-section{background:var(--off-white);padding:48px 16px 32px;border-top:1px solid var(--border)}
+.media-title{font-size:clamp(26px,6.5vw,36px);font-weight:900;color:var(--black);margin-bottom:8px;letter-spacing:-0.03em}
+.media-nav-row{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:16px}
+.media-nav-row span{font-size:clamp(15px,3.5vw,18px);font-weight:700;color:var(--text-muted)}
+.nav-btn{background:var(--white);color:var(--text);border:2px solid #E8E0E4;border-radius:50%;width:42px;height:42px;font-size:18px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:all var(--ease);box-shadow:var(--sh-soft)}
+.nav-btn:hover{border-color:var(--pink);background:var(--pink-bg);transform:scale(1.08)}
+#media-scroll>div{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-card)}
+#media-scroll::-webkit-scrollbar{display:none}
 
-/* ===== RESULT ===== */
-.result-wrap {
-  display: none;
-  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-section) 100%);
-  padding: 40px 8px;
-}
-.result-wrap.on { display: block; animation: fadeup 0.6s ease; }
-@keyframes fadeup { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+/* CONTACT */
+.contact-section{padding:48px 16px;background:var(--white);border-top:1px solid var(--border)}
+.contact-title{font-size:clamp(20px,4.5vw,26px);font-weight:800;color:var(--black);margin-bottom:24px;line-height:1.4}
+.contact-links{display:flex;flex-direction:column;gap:10px;max-width:440px;margin:0 auto}
+.contact-btn{background:var(--white);border:2px solid #E8E0E4;border-radius:var(--r-md);padding:16px 20px;font-size:clamp(15px,3.5vw,18px);font-weight:700;color:var(--text);text-decoration:none;display:block;text-align:center;transition:all var(--ease)}
+.contact-btn:hover{transform:translateY(-3px);box-shadow:var(--sh-card)}
+.contact-btn.wa{border-color:#25D366;color:#25D366}
+.contact-btn.wa:hover{background:rgba(37,211,102,0.06)}
+.contact-btn.email{border-color:var(--pink);color:var(--pink-hot)}
 
-.result-card {
-  background: var(--bg-card);
-  border-radius: var(--radius-lg);
-  padding: 28px 16px;
-  max-width: 100%;
-  margin: 0 4px 20px;
-  box-shadow: var(--shadow-card);
-  border: 1px solid var(--gray-border);
-  text-align: center;
-  transition: box-shadow var(--transition-base);
-}
-.result-card:hover {
-  box-shadow: 0 12px 50px rgba(0,0,0,0.5);
-}
+/* STORY */
+.story-section{background:var(--black);padding:56px 20px;color:var(--white)}
+.story-section h2{font-size:clamp(28px,7vw,42px);font-weight:900;margin-bottom:12px;letter-spacing:-0.03em}
+.story-sub{font-size:clamp(14px,3.2vw,17px);font-weight:500;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:3px;margin-bottom:8px}
+.story-body{max-width:640px;margin:0 auto}
+.story-body p{font-size:clamp(15px,3.5vw,18px);line-height:1.85;color:rgba(255,255,255,0.85);margin-bottom:20px;text-align:right}
+.story-body strong{color:var(--pink);font-weight:800}
+.story-body img{width:100%;max-width:560px;height:auto;display:block;margin:32px auto;border-radius:var(--r-md)}
+.story-body ol{max-width:540px;margin:20px auto;padding-right:24px;color:rgba(255,255,255,0.85);font-size:clamp(15px,3.5vw,18px);line-height:1.85}
+.story-body ol li{margin-bottom:10px}
 
-.stage-headline {
-  display: flex; align-items: center; gap: 10px;
-  margin-bottom: 10px;
-}
-.stage-headline-text {
-  font-size: clamp(24px, 5.5vw, 32px);
-  font-weight: 900;
-  color: var(--white);
-  line-height: 1.2;
-}
-.stage-headline-text .stage-label { color: var(--white-muted); }
-.stage-emoji-inline { font-size: 28px; flex-shrink: 0; }
-.merged-stage-desc {
-  font-size: clamp(16px, 3.8vw, 20px);
-  color: var(--white-muted);
-  line-height: 1.65;
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-.merged-divider {
-  height: 1px;
-  background: var(--gray-border);
-  margin: 18px 0;
-}
+/* FOOTER */
+.site-footer{background:var(--black);color:var(--white);padding:20px 10px 80px}
+.footer-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;direction:rtl;font-weight:600;font-size:13px}
+.footer-links a{color:rgba(255,255,255,0.6);text-decoration:none;transition:color var(--ease)}
+.footer-links a:hover{color:var(--pink);text-decoration:underline}
+.footer-sep{opacity:0.25}
+.footer-brand{color:var(--pink);font-weight:800}
+.footer-version{color:rgba(255,255,255,0.3);font-size:11px;font-weight:600}
 
-/* Gauge */
-.score-wrap { margin-bottom: 16px; }
-.gauge-text-row { display: flex; align-items: center; gap: 20px; text-align: center; }
-.gauge-col { flex-shrink: 0; text-align: center; min-width: 140px; }
-.gauge-text-col { flex: 1; text-align: center; }
-@media (max-width: 600px) {
-  .gauge-text-row { flex-direction: column-reverse; align-items: stretch; gap: 8px; }
-  .gauge-col { min-width: unset; }
-  .section { padding: 14px 10px; }
-}
-.score-label {
-  font-size: 11px; font-weight: 700;
-  color: var(--white-muted);
-  letter-spacing: 1.5px; text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.gauge-wrap { position: relative; width: 140px; height: 78px; margin: 0 auto 8px; }
-.gauge-svg { width: 100%; height: 100%; }
-.gauge-needle { transform-origin: 110px 110px; transform: rotate(-85deg); }
-.score-badge {
-  display: inline-block; padding: 8px 24px; border-radius: 20px;
-  font-size: 14px; font-weight: 800; margin-top: 6px;
-}
-.score-badge.low { background: rgba(254,244,230,0.15); color: #FFB74D; }
-.score-badge.medium { background: rgba(255,152,0,0.15); color: #FF9800; }
-.score-badge.high { background: rgba(233,30,99,0.15); color: var(--pink-hot); }
+/* COOKIE */
+.cookie-overlay{display:none !important}
+.cookie-popup{position:fixed;bottom:72px;left:0;right:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-top:1px solid var(--border);box-shadow:0 -2px 16px rgba(0,0,0,0.08);padding:10px 20px;z-index:999999;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px;max-width:1200px;margin:0 auto}
+.cookie-popup-title{display:none}
+.cookie-popup-text{font-size:11px;line-height:1.4;color:var(--text-muted);margin:0;text-align:center;flex:1}
+.cookie-popup-text a{color:var(--pink-hot);text-decoration:underline;font-weight:600}
+.cookie-popup-btn{padding:6px 16px;background:var(--pink);color:var(--black);border:none;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;transition:all var(--ease);white-space:nowrap}
+.cookie-popup-btn:hover{background:var(--pink-med);transform:translateY(-1px)}
+.cookie-hidden{display:none !important}
+@media(max-width:768px){.cookie-popup{padding:8px 14px;bottom:60px}.cookie-popup-text{font-size:10px;font-weight:600}}
 
-.result-title {
-  font-size: clamp(18px,4vw,22px);
-  font-weight: 900;
-  color: var(--pink);
-  margin-bottom: 8px;
-  line-height: 1.3;
-}
-.result-text {
-  font-size: clamp(16px, 3.8vw, 20px);
-  color: var(--white-muted);
-  line-height: 1.75;
-  text-align: center;
-}
+/* EXIT POPUP */
+.exit-popup-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:9999998;display:none;animation:fadeIn 0.3s ease}
+.exit-popup-overlay.show{display:flex;align-items:center;justify-content:center}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.exit-popup{background:var(--white);border-radius:var(--r-lg);padding:24px 20px;max-width:520px;width:90%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:popUp 0.4s ease-out;text-align:center}
+@keyframes popUp{from{transform:scale(0.85) translateY(30px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+.exit-popup-close{position:absolute;top:10px;left:10px;background:var(--off-white);border:2px solid var(--pink-hot);width:32px;height:32px;border-radius:50%;font-size:22px;color:var(--pink-hot);font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--ease)}
+.exit-popup-close:hover{background:var(--pink-hot);color:var(--white);transform:rotate(90deg) scale(1.1)}
+.exit-popup-title{font-size:22px;font-weight:900;color:var(--black);margin-bottom:8px;line-height:1.3}
+.exit-popup-subtitle{font-size:16px;font-weight:700;color:var(--pink-hot);margin-bottom:10px}
+.exit-popup-text{font-size:13px;font-weight:600;color:var(--text-muted);margin:6px 0;line-height:1.4}
+.exit-popup-gift{background:var(--pink-bg);padding:12px;border-radius:12px;margin-bottom:8px;border:1px solid var(--border-pink)}
+.exit-popup-gift-title{font-size:15px;font-weight:800;color:var(--text);margin-bottom:5px}
+.exit-popup-gift-text{font-size:14px;font-weight:600;color:var(--text-light);line-height:1.4}
+.exit-popup-form{margin:8px 0;background:var(--off-white);padding:12px;border-radius:10px}
+.exit-popup-form iframe{width:100%!important;min-height:200px;max-height:220px;border:none;background:transparent;transform:scale(0.9);transform-origin:top}
 
-.stat-box {
-  display: none; align-items: center; gap: 16px;
-  background: rgba(240,160,184,0.06);
-  border: 1px solid rgba(240,160,184,0.15);
-  border-radius: 16px;
-  padding: 18px 20px; margin-top: 20px;
-}
-.stat-box.on { display: flex; }
-.stat-num { font-size: 40px; font-weight: 800; color: var(--pink-hot); flex-shrink: 0; line-height: 1; }
-.stat-desc { font-size: 14px; color: var(--white-muted); font-weight: 500; line-height: 1.5; }
+/* FORM MODAL */
+.form-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;align-items:center;justify-content:center}
+.form-modal.show{display:flex}
+.modal-content{background:var(--white);padding:32px 24px;border-radius:var(--r-lg);max-width:600px;width:90%;max-height:90vh;overflow-y:auto;position:relative}
+.modal-close{position:absolute;top:16px;left:16px;background:none;border:none;font-size:32px;cursor:pointer;color:var(--pink-hot);font-weight:700}
+.modal-title{font-size:22px;font-weight:900;color:var(--black);text-align:center;margin-bottom:20px}
 
-/* No-suffer items */
-.no-suffer-list { margin-bottom: 24px; }
-.no-suffer-item {
-  display: flex; align-items: center; gap: 10px;
-  padding: 16px 18px; margin: 0 4px 10px;
-  background: var(--bg-card);
-  border-radius: var(--radius-md);
-  border-right: 4px solid var(--pink-hot);
-  font-size: clamp(17px, 4vw, 21px);
-  font-weight: 700;
-  color: var(--white);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-  animation: fadeup 0.4s ease both;
-  transition: box-shadow var(--transition-base), transform var(--transition-base);
-}
-.no-suffer-item:hover {
-  box-shadow: 0 6px 24px rgba(233,30,99,0.15);
-  transform: translateX(-4px);
-}
-.no-suffer-item .ns-emoji { font-size: 20px; flex-shrink: 0; }
-
-.result-prime {
-  display: flex; align-items: center; justify-content: center; gap: 14px;
-  padding: 14px 20px; margin: 0 4px 20px;
-  background: linear-gradient(135deg, rgba(240,160,184,0.12), rgba(233,30,99,0.08));
-  border: 2px solid var(--pink-hot);
-  border-radius: 18px;
-  font-size: clamp(22px, 5vw, 32px) !important;
-  font-weight: 900;
-  color: var(--white);
-  text-align: center;
-  line-height: 1.3;
-  box-shadow: 0 4px 24px rgba(233,30,99,0.2);
-}
-
-.scroll-arrow-wrap { text-align: center; margin-top: 24px; margin-bottom: 8px; }
-.scroll-arrow-text {
-  display: block;
-  font-size: clamp(18px, 4.2vw, 24px);
-  font-weight: 800;
-  color: var(--pink);
-  line-height: 1.35;
-  margin-bottom: 8px;
-}
-.scroll-arrow-icon {
-  font-size: clamp(24px, 4vw, 32px);
-  color: var(--pink-hot);
-  animation: bounce 1.2s ease-in-out infinite;
-}
-
-/* ===== PROGRAM / PAGE 2 ===== */
-.program-wrap { }
-.p2-hero {
-  background: linear-gradient(135deg, rgba(240,160,184,0.08), rgba(233,30,99,0.04));
-  padding: 36px 16px 28px;
-  text-align: center;
-}
-.p2-title {
-  font-size: clamp(22px, 5.5vw, 32px);
-  font-weight: 900;
-  color: var(--white);
-  line-height: 1.3;
-  margin-bottom: 12px;
-}
-.p2-subtitle {
-  font-size: clamp(18px, 4.5vw, 24px);
-  color: var(--white-muted);
-  line-height: 1.5;
-  font-weight: 500;
-  margin-bottom: 12px;
-}
-.p2-subtitle strong { color: var(--pink); text-decoration: underline; }
-
-.p2-final-cta { text-align: center; padding: 16px 20px; margin-top: 8px; }
-.p2-final-question {
-  font-size: clamp(22px, 5.5vw, 30px);
-  font-weight: 900;
-  color: var(--pink);
-  margin-bottom: 8px;
-  line-height: 1.3;
-}
-
-/* ===== FORM CONTAINERS ===== */
-.final-form-section {
-  background: transparent;
-  padding: 24px 16px 48px;
-  margin: 0;
-  width: 100%;
-}
-@media (min-width: 768px) { .final-form-section { padding: 40px 32px; } }
-.p2-final-cta + .final-form-section { margin-top: -20px !important; }
-
-.form-container {
-  max-width: 700px;
-  margin: 0 auto;
-  background: linear-gradient(135deg, rgba(233,30,99,0.15), rgba(240,160,184,0.08));
-  padding: 32px 20px;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-  border: 1px solid rgba(240,160,184,0.2);
-  transition: box-shadow var(--transition-base);
-}
-.form-container:hover {
-  box-shadow: 0 16px 50px rgba(233,30,99,0.15);
-}
-@media (min-width: 768px) { .form-container { padding: 40px 48px; } }
-.form-title {
-  font-size: clamp(24px, 5.5vw, 30px);
-  font-weight: 900;
-  color: var(--white);
-  text-align: center;
-  margin-bottom: 12px;
-  line-height: 1.15;
-}
-.form-subtitle {
-  font-size: clamp(15px, 3.8vw, 18px);
-  font-weight: 600;
-  color: var(--white-muted);
-  text-align: center;
-  margin-bottom: 24px;
-  line-height: 1.4;
-}
-.embedded-form { max-width: 100%; margin: 0; padding: 0; }
-
-/* ===== FORM MODAL ===== */
-.form-modal {
-  display: none; position: fixed; top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8); z-index: 9999;
-  align-items: center; justify-content: center;
-}
-.form-modal.show { display: flex; }
-.modal-content {
-  background: var(--bg-card);
-  padding: 32px 24px;
-  border-radius: var(--radius-lg);
-  max-width: 600px; width: 90%;
-  max-height: 90vh; overflow-y: auto;
-  position: relative;
-  border: 1px solid var(--gray-border);
-}
-.modal-close {
-  position: absolute; top: 16px; left: 16px;
-  background: none; border: none;
-  font-size: 32px; cursor: pointer;
-  color: var(--pink-hot); font-weight: 700;
-}
-.modal-title {
-  font-size: 22px; font-weight: 900;
-  color: var(--pink);
-  text-align: center; margin-bottom: 20px;
-}
-
-/* ===== MEDIA SECTION ===== */
-.media-section {
-  background: var(--bg-section);
-  padding: 40px 16px;
-  text-align: center;
-}
-.media-title {
-  font-size: clamp(26px, 6vw, 34px);
-  font-weight: 900;
-  color: var(--white);
-  margin-bottom: 6px;
-  letter-spacing: -0.02em;
-}
-.media-subtitle, .media-section .media-subtitle {
-  font-size: clamp(18px, 4.2vw, 22px) !important;
-  font-weight: 700 !important;
-  color: var(--white-muted) !important;
-  margin-bottom: 16px;
-}
-.nav-btn {
-  background: rgba(240,160,184,0.15);
-  color: var(--pink);
-  border: 1px solid rgba(240,160,184,0.3);
-  border-radius: 50%;
-  width: 44px; height: 44px;
-  font-size: 20px; cursor: pointer;
-  flex-shrink: 0;
-  display: inline-flex; align-items: center; justify-content: center;
-  transition: all var(--transition-base);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-.nav-btn:hover {
-  background: var(--pink-hot);
-  color: var(--white);
-  transform: scale(1.08);
-  border-color: var(--pink-hot);
-}
-
-#media-scroll > div {
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
-}
-
-/* ===== CONTACT SECTION ===== */
-.offer-support-links {
-  display: flex; flex-direction: column; gap: 10px;
-  padding: 40px 16px;
-  max-width: 500px;
-  margin: 0 auto;
-}
-.offer-support-btn {
-  background: var(--bg-card) !important;
-  border: 2px solid rgba(255,255,255,0.1) !important;
-  color: var(--white) !important;
-  border-radius: var(--radius-md);
-  padding: 18px 20px;
-  font-size: clamp(16px, 3.8vw, 20px);
-  font-weight: 700;
-  cursor: pointer;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  width: 100%;
-  transition: all var(--transition-base);
-}
-.offer-support-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.3);
-}
-.offer-support-btn.whatsapp-btn {
-  border-color: #25D366 !important;
-  color: #25D366 !important;
-}
-.offer-support-btn.whatsapp-btn:hover {
-  background: rgba(37,211,102,0.1) !important;
-}
-.offer-support-btn:not(.whatsapp-btn) {
-  border-color: rgba(240,160,184,0.4) !important;
-  color: var(--pink) !important;
-}
-.offer-support-btn:not(.whatsapp-btn):hover {
-  background: rgba(240,160,184,0.06) !important;
-}
-
-/* ===== STORY SECTION ===== */
-.story-section {
-  background: var(--bg-section);
-  padding: 48px 20px;
-  color: var(--white);
-}
-.story-section h2 {
-  font-size: clamp(28px, 6.5vw, 40px);
-  font-weight: 900;
-  text-align: center;
-  margin-bottom: 30px;
-  color: var(--white);
-  letter-spacing: -0.02em;
-}
-.story-section p {
-  max-width: 700px;
-  margin: 0 auto 20px;
-  font-size: clamp(16px, 3.8vw, 19px);
-  line-height: 1.8;
-  color: var(--white-soft);
-}
-.story-section strong {
-  color: var(--pink);
-  font-weight: 800;
-}
-.story-section img {
-  width: 100%; max-width: 600px;
-  height: auto; display: block;
-  margin: 30px auto;
-  border-radius: var(--radius-md);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-}
-.story-section ol {
-  max-width: 600px;
-  margin: 20px auto;
-  padding-right: 24px;
-  color: var(--white-soft);
-  font-size: clamp(16px, 3.8vw, 19px);
-  line-height: 1.8;
-}
-.story-section ol li { margin-bottom: 10px; }
-
-/* ===== TESTIMONIALS ===== */
-.testimonials-section { margin-bottom: 24px; }
-.testimonials-title {
-  font-size: clamp(22px, 5vw, 28px);
-  font-weight: 900;
-  color: var(--white);
-  text-align: center;
-  margin-bottom: 12px;
-}
-#testimony-scroll {
-  border-radius: 18px !important;
-  border: 2px solid rgba(240,160,184,0.3) !important;
-}
-#testimony-scroll::-webkit-scrollbar { display: none; }
-
-/* ===== FOOTER ===== */
-.site-footer {
-  background: #000;
-  color: var(--white);
-  padding: 16px 10px;
-}
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  direction: rtl;
-  font-weight: 600;
-  font-size: 13px;
-}
-.footer-links a {
-  color: var(--white-muted);
-  text-decoration: none;
-  transition: color var(--transition-base);
-}
-.footer-links a:hover { color: var(--pink); text-decoration: underline; }
-.footer-sep { opacity: 0.3; color: var(--white-muted); }
-.footer-brand { color: var(--pink); opacity: 0.9; font-weight: 800; }
-.footer-version {
-  color: var(--white-muted);
-  opacity: 0.6;
-  font-weight: 600;
-  font-size: 11px;
-}
-
-/* ===== COOKIE POPUP ===== */
-.cookie-overlay { display: none !important; }
-.cookie-popup {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  background: rgba(20,20,20,0.92);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(240,160,184,0.2);
-  box-shadow: 0 -4px 24px rgba(0,0,0,0.4);
-  padding: 12px 20px;
-  z-index: 999999;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.cookie-popup-title { display: none; }
-.cookie-popup-text {
-  font-size: 12px;
-  line-height: 1.4;
-  color: var(--white-muted);
-  margin: 0;
-  text-align: center;
-  flex: 1;
-}
-.cookie-popup-text a {
-  color: var(--pink);
-  text-decoration: underline;
-  font-weight: 600;
-}
-.cookie-popup-btn {
-  padding: 6px 18px;
-  background: var(--pink-hot);
-  color: var(--white);
-  border: none;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all var(--transition-base);
-  white-space: nowrap;
-}
-.cookie-popup-btn:hover {
-  background: #c2185b;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(233,30,99,0.4);
-}
-.cookie-hidden { display: none !important; }
-@media (max-width: 768px) {
-  .cookie-popup { padding: 10px 14px; }
-  .cookie-popup-text { font-size: 11px; font-weight: 600; }
-}
-
-/* ===== EXIT POPUP ===== */
-.exit-popup-overlay {
-  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.85);
-  z-index: 9999998;
-  display: none;
-  animation: fadeIn 0.3s ease;
-}
-.exit-popup-overlay.show {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-.exit-popup {
-  background: var(--bg-card);
-  border-radius: var(--radius-lg);
-  padding: 20px;
-  max-width: 550px; width: 90%;
-  position: relative;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-  animation: popUp 0.4s ease-out;
-  text-align: center;
-  border: 1px solid rgba(240,160,184,0.2);
-}
-@keyframes popUp {
-  from { transform: scale(0.85) translateY(30px); opacity: 0; }
-  to { transform: scale(1) translateY(0); opacity: 1; }
-}
-.exit-popup-close {
-  position: absolute; top: 10px; left: 10px;
-  background: rgba(255,255,255,0.05);
-  border: 2px solid var(--pink-hot);
-  width: 32px; height: 32px;
-  border-radius: 50%; font-size: 22px;
-  color: var(--pink-hot); font-weight: 900;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: all var(--transition-base);
-}
-.exit-popup-close:hover {
-  background: var(--pink-hot);
-  color: var(--white);
-  transform: rotate(90deg) scale(1.1);
-}
-.exit-popup-title {
-  font-size: 22px; font-weight: 900;
-  color: var(--white);
-  margin-bottom: 8px; line-height: 1.3;
-}
-.exit-popup-subtitle {
-  font-size: 16px; font-weight: 700;
-  color: var(--pink);
-  margin-bottom: 10px;
-}
-.exit-popup-text {
-  font-size: 13px; font-weight: 600;
-  color: var(--white-muted);
-  margin: 6px 0;
-  line-height: 1.4;
-}
-.exit-popup-gift {
-  background: rgba(240,160,184,0.08);
-  padding: 12px;
-  border-radius: 12px;
-  margin-bottom: 8px;
-  border: 1px solid rgba(240,160,184,0.2);
-}
-.exit-popup-gift-title {
-  font-size: 15px; font-weight: 800;
-  color: var(--white); margin-bottom: 5px;
-}
-.exit-popup-gift-text {
-  font-size: 14px; font-weight: 600;
-  color: var(--white-muted); line-height: 1.4;
-}
-.exit-popup-form {
-  margin: 8px 0;
-  background: rgba(240,160,184,0.06);
-  padding: 12px;
-  border-radius: 10px;
-}
-.exit-popup-form iframe {
-  width: 100% !important;
-  min-height: 200px;
-  max-height: 220px;
-  border: none;
-  background: transparent;
-  transform: scale(0.9);
-  transform-origin: top;
-}
-.exit-popup-close-text {
-  font-size: 11px; font-weight: 600;
-  color: var(--white-muted);
-  cursor: pointer;
-  text-decoration: underline;
-  transition: color var(--transition-base);
-}
-.exit-popup-close-text:hover { color: var(--pink); }
-
-@media (max-width: 768px) {
-  .exit-popup { padding: 15px; max-width: 95%; }
-  .exit-popup-title { font-size: 20px; }
-}
-
-/* ===== ACCESSIBILITY ===== */
-.a11y-fab {
-  position: fixed;
-  right: 14px; bottom: 14px;
-  z-index: 9999;
-  border: 0;
-  border-radius: 999px;
-  padding: 12px 14px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-.a11y-panel {
-  position: fixed;
-  right: 14px; bottom: 70px;
-  z-index: 9999;
-  width: min(320px, calc(100vw - 28px));
-  background: var(--bg-card);
-  color: var(--white);
-  border-radius: 16px;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
-  padding: 14px;
-  display: none;
-  direction: rtl;
-  border: 1px solid var(--gray-border);
-}
-.a11y-panel.open { display: block; }
-.a11y-title { font-weight: 900; font-size: 16px; margin: 0 0 10px; }
-.a11y-row {
-  display: flex; gap: 10px; align-items: center;
-  justify-content: space-between; margin: 10px 0;
-}
-.a11y-row button {
-  border: 0; border-radius: 12px;
-  padding: 10px 12px; font-weight: 800; cursor: pointer;
-}
-.a11y-close { background: rgba(255,255,255,0.1); color: var(--white); }
-.a11y-action { background: var(--pink-hot); color: var(--white); }
-.a11y-muted { font-size: 12px; opacity: 0.6; margin-top: 8px; line-height: 1.35; }
-
-html.a11y-contrast body { filter: contrast(1.15) saturate(1.05); }
-html.a11y-underline a { text-decoration: underline !important; }
-html.a11y-bigtext body { font-size: 112%; }
-
-/* ===== DESKTOP RESPONSIVE ===== */
-@media (min-width: 768px) {
-  .hero { height: auto !important; overflow: visible !important; }
-  .hero img { width: 100% !important; height: auto !important; object-fit: cover !important; display: block !important; }
-  #media-scroll > div { min-width: 600px !important; max-width: 600px !important; }
-}
-
-@media (min-width: 1024px) and (max-width: 1440px) {
-  body { zoom: 0.97 !important; }
-  .cookie-popup { zoom: 0.7 !important; }
-}
-@media (min-width: 1441px) and (max-width: 1920px) {
-  body { zoom: 1.35 !important; }
-  .cookie-popup { zoom: 0.65 !important; }
-}
-@media (min-width: 1921px) {
-  body { zoom: 1.5 !important; }
-  .cookie-popup { zoom: 0.6 !important; }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  body { zoom: 1.0 !important; }
-  .cookie-popup { zoom: 1.0 !important; }
-}
-
-/* ===== EMOJI FIX ===== */
-.emoji {
-  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
-  display: inline-block;
-}
-
-/* ===== DISCLAIMER ===== */
-.disclaimer-text {
-  font-size: 12px;
-  color: var(--white-muted);
-  line-height: 1.4;
-  opacity: 0.6;
-}
-
+/* DESKTOP */
+@media(min-width:768px){.hero{height:auto!important;overflow:visible!important}.hero img{width:100%!important;height:auto!important;object-fit:cover!important;display:block!important}#media-scroll>div{min-width:600px!important;max-width:600px!important}}
+@media(min-width:1024px) and (max-width:1440px){body{zoom:0.97!important}.cookie-popup{zoom:0.7!important}}
+@media(min-width:1441px) and (max-width:1920px){body{zoom:1.35!important}.cookie-popup{zoom:0.65!important}}
+@media(min-width:1921px){body{zoom:1.5!important}.cookie-popup{zoom:0.6!important}}
+@media(min-width:768px) and (max-width:1023px){body{zoom:1.0!important}.cookie-popup{zoom:1.0!important}}
+.emoji{font-family:"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji",sans-serif;display:inline-block}
 </style>
-
-<!-- Accessibility Code for "myprime.co.il" -->
 <script>
-window.interdeal = {
-    "sitekey": "9fd8fd0dea32e6467b980149c24d3899",
-    "Position": "Left",
-    "Menulang": "HE",
-    "domains": {
-        "js": "https://js.nagich.co.il/",
-        "acc": "https://access.nagich.co.il/"
-    },
-    "btnStyle": {
-        "vPosition": ["50%", null],
-        "scale": ["0.6", "0.6"],
-        "icon": { "type": 11, "shape": "circle", "outline": false }
-    }
-};
-(function(doc, head, body){
-	var coreCall = doc.createElement('script');
-	coreCall.src = interdeal.domains.js + 'core/4.5.12/accessibility.js';
-	coreCall.defer = true;
-	coreCall.integrity = 'sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==';
-	coreCall.crossOrigin = 'anonymous';
-	coreCall.setAttribute('data-cfasync', true);
-	body ? body.appendChild(coreCall) : head.appendChild(coreCall);
-})(document, document.head, document.body);
+window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};
+(function(d,h,b){var s=d.createElement('script');s.src=interdeal.domains.js+'core/4.5.12/accessibility.js';s.defer=true;s.integrity='sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==';s.crossOrigin='anonymous';s.setAttribute('data-cfasync',true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);
 </script>
-
 </head>
 <body>
-
-<!-- Cookie Popup -->
+<div class="sticky-bar">
+  <span class="sticky-bar-brand">MP</span>
+  <button class="sticky-bar-btn" onclick="openFormModal()">הרשמי עכשיו</button>
+  <button class="sticky-bar-menu" onclick="document.getElementById('checklist-section').scrollIntoView({behavior:'smooth'})">התחילי ▾</button>
+</div>
 <div class="cookie-overlay" id="cookieOverlay"></div>
 <div class="cookie-popup" id="cookiePopup">
-  <div class="cookie-popup-text">
-    אתר זה משתמש בקוקיז וטכנולוגיות דומות למטרות ניטור, תחזוקה, שיפור האתר וכן התאמת התכנים והפרסום, בהתאם ל<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות הפרטיות</a>.
-  </div>
+  <div class="cookie-popup-text">אתר זה משתמש בקוקיז בהתאם ל<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות הפרטיות</a>.</div>
   <button class="cookie-popup-btn" onclick="closeCookiePopup()">הבנתי</button>
 </div>
+<script>function closeCookiePopup(){document.getElementById('cookiePopup').classList.add('cookie-hidden');document.getElementById('cookieOverlay').classList.add('cookie-hidden')}</script>
 
-<script>
-function closeCookiePopup() {
-  document.getElementById('cookiePopup').classList.add('cookie-hidden');
-  document.getElementById('cookieOverlay').classList.add('cookie-hidden');
-}
-</script>
+<div class="hero"><picture><source media="(min-width:768px)" srcset="/360/site_images/HEADERPIC-W.jpg"><img src="/360/site_images/web_header_mob.jpg" alt="MyPrime - ענת הראל" class="hero-img"></picture></div>
 
-<!-- HERO -->
-<div class="hero">
-  <picture>
-    <source media="(min-width: 768px)" srcset="/360/site_images/HEADERPIC-W.jpg">
-    <img src="/360/site_images/web_header_mob.jpg" alt="MyPrime - ענת הראל" class="hero-img">
-  </picture>
+<div class="urgency-section fade-in">
+  <div class="urgency-tag">מקומות אחרונים</div>
+  <h2 class="urgency-headline">⏰ מפגש זום <em>חינמי</em></h2>
+  <p class="urgency-sub">בואי להדרכה חינמית שתגלה לך את הסודות להתמודדות בריאה עם עלייה במשקל, השמנה בטנית, הפרעות בשינה ועייפות כרונית!</p>
+  <button class="btn-pink" onclick="openFormModal()">לחצי והרשמי עכשיו למפגש</button>
 </div>
 
-<!-- URGENCY BOX -->
-<div class="webinar-urgency-box fade-in">
-  <div class="urgency-timer">⏰ מקומות אחרונים במפגש החינמי הקרוב!</div>
-  <h3 class="urgency-title">
-    בואי להדרכה חינמית שתגלה לך את הסודות להתמודדות בריאה עם עלייה במשקל, השמנה בטנית, הפרעות בשינה ועייפות כרונית!
-  </h3>
-  <button class="urgency-cta-btn" onclick="openFormModal()">
-    לחצי והרשמי עכשיו למפגש ולטיפים בחינם
-  </button>
-</div>
-
-<!-- HIDDEN FORM -->
 <div class="hidden-form-section" id="hiddenFormSection">
   <h2 class="hidden-form-title">🎯 הרשמי עכשיו למפגש החינמי</h2>
   <p class="hidden-form-subtitle">מלאי את הפרטים ונשמור לך מקום!</p>
   <p class="hidden-form-gift">📢 <strong>מתנה שימושית למשתתפות המפגש</strong><br>מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה יכול להיות רלוונטי בגיל שלנו</p>
-  <div class="embedded-form">
-    <script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script>
-  </div>
+  <div class="embedded-form"><script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script></div>
 </div>
 
-<!-- TESTIMONIALS (hidden) -->
-<div class="testimonials-section" style="display:none;padding:0 16px;margin:24px 0;">
-  <div class="testimonials-title">תשמעי מה הן אומרות 🎙️</div>
-  <div style="text-align:center;color:var(--white-muted);margin-bottom:12px;direction:rtl;display:flex;align-items:center;justify-content:center;gap:16px;">
-    <button class="nav-btn" onclick="scrollTestimony(1)">→</button>
-    <span style="font-size:clamp(18px,4vw,22px);font-weight:800;">החליקי לשמוע עוד עדויות</span>
-    <button class="nav-btn" onclick="scrollTestimony(-1)">←</button>
-  </div>
-  <div id="testimony-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:18px;border:2px solid rgba(240,160,184,0.3);height:min(75vw,420px);">
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;position:relative;height:100%;overflow:hidden;">
-      <iframe src="https://player.vimeo.com/video/1169277162?badge=0&autoplay=0&loop=0&autopause=1&player_id=0&app_id=58479" style="width:100%;height:100%;border:none;display:block;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="עדות 1"></iframe>
-    </div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:var(--bg-card);"><img src="/360/site_images/testimony1.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:var(--bg-card);"><img src="/360/site_images/testimony2.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:var(--bg-card);"><img src="/360/site_images/testimony3.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:var(--bg-card);"><img src="/360/site_images/testimony4.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:var(--bg-card);"><img src="/360/site_images/testimony5.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:var(--bg-card);"><img src="/360/site_images/testimony6.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:var(--bg-card);"><img src="/360/site_images/testimony7.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:var(--bg-card);"><img src="/360/site_images/testimony8.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:var(--bg-card);"><img src="/360/site_images/testimony9.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:var(--bg-card);"><img src="/360/site_images/testimony10.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:var(--bg-card);"><img src="/360/site_images/testimony11.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-    <div style="min-width:100%;scroll-snap-align:start;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;background:var(--bg-card);"><img src="/360/site_images/testimony12.jpg" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-  </div>
-</div>
-
-<!-- INTRO -->
 <div class="intro-section fade-in">
-  <h2 class="intro-title">איך תדעי אם המפגש יכול לעזור לך?</h2>
-  <p class="intro-subtitle">עני על 3 שאלות קצרות</p>
-  <p class="intro-subtitle">ותקבלי הערכה ראשונית</p>
+  <h2 class="intro-title">איך תדעי אם המפגש<br>יכול לעזור לך?</h2>
+  <p class="intro-subtitle">עני על 3 שאלות קצרות ותקבלי הערכה ראשונית</p>
   <p class="intro-subtitle">שאולי תסביר לך הרבה דברים שיפתיעו אותך</p>
-  <button class="start-btn-main" onclick="document.getElementById('checklist-section').scrollIntoView({behavior:'smooth',block:'start'})">
-    <span>מוכנה? בואי נתחיל</span><span class="arrow">&#8595;</span>
-  </button>
-  <p class="disclaimer-text" style="margin-top:16px;padding:0 20px;">* זהו כלי מידע בלבד ואינו תחליף לייעוץ רפואי ומקצועי. בהתאם למדיניות הפרטיות של החברה</p>
+  <button class="start-btn" onclick="document.getElementById('checklist-section').scrollIntoView({behavior:'smooth',block:'start'})"><span>מוכנה? בואי נתחיל</span><span class="arrow">&#8595;</span></button>
+  <p style="margin-top:16px;font-size:11px;color:var(--text-muted);line-height:1.4;padding:0 20px;">* זהו כלי מידע בלבד ואינו תחליף לייעוץ רפואי ומקצועי</p>
 </div>
 
-<!-- CHECKLIST -->
-<div class="checklist-wrap" id="checklist-section">
-  <div class="section">
-    <div class="q-label fade-in"><span class="q-num">1</span>ספרי לי על התסמינים שמפריעים לך:</div>
-    <p class="section-sub fade-in">מה מוכר לך בתקופה האחרונה?</p>
-    <div class="chips-grid" id="symptoms-grid">
-      <div class="chip chip-featured" data-cat="body" data-label="השמנה בטנית" onclick="toggleSym(this)"><span class="chip-emoji">🫃</span>השמנה בטנית 🔥</div>
-      <div class="chip chip-featured" data-cat="energy" data-label="שינה גרועה" onclick="toggleSym(this)"><span class="chip-emoji">😴</span>שינה גרועה 🔥</div>
-      <div class="chip chip-featured" data-cat="mood" data-label="שינויי מצב רוח" onclick="toggleSym(this)"><span class="chip-emoji">🌊</span>מצבי רוח 🔥</div>
-      <div class="chip chip-featured" data-cat="body" data-label="עלייה במשקל" onclick="toggleSym(this)"><span class="chip-emoji">⚖️</span>עלייה במשקל 🔥</div>
-      <div class="chip" data-cat="vaso" data-label="גלי חום" onclick="toggleSym(this)"><span class="chip-emoji">🌡️</span>גלי חום</div>
-      <div class="chip" data-cat="vaso" data-label="הזעות לילה" onclick="toggleSym(this)"><span class="chip-emoji">😰</span>הזעות לילה</div>
-      <div class="chip" data-cat="energy" data-label="עייפות מתמשכת" onclick="toggleSym(this)"><span class="chip-emoji">😴</span>עייפות מתמשכת</div>
-      <div class="chip" data-cat="energy" data-label="שינה-גרועה-dup" style="display:none" onclick="toggleSym(this)"><span class="chip-emoji">🌙</span>שינה גרועה</div>
-      <div class="chip" data-cat="mood" data-label="עצבנות" onclick="toggleSym(this)"><span class="chip-emoji">😤</span>עצבנות</div>
-      <div class="chip" data-cat="mood" data-label="חרדה" onclick="toggleSym(this)"><span class="chip-emoji">😟</span>חרדה</div>
-      <div class="chip" data-cat="mood" data-label="שינויי-מצב-רוח-dup" style="display:none" onclick="toggleSym(this)"><span class="chip-emoji">🌀</span>שינויי מצב רוח</div>
-      <div class="chip" data-cat="mood" data-label="ירידה במצב רוח" onclick="toggleSym(this)"><span class="chip-emoji">😞</span>ירידה במצב רוח</div>
-      <div class="chip" data-cat="cognitive" data-label="ערפול מחשבתי" onclick="toggleSym(this)"><span class="chip-emoji">🧠</span>ערפול מחשבתי</div>
-      <div class="chip" data-cat="cognitive" data-label="קושי להתרכז" onclick="toggleSym(this)"><span class="chip-emoji">💭</span>קושי להתרכז</div>
-      <div class="chip" data-cat="body" data-label="כאבי מפרקים" onclick="toggleSym(this)"><span class="chip-emoji">🦴</span>כאבי מפרקים</div>
-      <div class="chip" data-cat="body" data-label="ירידה בכוח" onclick="toggleSym(this)"><span class="chip-emoji">💪</span>ירידה בכוח</div>
-      <div class="chip" data-cat="body" data-label="נפיחות" onclick="toggleSym(this)"><span class="chip-emoji">🫧</span>נפיחות</div>
-      <div class="chip" data-cat="skin" data-label="יובש בעור" onclick="toggleSym(this)"><span class="chip-emoji">💧</span>יובש בעור</div>
-      <div class="chip" data-cat="skin" data-label="יובש בנרתיק" onclick="toggleSym(this)"><span class="chip-emoji">💧</span>יובש בנרתיק</div>
-      <div class="chip" data-cat="skin" data-label="שינויים בעור ובשיער" onclick="toggleSym(this)"><span class="chip-emoji">🔥</span>שינויים בעור ובשיער</div>
-      <div class="chip" data-cat="vaso" data-label="דפיקות לב" onclick="toggleSym(this)"><span class="chip-emoji">💓</span>דפיקות לב</div>
-      <div class="chip" data-cat="libido" data-label="ירידה בחשק המיני" onclick="toggleSym(this)"><span class="chip-emoji">❤️</span>ירידה בחשק המיני</div>
-    </div>
-    <div class="counter-pill">
-      <span class="counter-text">מספר התסמינים שסימנת: <span class="counter-num" id="sym-count">0</span></span>
-    </div>
+<div class="checklist-wrap" id="checklist-section"><div class="section">
+  <div class="q-label fade-in"><span class="q-num">1</span>ספרי לי על התסמינים שמפריעים לך:</div>
+  <p class="section-sub">מה מוכר לך בתקופה האחרונה?</p>
+  <div class="chips-grid" id="symptoms-grid">
+    <div class="chip chip-featured" data-cat="body" data-label="השמנה בטנית" onclick="toggleSym(this)"><span class="chip-emoji">🫃</span>השמנה בטנית 🔥</div>
+    <div class="chip chip-featured" data-cat="energy" data-label="שינה גרועה" onclick="toggleSym(this)"><span class="chip-emoji">😴</span>שינה גרועה 🔥</div>
+    <div class="chip chip-featured" data-cat="mood" data-label="שינויי מצב רוח" onclick="toggleSym(this)"><span class="chip-emoji">🌊</span>מצבי רוח 🔥</div>
+    <div class="chip chip-featured" data-cat="body" data-label="עלייה במשקל" onclick="toggleSym(this)"><span class="chip-emoji">⚖️</span>עלייה במשקל 🔥</div>
+    <div class="chip" data-cat="vaso" data-label="גלי חום" onclick="toggleSym(this)"><span class="chip-emoji">🌡️</span>גלי חום</div>
+    <div class="chip" data-cat="vaso" data-label="הזעות לילה" onclick="toggleSym(this)"><span class="chip-emoji">😰</span>הזעות לילה</div>
+    <div class="chip" data-cat="energy" data-label="עייפות מתמשכת" onclick="toggleSym(this)"><span class="chip-emoji">😴</span>עייפות מתמשכת</div>
+    <div class="chip" data-cat="mood" data-label="עצבנות" onclick="toggleSym(this)"><span class="chip-emoji">😤</span>עצבנות</div>
+    <div class="chip" data-cat="mood" data-label="חרדה" onclick="toggleSym(this)"><span class="chip-emoji">😟</span>חרדה</div>
+    <div class="chip" data-cat="mood" data-label="ירידה במצב רוח" onclick="toggleSym(this)"><span class="chip-emoji">😞</span>ירידה במצב רוח</div>
+    <div class="chip" data-cat="cognitive" data-label="ערפול מחשבתי" onclick="toggleSym(this)"><span class="chip-emoji">🧠</span>ערפול מחשבתי</div>
+    <div class="chip" data-cat="cognitive" data-label="קושי להתרכז" onclick="toggleSym(this)"><span class="chip-emoji">💭</span>קושי להתרכז</div>
+    <div class="chip" data-cat="body" data-label="כאבי מפרקים" onclick="toggleSym(this)"><span class="chip-emoji">🦴</span>כאבי מפרקים</div>
+    <div class="chip" data-cat="body" data-label="ירידה בכוח" onclick="toggleSym(this)"><span class="chip-emoji">💪</span>ירידה בכוח</div>
+    <div class="chip" data-cat="body" data-label="נפיחות" onclick="toggleSym(this)"><span class="chip-emoji">🫧</span>נפיחות</div>
+    <div class="chip" data-cat="skin" data-label="יובש בעור" onclick="toggleSym(this)"><span class="chip-emoji">💧</span>יובש בעור</div>
+    <div class="chip" data-cat="skin" data-label="יובש בנרתיק" onclick="toggleSym(this)"><span class="chip-emoji">💧</span>יובש בנרתיק</div>
+    <div class="chip" data-cat="skin" data-label="שינויים בעור ובשיער" onclick="toggleSym(this)"><span class="chip-emoji">🔥</span>שינויים בעור ובשיער</div>
+    <div class="chip" data-cat="vaso" data-label="דפיקות לב" onclick="toggleSym(this)"><span class="chip-emoji">💓</span>דפיקות לב</div>
+    <div class="chip" data-cat="libido" data-label="ירידה בחשק המיני" onclick="toggleSym(this)"><span class="chip-emoji">❤️</span>ירידה בחשק המיני</div>
   </div>
-</div>
+  <div class="counter-pill"><span class="counter-text">מספר התסמינים שסימנת: <span class="counter-num" id="sym-count">0</span></span></div>
+</div></div>
 
-<!-- QUESTIONS -->
-<div class="q-wrap" id="questions">
-  <div class="section">
-    <div class="q-block fade-in">
-      <div class="q-label"><span class="q-num">2</span>מה טווח הגיל שלך?</div>
-      <div class="opts" id="age-opts">
-        <div class="opt-item" onclick="selectOpt('age','38_49',this)"><div class="radio-dot"></div> 38 עד 49</div>
-        <div class="opt-item" onclick="selectOpt('age','50_59',this)"><div class="radio-dot"></div> 50 עד 59</div>
-        <div class="opt-item" onclick="selectOpt('age','60_69',this)"><div class="radio-dot"></div> 60 עד 69</div>
-        <div class="opt-item" onclick="selectOpt('age','over70',this)"><div class="radio-dot"></div> 70 פלוס</div>
-      </div>
-      <p class="val-msg" id="val-age">בחרי גיל כדי להמשיך</p>
+<div class="q-wrap" id="questions"><div class="section">
+  <div class="q-block fade-in">
+    <div class="q-label"><span class="q-num">2</span>מה טווח הגיל שלך?</div>
+    <div class="opts" id="age-opts">
+      <div class="opt-item" onclick="selectOpt('age','38_49',this)"><div class="radio-dot"></div> 38 עד 49</div>
+      <div class="opt-item" onclick="selectOpt('age','50_59',this)"><div class="radio-dot"></div> 50 עד 59</div>
+      <div class="opt-item" onclick="selectOpt('age','60_69',this)"><div class="radio-dot"></div> 60 עד 69</div>
+      <div class="opt-item" onclick="selectOpt('age','over70',this)"><div class="radio-dot"></div> 70 פלוס</div>
     </div>
-    <div class="q-block fade-in">
-      <div class="q-label"><span class="q-num">3</span>מה קורה עם המחזור שלך?</div>
-      <div class="opts" id="cycle-opts">
-        <div class="opt-item" onclick="selectOpt('cycle','regular',this)"><div class="radio-dot"></div> עדיין יש לי מחזור (סדיר או לא סדיר)</div>
-        <div class="opt-item" onclick="selectOpt('cycle','menopause',this)"><div class="radio-dot"></div> לא היה לי מחזור כבר יותר משנה</div>
-      </div>
-      <p class="val-msg" id="val-cycle">סמני את מצב המחזור כדי להמשיך</p>
-    </div>
+    <p class="val-msg" id="val-age">בחרי גיל כדי להמשיך</p>
   </div>
-</div>
+  <div class="q-block fade-in">
+    <div class="q-label"><span class="q-num">3</span>מה קורה עם המחזור שלך?</div>
+    <div class="opts" id="cycle-opts">
+      <div class="opt-item" onclick="selectOpt('cycle','regular',this)"><div class="radio-dot"></div> עדיין יש לי מחזור (סדיר או לא סדיר)</div>
+      <div class="opt-item" onclick="selectOpt('cycle','menopause',this)"><div class="radio-dot"></div> לא היה לי מחזור כבר יותר משנה</div>
+    </div>
+    <p class="val-msg" id="val-cycle">סמני את מצב המחזור כדי להמשיך</p>
+  </div>
+</div></div>
 
-<!-- CTA -->
 <div class="cta-wrap">
   <button class="btn-main" onclick="showResult()">גלי עכשיו מה הגוף שלך מנסה להגיד לך &#8592;</button>
   <p class="val-msg" id="val-main" style="text-align:center;margin-top:10px;"></p>
 </div>
 
-<!-- RESULT -->
-<div class="result-wrap" id="result">
-  <div class="section" style="padding-top:0">
-    <div class="result-card">
-      <div class="stage-header" id="stage-header">
-        <div class="stage-headline">
-          <span class="stage-emoji-inline" id="merged-emoji"></span>
-          <div class="stage-headline-text">
-            <span class="stage-label">השלב שלך: </span><span id="merged-stage-name"></span>
-          </div>
-        </div>
-        <div class="merged-stage-desc" id="merged-stage-desc"></div>
-      </div>
-      <div class="merged-divider"></div>
-      <div class="score-wrap" id="score-wrap">
-        <div class="gauge-text-row">
-          <div class="gauge-col">
-            <div class="score-label">עוצמת ההשפעה</div>
-            <div class="gauge-wrap">
-              <svg class="gauge-svg" viewBox="0 0 220 120" style="overflow:visible">
-                <path d="M 20 110 A 90 90 0 0 1 73 27" fill="none" stroke="#FFB74D" stroke-width="18" stroke-linecap="round" opacity="0.6"/>
-                <path d="M 73 27 A 90 90 0 0 1 147 27" fill="none" stroke="#FF9800" stroke-width="18" stroke-linecap="round" opacity="0.7"/>
-                <path d="M 147 27 A 90 90 0 0 1 200 110" fill="none" stroke="#E91E63" stroke-width="18" stroke-linecap="round" opacity="0.8"/>
-                <line id="gauge-needle" x1="110" y1="110" x2="110" y2="30" stroke="var(--white)" stroke-width="3" stroke-linecap="round" class="gauge-needle"/>
-                <circle cx="110" cy="110" r="7" fill="var(--white)"/>
-              </svg>
-            </div>
-            <div class="score-badge" id="score-badge"></div>
-          </div>
-          <div class="gauge-text-col">
-            <div class="result-title" id="res-title"></div>
-            <p class="result-text" id="res-text"></p>
-          </div>
-        </div>
-        <div class="stat-box" id="stat-box">
-          <div class="stat-num">80%</div>
-          <div class="stat-desc">מהנשים שמילאו הערכה זו סימנו יותר מ-5 תסמינים - את ממש לא לבד</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="result-cta-section">
-      <div class="no-suffer-list" id="no-suffer-list"></div>
-      <p class="result-prime" style="justify-content:center;text-align:center;">את בפריים שלך<br>ומגיע לך ליהנות מהחיים!</p>
-      <div class="scroll-arrow-wrap">
-        <span class="scroll-arrow-text">יש מה לעשות וזה לא מסובך כמו שאת חושבת<br>יודעת למה?</span>
-        <div class="scroll-arrow-icon">&#8595;</div>
-      </div>
-    </div>
+<div class="result-wrap" id="result"><div class="section" style="padding-top:0">
+  <div class="result-card">
+    <div id="stage-header"><div class="stage-headline"><span class="stage-emoji-inline" id="merged-emoji"></span><div class="stage-headline-text"><span class="stage-label">השלב שלך: </span><span id="merged-stage-name"></span></div></div><div class="merged-stage-desc" id="merged-stage-desc"></div></div>
+    <div class="merged-divider"></div>
+    <div class="score-wrap" id="score-wrap"><div class="gauge-text-row"><div class="gauge-col"><div class="score-label">עוצמת ההשפעה</div><div class="gauge-wrap"><svg class="gauge-svg" viewBox="0 0 220 120" style="overflow:visible"><path d="M 20 110 A 90 90 0 0 1 73 27" fill="none" stroke="#FECBA1" stroke-width="18" stroke-linecap="round"/><path d="M 73 27 A 90 90 0 0 1 147 27" fill="none" stroke="#F97316" stroke-width="18" stroke-linecap="round"/><path d="M 147 27 A 90 90 0 0 1 200 110" fill="none" stroke="#E24A76" stroke-width="18" stroke-linecap="round"/><line id="gauge-needle" x1="110" y1="110" x2="110" y2="30" stroke="var(--black)" stroke-width="3" stroke-linecap="round" class="gauge-needle"/><circle cx="110" cy="110" r="7" fill="var(--black)"/></svg></div><div class="score-badge" id="score-badge"></div></div><div class="gauge-text-col"><div class="result-title" id="res-title"></div><p class="result-text" id="res-text"></p></div></div>
+    <div class="stat-box" id="stat-box"><div class="stat-num">80%</div><div class="stat-desc">מהנשים שמילאו הערכה זו סימנו יותר מ-5 תסמינים - את ממש לא לבד</div></div></div>
   </div>
-</div>
+  <div class="result-cta-section">
+    <div class="no-suffer-list" id="no-suffer-list"></div>
+    <p class="result-prime">את בפריים שלך<br>ומגיע לך ליהנות מהחיים!</p>
+    <div class="scroll-arrow-wrap"><span class="scroll-arrow-text">יש מה לעשות וזה לא מסובך כמו שאת חושבת<br>יודעת למה?</span><div class="scroll-arrow-icon">&#8595;</div></div>
+  </div>
+  <div class="final-form-section" style="padding-top:0"><div class="form-container"><h2 class="form-title">🎯 הרשמי עכשיו למפגש</h2><p class="form-subtitle">גלי את השיטה שעוזרת לאלפי נשים</p><div class="embedded-form"><script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script></div></div></div>
+</div></div>
 
-<!-- PROGRAM SECTION -->
-<div id="program-section" class="program-wrap">
+<div id="program-section">
   <div class="p2-hero fade-in">
     <h2 class="p2-title" id="p2-title">כי פיתחתי שיטה שעזרה עד היום לאלפי נשים <span id="age-stage">בשלב שלך</span> להתמודד עם:</h2>
     <p class="p2-subtitle" id="p2-subtitle"><strong>ועוד תופעות של השינוי ההורמונלי.</strong></p>
-    <div class="p2-final-cta">
-      <p class="p2-final-question">כמה את חשובה לך?</p>
-      <p class="p2-final-question">הקדישי לעצמך שעה אחת מזמנך ותעשי צעד ראשון ומשמעותי!</p>
-    </div>
-
-    <div class="final-form-section">
-      <div class="form-container">
-        <h2 class="form-title">🎯 אל תפספסי! הרשמי עכשיו</h2>
-        <p class="form-subtitle">המפגש מתקרב - שמרי את מקומך!</p>
-        <div class="embedded-form">
-          <script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script>
-        </div>
-      </div>
-    </div>
+    <div class="p2-final-cta"><p class="p2-final-question">כמה את חשובה לך?</p><p class="p2-final-question">הקדישי לעצמך שעה אחת<br>ותעשי צעד ראשון <em>ומשמעותי!</em></p></div>
   </div>
+  <div class="final-form-section"><div class="form-container"><h2 class="form-title">🎯 אל תפספסי! הרשמי עכשיו</h2><p class="form-subtitle">המפגש מתקרב - שמרי את מקומך!</p><div class="embedded-form"><script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script></div></div></div>
 </div>
 
-<!-- FORM MODAL -->
-<div class="form-modal" id="formModal">
-  <div class="modal-content">
-    <button class="modal-close" onclick="closeFormModal()">✕</button>
-    <h3 class="modal-title">הרשמי לווביניר בחינם</h3>
-  </div>
-</div>
-
-<!-- MEDIA SECTION -->
 <div class="media-section fade-in">
   <h2 class="media-title">מדברים עלינו במדיה 📣</h2>
-  <div class="media-subtitle" style="display:flex;align-items:center;justify-content:center;gap:16px;">
-    <button class="nav-btn" onclick="scrollMedia(1)">→</button>
-    <span>החליקי לצפייה</span>
-    <button class="nav-btn" onclick="scrollMedia(-1)">←</button>
-  </div>
+  <div class="media-nav-row"><button class="nav-btn" onclick="scrollMedia(1)">→</button><span>החליקי לצפייה</span><button class="nav-btn" onclick="scrollMedia(-1)">←</button></div>
   <div id="media-scroll" style="display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px;padding:0 16px 12px;">
-    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;border-radius:18px;overflow:hidden;flex-shrink:0;">
-      <iframe src="https://player.vimeo.com/video/1169298167?badge=0&autoplay=0&loop=0&autopause=1&player_id=0&app_id=58479" style="width:100%;height:100%;border:none;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;border-radius:18px;overflow:hidden;flex-shrink:0;">
-      <iframe src="https://player.vimeo.com/video/1169325165?badge=0&autoplay=0&loop=0&autopause=1&player_id=0&app_id=58479" style="width:100%;height:100%;border:none;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;border-radius:18px;overflow:hidden;flex-shrink:0;">
-      <iframe src="https://player.vimeo.com/video/1169301995?badge=0&autoplay=0&loop=0&autopause=1&player_id=0&app_id=58479" style="width:100%;height:100%;border:none;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;border-radius:18px;overflow:hidden;flex-shrink:0;">
-      <img src="/360/site_images/media_ynet.jpg" alt="כתבה ב-Ynet" style="width:100%;height:100%;object-fit:cover;">
-    </div>
-    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;border-radius:18px;overflow:hidden;flex-shrink:0;">
-      <img src="/360/site_images/media_ynet2.jpg" alt="כתבה ב-Ynet" style="width:100%;height:100%;object-fit:cover;">
-    </div>
-    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;border-radius:18px;overflow:hidden;flex-shrink:0;">
-      <img src="/360/site_images/media_yediot.jpg" alt="כתבה בידיעות אחרונות" style="width:100%;height:100%;object-fit:cover;">
-    </div>
-  </div>
-  <style>#media-scroll::-webkit-scrollbar{display:none;}</style>
-</div>
-
-<!-- FINAL FORM -->
-<div class="final-form-section">
-  <div class="form-container">
-    <h2 class="form-title">🎯 אל תפספסי! הרשמי עכשיו</h2>
-    <p class="form-subtitle">המפגש מתקרב - שמרי את מקומך!</p>
-    <div class="embedded-form">
-      <script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script>
-    </div>
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;flex-shrink:0;"><iframe src="https://player.vimeo.com/video/1169298167?badge=0&autoplay=0&loop=0&autopause=1" style="width:100%;height:100%;border:none;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;flex-shrink:0;"><iframe src="https://player.vimeo.com/video/1169325165?badge=0&autoplay=0&loop=0&autopause=1" style="width:100%;height:100%;border:none;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;flex-shrink:0;"><iframe src="https://player.vimeo.com/video/1169301995?badge=0&autoplay=0&loop=0&autopause=1" style="width:100%;height:100%;border:none;" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;flex-shrink:0;"><img src="/360/site_images/media_ynet.jpg" alt="Ynet" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;flex-shrink:0;"><img src="/360/site_images/media_ynet2.jpg" alt="Ynet" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div style="min-width:85vw;max-width:85vw;scroll-snap-align:center;aspect-ratio:1/1;flex-shrink:0;"><img src="/360/site_images/media_yediot.jpg" alt="ידיעות אחרונות" style="width:100%;height:100%;object-fit:cover;"></div>
   </div>
 </div>
 
-<!-- CONTACT -->
-<div class="offer-support-links">
-  <p style="font-size:clamp(20px,4.5vw,26px);font-weight:800;color:var(--white);text-align:center;margin-bottom:24px;line-height:1.4;">רוצה לדבר איתנו? לחצי על הכפתור ונשמח לשוחח</p>
-  <a class="offer-support-btn whatsapp-btn" href="https://wa.me/9720547304177">📱 WhatsApp<br>054-7304177</a>
-  <a class="offer-support-btn email-btn" href="/cdn-cgi/l/email-protection#1c6f696c6c736e685c71656c6e757179327f73327570">📧 לחצי לשליחת מייל</a>
+<div class="final-form-section"><div class="form-container"><h2 class="form-title">🎯 אל תפספסי! הרשמי עכשיו</h2><p class="form-subtitle">המפגש מתקרב - שמרי את מקומך!</p><div class="embedded-form"><script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script></div></div></div>
+
+<div class="contact-section">
+  <p class="contact-title">רוצה לדבר איתנו?<br>נשמח לשוחח</p>
+  <div class="contact-links">
+    <a class="contact-btn wa" href="https://wa.me/9720547304177">📱 WhatsApp — 054-7304177</a>
+    <a class="contact-btn email" href="/cdn-cgi/l/email-protection#1c6f696c6c736e685c71656c6e757179327f73327570">📧 לחצי לשליחת מייל</a>
+  </div>
 </div>
 
-<!-- STORY -->
-<div class="story-section" style="display:block;">
+<div class="story-section">
+  <p class="story-sub">הכירו את ענת</p>
   <h2>הסיפור האישי שלי</h2>
-  <div style="max-width:700px;margin:0 auto;">
+  <div class="story-body">
     <p>היי! אני ענת, בת 55, מייסדת "מיי פריים" - תוכניות ליווי לנשים בגיל המעבר, מרצה על אורח חיים בריא ומאמנת להתפתחות אישית.</p>
     <img src="/360/site_images/anat_portrait.jpg" alt="ענת הראל">
     <p>אני עוסקת בתחום כבר 20 שנה ויותר וזה סיפור ההתמודדות שלי עם גיל המעבר ואיך נולד הקורס "מיי פריים 360" במיוחד עבורך:</p>
-    <p>במהלך הקריירה שלי הגעתי לאלפי נשים בכל דרך אפשרית – מקבוצות וסדנאות כושר, דרך תוכניות אימון אונליין וכלה בהגשת תוכניות טלוויזיה רבות, כגון: "שעת אושר", "לחיות טוב", "גוף ונפש עם ענת הראל" ועוד. בעבר הייתי פרזנטורית של מותג דגני בוקר ושל "נייקי ישראל" וכיום אני בנבחרת המשפיעניות של "מכבי שירותי בריאות", "הודי'ס" ועוד.</p>
+    <p>במהלך הקריירה שלי הגעתי לאלפי נשים בכל דרך אפשרית – מקבוצות וסדנאות כושר, דרך תוכניות אימון אונליין וכלה בהגשת תוכניות טלוויזיה רבות.</p>
     <p><strong>מאז ומעולם הרגשתי שיש לי שליחות חשובה,</strong> שאליה אני מתמסרת כל כולי – לגרום לכמה שיותר נשים להבין את ההשפעה של פעילות גופנית ותזונה מאוזנת על החיים שלהן.</p>
-    <p>באמצע שנות ה-40 לחיי, ממש כשהרגשתי בשיא – משהו השתבש. שמתי לב למצבי רוח שמשתנים בקיצוניות, יכולת הריכוז שלי ירדה, השינה שלי נהייתה הרבה פחות רציפה ואיכותית, והגוף כבר לא הגיב באותו אופן לאימונים ולתזונה שהיו חלק בלתי נפרד מהשגרה שלי.</p>
-    <p>לקח לי כמה חודשים של ריצות מרופא לרופא, כדי להבין שאני בסך הכול עוברת תהליך טבעי שכל אישה עוברת: שינוי הורמונלי שמתרחש בשלבים המוקדמים של גיל המעבר. הבנתי שאני לא לבד, שישנן נשים רבות שחוות יחד איתי את אותן התופעות בדיוק.</p>
+    <p>באמצע שנות ה-40 לחיי, ממש כשהרגשתי בשיא – משהו השתבש. שמתי לב למצבי רוח שמשתנים בקיצוניות, יכולת הריכוז שלי ירדה, השינה שלי נהייתה הרבה פחות רציפה ואיכותית.</p>
+    <p>לקח לי כמה חודשים של ריצות מרופא לרופא, כדי להבין שאני עוברת תהליך טבעי שכל אישה עוברת: שינוי הורמונלי שמתרחש בשלבים המוקדמים של גיל המעבר.</p>
     <p>התחלתי לברר וגיליתי ש:</p>
-    <ol>
-      <li>רוב הנשים לא מבינות שמה שעובר עליהן קשור להורמונים.</li>
-      <li>רוב הנשים מחפשות את הפתרון במקום הלא נכון.</li>
-      <li>רובנו מתביישות לדבר על זה — ואם אנחנו לא מדברות, איך נוכל לטפל בבעיה?</li>
-    </ol>
+    <ol><li>רוב הנשים לא מבינות שמה שעובר עליהן קשור להורמונים.</li><li>רוב הנשים מחפשות את הפתרון במקום הלא נכון.</li><li>רובנו מתביישות לדבר על זה — ואם אנחנו לא מדברות, איך נוכל לטפל בבעיה?</li></ol>
     <img src="/360/site_images/anat_sport.jpg" alt="ענת הראל">
-    <p>החלטתי ללמוד איך אפשר לעבור את זה אחרת, תוך שילוב כל מה שאני עוסקת בו כבר עשרים שנה. קראתי מחקרים, התייעצתי עם רופאות ותזונאיות מובילות ויצרתי שיטה שמטרתה לאפשר לנשים החל מטרום גיל המעבר לחיות חיים טובים יותר בכל התחומים: במראה החיצוני, בבריאות, ברמות האנרגיה, ובהתמודדות עם השינויים.</p>
-    <p>כיום, אני רואה שליחות אדירה בהפצת הידע שרכשתי והשיטות שלמדתי והתנסיתי בהן בתחום ההתמודדות עם שלבי גיל המעבר, כי מגיע לנו להנות מהתקופה הזו – <strong>תקופת הפריים שלנו.</strong></p>
+    <p>החלטתי ללמוד איך אפשר לעבור את זה אחרת. קראתי מחקרים, התייעצתי עם רופאות ותזונאיות מובילות ויצרתי שיטה שמטרתה לאפשר לנשים לחיות חיים טובים יותר בכל התחומים.</p>
+    <p>כיום, אני רואה שליחות אדירה בהפצת הידע שרכשתי בתחום ההתמודדות עם שלבי גיל המעבר, כי מגיע לנו להנות מהתקופה הזו – <strong>תקופת הפריים שלנו.</strong></p>
   </div>
 </div>
 
-<!-- FINAL FORM (after story) -->
-<div class="final-form-section">
-  <div class="form-container">
-    <h2 class="form-title">🎯 אל תפספסי! הרשמי עכשיו</h2>
-    <p class="form-subtitle">המפגש מתקרב - שמרי את מקומך!</p>
-    <div class="embedded-form">
-      <script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script>
-    </div>
-  </div>
-</div>
+<div class="final-form-section" style="background:var(--off-white)"><div class="form-container"><h2 class="form-title">🎯 אל תפספסי! הרשמי עכשיו</h2><p class="form-subtitle">המפגש מתקרב - שמרי את מקומך!</p><div class="embedded-form"><script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script></div></div></div>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <nav class="footer-links" aria-label="קישורים משפטיים">
-    <a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a7%d7%95%d7%a7%d7%99%d7%96/" target="_blank" rel="noopener">מדיניות קוקיז</a>
-    <span class="footer-sep">|</span>
-    <a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank" rel="noopener">מדיניות פרטיות</a>
-    <span class="footer-sep">|</span>
-    <a href="https://myprime.co.il/%d7%94%d7%a6%d7%94%d7%a8%d7%aa-%d7%a0%d7%92%d7%99%d7%a9%d7%95%d7%aa/" target="_blank" rel="noopener">הצהרת נגישות</a>
-    <span class="footer-sep">|</span>
-    <a href="https://myprime.co.il/%d7%aa%d7%a7%d7%a0%d7%95%d7%9f/" target="_blank" rel="noopener">תקנון האתר</a>
-    <span class="footer-sep">|</span>
-    <a href="https://myprime.ravpage.co.il/BITUL?_gl=1*nmbnyj*_gcl_au*MjA1MjM0MDAyNC4xNzY3Njk0MTE0" target="_blank" rel="noopener">ביטול עסקה</a>
-    <span class="footer-sep">|</span>
-    <span class="footer-brand">my prime ענת הראל</span>
-    <span class="footer-sep">|</span>
-    <span class="footer-version">INDEXW254A</span>
-  </nav>
-</footer>
-
-<!-- ===== ALL JAVASCRIPT ===== -->
+<footer class="site-footer"><nav class="footer-links" aria-label="קישורים משפטיים">
+  <a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a7%d7%95%d7%a7%d7%99%d7%96/" target="_blank" rel="noopener">מדיניות קוקיז</a><span class="footer-sep">|</span>
+  <a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank" rel="noopener">מדיניות פרטיות</a><span class="footer-sep">|</span>
+  <a href="https://myprime.co.il/%d7%94%d7%a6%d7%94%d7%a8%d7%aa-%d7%a0%d7%92%d7%99%d7%a9%d7%95%d7%aa/" target="_blank" rel="noopener">הצהרת נגישות</a><span class="footer-sep">|</span>
+  <a href="https://myprime.co.il/%d7%aa%d7%a7%d7%a0%d7%95%d7%9f/" target="_blank" rel="noopener">תקנון האתר</a><span class="footer-sep">|</span>
+  <a href="https://myprime.ravpage.co.il/BITUL" target="_blank" rel="noopener">ביטול עסקה</a><span class="footer-sep">|</span>
+  <span class="footer-brand">my prime ענת הראל</span><span class="footer-sep">|</span><span class="footer-version">INDEXW254B</span>
+</nav></footer>
 <script>
-// ===== SCROLL FADE-IN ANIMATION =====
-var fadeObserver = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.fade-in').forEach(function(el) {
-  fadeObserver.observe(el);
-});
-
-// ===== STATE =====
-var answers = { age: null, cycle: null };
-
-function selectOpt(group, value, el) {
-  answers[group] = value;
-  var container = el.parentElement;
-  var items = container.getElementsByClassName('opt-item');
-  for (var i = 0; i < items.length; i++) items[i].classList.remove('selected');
-  el.classList.add('selected');
-  document.getElementById('val-' + group).classList.remove('show');
-  if (group === 'age') {
-    setTimeout(function() {
-      var cycleBlock = document.getElementById('cycle-opts').closest('.q-block');
-      var y = cycleBlock.getBoundingClientRect().top + window.pageYOffset - (window.innerHeight * 0.1);
-      window.scrollTo({top: y, behavior: 'smooth'});
-      checkPulseBtn();
-    }, 200);
-  } else if (group === 'cycle') {
-    setTimeout(function() {
-      checkPulseBtn();
-      var btn = document.querySelector('.btn-main');
-      if (btn) {
-        var btnBottom = btn.getBoundingClientRect().bottom + window.pageYOffset;
-        var y = btnBottom - (window.innerHeight * 0.85);
-        window.scrollTo({top: y, behavior: 'smooth'});
-      }
-    }, 100);
-  }
+var fObs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(function(el){fObs.observe(el)});
+var answers={age:null,cycle:null};
+function selectOpt(g,v,el){answers[g]=v;var items=el.parentElement.getElementsByClassName('opt-item');for(var i=0;i<items.length;i++)items[i].classList.remove('selected');el.classList.add('selected');document.getElementById('val-'+g).classList.remove('show');if(g==='age'){setTimeout(function(){var cb=document.getElementById('cycle-opts').closest('.q-block');window.scrollTo({top:cb.getBoundingClientRect().top+window.pageYOffset-(window.innerHeight*0.1),behavior:'smooth'});checkPulseBtn()},200)}else if(g==='cycle'){setTimeout(function(){checkPulseBtn();var btn=document.querySelector('.btn-main');if(btn)window.scrollTo({top:btn.getBoundingClientRect().bottom+window.pageYOffset-(window.innerHeight*0.85),behavior:'smooth'})},100)}}
+function toggleSym(el){el.classList.toggle('selected');document.getElementById('sym-count').textContent=document.querySelectorAll('#symptoms-grid .chip.selected').length;var r=el.getBoundingClientRect();window.scrollBy({top:Math.round(80+(r.top/window.innerHeight)*180),behavior:'smooth'})}
+function checkPulseBtn(){if(answers.age&&answers.cycle){var btn=document.querySelector('.btn-main');if(btn&&!btn.classList.contains('pulse-ready')){btn.classList.add('pulse-ready');setTimeout(function(){window.scrollTo({top:btn.getBoundingClientRect().top+window.pageYOffset-(window.innerHeight*0.4),behavior:'smooth'})},150)}}}
+function showResult(){
+  var btn=document.querySelector('.btn-main');if(btn)btn.classList.remove('pulse-ready');
+  var valid=true;if(!answers.age){document.getElementById('val-age').classList.add('show');valid=false}if(!answers.cycle){document.getElementById('val-cycle').classList.add('show');valid=false}if(!valid){document.getElementById('questions').scrollIntoView({behavior:'smooth'});return}
+  var chips=document.querySelectorAll('#symptoms-grid .chip.selected'),count=chips.length;
+  var cats={vaso:0,energy:0,mood:0,cognitive:0,body:0,skin:0,libido:0};chips.forEach(function(c){var cat=c.getAttribute('data-cat');if(cats[cat]!==undefined)cats[cat]++});
+  var rotation;if(count===0)rotation=-85;else if(count===1)rotation=-60;else if(count<=4)rotation=Math.round(-40+(count-2)*20);else rotation=Math.min(85,Math.round((count-5)*14));
+  var needle=document.getElementById('gauge-needle');needle.style.transition='none';needle.style.transform='rotate(-85deg)';
+  var obs=new IntersectionObserver(function(e){if(e[0].isIntersecting){setTimeout(function(){needle.style.transition='transform 1.4s cubic-bezier(0.34,1.3,0.64,1)';needle.style.transform='rotate('+rotation+'deg)'},200);obs.disconnect()}},{threshold:0.5});obs.observe(document.getElementById('score-wrap'));
+  var badge=document.getElementById('score-badge');if(count<=1){badge.textContent='השפעה חלקית';badge.className='score-badge low'}else if(count<=4){badge.textContent='השפעה בינונית';badge.className='score-badge medium'}else{badge.textContent='הגוף שלך מדבר אלייך 🔊';badge.className='score-badge high'}
+  if(answers.cycle==='menopause'){document.getElementById('merged-emoji').textContent='';document.getElementById('merged-stage-name').textContent='מנופאוזה';document.getElementById('merged-stage-desc').textContent='המחזור הפסיק - זה שלב מתקדם של גיל המעבר. הגוף כבר בעיצומו של השינוי ההורמונלי ויש כמה כלים משמעותיים כדי להרגיש ולהראות כמו שאת חולמת.'}else{if(answers.age==='38_49'){document.getElementById('merged-emoji').textContent='';document.getElementById('merged-stage-name').textContent='פרי-מנופאוזה (טרום גיל המעבר)';document.getElementById('merged-stage-desc').textContent='בגיל הזה עם מחזור סדיר, את בשלב הפרי-מנופאוזה - הגוף מתחיל לשנות את האיזון ההורמונלי שלו. התסמינים שסימנת הם בדיוק הסימן לכך.'}else if(answers.age==='50_59'){document.getElementById('merged-emoji').textContent='';document.getElementById('merged-stage-name').textContent='פרי-מנופאוזה (טרום גיל המעבר)';document.getElementById('merged-stage-desc').textContent='הגיל והמחזור מצביעים על פרי-מנופאוזה - התקופה שבה הורמונים מתחילים להשתנות. רוב התסמינים מגיעים דווקא בשלב הזה.'}else{document.getElementById('merged-emoji').textContent='';document.getElementById('merged-stage-name').textContent='מנופאוזה';document.getElementById('merged-stage-desc').textContent='המחזור הפסיק - זה שלב מתקדם של גיל המעבר. הגוף כבר בעיצומו של השינוי ההורמונלי ויש כמה כלים משמעותיים כדי להרגיש ולהראות כמו שאת חולמת.'}}
+  var title,text,score=count*5;if(score<=10){title='כמה סימנים ראשוניים';text='הגוף שלך מתחיל לשלוח סימנים. זה השלב הכי טוב להבין מה קורה ולהתחיל לעבוד עם הגוף.'}else if(score<=20){title='השינוי ההורמונלי כבר משפיע עלייך';text='את מרגישה את זה, ויש סיבה. הגוף שלך עובר שינוי משמעותי. החדשות הטובות - יש מה לעשות עם זה.'}else{title='עומס תסמינים משמעותי';text='את מתמודדת עם הרבה ואת לא חייבת להרגיש ככה! יש שיטה שמייצרת עבורך כלים להחזיר את השליטה.'}
+  document.getElementById('res-title').textContent=title;document.getElementById('res-text').textContent=text;
+  var cm={'גלי חום':{e:'🌡️',t:'את לא חייבת לחיות עם גלי חום שמפתיעים אותך!'},'הזעות לילה':{e:'😰',t:'את לא חייבת להתעורר בלילה רטובה מזיעה!'},'עייפות מתמשכת':{e:'😴',t:'את לא חייבת להיות עייפה כל היום!'},'שינה גרועה':{e:'🌙',t:'את לא חייבת לסבול מלילות ללא שינה!'},'עצבנות':{e:'😤',t:'את לא חייבת לסבול מעצבנות שבאה משום מקום!'},'חרדה':{e:'😟',t:'את לא חייבת לחיות עם חרדה שלא הייתה לך קודם!'},'שינויי מצב רוח':{e:'🌀',t:'את לא חייבת לסבול ממצבי רוח שמשתלטים עלייך!'},'ירידה במצב רוח':{e:'😞',t:'את לא חייבת לוותר על השמחה והאנרגיה!'},'ערפול מחשבתי':{e:'🧠',t:'את לא חייבת לוותר על הריכוז שלך!'},'קושי להתרכז':{e:'💭',t:'את לא חייבת לאבד מילים באמצע משפט!'},'עלייה במשקל':{e:'⚖️',t:'את לא חייבת לחיות עם משקל עודף!'},'השמנה בטנית':{e:'🫃',t:'את לא חייבת לקבל את העליה בהיקף הבטן!'},'כאבי מפרקים':{e:'🦴',t:'את לא חייבת לסבול מכאבים שמגבילים אותך!'},'ירידה בכוח':{e:'💪',t:'את לא חייבת לוותר על הכוח שהיה לך!'},'נפיחות':{e:'🫧',t:'את לא חייבת לסבול מנפיחות ללא סיבה!'},'יובש בעור':{e:'💧',t:'את לא חייבת לסבול מעור יבש!'},'יובש בנרתיק':{e:'💧',t:'את לא חייבת לסבול מאי-נוחות!'},'שינויים בעור ובשיער':{e:'🔥',t:'את לא חייבת לקבל את השינויים בעור ובשיער!'},'דפיקות לב':{e:'💓',t:'את לא חייבת לחיות עם דפיקות לב מפחידות!'},'ירידה בחשק המיני':{e:'❤️',t:'את לא חייבת לוותר על החשק והקרבה!'}};
+  var sl=document.getElementById('no-suffer-list');sl.innerHTML='';var shown=0;
+  document.querySelectorAll('#symptoms-grid .chip.selected').forEach(function(chip,i){if(shown>=5)return;var l=chip.getAttribute('data-label'),m=cm[l];if(m){var d=document.createElement('div');d.className='no-suffer-item';d.style.animationDelay=(i*0.08)+'s';d.innerHTML='<span class="ns-emoji">'+m.e+'</span>'+m.t;sl.appendChild(d);shown++}});
+  if(shown===0){var d=document.createElement('div');d.className='no-suffer-item';d.innerHTML='<span class="ns-emoji">✨</span>את לא חייבת לקבל את השינויים - יש מה לעשות!';sl.appendChild(d)}
+  var ml={'עלייה במשקל':'עלייה במשקל ושומן בטני','השמנה בטנית':'עלייה במשקל ושומן בטני','שינה גרועה':'שינה גרועה ועייפות','עייפות מתמשכת':'שינה גרועה ועייפות','שינויי מצב רוח':'מצבי רוח ועצבנות','עצבנות':'מצבי רוח ועצבנות','ירידה במצב רוח':'מצבי רוח ועצבנות','חרדה':'חרדה ומצבי רוח','גלי חום':'גלי חום והזעות','הזעות לילה':'גלי חום והזעות','ערפול מחשבתי':'ערפול מחשבתי','קושי להתרכז':'ערפול מחשבתי','כאבי מפרקים':'כאבי מפרקים','ירידה בכוח':'ירידה בכוח','יובש בעור':'יובש בעור','יובש בנרתיק':'יובש','שינויים בעור ובשיער':'שינויים בעור','דפיקות לב':'דפיקות לב','ירידה בחשק המיני':'ירידה בחשק','נפיחות':'נפיחות'};
+  if(count>5)document.getElementById('stat-box').classList.add('on');
+  var re=document.getElementById('result');re.classList.add('on');
+  var p2=document.getElementById('p2-title');if(p2)p2.innerHTML='כי פיתחתי שיטה שעזרה עד היום לאלפי נשים <span id="age-stage">בשלב שלך</span> להתמודד עם:';
+  var ps=document.getElementById('p2-subtitle');if(ps){var pi=[],pa=new Set(),pp=['עלייה במשקל ושומן בטני','שינה גרועה ועייפות','מצבי רוח ועצבנות'];document.querySelectorAll('#symptoms-grid .chip.selected').forEach(function(c){if(pi.length>=4)return;var l=c.getAttribute('data-label'),item=ml[l];if(item&&!pa.has(item)){pa.add(item);pi.push(item)}});pp.forEach(function(item){if(pi.length>=5)return;if(!pa.has(item)){pa.add(item);pi.push(item)}});ps.innerHTML=pi.join(', ')+' <strong>ועוד תופעות של השינוי ההורמונלי.</strong>'}
+  setTimeout(function(){re.scrollIntoView({behavior:'smooth'})},100);
 }
-
-function toggleSym(el) {
-  el.classList.toggle('selected');
-  var count = document.querySelectorAll('#symptoms-grid .chip.selected').length;
-  document.getElementById('sym-count').textContent = count;
-  var rect = el.getBoundingClientRect();
-  var ratio = rect.top / window.innerHeight;
-  var scrollAmt = Math.round(80 + ratio * 180);
-  window.scrollBy({ top: scrollAmt, behavior: 'smooth' });
-}
-
-function showResult() {
-  var btn = document.querySelector('.btn-main');
-  if (btn) btn.classList.remove('pulse-ready');
-
-  var valid = true;
-  if (!answers.age) { document.getElementById('val-age').classList.add('show'); valid = false; }
-  if (!answers.cycle) { document.getElementById('val-cycle').classList.add('show'); valid = false; }
-  if (!valid) { document.getElementById('questions').scrollIntoView({behavior:'smooth'}); return; }
-
-  var chips = document.querySelectorAll('#symptoms-grid .chip.selected');
-  var count = chips.length;
-  var cats = { vaso:0, energy:0, mood:0, cognitive:0, body:0, skin:0, libido:0 };
-  chips.forEach(function(c) { var cat = c.getAttribute('data-cat'); if (cats[cat] !== undefined) cats[cat]++; });
-
-  var rotation;
-  if (count === 0) rotation = -85;
-  else if (count === 1) rotation = -60;
-  else if (count <= 4) rotation = Math.round(-40 + (count - 2) * 20);
-  else rotation = Math.min(85, Math.round((count - 5) * 14));
-
-  var needle = document.getElementById('gauge-needle');
-  needle.style.transition = 'none';
-  needle.style.transform = 'rotate(-85deg)';
-  var observer = new IntersectionObserver(function(entries) {
-    if (entries[0].isIntersecting) {
-      setTimeout(function() {
-        needle.style.transition = 'transform 1.4s cubic-bezier(0.34, 1.3, 0.64, 1)';
-        needle.style.transform = 'rotate(' + rotation + 'deg)';
-      }, 200);
-      observer.disconnect();
-    }
-  }, { threshold: 0.5 });
-  observer.observe(document.getElementById('score-wrap'));
-
-  var badge = document.getElementById('score-badge');
-  if (count <= 1) { badge.textContent = 'השפעה חלקית'; badge.className = 'score-badge low'; }
-  else if (count <= 4) { badge.textContent = 'השפעה בינונית'; badge.className = 'score-badge medium'; }
-  else { badge.textContent = 'הגוף שלך מדבר אלייך 🔊'; badge.className = 'score-badge high'; }
-
-  var age = answers.age, cycle = answers.cycle;
-  if (cycle === 'menopause') {
-    document.getElementById('merged-emoji').textContent = '';
-    document.getElementById('merged-stage-name').textContent = 'מנופאוזה';
-    document.getElementById('merged-stage-desc').textContent = 'המחזור הפסיק - זה שלב מתקדם של גיל המעבר. הגוף כבר בעיצומו של השינוי ההורמונלי ויש כמה כלים משמעותיים כדי להרגיש ולהראות כמו שאת חולמת.';
-  } else {
-    if (age === '38_49') {
-      document.getElementById('merged-emoji').textContent = '';
-      document.getElementById('merged-stage-name').textContent = 'פרי-מנופאוזה (טרום גיל המעבר)';
-      document.getElementById('merged-stage-desc').textContent = 'בגיל הזה עם מחזור סדיר, את בשלב הפרי-מנופאוזה (טרום גיל המעבר) - הגוף מתחיל לשנות את האיזון ההורמונלי שלו גם כשהמחזור עדיין קיים. התסמינים שסימנת הם בדיוק הסימן לכך.';
-    } else if (age === '50_59') {
-      document.getElementById('merged-emoji').textContent = '';
-      document.getElementById('merged-stage-name').textContent = 'פרי-מנופאוזה (טרום גיל המעבר)';
-      document.getElementById('merged-stage-desc').textContent = 'הגיל והמחזור מצביעים על פרי-מנופאוזה (טרום גיל המעבר) - התקופה שבה הורמונים מתחילים להשתנות. זה יכול להימשך כמה שנים, ורוב התסמינים מגיעים דווקא בשלב הזה.';
-    } else {
-      document.getElementById('merged-emoji').textContent = '';
-      document.getElementById('merged-stage-name').textContent = 'מנופאוזה';
-      document.getElementById('merged-stage-desc').textContent = 'המחזור הפסיק - זה שלב מתקדם של גיל המעבר. הגוף כבר בעיצומו של השינוי ההורמונלי ויש כמה כלים משמעותיים כדי להרגיש ולהראות כמו שאת חולמת.';
-    }
-  }
-
-  var title, text;
-  var score = count * 5;
-  if (score <= 10) {
-    title = 'כמה סימנים ראשוניים';
-    text = 'הגוף שלך מתחיל לשלוח סימנים. זה השלב הכי טוב להבין מה קורה ולהתחיל לעבוד עם הגוף - לפני שהתסמינים מחמירים.';
-  } else if (score <= 20) {
-    title = 'השינוי ההורמונלי כבר משפיע עלייך';
-    text = 'את מרגישה את זה, ויש סיבה. הגוף שלך עובר שינוי משמעותי ויש לו מה לומר לך. החדשות הטובות - יש מה לעשות עם זה, ועכשיו זה הזמן.';
-  } else {
-    title = 'עומס תסמינים משמעותי';
-    text = 'את מתמודדת עם הרבה מאוד ואת לא חייבת להרגיש ככה ! יש שיטה שמבינה את כל מה שהגוף שלך עובר עכשיו ומייצרת עבורך כלים להחזיר את השליטה על הגוף שלך.';
-  }
-  document.getElementById('res-title').textContent = title;
-  document.getElementById('res-text').textContent = text;
-
-  var chipMessages = {
-    'גלי חום': { emoji: '🌡️', text: 'את לא חייבת לחיות עם גלי חום שמפתיעים אותך בכל רגע!' },
-    'הזעות לילה': { emoji: '😰', text: 'את לא חייבת להתעורר בלילה רטובה מזיעה!' },
-    'עייפות מתמשכת': { emoji: '😴', text: 'את לא חייבת להיות עייפה כל היום גם אחרי שינה מלאה!' },
-    'שינה גרועה': { emoji: '🌙', text: 'את לא חייבת לסבול מלילות ללא שינה!' },
-    'עצבנות': { emoji: '😤', text: 'את לא חייבת לסבול מעצבנות שבאה משום מקום!' },
-    'חרדה': { emoji: '😟', text: 'את לא חייבת לחיות עם חרדה שלא הייתה לך קודם!' },
-    'שינויי מצב רוח': { emoji: '🌀', text: 'את לא חייבת לסבול ממצבי רוח שמשתלטים עלייך!' },
-    'ירידה במצב רוח': { emoji: '😞', text: 'את לא חייבת לוותר על השמחה והאנרגיה שהיו לך!' },
-    'ערפול מחשבתי': { emoji: '🧠', text: 'את לא חייבת לוותר על הריכוז שלך!' },
-    'קושי להתרכז': { emoji: '💭', text: 'את לא חייבת לאבד מילים באמצע משפט!' },
-    'עלייה במשקל': { emoji: '⚖️', text: 'את לא חייבת לחיות עם משקל עודף !' },
-    'השמנה בטנית': { emoji: '🫃', text: 'את לא חייבת לקבל את העליה בהיקף הבטן כמובן מאליו !' },
-    'כאבי מפרקים': { emoji: '🦴', text: 'את לא חייבת לסבול מכאבים שמגבילים אותך!' },
-    'ירידה בכוח': { emoji: '💪', text: 'את לא חייבת לוותר על הכוח והחוזק שהיו לך!' },
-    'נפיחות': { emoji: '🫧', text: 'את לא חייבת לסבול מנפיחות שמופיעה ללא סיבה!' },
-    'יובש בעור': { emoji: '💧', text: 'את לא חייבת לסבול מעור יבש ששום קרם לא עוזר לו!' },
-    'יובש בנרתיק': { emoji: '💧', text: 'את לא חייבת לסבול מאי-נוחות שמגבילה אותך!' },
-    'שינויים בעור ובשיער': { emoji: '🔥', text: 'את לא חייבת לקבל את השינויים בעור ובשיער שלך!' },
-    'דפיקות לב': { emoji: '💓', text: 'את לא חייבת לחיות עם דפיקות לב שמפחידות אותך!' },
-    'ירידה בחשק המיני': { emoji: '❤️', text: 'את לא חייבת לוותר על החשק, על הקרבה, על ההנאה!' },
-  };
-
-  var sufferList = document.getElementById('no-suffer-list');
-  sufferList.innerHTML = '';
-  var selectedChips = document.querySelectorAll('#symptoms-grid .chip.selected');
-  var shown = 0;
-  selectedChips.forEach(function(chip, i) {
-    if (shown >= 5) return;
-    var label = chip.getAttribute('data-label');
-    var msg = chipMessages[label];
-    if (msg) {
-      var div = document.createElement('div');
-      div.className = 'no-suffer-item';
-      div.style.animationDelay = (i * 0.08) + 's';
-      div.innerHTML = '<span class="ns-emoji">' + msg.emoji + '</span>' + msg.text;
-      sufferList.appendChild(div);
-      shown++;
-    }
-  });
-  if (shown === 0) {
-    var div = document.createElement('div');
-    div.className = 'no-suffer-item';
-    div.innerHTML = '<span class="ns-emoji">✨</span>את לא חייבת לקבל את השינויים שהגוף שלך עובר - יש מה לעשות!';
-    sufferList.appendChild(div);
-  }
-
-  var methodLabels = {
-    'עלייה במשקל': 'עלייה במשקל ושומן בטני',
-    'השמנה בטנית': 'עלייה במשקל ושומן בטני',
-    'שינה גרועה': 'שינה גרועה ועייפות',
-    'עייפות מתמשכת': 'שינה גרועה ועייפות',
-    'שינויי מצב רוח': 'מצבי רוח ועצבנות',
-    'עצבנות': 'מצבי רוח ועצבנות',
-    'ירידה במצב רוח': 'מצבי רוח ועצבנות',
-    'חרדה': 'חרדה ומצבי רוח',
-    'גלי חום': 'גלי חום והזעות לילה',
-    'הזעות לילה': 'גלי חום והזעות לילה',
-    'ערפול מחשבתי': 'ערפול מחשבתי וקשיי ריכוז',
-    'קושי להתרכז': 'ערפול מחשבתי וקשיי ריכוז',
-    'כאבי מפרקים': 'כאבי מפרקים ושרירים',
-    'ירידה בכוח': 'ירידה בכוח ואנרגיה',
-    'יובש בעור': 'יובש בעור ובגוף',
-    'יובש בנרתיק': 'יובש ואי-נוחות',
-    'שינויים בעור ובשיער': 'שינויים בעור ובשיער',
-    'דפיקות לב': 'דפיקות לב ואי-שקט',
-    'ירידה בחשק המיני': 'ירידה בחשק המיני',
-    'נפיחות': 'נפיחות ואי-נוחות',
-  };
-
-  if (count > 5) document.getElementById('stat-box').classList.add('on');
-
-  var resultEl = document.getElementById('result');
-  resultEl.classList.add('on');
-
-  var ageLabels = { '38_49': 'אחרי גיל 38', '50_59': 'אחרי גיל 50', '60_69': 'אחרי גיל 60', 'over70': 'אחרי גיל 70' };
-  var p2El = document.getElementById('p2-title');
-  if (p2El) {
-    p2El.innerHTML = 'כי פיתחתי שיטה שעזרה עד היום לאלפי נשים <span id="age-stage">בשלב שלך</span> להתמודד עם:';
-  }
-  var p2Sub = document.getElementById('p2-subtitle');
-  if (p2Sub) {
-    var p2Items = [], p2Added = new Set();
-    var p2Priority = ['עלייה במשקל ושומן בטני', 'שינה גרועה ועייפות', 'מצבי רוח ועצבנות'];
-    document.querySelectorAll('#symptoms-grid .chip.selected').forEach(function(chip) {
-      if (p2Items.length >= 4) return;
-      var label = chip.getAttribute('data-label');
-      var item = methodLabels[label];
-      if (item && !p2Added.has(item)) { p2Added.add(item); p2Items.push(item); }
-    });
-    p2Priority.forEach(function(item) {
-      if (p2Items.length >= 5) return;
-      if (!p2Added.has(item)) { p2Added.add(item); p2Items.push(item); }
-    });
-    p2Sub.innerHTML = p2Items.join(', ') + ' <strong>ועוד תופעות של השינוי ההורמונלי.</strong>';
-  }
-  setTimeout(function() { resultEl.scrollIntoView({behavior:'smooth'}); }, 100);
-}
-
-function checkPulseBtn() {
-  if (answers.age && answers.cycle) {
-    var btn = document.querySelector('.btn-main');
-    if (btn && !btn.classList.contains('pulse-ready')) {
-      btn.classList.add('pulse-ready');
-      setTimeout(function() {
-        var y = btn.getBoundingClientRect().top + window.pageYOffset - (window.innerHeight * 0.4);
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }, 150);
-    }
-  }
-}
-
-function scrollTestimony(dir) {
-  var el = document.getElementById('testimony-scroll');
-  if (!el) return;
-  el.scrollBy({ left: dir * el.offsetWidth, behavior: 'smooth' });
-}
-
-function scrollMedia(dir) {
-  var el = document.getElementById('media-scroll');
-  if (!el) return;
-  var slideW = el.offsetWidth * 0.85 + 12;
-  el.scrollBy({ left: dir * slideW, behavior: 'smooth' });
-}
-
-function showWhenSection() {
-  window.open('https://secure.cardcom.solutions/EA/EA5/Fuqf61nPWki3bJ9QL1Yrw/Intro', '_blank');
-}
-
-// FORM REVEAL
-function showHiddenForm() {
-  var formSection = document.getElementById('hiddenFormSection');
-  if (formSection) {
-    formSection.classList.add('show');
-    setTimeout(function() {
-      formSection.scrollIntoView({behavior: 'smooth', block: 'start'});
-    }, 100);
-  }
-}
-
-function openFormModal() {
-  localStorage.setItem('user_clicked_register', 'true');
-  showHiddenForm();
-}
-
-function closeFormModal() {}
-
-// Vimeo loop disable
-try {
-  if (typeof Vimeo !== 'undefined' && Vimeo.Player) {
-    document.querySelectorAll('iframe[src*="player.vimeo.com/video/"]').forEach(function(iframe) {
-      try { var p = new Vimeo.Player(iframe); p.setLoop(false); } catch (e) {}
-    });
-  }
-} catch (e) {}
+function scrollMedia(dir){var el=document.getElementById('media-scroll');if(!el)return;el.scrollBy({left:dir*(el.offsetWidth*0.85+12),behavior:'smooth'})}
+function showHiddenForm(){var f=document.getElementById('hiddenFormSection');if(f){f.classList.add('show');setTimeout(function(){f.scrollIntoView({behavior:'smooth',block:'start'})},100)}}
+function openFormModal(){localStorage.setItem('user_clicked_register','true');showHiddenForm()}
+function closeFormModal(){}
 </script>
 
-<!-- Exit Intent Popup -->
-<div class="exit-popup-overlay" id="exitPopup">
-  <div class="exit-popup">
-    <button class="exit-popup-close" onclick="closeExitPopup()">×</button>
-    <div class="exit-popup-title">רגע! לפני שאת הולכת...</div>
-    <div class="exit-popup-subtitle">אם עוד לא נרשמת, שמרי מקום עכשיו במפגש החינמי שלנו!</div>
-    <div class="exit-popup-gift">
-      <div class="exit-popup-gift-title">🎁 מתנה שימושית למשתתפות המפגש</div>
-      <div class="exit-popup-gift-text">מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה יכול להיות רלוונטי בגיל שלנו</div>
-    </div>
-    <div class="exit-popup-text">מלאי את הפרטים ונשמור לך מקום במפגש שיעזור לך להתמודד עם הסימנים שחווית</div>
-    <div class="exit-popup-form">
-      <script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script>
-    </div>
-  </div>
-</div>
-
+<div class="exit-popup-overlay" id="exitPopup"><div class="exit-popup">
+  <button class="exit-popup-close" onclick="closeExitPopup()">×</button>
+  <div class="exit-popup-title">רגע! לפני שאת הולכת...</div>
+  <div class="exit-popup-subtitle">שמרי מקום עכשיו במפגש החינמי!</div>
+  <div class="exit-popup-gift"><div class="exit-popup-gift-title">🎁 מתנה שימושית למשתתפות</div><div class="exit-popup-gift-text">מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה רלוונטי בגיל שלנו</div></div>
+  <div class="exit-popup-text">מלאי את הפרטים ונשמור לך מקום</div>
+  <div class="exit-popup-form"><script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script></div>
+</div></div>
 <script>
-// Exit Intent
-var exitPopupShown = false;
-var exitPopupClosed = false;
-var formSubmittedFlag = false;
-
-window.addEventListener('message', function(event) {
-  if (event.origin.includes('ravpage.co.il')) {
-    if (event.data && (
-      event.data.type === 'formSubmitted' || event.data.type === 'formSuccess' ||
-      event.data.success === true || event.data.submitted === true ||
-      JSON.stringify(event.data).includes('success') || JSON.stringify(event.data).includes('submit')
-    )) {
-      formSubmittedFlag = true;
-      localStorage.setItem('ravpage_form_submitted', 'true');
-    }
-  }
-});
-
-if (localStorage.getItem('ravpage_form_submitted') === 'true') formSubmittedFlag = true;
-
-document.addEventListener('mouseleave', function(e) {
-  if (e.clientY < 10 && !exitPopupShown && !exitPopupClosed) showExitPopup();
-});
-
-function showExitPopup() {
-  if (localStorage.getItem('user_clicked_register') === 'true') return;
-  if (formSubmittedFlag || localStorage.getItem('ravpage_form_submitted') === 'true') return;
-  var inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]');
-  for (var i = 0; i < inputs.length; i++) {
-    if (inputs[i].value && inputs[i].value.trim().length > 0) return;
-  }
-  exitPopupShown = true;
-  document.getElementById('exitPopup').classList.add('show');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeExitPopup() {
-  exitPopupClosed = true;
-  document.getElementById('exitPopup').classList.remove('show');
-  document.body.style.overflow = '';
-}
-
-document.getElementById('exitPopup').addEventListener('click', function(e) {
-  if (e.target === this) closeExitPopup();
-});
-
-if (window.innerWidth < 768) {
-  window.addEventListener('popstate', function(event) {
-    if (!exitPopupShown && !exitPopupClosed) {
-      event.preventDefault();
-      showExitPopup();
-      history.pushState(null, null, window.location.href);
-    }
-  });
-  history.pushState(null, null, window.location.href);
-}
-
-function resetExitPopup() {
-  localStorage.removeItem('user_clicked_register');
-  localStorage.removeItem('ravpage_form_submitted');
-  exitPopupShown = false;
-  exitPopupClosed = false;
-}
+var exitPopupShown=false,exitPopupClosed=false,formSubmittedFlag=false;
+window.addEventListener('message',function(e){if(e.origin.includes('ravpage.co.il')&&e.data&&(e.data.type==='formSubmitted'||e.data.type==='formSuccess'||e.data.success||e.data.submitted||JSON.stringify(e.data).includes('success'))){formSubmittedFlag=true;localStorage.setItem('ravpage_form_submitted','true')}});
+if(localStorage.getItem('ravpage_form_submitted')==='true')formSubmittedFlag=true;
+document.addEventListener('mouseleave',function(e){if(e.clientY<10&&!exitPopupShown&&!exitPopupClosed)showExitPopup()});
+function showExitPopup(){if(localStorage.getItem('user_clicked_register')==='true')return;if(formSubmittedFlag)return;var inputs=document.querySelectorAll('input[type="text"],input[type="email"],input[type="tel"]');for(var i=0;i<inputs.length;i++)if(inputs[i].value&&inputs[i].value.trim().length>0)return;exitPopupShown=true;document.getElementById('exitPopup').classList.add('show');document.body.style.overflow='hidden'}
+function closeExitPopup(){exitPopupClosed=true;document.getElementById('exitPopup').classList.remove('show');document.body.style.overflow=''}
+document.getElementById('exitPopup').addEventListener('click',function(e){if(e.target===this)closeExitPopup()});
+if(window.innerWidth<768){window.addEventListener('popstate',function(e){if(!exitPopupShown&&!exitPopupClosed){e.preventDefault();showExitPopup();history.pushState(null,null,window.location.href)}});history.pushState(null,null,window.location.href)}
 </script>
-
-</body>
-</html>
+</body></html>
