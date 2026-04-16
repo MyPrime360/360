@@ -1845,6 +1845,70 @@ body{padding-top:56px}
     padding:14px 28px !important;
   }
 }
+
+/* ========================================
+   FINAL MOBILE OVERRIDES (consolidated)
+   This block comes LAST so it wins all conflicts
+======================================== */
+@media(max-width:767px){
+  /* ===== FORMS S8, S12, S17 - match S4 padding (10px sides) ===== */
+  .reg-standalone{padding:16px 0 !important}
+  .reg-standalone-inner{padding:14px 10px !important;margin:0 !important;border-width:2px !important}
+  .result-form-section{padding:16px 0 !important}
+  .result-form-wrap{padding:14px 10px !important;margin:0 !important;border-width:2px !important}
+  .final-form-section{padding:24px 0 !important}
+  .final-form-wrap{padding:14px 10px !important;margin:0 !important;border-width:2px !important}
+  .form-purple{padding:12px 8px !important;margin:0 !important}
+  
+  /* ===== DR. NOA - tight padding ===== */
+  .doctors-section{padding:24px 0 !important}
+  .dr-title-row{padding:0 10px !important;gap:10px !important;margin-bottom:14px !important}
+  .dr-title-photo{width:64px !important;height:64px !important}
+  .dr-title-heading{font-size:17px !important;line-height:1.4 !important}
+  .dr-quote-card{padding:12px 8px !important;margin:0 10px !important;border-radius:14px !important}
+  .dr-quote-text{padding:12px 10px !important;border-radius:10px !important}
+  .dr-quote-text .quote-mark{font-size:36px !important;top:2px !important;right:6px !important}
+  .dr-quote-text p{font-size:16px !important;line-height:1.45 !important;margin-bottom:6px !important;font-weight:400 !important}
+  .dr-quote-text p strong{font-weight:700 !important}
+}
+
+/* ========================================
+   "AT LO CHAYEVET" - GRID on desktop, STRIPS on mobile
+======================================== */
+@media(min-width:768px){
+  .no-suffer-strips{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:12px !important;
+  }
+  .no-suffer-strip{
+    padding:18px 16px !important;
+    font-size:clamp(15px,3.5vw,18px) !important;
+    border-radius:12px !important;
+  }
+}
+
+/* ========================================
+   PROGRESS BAR ARROWS
+======================================== */
+.progress-line{
+  position:relative;
+}
+.progress-arrow{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:0;height:0;
+  /* Arrow pointing LEFT in RTL (which is visually "forward") */
+  border-top:5px solid transparent;
+  border-bottom:5px solid transparent;
+  border-right:7px solid var(--indigo);
+  opacity:0.5;
+  transition:opacity 0.4s ease;
+}
+.progress-line[style*="--fill:100%"] .progress-arrow{
+  opacity:1;
+}
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
 </head>
@@ -1998,9 +2062,9 @@ body{padding-top:56px}
 <div class="quiz-progress" id="quizProgress">
   <div class="progress-track">
     <div class="progress-node" id="pnode-1"></div>
-    <div class="progress-line" id="pline-1" style="--fill:0%"></div>
+    <div class="progress-line" id="pline-1" style="--fill:0%"><span class="progress-arrow"></span></div>
     <div class="progress-node" id="pnode-2"></div>
-    <div class="progress-line" id="pline-2" style="--fill:0%"></div>
+    <div class="progress-line" id="pline-2" style="--fill:0%"><span class="progress-arrow"></span></div>
     <div class="progress-node" id="pnode-3"></div>
   </div>
   <div class="progress-labels">
@@ -2301,7 +2365,7 @@ function startQuiz(){
     if(pb){pb.classList.add("show");pb.classList.remove("hidden-complete")}
     document.body.classList.add("quiz-active");
     quizStarted=true;
-    setTimeout(function(){q.scrollIntoView({behavior:"smooth",block:"start"})},100);
+    setTimeout(function(){var y=q.getBoundingClientRect().top+window.pageYOffset-120;window.scrollTo({top:y,behavior:"smooth"})},100);
   }
 }
 
@@ -2550,7 +2614,7 @@ document.getElementById("exitPopup").addEventListener("click",function(e){
 });
 
 
-function showHiddenForm(){var f=document.getElementById("hiddenFormSection");if(f){f.classList.add("show");setTimeout(function(){f.scrollIntoView({behavior:"smooth",block:"start"})},100)}}
+function showHiddenForm(){var f=document.getElementById("hiddenFormSection");if(f){f.classList.add("show");setTimeout(function(){var y=f.getBoundingClientRect().top+window.pageYOffset-70;window.scrollTo({top:y,behavior:"smooth"})},100)}}
 function openFormModal(){localStorage.setItem("user_clicked_register","true");showHiddenForm()}
 function scrollTestimony(dir){var el=document.getElementById("testimony-scroll");if(!el)return;el.scrollBy({left:dir*el.offsetWidth,behavior:"smooth"})}
 </script>
