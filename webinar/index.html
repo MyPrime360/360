@@ -9,8 +9,8 @@
 <style>
 /* ===== COLOR SYSTEM =====
    --cream: #FCF8F4  (warm cream, 60% of page)
-   --indigo: #4B0082 (deep indigo — H1, H2, bold text, footer)
-   --berry:  #701C57 (deep berry — CTA buttons only)
+   --indigo: #4B0082 (deep indigo - H1, H2, bold text, footer)
+   --berry:  #701C57 (deep berry - CTA buttons only)
 */
 :root{
   --cream:#FCF8F4;
@@ -2028,7 +2028,7 @@ body{padding-top:56px}
   }
 }
 
-/* Hero audience - tighter to push video up */
+/* Hero audience - tighter line spacing only */
 .hero-audience{
   line-height:1.35 !important;
   margin-bottom:4px !important;
@@ -2037,20 +2037,19 @@ body{padding-top:56px}
   .hero-audience{
     line-height:1.3 !important;
     margin-bottom:4px !important;
-    font-size:16px !important;
   }
 }
 
 /* Social proof line */
 .social-proof-line{
   text-align:center;
-  font-size:clamp(14px,3.5vw,16px);
+  font-size:clamp(16px,4vw,19px);
   font-weight:700;
-  color:var(--indigo);
-  margin:0 16px 12px;
+  color:var(--berry);
+  margin:0 16px 14px;
   padding:0;
-  opacity:0.8;
 }
+.social-proof-line strong{font-weight:800;color:var(--indigo)}
 @media(max-width:767px){
   .social-proof-line{
     font-size:14px !important;
@@ -2083,7 +2082,7 @@ body{padding-top:56px}
 </div>
 
 <!-- Social proof line -->
-<p class="social-proof-line">עשרות אלפי נשים כבר השתתפו במפגש</p>
+<p class="social-proof-line"><strong>עשרות אלפי נשים</strong> כבר גילו את השיטה - עכשיו תורך!</p>
 
 <!-- ============ S3: URGENCY BOX + CTA (CTA inside the box) ============ -->
 <div class="urgency-box">
@@ -2311,7 +2310,7 @@ body{padding-top:56px}
   <div class="result-prime-banner">✨ את בפריים שלך ומגיע לך ליהנות מהחיים! ✨</div>
 
   <div class="scroll-to-form-arrow">
-    <p>יש מה לעשות — וזה לא מסובך כמו שאת חושבת</p>
+    <p>יש מה לעשות - וזה לא מסובך כמו שאת חושבת</p>
     <div class="arrow-icon">↓</div>
   </div>
 </div>
@@ -2626,17 +2625,17 @@ function showResult(){
   var stageName="",stageDesc="";
   if(answers.cycle==="menopause"){
     stageName="מנופאוזה";
-    stageDesc="המחזור הפסיק — זה שלב מתקדם של גיל המעבר. הגוף כבר בעיצומו של השינוי ההורמונלי ויש כמה כלים משמעותיים כדי להרגיש ולהראות כמו שאת חולמת.";
+    stageDesc="המחזור הפסיק - זה שלב מתקדם של גיל המעבר. הגוף כבר בעיצומו של השינוי ההורמונלי ויש כמה כלים משמעותיים כדי להרגיש ולהראות כמו שאת חולמת.";
   }else{
     if(answers.age==="38_49"){
       stageName="פרי-מנופאוזה (טרום גיל המעבר)";
-      stageDesc="בגיל הזה עם מחזור סדיר, את בשלב הפרי-מנופאוזה — הגוף מתחיל לשנות את האיזון ההורמונלי שלו גם כשהמחזור עדיין קיים. התסמינים שסימנת הם בדיוק הסימן לכך.";
+      stageDesc="בגיל הזה עם מחזור סדיר, את בשלב הפרי-מנופאוזה - הגוף מתחיל לשנות את האיזון ההורמונלי שלו גם כשהמחזור עדיין קיים. התסמינים שסימנת הם בדיוק הסימן לכך.";
     }else if(answers.age==="50_59"){
       stageName="פרי-מנופאוזה (טרום גיל המעבר)";
-      stageDesc="הגיל והמחזור מצביעים על פרי-מנופאוזה — התקופה שבה הורמונים מתחילים להשתנות. רוב התסמינים מגיעים דווקא בשלב הזה.";
+      stageDesc="הגיל והמחזור מצביעים על פרי-מנופאוזה - התקופה שבה הורמונים מתחילים להשתנות. רוב התסמינים מגיעים דווקא בשלב הזה.";
     }else{
       stageName="מנופאוזה";
-      stageDesc="המחזור הפסיק — זה שלב מתקדם של גיל המעבר. הגוף כבר בעיצומו של השינוי ההורמונלי.";
+      stageDesc="המחזור הפסיק - זה שלב מתקדם של גיל המעבר. הגוף כבר בעיצומו של השינוי ההורמונלי.";
     }
   }
   document.getElementById("stage-name").textContent=stageName;
@@ -2651,7 +2650,7 @@ function showResult(){
     text="הגוף שלך מתחיל לשלוח סימנים. זה השלב הכי טוב להבין מה קורה ולהתחיל לעבוד עם הגוף.";
   }else if(count<=5){
     headline="השינוי ההורמונלי כבר משפיע עלייך";
-    text="את מרגישה את זה, ויש סיבה. הגוף שלך עובר שינוי משמעותי ויש לו מה לומר לך. החדשות הטובות — יש מה לעשות עם זה, ועכשיו זה הזמן.";
+    text="את מרגישה את זה, ויש סיבה. הגוף שלך עובר שינוי משמעותי ויש לו מה לומר לך. החדשות הטובות - יש מה לעשות עם זה, ועכשיו זה הזמן.";
   }else{
     headline="עומס תסמינים משמעותי";
     text="את מתמודדת עם הרבה מאוד ואת לא חייבת להרגיש ככה! יש שיטה שמבינה את כל מה שהגוף שלך עובר עכשיו ומייצרת עבורך כלים להחזיר את השליטה.";
@@ -2701,7 +2700,7 @@ function showResult(){
   if(shown===0){
     var d=document.createElement("div");
     d.className="personal-item";
-    d.innerHTML="<span class=\"ns-emoji\">✨</span>את לא חייבת לקבל את השינויים — יש מה לעשות!";
+    d.innerHTML="<span class=\"ns-emoji\">✨</span>את לא חייבת לקבל את השינויים - יש מה לעשות!";
     pl.appendChild(d);
   }
 
