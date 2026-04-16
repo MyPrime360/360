@@ -90,8 +90,8 @@ body{font-family:"Assistant",sans-serif;background:var(--cream);color:var(--text
 .form-purple{background:linear-gradient(135deg,#9D4EDD 0%,#7209B7 100%);padding:20px 16px;border-radius:16px;border:2px solid rgba(255,255,255,0.3)}
 .reg-layout{display:flex;gap:16px;align-items:flex-start;text-align:right;max-width:700px;margin:0 auto}
 .reg-layout .reg-content{flex:1;min-width:0}
-.reg-layout .reg-photo-col{flex:0 0 160px;display:flex;align-items:flex-end;justify-content:center}
-.reg-layout .reg-photo-col img{width:160px;border-radius:12px 12px 0 0;object-fit:cover;object-position:top;display:block}
+.reg-layout .reg-photo-col{flex:0 0 220px;display:flex;align-items:stretch;justify-content:center}
+.reg-layout .reg-photo-col img{width:220px;height:330px;border-radius:14px;object-fit:cover;object-position:center top;display:block;box-shadow:0 6px 20px rgba(0,0,0,0.2)}
 .reg-layout h3{font-size:clamp(18px,4.5vw,24px);font-weight:800;color:var(--accent-pink);line-height:1.35;margin-bottom:4px}
 .reg-layout .bold-white{font-size:clamp(16px,4vw,20px);font-weight:800;color:white;line-height:1.3;margin-bottom:12px}
 
@@ -967,6 +967,66 @@ body{padding-top:56px}
   min-height:220px;max-height:240px;
   border:none;background:transparent;
 }
+
+/* ========================================
+   DR. QUOTE CARD (S15)
+======================================== */
+.dr-quote-card{
+  max-width:680px;margin:0 auto;
+  background:white;border-radius:20px;
+  padding:28px 24px;
+  border:1px solid rgba(75,0,130,0.1);
+  box-shadow:0 8px 30px rgba(75,0,130,0.08);
+  text-align:center;
+}
+.dr-quote-photo{
+  width:96px;height:96px;border-radius:50%;
+  object-fit:cover;object-position:center top;
+  margin:0 auto 14px;display:block;
+  border:3px solid rgba(75,0,130,0.15);
+  background:linear-gradient(135deg,#E0C8F0,#D8C0F0);
+}
+.dr-quote-info{margin-bottom:20px}
+.dr-quote-info h4{
+  font-size:clamp(18px,4.5vw,22px);
+  font-weight:800;color:var(--indigo);
+  margin-bottom:4px;line-height:1.3;
+}
+.dr-quote-role{
+  font-size:clamp(13px,3.3vw,14px);
+  color:var(--text-mid);font-weight:600;
+  line-height:1.4;
+}
+.dr-quote-text{
+  text-align:right;
+  background:linear-gradient(135deg,rgba(75,0,130,0.04) 0%,rgba(112,28,87,0.04) 100%);
+  padding:22px 20px;border-radius:14px;
+  border-right:4px solid var(--indigo);
+  position:relative;
+}
+.dr-quote-text .quote-mark{
+  position:absolute;top:4px;right:12px;
+  font-size:50px;color:rgba(75,0,130,0.15);
+  font-family:serif;line-height:1;
+  font-weight:900;
+}
+.dr-quote-text p{
+  font-size:clamp(14px,3.5vw,16px);
+  color:var(--text-body);
+  line-height:1.75;margin-bottom:12px;
+  font-weight:500;
+}
+.dr-quote-text p:last-child{margin-bottom:0}
+.dr-quote-text strong{color:var(--indigo);font-weight:800}
+
+/* Gift message in final form (matches S4 style) */
+.final-form-wrap .final-form-gift{
+  font-size:clamp(14px,3.5vw,16px);
+  font-weight:700;color:var(--text-body);
+  text-align:center;margin:10px auto 16px;
+  line-height:1.4;max-width:540px;
+}
+.final-form-wrap .final-form-gift strong{font-weight:800;color:var(--indigo)}
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
 </head>
@@ -981,7 +1041,7 @@ body{padding-top:56px}
 
 <!-- COOKIE -->
 <div class="cookie-overlay" id="cookieOverlay"></div>
-<div class="cookie-popup" id="cookiePopup"><div class="cookie-popup-text">אתר זה משתמש בקוקיז בהתאם ל<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות הפרטיות</a>.</div><button class="cookie-popup-btn" onclick="closeCookiePopup()">הבנתי</button></div>
+<div class="cookie-popup" id="cookiePopup"><div class="cookie-popup-text">אתר זה משתמש בקוקיז וטכנולוגיות דומות למטרות ניטור, תחזוקה, שיפור האתר וכן התאמת התכנים והפרסום, בהתאם ל<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות הפרטיות</a>.</div><button class="cookie-popup-btn" onclick="closeCookiePopup()">הבנתי</button></div>
 <script>function closeCookiePopup(){document.getElementById("cookiePopup").classList.add("cookie-hidden");document.getElementById("cookieOverlay").classList.add("cookie-hidden")}</script>
 
 <!-- ============ S2: HERO TEXT ============ -->
@@ -1003,8 +1063,8 @@ body{padding-top:56px}
 
 <!-- ============ S4: HIDDEN FORM (opens on click) ============ -->
 <div class="hidden-form-section" id="hiddenFormSection">
-  <h2 class="hidden-form-title">🎯 הרשמי עכשיו למפגש החינמי</h2>
-  <p class="hidden-form-subtitle">מלאי את הפרטים ונשמור לך מקום!</p>
+  <h2 class="hidden-form-title">רוצה לקבל כבר עכשיו כלים להתמודדות<br>יעילה עם התסמינים שמטרידים אותך?</h2>
+  <p class="hidden-form-subtitle">שרייני עכשיו (ללא עלות) מקום במפגש הזום הקרוב</p>
   <p class="hidden-form-gift">📢 <strong>מתנה שימושית למשתתפות המפגש</strong><br>מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה יכול להיות רלוונטי בגיל שלנו</p>
 
   <div class="reg-counter">
@@ -1014,8 +1074,6 @@ body{padding-top:56px}
   <div class="form-purple">
     <div class="reg-layout">
       <div class="reg-content">
-        <h3>רוצה לקבל כבר עכשיו כלים להתמודדות<br>יעילה עם התסמינים שמטרידים אותך?</h3>
-        <p class="bold-white">שרייני עכשיו (ללא עלות) מקום במפגש הזום הקרוב</p>
         <div class="embedded-form">
           <script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script>
         </div>
@@ -1251,98 +1309,83 @@ body{padding-top:56px}
   </div>
 </div>
 
-<!-- ============ S13: PROGRAM "מיי פריים 360" ============ -->
-<div class="program-section">
-  <div style="text-align:center">
-    <div class="program-tag">התוכנית</div>
-    <h2 class="program-title">המתכון המנצח להצלחה</h2>
-    <p class="program-sub">כי לדעת זה לא מספיק, צריך גם ליישם!<br>זו התוכנית שתהפוך את כל זה להרבה יותר פשוט עבורך.</p>
-  </div>
-  <div class="program-grid">
-    <div class="prog-card">
-      <span class="icon">🥗</span>
-      <h4>תזונה לגיל המעבר</h4>
-      <p>תלמדי כיצד להתאים את התזונה היומית לשינויים ההורמונליים</p>
-    </div>
-    <div class="prog-card">
-      <span class="icon">🏃‍♀️</span>
-      <h4>אימונים מותאמים</h4>
-      <p>נתרגלי יחד אימוני חיטוב קצרים ופשוטים</p>
-    </div>
-    <div class="prog-card">
-      <span class="icon">🧘</span>
-      <h4>תרגול מנטאלי</h4>
-      <p>כלים מנטליים להתמודדות עם מצבי רוח משתנים</p>
-    </div>
-    <div class="prog-card">
-      <span class="icon">📱</span>
-      <h4>ליווי יומיומי</h4>
-      <p>באמצעות סרטונים קצרים לצפייה בזמן שנוח לך</p>
-    </div>
-    <div class="prog-card">
-      <span class="icon">📊</span>
-      <h4>מעקב התקדמות</h4>
-      <p>שיעזור לך להתמיד ולראות את ההתקדמות לאורך זמן</p>
-    </div>
-    <div class="prog-card">
-      <span class="icon">👥</span>
-      <h4>קהילה תומכת</h4>
-      <p>קבוצת פייסבוק סגורה למשתתפות לצורך תמיכה וליווי</p>
-    </div>
-  </div>
-</div>
-
-<!-- ============ S14: STORY (Anat's personal story) ============ -->
-<div class="story-section">
-  <div style="text-align:center">
-    <div class="story-tag">הכירו את ענת</div>
-    <h2 class="story-title">הסיפור האישי שלי</h2>
-  </div>
-  <div class="story-body">
-    <p>היי! אני ענת, בת 55, מייסדת "מיי פריים" — תוכניות ליווי לנשים בגיל המעבר, מרצה על אורח חיים בריא ומאמנת להתפתחות אישית.</p>
-    <img src="/360/site_images/anat_portrait.jpg" alt="ענת הראל">
-    <p>אני עוסקת בתחום כבר 20 שנה ויותר וזה סיפור ההתמודדות שלי עם גיל המעבר ואיך נולד הקורס "מיי פריים 360" במיוחד עבורך:</p>
-    <p>במהלך הקריירה שלי הגעתי לאלפי נשים בכל דרך אפשרית — מקבוצות וסדנאות כושר, דרך תוכניות אימון אונליין וכלה בהגשת תוכניות טלוויזיה רבות.</p>
-    <p><strong>מאז ומעולם הרגשתי שיש לי שליחות חשובה,</strong> שאליה אני מתמסרת כל כולי — לגרום לכמה שיותר נשים להבין את ההשפעה של פעילות גופנית ותזונה מאוזנת על החיים שלהן.</p>
-    <p>באמצע שנות ה-40 לחיי, ממש כשהרגשתי בשיא — משהו השתבש. שמתי לב למצבי רוח שמשתנים בקיצוניות, יכולת הריכוז שלי ירדה, השינה שלי נהייתה הרבה פחות רציפה ואיכותית.</p>
-    <p>לקח לי כמה חודשים של ריצות מרופא לרופא, כדי להבין שאני עוברת תהליך טבעי שכל אישה עוברת: שינוי הורמונלי שמתרחש בשלבים המוקדמים של גיל המעבר.</p>
-    <p>התחלתי לברר וגיליתי ש:</p>
-    <ol>
-      <li>רוב הנשים לא מבינות שמה שעובר עליהן קשור להורמונים.</li>
-      <li>רוב הנשים מחפשות את הפתרון במקום הלא נכון.</li>
-      <li>רובנו מתביישות לדבר על זה — ואם אנחנו לא מדברות, איך נוכל לטפל בבעיה?</li>
+<!-- ============ S14: STORY (Anat's personal story - from original code) ============ -->
+<div class="story-section" style="display:block;background:#2a2a2a;padding:48px 20px;color:white;">
+  <h2 style="font-size:clamp(28px,6.5vw,44px);font-weight:900;text-align:center;margin-bottom:30px;color:white;">הסיפור האישי שלי</h2>
+  
+  <div style="max-width:800px;margin:0 auto;font-size:clamp(16px,3.8vw,20px);line-height:1.75;color:rgba(255,255,255,0.9);">
+    
+    <p style="margin-bottom:20px;">
+      היי! אני ענת, בת 55, מייסדת "מיי פריים" - תוכניות ליווי לנשים בגיל המעבר, מרצה על אורח חיים בריא ומאמנת להתפתחות אישית.
+    </p>
+    
+    <img src="/360/site_images/anat_portrait.jpg" alt="ענת הראל" style="width:100%;max-width:600px;height:auto;display:block;margin:30px auto;border-radius:8px;">
+    
+    <p style="margin-bottom:20px;">
+      אני עוסקת בתחום כבר 20 שנה ויותר וזה סיפור ההתמודדות שלי עם גיל המעבר ואיך נולד הקורס "מיי פריים 360" במיוחד עבורך:
+    </p>
+    
+    <p style="margin-bottom:20px;">
+      במהלך הקריירה שלי הגעתי לאלפי נשים בכל דרך אפשרית – מקבוצות וסדנאות כושר, דרך תוכניות אימון אונליין וכלה בהגשת תוכניות טלוויזיה רבות, כגון: "שעת אושר", "לחיות טוב", "גוף ונפש עם ענת הראל" ועוד. בעבר הייתי פרזנטורית של מותג דגני בוקר ושל "נייקי ישראל" וכיום אני בנבחרת המשפיעניות של "מכבי שירותי בריאות", "הודי'ס" ועוד.
+    </p>
+    
+    <p style="margin-bottom:20px;">
+      <strong>מאז ומעולם הרגשתי שיש לי שליחות חשובה,</strong> שאליה אני מתמסרת כל כולי – לגרום לכמה שיותר נשים להבין את ההשפעה של פעילות גופנית ותזונה מאוזנת על החיים שלהן.
+    </p>
+    
+    <p style="margin-bottom:20px;">
+      באמצע שנות ה-40 לחיי, ממש כשהרגשתי בשיא – משהו השתבש. שמתי לב למצבי רוח שמשתנים בקיצוניות, יכולת הריכוז שלי ירדה, השינה שלי נהייתה הרבה פחות רציפה ואיכותית, והגוף כבר לא הגיב באותו אופן לאימונים ולתזונה שהיו חלק בלתי נפרד מהשגרה שלי.
+    </p>
+    
+    <p style="margin-bottom:20px;">
+      לקח לי כמה חודשים של ריצות מרופא לרופא, כדי להבין שאני בסך הכול עוברת תהליך טבעי שכל אישה עוברת: שינוי הורמונלי שמתרחש בשלבים המוקדמים של גיל המעבר. הבנתי שאני לא לבד, שישנן נשים רבות שחוות יחד איתי את אותן התופעות בדיוק.
+    </p>
+    
+    <p style="margin-bottom:20px;">
+      התחלתי לברר וגיליתי ש:
+    </p>
+    
+    <ol style="margin:20px 0;padding-right:20px;">
+      <li style="margin-bottom:10px;">רוב הנשים לא מבינות שמה שעובר עליהן קשור להורמונים.</li>
+      <li style="margin-bottom:10px;">רוב הנשים מחפשות את הפתרון במקום הלא נכון.</li>
+      <li style="margin-bottom:10px;">רובנו מתביישות לדבר על זה — ואם אנחנו לא מדברות, איך נוכל לטפל בבעיה?</li>
     </ol>
-    <img src="/360/site_images/anat_sport.jpg" alt="ענת הראל">
-    <p>החלטתי ללמוד איך אפשר לעבור את זה אחרת. קראתי מחקרים, התייעצתי עם רופאות ותזונאיות מובילות ויצרתי שיטה שמטרתה לאפשר לנשים לחיות חיים טובים יותר בכל התחומים.</p>
-    <p class="story-closing">כיום, אני רואה שליחות אדירה בהפצת הידע — כי מגיע לנו להנות מהתקופה הזו.<br>תקופת הפריים שלנו.</p>
+    
+    <img src="/360/site_images/anat_sport.jpg" alt="ענת הראל" style="width:100%;max-width:600px;height:auto;display:block;margin:30px auto;border-radius:8px;">
+    
+    <p style="margin-bottom:20px;">
+      החלטתי ללמוד איך אפשר לעבור את זה אחרת, תוך שילוב כל מה שאני עוסקת בו כבר עשרים שנה. קראתי
+    </p>
+    
+    <p style="margin-bottom:20px;">
+      מחקרים, התייעצתי עם רופאות ותזונאיות מובילות ויצרתי שיטה שמטרתה לאפשר לנשים החל מטרום גיל המעבר לחיות חיים טובים יותר בכל התחומים: במראה החיצוני, בבריאות, ברמות האנרגיה, ובהתמודדות עם השינויים.
+    </p>
+    
+    <p style="margin-bottom:0;">
+      כיום, אני רואה שליחות אדירה בהפצת הידע שרכשתי והשיטות שלמדתי והתנסיתי בהן בתחום ההתמודדות עם שלבי גיל המעבר, כי מגיע לנו להנות מהתקופה הזו – <strong>תקופת הפריים שלנו.</strong>
+    </p>
+    
   </div>
 </div>
 
-<!-- ============ S15: DOCTORS / EXPERTS ============ -->
+<!-- ============ S15: DR. NOA HOVAV - SINGLE EXPERT WITH QUOTE ============ -->
 <div class="doctors-section">
   <div style="text-align:center">
-    <div class="doctors-tag">הצוות</div>
-    <h2 class="doctors-title">המומחיות שלנו</h2>
+    <div class="doctors-tag">חוות דעת מקצועית</div>
+    <h2 class="doctors-title">ד"ר נעה חובב ממליצה</h2>
   </div>
-  <div class="doctor-card">
-    <img src="/360/site_images/dr_noa.jpg" alt="ד&quot;ר נעה חובב" class="doctor-photo" onerror="this.style.display='none'">
-    <div class="doctor-info">
+  <div class="dr-quote-card">
+    <img src="/360/site_images/dr_noa.jpg" alt="ד&quot;ר נעה חובב" class="dr-quote-photo" onerror="this.style.display='none'">
+    <div class="dr-quote-info">
       <h4>ד"ר נעה חובב</h4>
-      <p>רופאת גיל המעבר ומומחית ברפואת משפחה</p>
+      <p class="dr-quote-role">רופאת גיל המעבר ומומחית ברפואת משפחה</p>
     </div>
-  </div>
-  <div class="doctor-card">
-    <img src="/360/site_images/mia.jpg" alt="מיה בן אפרים" class="doctor-photo" onerror="this.style.display='none'">
-    <div class="doctor-info">
-      <h4>מיה בן אפרים</h4>
-      <p>דיאטנית קלינית מוסמכת, מתמחה באיזון הורמונלי בגיל המעבר</p>
-    </div>
-  </div>
-  <div class="doctor-card">
-    <img src="/360/site_images/anat_portrait.jpg" alt="ענת הראל" class="doctor-photo" onerror="this.style.display='none'">
-    <div class="doctor-info">
-      <h4>ענת הראל</h4>
-      <p>בעלת קבוצות אימון לנשים, מרצה על אורח חיים בריא ומאמנת להתפתחות אישית</p>
+    <div class="dr-quote-text">
+      <span class="quote-mark">"</span>
+      <p>תקופת גיל המעבר וטרום גיל המעבר, דווקא בגלל האתגרים הגופניים והנפשיים שהיא מזמנת, מהווה הזדמנות פז, לך, אישה יקרה, לעצור לרגע ולהתבונן — לדייק ולאזן את יחסייך עם גופך/נפשך/משפחתך/עבודתך.</p>
+      <p>החזית הראשונה והחשובה ביותר היא התאמת אורח חיים נכון ובריא בשבילך. בבסיסו עומדים הנעת הגוף והזנתו הנכונה.</p>
+      <p>לכן, בתור רופאת גיל המעבר, שמחתי לקחת חלק בפרויקט "מיי פריים 360" שעוסק בדיוק בנקודה זו!</p>
+      <p><strong>אישה יקרה — קחי את המושכות חזרה לידייך וצאי לדרך. אנחנו לצידך.</strong></p>
     </div>
   </div>
 </div>
@@ -1371,8 +1414,9 @@ body{padding-top:56px}
 <!-- ============ S17: FINAL FORM ============ -->
 <div class="final-form-section">
   <div class="final-form-wrap">
-    <h2>🎯 אל תפספסי! הרשמי עכשיו</h2>
-    <p class="sub">המפגש מתקרב — שמרי את מקומך!</p>
+    <h2>רוצה לקבל כבר עכשיו כלים להתמודדות<br>יעילה עם התסמינים שמטרידים אותך?</h2>
+    <p class="sub">שרייני עכשיו (ללא עלות) מקום במפגש הזום הקרוב</p>
+    <p class="final-form-gift">📢 <strong>מתנה שימושית למשתתפות המפגש</strong><br>מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה יכול להיות רלוונטי בגיל שלנו</p>
 
     <div class="reg-counter">
       <script type='text/javascript' src='//form2.ravpage.co.il/9ba0ca9db43f7db1f0afb068f47b08b3697F7D78' charset='UTF-8'></script>
@@ -1381,8 +1425,6 @@ body{padding-top:56px}
     <div class="form-purple">
       <div class="reg-layout">
         <div class="reg-content">
-          <h3>שרייני עכשיו מקום במפגש הזום הקרוב</h3>
-          <p class="bold-white">ללא עלות · מקומות מוגבלים</p>
           <div class="embedded-form">
             <script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script>
           </div>
