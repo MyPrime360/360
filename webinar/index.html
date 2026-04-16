@@ -484,6 +484,489 @@ body{padding-top:56px}
 
 /* Section #2 (Hero text) - reduce top padding now that logo is gone */
 .hero-text{padding-top:24px}
+
+/* ========================================
+   S11: QUIZ RESULT
+======================================== */
+.result-section{
+  display:none;
+  background:linear-gradient(180deg,var(--cream) 0%,#F5ECEF 100%);
+  padding:48px 16px;
+  border-top:1px solid var(--border-soft);
+  animation:fadeResultUp 0.7s ease-out;
+}
+.result-section.show{display:block}
+@keyframes fadeResultUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+.result-card{
+  max-width:640px;margin:0 auto 20px;
+  background:white;border-radius:20px;
+  padding:28px 20px;
+  box-shadow:0 8px 32px rgba(75,0,130,0.1);
+  border:2px solid rgba(75,0,130,0.08);
+  text-align:center;
+}
+.stage-tag{
+  display:inline-block;
+  background:rgba(75,0,130,0.08);
+  color:var(--indigo);
+  font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:5px 14px;border-radius:20px;
+  margin-bottom:14px;
+}
+.stage-name{
+  font-size:clamp(24px,6vw,34px);
+  font-weight:800;color:var(--indigo);
+  line-height:1.2;margin-bottom:12px;
+}
+.stage-desc{
+  font-size:clamp(15px,3.8vw,18px);
+  color:var(--text-body);
+  line-height:1.7;font-weight:500;
+}
+.result-divider{
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(75,0,130,0.12),transparent);
+  margin:22px 0;
+}
+.result-headline{
+  font-size:clamp(18px,4.5vw,22px);
+  font-weight:800;color:var(--berry);
+  margin-bottom:10px;line-height:1.3;
+}
+.result-text{
+  font-size:clamp(15px,3.5vw,17px);
+  color:var(--text-mid);
+  line-height:1.7;
+}
+
+/* Personalized "at lo chayevet" list */
+.personal-list{
+  max-width:640px;margin:0 auto 24px;
+}
+.personal-item{
+  display:flex;align-items:center;gap:12px;
+  padding:16px 18px;margin:0 0 10px;
+  background:white;border-radius:12px;
+  border-right:4px solid var(--berry);
+  font-size:clamp(15px,3.8vw,18px);
+  font-weight:700;color:var(--text-body);
+  box-shadow:0 2px 10px rgba(75,0,130,0.06);
+  animation:slideItemIn 0.4s ease both;
+}
+.personal-item .ns-emoji{font-size:20px;flex-shrink:0}
+@keyframes slideItemIn{from{opacity:0;transform:translateX(-15px)}to{opacity:1;transform:translateX(0)}}
+
+.result-prime-banner{
+  max-width:640px;margin:20px auto;
+  background:linear-gradient(135deg,#FCE4F2 0%,#EDE0FF 100%);
+  border:2px solid var(--indigo);
+  border-radius:16px;
+  padding:20px 24px;text-align:center;
+  font-size:clamp(20px,5vw,28px);
+  font-weight:800;color:var(--indigo);
+  line-height:1.3;
+  box-shadow:0 6px 20px rgba(75,0,130,0.12);
+}
+
+.scroll-to-form-arrow{
+  text-align:center;margin:24px 0 16px;
+}
+.scroll-to-form-arrow p{
+  font-size:clamp(15px,3.8vw,18px);
+  color:var(--text-body);font-weight:700;
+  margin-bottom:6px;line-height:1.4;
+}
+.scroll-to-form-arrow .arrow-icon{
+  font-size:28px;color:var(--berry);
+  animation:bounceDown 1.4s ease-in-out infinite;
+}
+
+/* ========================================
+   S12: RESULT FORM (after quiz result)
+======================================== */
+.result-form-section{
+  background:var(--cream);
+  padding:24px 16px 40px;
+  display:none;
+}
+.result-form-section.show{display:block}
+.result-form-wrap{
+  max-width:700px;margin:0 auto;
+  background:linear-gradient(135deg,#FCE4F2 0%,#F3E8FF 50%,#EDE0FF 100%);
+  border:3px solid var(--indigo);
+  border-radius:20px;
+  padding:24px 16px;
+}
+.result-form-wrap h2{
+  font-size:clamp(22px,5.5vw,28px);
+  font-weight:800;color:var(--indigo);
+  margin-bottom:6px;
+}
+.result-form-wrap .sub{
+  font-size:clamp(14px,3.5vw,16px);
+  font-weight:700;color:var(--text-body);
+  margin-bottom:14px;
+}
+
+/* ========================================
+   S13: PROGRAM "מיי פריים 360"
+======================================== */
+.program-section{
+  background:var(--cream);
+  padding:48px 20px;
+  border-top:1px solid var(--border-soft);
+}
+.program-tag{
+  display:inline-block;
+  background:rgba(75,0,130,0.08);
+  color:var(--indigo);
+  font-size:12px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:6px 16px;border-radius:20px;
+  margin-bottom:14px;
+}
+.program-title{
+  font-size:clamp(24px,6vw,34px);
+  font-weight:800;color:var(--indigo);
+  line-height:1.2;margin-bottom:10px;
+}
+.program-sub{
+  font-size:clamp(15px,3.8vw,18px);
+  color:var(--text-mid);
+  line-height:1.6;margin-bottom:28px;
+  max-width:520px;margin-left:auto;margin-right:auto;
+}
+.program-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  max-width:700px;margin:0 auto;
+}
+@media(min-width:640px){.program-grid{grid-template-columns:repeat(3,1fr)}}
+.prog-card{
+  background:white;border-radius:16px;
+  padding:20px 14px;text-align:center;
+  border:1px solid rgba(75,0,130,0.1);
+  box-shadow:0 2px 12px rgba(75,0,130,0.04);
+  transition:all 0.3s ease;
+}
+.prog-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(75,0,130,0.1)}
+.prog-card .icon{font-size:32px;display:block;margin-bottom:10px}
+.prog-card h4{
+  font-size:clamp(14px,3.5vw,16px);
+  font-weight:800;color:var(--indigo);
+  line-height:1.3;margin-bottom:6px;
+}
+.prog-card p{
+  font-size:clamp(12px,3vw,13px);
+  color:var(--text-mid);
+  line-height:1.5;
+}
+
+/* ========================================
+   S14: STORY (Anat's personal story)
+======================================== */
+.story-section{
+  background:var(--indigo);
+  padding:56px 20px;color:white;
+  border-top:1px solid var(--border-soft);
+}
+.story-tag{
+  display:inline-block;
+  background:rgba(255,255,255,0.12);
+  color:#FFC8DE;
+  font-size:11px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;
+  padding:5px 14px;border-radius:20px;
+  margin-bottom:14px;
+}
+.story-title{
+  font-size:clamp(28px,7vw,40px);
+  font-weight:800;
+  text-align:center;
+  margin-bottom:28px;
+  line-height:1.2;
+}
+.story-body{max-width:640px;margin:0 auto}
+.story-body p{
+  font-size:clamp(15px,3.5vw,17px);
+  color:rgba(255,255,255,0.88);
+  line-height:1.85;margin-bottom:18px;
+  text-align:right;font-weight:500;
+}
+.story-body strong{color:#FFC8DE;font-weight:800}
+.story-body img{
+  width:100%;max-width:520px;
+  height:auto;display:block;
+  margin:28px auto;border-radius:14px;
+  box-shadow:0 8px 28px rgba(0,0,0,0.3);
+}
+.story-body ol{
+  max-width:540px;margin:20px auto;
+  padding-right:24px;
+  color:rgba(255,255,255,0.88);
+  font-size:clamp(15px,3.5vw,17px);
+  line-height:1.85;
+}
+.story-body ol li{margin-bottom:10px}
+.story-closing{
+  font-size:clamp(20px,5vw,26px);
+  font-weight:800;
+  color:#FFC8DE;
+  text-align:center;
+  line-height:1.45;
+  margin-top:32px;
+  padding:20px;
+  border-top:1px solid rgba(255,255,255,0.15);
+  border-bottom:1px solid rgba(255,255,255,0.15);
+}
+
+/* ========================================
+   S15: DOCTORS / EXPERTS
+======================================== */
+.doctors-section{
+  background:var(--cream);
+  padding:48px 16px;
+  border-top:1px solid var(--border-soft);
+}
+.doctors-tag{
+  display:inline-block;
+  background:rgba(75,0,130,0.08);
+  color:var(--indigo);
+  font-size:12px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:6px 16px;border-radius:20px;
+  margin-bottom:14px;
+}
+.doctors-title{
+  font-size:clamp(24px,6vw,32px);
+  font-weight:800;color:var(--indigo);
+  text-align:center;margin-bottom:24px;
+  line-height:1.2;
+}
+.doctor-card{
+  display:flex;align-items:center;gap:16px;
+  padding:18px 16px;
+  background:white;border-radius:14px;
+  margin:0 auto 12px;
+  border:1px solid rgba(75,0,130,0.1);
+  box-shadow:0 2px 10px rgba(75,0,130,0.04);
+  max-width:640px;
+}
+.doctor-photo{
+  width:68px;height:68px;border-radius:50%;
+  object-fit:cover;flex-shrink:0;
+  background:linear-gradient(135deg,#E0C8F0,#D8C0F0);
+  border:2px solid rgba(75,0,130,0.15);
+}
+.doctor-info{text-align:right;flex:1;min-width:0}
+.doctor-info h4{
+  font-size:clamp(16px,4vw,18px);
+  font-weight:800;color:var(--indigo);
+  margin-bottom:3px;line-height:1.3;
+}
+.doctor-info p{
+  font-size:clamp(13px,3.3vw,14px);
+  color:var(--text-mid);
+  line-height:1.4;
+}
+
+/* ========================================
+   S16: MEDIA MENTIONS
+======================================== */
+.media-section{
+  background:var(--cream);
+  padding:48px 16px;
+  border-top:1px solid var(--border-soft);
+}
+.media-tag{
+  display:inline-block;
+  background:rgba(75,0,130,0.08);
+  color:var(--indigo);
+  font-size:12px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:6px 16px;border-radius:20px;
+  margin-bottom:14px;
+}
+.media-title{
+  font-size:clamp(24px,6vw,32px);
+  font-weight:800;color:var(--indigo);
+  text-align:center;margin-bottom:8px;
+  line-height:1.2;
+}
+.media-nav{
+  display:flex;align-items:center;justify-content:center;
+  gap:14px;margin-bottom:18px;
+}
+.media-nav span{
+  font-size:clamp(14px,3.5vw,16px);
+  font-weight:700;color:var(--text-mid);
+}
+.media-nav .nav-btn{
+  background:var(--indigo);color:white;
+  border:none;border-radius:8px;
+  width:42px;height:42px;font-size:18px;
+  cursor:pointer;display:inline-flex;
+  align-items:center;justify-content:center;
+  transition:background 0.2s;box-shadow:0 2px 8px rgba(75,0,130,0.15);
+}
+.media-nav .nav-btn:hover{background:#5B0C9E}
+#media-scroll{
+  display:flex;overflow-x:scroll;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  gap:14px;padding:0 4px 12px;
+  max-width:700px;margin:0 auto;
+}
+#media-scroll::-webkit-scrollbar{display:none}
+#media-scroll>div{
+  min-width:85%;max-width:85%;
+  scroll-snap-align:center;
+  aspect-ratio:1/1;
+  border-radius:16px;overflow:hidden;
+  flex-shrink:0;
+  box-shadow:0 4px 20px rgba(75,0,130,0.1);
+  border:1px solid rgba(75,0,130,0.08);
+}
+@media(min-width:768px){#media-scroll>div{min-width:400px!important;max-width:400px!important}}
+
+/* ========================================
+   S17: FINAL FORM
+======================================== */
+.final-form-section{
+  background:var(--cream);
+  padding:48px 16px;
+  border-top:1px solid var(--border-soft);
+}
+.final-form-wrap{
+  max-width:700px;margin:0 auto;
+  background:linear-gradient(135deg,#FCE4F2 0%,#F3E8FF 50%,#EDE0FF 100%);
+  border:3px solid var(--indigo);
+  border-radius:20px;
+  padding:28px 20px;
+}
+.final-form-wrap h2{
+  font-size:clamp(24px,6vw,30px);
+  font-weight:800;color:var(--indigo);
+  text-align:center;margin-bottom:6px;
+  line-height:1.2;
+}
+.final-form-wrap .sub{
+  font-size:clamp(15px,3.8vw,17px);
+  font-weight:700;color:var(--text-body);
+  text-align:center;margin-bottom:16px;
+}
+
+/* ========================================
+   S18: CONTACT
+======================================== */
+.contact-section{
+  padding:44px 20px;
+  background:var(--cream);
+  border-top:1px solid var(--border-soft);
+  text-align:center;
+}
+.contact-title{
+  font-size:clamp(20px,5vw,26px);
+  font-weight:800;color:var(--indigo);
+  margin-bottom:24px;line-height:1.4;
+}
+.contact-links{
+  display:flex;flex-direction:column;gap:10px;
+  max-width:440px;margin:0 auto;
+}
+.contact-btn{
+  background:white;
+  border:2px solid rgba(75,0,130,0.15);
+  border-radius:8px;
+  padding:16px 20px;
+  font-size:clamp(15px,3.8vw,17px);
+  font-weight:700;
+  color:var(--indigo);
+  text-decoration:none;
+  display:block;text-align:center;
+  transition:all 0.3s ease;
+  font-family:"Assistant",sans-serif;
+}
+.contact-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(75,0,130,0.15)}
+.contact-btn.wa{border-color:#25D366;color:#25D366}
+.contact-btn.wa:hover{background:rgba(37,211,102,0.05)}
+.contact-btn.email{border-color:var(--indigo);color:var(--indigo)}
+.contact-btn.email:hover{background:rgba(75,0,130,0.04)}
+
+/* ========================================
+   EXIT POPUP
+======================================== */
+.exit-popup-overlay{
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background:rgba(28,8,50,0.85);
+  z-index:9999998;display:none;
+  animation:fadeInOverlay 0.3s ease;
+}
+.exit-popup-overlay.show{display:flex;align-items:center;justify-content:center}
+@keyframes fadeInOverlay{from{opacity:0}to{opacity:1}}
+.exit-popup{
+  background:var(--cream);
+  border-radius:20px;padding:24px 20px;
+  max-width:540px;width:90%;
+  position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+  animation:popUp 0.4s ease-out;
+  text-align:center;
+  border:2px solid var(--indigo);
+}
+@keyframes popUp{from{transform:scale(0.85) translateY(30px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+.exit-popup-close{
+  position:absolute;top:10px;left:10px;
+  background:white;
+  border:2px solid var(--berry);
+  width:34px;height:34px;border-radius:50%;
+  font-size:20px;color:var(--berry);
+  font-weight:800;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.3s;
+}
+.exit-popup-close:hover{background:var(--berry);color:white;transform:rotate(90deg) scale(1.08)}
+.exit-popup-title{
+  font-size:clamp(22px,5.5vw,28px);
+  font-weight:800;color:var(--indigo);
+  margin-bottom:6px;line-height:1.3;
+}
+.exit-popup-subtitle{
+  font-size:clamp(16px,4vw,19px);
+  font-weight:700;color:var(--berry);
+  margin-bottom:12px;line-height:1.4;
+}
+.exit-popup-gift{
+  background:linear-gradient(135deg,#FCE4F2 0%,#EDE0FF 100%);
+  padding:14px;border-radius:12px;
+  margin-bottom:12px;
+  border:1px solid rgba(75,0,130,0.15);
+}
+.exit-popup-gift-title{
+  font-size:clamp(14px,3.5vw,16px);
+  font-weight:800;color:var(--indigo);
+  margin-bottom:4px;
+}
+.exit-popup-gift-text{
+  font-size:clamp(13px,3.3vw,15px);
+  font-weight:600;color:var(--text-body);
+  line-height:1.4;
+}
+.exit-popup-form{
+  margin:12px 0 8px;
+  background:white;padding:12px;
+  border-radius:10px;
+  border:1px solid rgba(75,0,130,0.1);
+}
+.exit-popup-form iframe{
+  width:100%!important;
+  min-height:220px;max-height:240px;
+  border:none;background:transparent;
+}
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
 </head>
@@ -720,6 +1203,224 @@ body{padding-top:56px}
 </div>
 
 
+<!-- ============ S11: QUIZ RESULT (hidden until quiz complete) ============ -->
+<div class="result-section" id="resultSection">
+  <div class="result-card">
+    <div class="stage-tag">השלב שלך</div>
+    <h3 class="stage-name" id="stage-name"></h3>
+    <p class="stage-desc" id="stage-desc"></p>
+    <div class="result-divider"></div>
+    <p class="result-headline" id="result-headline"></p>
+    <p class="result-text" id="result-text"></p>
+  </div>
+
+  <div class="personal-list" id="personalList"></div>
+
+  <div class="result-prime-banner">✨ את בפריים שלך ומגיע לך ליהנות מהחיים! ✨</div>
+
+  <div class="scroll-to-form-arrow">
+    <p>יש מה לעשות — וזה לא מסובך כמו שאת חושבת</p>
+    <div class="arrow-icon">↓</div>
+  </div>
+</div>
+
+<!-- ============ S12: RESULT FORM (form right after quiz result) ============ -->
+<div class="result-form-section" id="resultFormSection">
+  <div class="result-form-wrap">
+    <h2>🎯 הרשמי עכשיו למפגש</h2>
+    <p class="sub">גלי את השיטה שעוזרת לאלפי נשים כמוך</p>
+
+    <div class="reg-counter">
+      <script type='text/javascript' src='//form2.ravpage.co.il/9ba0ca9db43f7db1f0afb068f47b08b3697F7D78' charset='UTF-8'></script>
+    </div>
+
+    <div class="form-purple">
+      <div class="reg-layout">
+        <div class="reg-content">
+          <h3>רוצה לקבל כבר עכשיו כלים להתמודדות<br>יעילה עם התסמינים שמטרידים אותך?</h3>
+          <p class="bold-white">שרייני עכשיו (ללא עלות) מקום במפגש הזום הקרוב</p>
+          <div class="embedded-form">
+            <script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script>
+          </div>
+        </div>
+        <div class="reg-photo-col">
+          <img src="/360/site_images/anat_portrait.jpg" alt="ענת הראל">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ S13: PROGRAM "מיי פריים 360" ============ -->
+<div class="program-section">
+  <div style="text-align:center">
+    <div class="program-tag">התוכנית</div>
+    <h2 class="program-title">המתכון המנצח להצלחה</h2>
+    <p class="program-sub">כי לדעת זה לא מספיק, צריך גם ליישם!<br>זו התוכנית שתהפוך את כל זה להרבה יותר פשוט עבורך.</p>
+  </div>
+  <div class="program-grid">
+    <div class="prog-card">
+      <span class="icon">🥗</span>
+      <h4>תזונה לגיל המעבר</h4>
+      <p>תלמדי כיצד להתאים את התזונה היומית לשינויים ההורמונליים</p>
+    </div>
+    <div class="prog-card">
+      <span class="icon">🏃‍♀️</span>
+      <h4>אימונים מותאמים</h4>
+      <p>נתרגלי יחד אימוני חיטוב קצרים ופשוטים</p>
+    </div>
+    <div class="prog-card">
+      <span class="icon">🧘</span>
+      <h4>תרגול מנטאלי</h4>
+      <p>כלים מנטליים להתמודדות עם מצבי רוח משתנים</p>
+    </div>
+    <div class="prog-card">
+      <span class="icon">📱</span>
+      <h4>ליווי יומיומי</h4>
+      <p>באמצעות סרטונים קצרים לצפייה בזמן שנוח לך</p>
+    </div>
+    <div class="prog-card">
+      <span class="icon">📊</span>
+      <h4>מעקב התקדמות</h4>
+      <p>שיעזור לך להתמיד ולראות את ההתקדמות לאורך זמן</p>
+    </div>
+    <div class="prog-card">
+      <span class="icon">👥</span>
+      <h4>קהילה תומכת</h4>
+      <p>קבוצת פייסבוק סגורה למשתתפות לצורך תמיכה וליווי</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ S14: STORY (Anat's personal story) ============ -->
+<div class="story-section">
+  <div style="text-align:center">
+    <div class="story-tag">הכירו את ענת</div>
+    <h2 class="story-title">הסיפור האישי שלי</h2>
+  </div>
+  <div class="story-body">
+    <p>היי! אני ענת, בת 55, מייסדת "מיי פריים" — תוכניות ליווי לנשים בגיל המעבר, מרצה על אורח חיים בריא ומאמנת להתפתחות אישית.</p>
+    <img src="/360/site_images/anat_portrait.jpg" alt="ענת הראל">
+    <p>אני עוסקת בתחום כבר 20 שנה ויותר וזה סיפור ההתמודדות שלי עם גיל המעבר ואיך נולד הקורס "מיי פריים 360" במיוחד עבורך:</p>
+    <p>במהלך הקריירה שלי הגעתי לאלפי נשים בכל דרך אפשרית — מקבוצות וסדנאות כושר, דרך תוכניות אימון אונליין וכלה בהגשת תוכניות טלוויזיה רבות.</p>
+    <p><strong>מאז ומעולם הרגשתי שיש לי שליחות חשובה,</strong> שאליה אני מתמסרת כל כולי — לגרום לכמה שיותר נשים להבין את ההשפעה של פעילות גופנית ותזונה מאוזנת על החיים שלהן.</p>
+    <p>באמצע שנות ה-40 לחיי, ממש כשהרגשתי בשיא — משהו השתבש. שמתי לב למצבי רוח שמשתנים בקיצוניות, יכולת הריכוז שלי ירדה, השינה שלי נהייתה הרבה פחות רציפה ואיכותית.</p>
+    <p>לקח לי כמה חודשים של ריצות מרופא לרופא, כדי להבין שאני עוברת תהליך טבעי שכל אישה עוברת: שינוי הורמונלי שמתרחש בשלבים המוקדמים של גיל המעבר.</p>
+    <p>התחלתי לברר וגיליתי ש:</p>
+    <ol>
+      <li>רוב הנשים לא מבינות שמה שעובר עליהן קשור להורמונים.</li>
+      <li>רוב הנשים מחפשות את הפתרון במקום הלא נכון.</li>
+      <li>רובנו מתביישות לדבר על זה — ואם אנחנו לא מדברות, איך נוכל לטפל בבעיה?</li>
+    </ol>
+    <img src="/360/site_images/anat_sport.jpg" alt="ענת הראל">
+    <p>החלטתי ללמוד איך אפשר לעבור את זה אחרת. קראתי מחקרים, התייעצתי עם רופאות ותזונאיות מובילות ויצרתי שיטה שמטרתה לאפשר לנשים לחיות חיים טובים יותר בכל התחומים.</p>
+    <p class="story-closing">כיום, אני רואה שליחות אדירה בהפצת הידע — כי מגיע לנו להנות מהתקופה הזו.<br>תקופת הפריים שלנו.</p>
+  </div>
+</div>
+
+<!-- ============ S15: DOCTORS / EXPERTS ============ -->
+<div class="doctors-section">
+  <div style="text-align:center">
+    <div class="doctors-tag">הצוות</div>
+    <h2 class="doctors-title">המומחיות שלנו</h2>
+  </div>
+  <div class="doctor-card">
+    <img src="/360/site_images/dr_noa.jpg" alt="ד&quot;ר נעה חובב" class="doctor-photo" onerror="this.style.display='none'">
+    <div class="doctor-info">
+      <h4>ד"ר נעה חובב</h4>
+      <p>רופאת גיל המעבר ומומחית ברפואת משפחה</p>
+    </div>
+  </div>
+  <div class="doctor-card">
+    <img src="/360/site_images/mia.jpg" alt="מיה בן אפרים" class="doctor-photo" onerror="this.style.display='none'">
+    <div class="doctor-info">
+      <h4>מיה בן אפרים</h4>
+      <p>דיאטנית קלינית מוסמכת, מתמחה באיזון הורמונלי בגיל המעבר</p>
+    </div>
+  </div>
+  <div class="doctor-card">
+    <img src="/360/site_images/anat_portrait.jpg" alt="ענת הראל" class="doctor-photo" onerror="this.style.display='none'">
+    <div class="doctor-info">
+      <h4>ענת הראל</h4>
+      <p>בעלת קבוצות אימון לנשים, מרצה על אורח חיים בריא ומאמנת להתפתחות אישית</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ S16: MEDIA MENTIONS ============ -->
+<div class="media-section">
+  <div style="text-align:center">
+    <div class="media-tag">בתקשורת</div>
+    <h2 class="media-title">מדברים עלינו במדיה 📣</h2>
+  </div>
+  <div class="media-nav">
+    <button class="nav-btn" onclick="scrollMedia(1)">→</button>
+    <span>החליקי לצפייה</span>
+    <button class="nav-btn" onclick="scrollMedia(-1)">←</button>
+  </div>
+  <div id="media-scroll">
+    <div><iframe src="https://player.vimeo.com/video/1169298167?badge=0&autoplay=0&loop=0&autopause=1" style="width:100%;height:100%;border:none" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+    <div><iframe src="https://player.vimeo.com/video/1169325165?badge=0&autoplay=0&loop=0&autopause=1" style="width:100%;height:100%;border:none" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+    <div><iframe src="https://player.vimeo.com/video/1169301995?badge=0&autoplay=0&loop=0&autopause=1" style="width:100%;height:100%;border:none" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+    <div><img src="/360/site_images/media_ynet.jpg" alt="Ynet" style="width:100%;height:100%;object-fit:cover"></div>
+    <div><img src="/360/site_images/media_ynet2.jpg" alt="Ynet" style="width:100%;height:100%;object-fit:cover"></div>
+    <div><img src="/360/site_images/media_yediot.jpg" alt="ידיעות אחרונות" style="width:100%;height:100%;object-fit:cover"></div>
+  </div>
+</div>
+
+<!-- ============ S17: FINAL FORM ============ -->
+<div class="final-form-section">
+  <div class="final-form-wrap">
+    <h2>🎯 אל תפספסי! הרשמי עכשיו</h2>
+    <p class="sub">המפגש מתקרב — שמרי את מקומך!</p>
+
+    <div class="reg-counter">
+      <script type='text/javascript' src='//form2.ravpage.co.il/9ba0ca9db43f7db1f0afb068f47b08b3697F7D78' charset='UTF-8'></script>
+    </div>
+
+    <div class="form-purple">
+      <div class="reg-layout">
+        <div class="reg-content">
+          <h3>שרייני עכשיו מקום במפגש הזום הקרוב</h3>
+          <p class="bold-white">ללא עלות · מקומות מוגבלים</p>
+          <div class="embedded-form">
+            <script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script>
+          </div>
+        </div>
+        <div class="reg-photo-col">
+          <img src="/360/site_images/anat_portrait.jpg" alt="ענת הראל">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ S18: CONTACT ============ -->
+<div class="contact-section">
+  <p class="contact-title">רוצה לדבר איתנו?<br>לחצי על הכפתור ונשמח לשוחח</p>
+  <div class="contact-links">
+    <a class="contact-btn wa" href="https://wa.me/9720547304177" target="_blank">📱 WhatsApp — 054-7304177</a>
+    <a class="contact-btn email" href="mailto:info@myprime.co.il">📧 לחצי לשליחת מייל</a>
+  </div>
+</div>
+
+<!-- ============ EXIT POPUP ============ -->
+<div class="exit-popup-overlay" id="exitPopup">
+  <div class="exit-popup">
+    <button class="exit-popup-close" onclick="closeExitPopup()" aria-label="סגירה">×</button>
+    <div class="exit-popup-title">רגע! לפני שאת הולכת...</div>
+    <div class="exit-popup-subtitle">שמרי מקום עכשיו במפגש החינמי!</div>
+    <div class="exit-popup-gift">
+      <div class="exit-popup-gift-title">🎁 מתנה שימושית למשתתפות</div>
+      <div class="exit-popup-gift-text">מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה רלוונטי בגיל שלנו</div>
+    </div>
+    <div class="exit-popup-form">
+      <script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script>
+    </div>
+  </div>
+</div>
+
+
 <!-- FOOTER -->
 <footer class="site-footer"><nav class="footer-links" aria-label="קישורים משפטיים"><a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a7%d7%95%d7%a7%d7%99%d7%96/" target="_blank">מדיניות קוקיז</a><span class="footer-sep">|</span><a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות פרטיות</a><span class="footer-sep">|</span><a href="https://myprime.co.il/%d7%94%d7%a6%d7%94%d7%a8%d7%aa-%d7%a0%d7%92%d7%99%d7%a9%d7%95%d7%aa/" target="_blank">הצהרת נגישות</a><span class="footer-sep">|</span><a href="https://myprime.co.il/%d7%aa%d7%a7%d7%a0%d7%95%d7%9f/" target="_blank">תקנון האתר</a><span class="footer-sep">|</span><a href="https://myprime.ravpage.co.il/BITUL" target="_blank">ביטול עסקה</a><span class="footer-sep">|</span><span class="footer-brand">my prime ענת הראל</span><span class="footer-sep">|</span><span class="footer-version">INDEXW256B</span></nav></footer>
 
@@ -847,9 +1548,151 @@ function showResult(){
   var pb=document.getElementById("quizProgress");
   if(pb)pb.classList.add("hidden-complete");
   document.body.classList.remove("quiz-active");
-  // Result section will be added in S11
-  alert("התוצאה תוצג כאן (S11 - הסקשן הבא)");
+
+  // Determine stage based on age + cycle
+  var stageName="",stageDesc="";
+  if(answers.cycle==="menopause"){
+    stageName="מנופאוזה";
+    stageDesc="המחזור הפסיק — זה שלב מתקדם של גיל המעבר. הגוף כבר בעיצומו של השינוי ההורמונלי ויש כמה כלים משמעותיים כדי להרגיש ולהראות כמו שאת חולמת.";
+  }else{
+    if(answers.age==="38_49"){
+      stageName="פרי-מנופאוזה (טרום גיל המעבר)";
+      stageDesc="בגיל הזה עם מחזור סדיר, את בשלב הפרי-מנופאוזה — הגוף מתחיל לשנות את האיזון ההורמונלי שלו גם כשהמחזור עדיין קיים. התסמינים שסימנת הם בדיוק הסימן לכך.";
+    }else if(answers.age==="50_59"){
+      stageName="פרי-מנופאוזה (טרום גיל המעבר)";
+      stageDesc="הגיל והמחזור מצביעים על פרי-מנופאוזה — התקופה שבה הורמונים מתחילים להשתנות. רוב התסמינים מגיעים דווקא בשלב הזה.";
+    }else{
+      stageName="מנופאוזה";
+      stageDesc="המחזור הפסיק — זה שלב מתקדם של גיל המעבר. הגוף כבר בעיצומו של השינוי ההורמונלי.";
+    }
+  }
+  document.getElementById("stage-name").textContent=stageName;
+  document.getElementById("stage-desc").textContent=stageDesc;
+
+  // Headline + text based on symptom count
+  var chips=document.querySelectorAll("#symptoms-grid .chip.selected");
+  var count=chips.length;
+  var headline,text;
+  if(count<=2){
+    headline="כמה סימנים ראשוניים";
+    text="הגוף שלך מתחיל לשלוח סימנים. זה השלב הכי טוב להבין מה קורה ולהתחיל לעבוד עם הגוף.";
+  }else if(count<=5){
+    headline="השינוי ההורמונלי כבר משפיע עלייך";
+    text="את מרגישה את זה, ויש סיבה. הגוף שלך עובר שינוי משמעותי ויש לו מה לומר לך. החדשות הטובות — יש מה לעשות עם זה, ועכשיו זה הזמן.";
+  }else{
+    headline="עומס תסמינים משמעותי";
+    text="את מתמודדת עם הרבה מאוד ואת לא חייבת להרגיש ככה! יש שיטה שמבינה את כל מה שהגוף שלך עובר עכשיו ומייצרת עבורך כלים להחזיר את השליטה.";
+  }
+  document.getElementById("result-headline").textContent=headline;
+  document.getElementById("result-text").textContent=text;
+
+  // Personalized "at lo chayevet" list
+  var cm={
+    "השמנה בטנית":{e:"🫃",t:"את לא חייבת לקבל את העלייה בהיקף הבטן!"},
+    "שינה גרועה":{e:"😴",t:"את לא חייבת לסבול מלילות ללא שינה!"},
+    "שינויי מצב רוח":{e:"🌊",t:"את לא חייבת לסבול ממצבי רוח שמשתלטים עלייך!"},
+    "עלייה במשקל":{e:"⚖️",t:"את לא חייבת לחיות עם משקל עודף!"},
+    "גלי חום":{e:"🌡️",t:"את לא חייבת לחיות עם גלי חום שמפתיעים אותך!"},
+    "הזעות לילה":{e:"😰",t:"את לא חייבת להתעורר בלילה רטובה מזיעה!"},
+    "עייפות מתמשכת":{e:"😴",t:"את לא חייבת להיות עייפה כל היום!"},
+    "עצבנות":{e:"😤",t:"את לא חייבת לסבול מעצבנות שבאה משום מקום!"},
+    "חרדה":{e:"😟",t:"את לא חייבת לחיות עם חרדה שלא הייתה לך קודם!"},
+    "ירידה במצב רוח":{e:"😞",t:"את לא חייבת לוותר על השמחה והאנרגיה!"},
+    "ערפול מחשבתי":{e:"🧠",t:"את לא חייבת לוותר על הריכוז שלך!"},
+    "קושי להתרכז":{e:"💭",t:"את לא חייבת לאבד מילים באמצע משפט!"},
+    "כאבי מפרקים":{e:"🦴",t:"את לא חייבת לסבול מכאבים שמגבילים אותך!"},
+    "ירידה בכוח":{e:"💪",t:"את לא חייבת לוותר על הכוח והחוזק שהיו לך!"},
+    "נפיחות":{e:"🫧",t:"את לא חייבת לסבול מנפיחות שמופיעה ללא סיבה!"},
+    "יובש בעור":{e:"💧",t:"את לא חייבת לסבול מעור יבש!"},
+    "יובש בנרתיק":{e:"💧",t:"את לא חייבת לסבול מאי-נוחות שמגבילה אותך!"},
+    "שינויים בעור ובשיער":{e:"🔥",t:"את לא חייבת לקבל את השינויים בעור ובשיער שלך!"},
+    "דפיקות לב":{e:"💓",t:"את לא חייבת לחיות עם דפיקות לב שמפחידות אותך!"},
+    "ירידה בחשק המיני":{e:"❤️",t:"את לא חייבת לוותר על החשק והקרבה!"}
+  };
+  var pl=document.getElementById("personalList");
+  pl.innerHTML="";
+  var shown=0;
+  chips.forEach(function(chip,i){
+    if(shown>=5)return;
+    var label=chip.getAttribute("data-label");
+    var msg=cm[label];
+    if(msg){
+      var d=document.createElement("div");
+      d.className="personal-item";
+      d.style.animationDelay=(i*0.08)+"s";
+      d.innerHTML="<span class=\"ns-emoji\">"+msg.e+"</span>"+msg.t;
+      pl.appendChild(d);
+      shown++;
+    }
+  });
+  if(shown===0){
+    var d=document.createElement("div");
+    d.className="personal-item";
+    d.innerHTML="<span class=\"ns-emoji\">✨</span>את לא חייבת לקבל את השינויים — יש מה לעשות!";
+    pl.appendChild(d);
+  }
+
+  // Show result + form sections
+  document.getElementById("resultSection").classList.add("show");
+  document.getElementById("resultFormSection").classList.add("show");
+
+  // Scroll to result
+  setTimeout(function(){
+    document.getElementById("resultSection").scrollIntoView({behavior:"smooth",block:"start"});
+  },100);
 }
+
+// Media carousel scroll
+function scrollMedia(dir){
+  var el=document.getElementById("media-scroll");
+  if(!el)return;
+  el.scrollBy({left:dir*(el.offsetWidth*0.85+14),behavior:"smooth"});
+}
+
+// Testimony carousel scroll (already in use by existing HTML from original)
+function scrollTestimony(dir){
+  var el=document.getElementById("testimony-scroll");
+  if(!el)return;
+  el.scrollBy({left:dir*el.offsetWidth,behavior:"smooth"});
+}
+
+// Exit popup logic
+var exitPopupShown=false,exitPopupClosed=false,formSubmittedFlag=false;
+
+window.addEventListener("message",function(e){
+  if(e.origin.includes("ravpage.co.il")&&e.data){
+    if(e.data.type==="formSubmitted"||e.data.type==="formSuccess"||e.data.success||e.data.submitted||JSON.stringify(e.data).indexOf("success")>=0){
+      formSubmittedFlag=true;
+      try{localStorage.setItem("ravpage_form_submitted","true")}catch(err){}
+    }
+  }
+});
+
+try{if(localStorage.getItem("ravpage_form_submitted")==="true")formSubmittedFlag=true}catch(err){}
+
+document.addEventListener("mouseleave",function(e){
+  if(e.clientY<10&&!exitPopupShown&&!exitPopupClosed){
+    try{if(localStorage.getItem("user_clicked_register")==="true")return}catch(err){}
+    if(formSubmittedFlag)return;
+    var inputs=document.querySelectorAll("input[type=\"text\"],input[type=\"email\"],input[type=\"tel\"]");
+    for(var i=0;i<inputs.length;i++){
+      if(inputs[i].value&&inputs[i].value.trim().length>0)return;
+    }
+    exitPopupShown=true;
+    document.getElementById("exitPopup").classList.add("show");
+    document.body.style.overflow="hidden";
+  }
+});
+
+function closeExitPopup(){
+  exitPopupClosed=true;
+  document.getElementById("exitPopup").classList.remove("show");
+  document.body.style.overflow="";
+}
+
+document.getElementById("exitPopup").addEventListener("click",function(e){
+  if(e.target===this)closeExitPopup();
+});
 
 
 function showHiddenForm(){var f=document.getElementById("hiddenFormSection");if(f){f.classList.add("show");setTimeout(function(){f.scrollIntoView({behavior:"smooth",block:"start"})},100)}}
