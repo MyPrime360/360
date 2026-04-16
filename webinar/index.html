@@ -1035,7 +1035,7 @@ body{padding-top:56px}
    S14 STORY - Two column layout (like Rav Messer)
 ======================================== */
 .story-section-v2{
-  background:#2a2a2a;
+  background:#2D1854;
   padding:56px 20px;
   color:white;
   border-top:1px solid var(--border-soft);
@@ -2027,6 +2027,36 @@ body{padding-top:56px}
     line-height:1.35 !important;
   }
 }
+
+/* Hero audience - tighter to push video up */
+.hero-audience{
+  line-height:1.35 !important;
+  margin-bottom:4px !important;
+}
+@media(max-width:767px){
+  .hero-audience{
+    line-height:1.3 !important;
+    margin-bottom:4px !important;
+    font-size:16px !important;
+  }
+}
+
+/* Social proof line */
+.social-proof-line{
+  text-align:center;
+  font-size:clamp(14px,3.5vw,16px);
+  font-weight:700;
+  color:var(--indigo);
+  margin:0 16px 12px;
+  padding:0;
+  opacity:0.8;
+}
+@media(max-width:767px){
+  .social-proof-line{
+    font-size:14px !important;
+    margin:0 14px 8px !important;
+  }
+}
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
 </head>
@@ -2035,7 +2065,7 @@ body{padding-top:56px}
 <!-- ============ STICKY TOP BAR ============ -->
 <div class="top-bar">
   <img src="/360/site_images/logo_final.png" alt="MyPrime" class="top-bar-logo">
-  <button class="top-bar-cta" onclick="scrollToSecondForm()">הרשמה חינם</button>
+  <button class="top-bar-cta" onclick="scrollToSecondForm()">הרשמה למפגש</button>
 </div>
 
 
@@ -2052,9 +2082,12 @@ body{padding-top:56px}
   </h1>
 </div>
 
+<!-- Social proof line -->
+<p class="social-proof-line">עשרות אלפי נשים כבר השתתפו במפגש</p>
+
 <!-- ============ S3: URGENCY BOX + CTA (CTA inside the box) ============ -->
 <div class="urgency-box">
-  <p class="urgency-icon">מקומות אחרונים במפגש החינמי הקרוב!</p>
+  <p class="urgency-icon">מקומות אחרונים במפגש הקרוב!</p>
   <button class="urgency-cta" onclick="openFormModal()">לחצי והרשמי עכשיו למפגש ולטיפים בחינם</button>
 </div>
 
@@ -2139,7 +2172,7 @@ body{padding-top:56px}
 <!-- ============ S8: SECOND REGISTRATION FORM ============ -->
 <div class="reg-standalone" id="secondForm">
   <div class="reg-standalone-inner">
-    <h2>🎯 שרייני מקום במפגש החינמי</h2>
+    <h2>🎯 שרייני מקום במפגש הקרוב</h2>
     <div class="reg-counter counter-desktop">
       <script type='text/javascript' src='//form2.ravpage.co.il/9ba0ca9db43f7db1f0afb068f47b08b3697F7D78' charset='UTF-8'></script>
     </div>
@@ -2449,7 +2482,7 @@ body{padding-top:56px}
   <div class="exit-popup">
     <button class="exit-popup-close" onclick="closeExitPopup()" aria-label="סגירה">×</button>
     <div class="exit-popup-title">רגע! לפני שאת הולכת...</div>
-    <div class="exit-popup-subtitle">שמרי מקום עכשיו במפגש החינמי!</div>
+    <div class="exit-popup-subtitle">שמרי מקום עכשיו במפגש הקרוב!</div>
     <div class="exit-popup-gift">
       <div class="exit-popup-gift-title">🎁 מתנה שימושית למשתתפות</div>
       <div class="exit-popup-gift-text">מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה רלוונטי בגיל שלנו</div>
