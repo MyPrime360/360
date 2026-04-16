@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>מפגש זום חינם - ענת הראל MyPrime</title>
 <link rel="icon" type="image/png" sizes="32x32" href="/360/site_images/favicon-32.png">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* ===== COLOR SYSTEM =====
    --cream: #FCF8F4  (warm cream, 60% of page)
@@ -26,7 +26,7 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{max-width:100%;overflow-x:hidden}
-body{font-family:"Open Sans",sans-serif;background:var(--cream);color:var(--text-body);direction:rtl;text-align:center;line-height:1.65;-webkit-font-smoothing:antialiased}
+body{font-family:"Assistant",sans-serif;background:var(--cream);color:var(--text-body);direction:rtl;text-align:center;line-height:1.65;-webkit-font-smoothing:antialiased}
 @media(min-width:768px){html{background:linear-gradient(160deg,#EDE0F0 0%,#F3E8FF 40%,#E8D0E8 100%);min-height:100%}body{max-width:820px;margin:0 auto;background:var(--cream);box-shadow:0 0 60px rgba(75,0,130,0.15);min-height:100vh}}
 
 /* ===== LOGO SECTION (no background, just cream) ===== */
@@ -56,8 +56,8 @@ body{font-family:"Open Sans",sans-serif;background:var(--cream);color:var(--text
 .urgency-cta{
   width:100%;max-width:500px;padding:18px 32px;
   background:var(--berry);
-  color:white;border:none;border-radius:50px;
-  font-family:"Open Sans",sans-serif;
+  color:white;border:none;border-radius:8px;
+  font-family:"Assistant",sans-serif;
   font-size:clamp(18px,4.5vw,22px);font-weight:800;
   cursor:pointer;
   box-shadow:0 8px 28px rgba(112,28,87,0.45);
@@ -175,20 +175,331 @@ body{font-family:"Open Sans",sans-serif;background:var(--cream);color:var(--text
 @media(min-width:1024px) and (max-width:1440px){body{zoom:0.97!important}}
 @media(min-width:1441px) and (max-width:1920px){body{zoom:1.35!important}}
 @media(min-width:1921px){body{zoom:1.5!important}}
+
+/* ========================================
+   S9: INTRO / "מוכנה? בואי נתחיל"
+======================================== */
+.quiz-intro-section{
+  background:var(--cream);
+  padding:44px 20px 40px;
+  text-align:center;
+  border-top:1px solid var(--border-soft);
+}
+.quiz-intro-tag{
+  display:inline-block;
+  background:rgba(75,0,130,0.08);
+  color:var(--indigo);
+  font-size:12px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:6px 16px;border-radius:20px;
+  margin-bottom:16px;
+}
+.quiz-intro-title{
+  font-size:clamp(24px,6vw,36px);
+  font-weight:800;color:var(--indigo);
+  line-height:1.2;margin-bottom:12px;
+}
+.quiz-intro-sub{
+  font-size:clamp(15px,3.8vw,18px);
+  color:var(--text-mid);
+  font-weight:500;line-height:1.6;
+  max-width:520px;margin:0 auto 28px;
+}
+.quiz-start-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--berry);color:white;
+  padding:16px 36px;border-radius:8px;
+  font-family:"Assistant",sans-serif;
+  font-size:clamp(17px,4.2vw,20px);font-weight:800;
+  border:none;cursor:pointer;
+  box-shadow:0 6px 20px rgba(112,28,87,0.35);
+  transition:all 0.3s ease;
+}
+.quiz-start-btn:hover{transform:translateY(-2px);background:var(--berry-dark);box-shadow:0 10px 28px rgba(112,28,87,0.5)}
+.quiz-start-btn .arrow{display:inline-block;animation:bounceArrow 1.6s ease-in-out infinite;font-size:16px}
+@keyframes bounceArrow{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+.quiz-intro-note{
+  margin-top:14px;font-size:11px;color:var(--text-mid);
+  line-height:1.4;padding:0 20px;opacity:0.7;
+}
+
+/* ========================================
+   S10: QUIZ (hidden until user clicks)
+======================================== */
+.quiz-section{
+  display:none;
+  background:var(--cream);
+  padding:0 16px 32px;
+  border-top:1px solid var(--border-soft);
+}
+.quiz-section.show{display:block;animation:slideQuizDown 0.6s ease-out}
+@keyframes slideQuizDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+
+/* Progress Bar - FLOATING (sticks under top-bar during quiz) */
+.quiz-progress{
+  position:fixed;
+  top:56px;left:0;right:0;
+  z-index:99998;
+  background:rgba(252,248,244,0.94);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(75,0,130,0.08);
+  padding:10px 16px 12px;
+  display:none;
+  animation:progressSlideIn 0.4s ease-out;
+}
+@media(min-width:768px){
+  .quiz-progress{max-width:820px;margin:0 auto}
+}
+.quiz-progress.show{display:block}
+.quiz-progress.hidden-complete{display:none !important}
+@keyframes progressSlideIn{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
+
+.progress-track{
+  display:flex;align-items:center;gap:0;
+  max-width:360px;margin:0 auto;
+}
+.progress-node{
+  width:14px;height:14px;border-radius:50%;
+  border:2px solid var(--indigo);
+  background:var(--cream);
+  flex-shrink:0;
+  transition:all 0.4s ease;
+}
+.progress-node.done{background:var(--indigo);box-shadow:0 0 0 4px rgba(75,0,130,0.15)}
+.progress-line{
+  flex:1;height:2px;
+  background:linear-gradient(to right,var(--indigo) var(--fill,0%),rgba(75,0,130,0.15) var(--fill,0%));
+  transition:all 0.4s ease;
+}
+.progress-labels{
+  display:flex;justify-content:space-between;
+  max-width:360px;margin:6px auto 0;
+  font-size:10px;font-weight:700;
+  color:var(--text-mid);
+}
+.progress-labels span{text-align:center;flex:1}
+.progress-labels span.active{color:var(--indigo)}
+
+/* When quiz is active, push content down to make room for progress bar */
+body.quiz-active{padding-top:106px}
+
+/* Quiz questions */
+.q-block{max-width:640px;margin:0 auto 32px;text-align:right}
+.q-label{
+  display:flex;align-items:center;gap:12px;
+  font-size:clamp(20px,5vw,26px);
+  font-weight:800;color:var(--indigo);
+  line-height:1.2;margin-bottom:12px;
+}
+.q-num{
+  width:34px;height:34px;
+  background:var(--indigo);color:white;
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:800;flex-shrink:0;
+}
+.q-sub{
+  font-size:14px;color:var(--text-mid);
+  margin-bottom:14px;font-weight:500;
+}
+
+/* Chips */
+.chips-grid{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.chip{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:12px 20px;background:white;
+  border:2px solid rgba(75,0,130,0.15);
+  border-radius:100px;cursor:pointer;
+  font-size:clamp(15px,3.6vw,18px);
+  color:var(--text-body);font-weight:700;
+  transition:all 0.2s ease;
+  user-select:none;-webkit-user-select:none;
+  -webkit-tap-highlight-color:transparent;
+  box-shadow:0 2px 8px rgba(75,0,130,0.08);
+  white-space:nowrap;
+}
+.chip:active{transform:scale(0.93)}
+.chip.selected{
+  background:var(--indigo);
+  border-color:var(--indigo);
+  color:white;
+  box-shadow:0 4px 14px rgba(75,0,130,0.35);
+  transform:scale(1.04);
+}
+.chip-emoji{font-size:16px;line-height:1}
+
+/* Adaptive counter message */
+.counter-wrap{
+  background:white;
+  border:2px solid var(--border-soft);
+  border-radius:16px;
+  padding:14px 22px;margin-top:16px;
+  text-align:center;
+}
+.counter-msg{
+  font-size:13px;color:var(--text-mid);
+  font-weight:600;margin-bottom:4px;
+  min-height:18px;
+  transition:color 0.3s ease;
+}
+.counter-msg.active{color:var(--indigo)}
+.counter-text{
+  font-size:clamp(16px,4vw,20px);
+  color:var(--text-body);font-weight:700;
+}
+.counter-num{
+  font-size:32px;font-weight:800;
+  color:var(--berry);line-height:1;
+  display:inline-block;
+  transition:transform 0.2s ease;
+}
+.counter-num.bump{animation:bump 0.3s ease}
+@keyframes bump{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+
+/* Curiosity teaser (after first chip) */
+.curiosity-teaser{
+  display:none;
+  background:linear-gradient(135deg,rgba(75,0,130,0.06) 0%,rgba(112,28,87,0.06) 100%);
+  border:1px solid rgba(75,0,130,0.15);
+  border-radius:12px;padding:14px 18px;
+  margin-top:14px;text-align:center;
+  animation:fadeSlide 0.5s ease;
+}
+.curiosity-teaser.show{display:block}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.curiosity-teaser p{
+  font-size:14px;color:var(--indigo);
+  line-height:1.5;font-weight:600;
+}
+.curiosity-teaser .emoji{font-size:18px;margin-left:4px}
+
+/* Radio options (age, cycle) */
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt-item{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 20px;
+  border:2px solid rgba(75,0,130,0.12);
+  border-radius:16px;
+  cursor:pointer;font-size:clamp(15px,3.5vw,17px);
+  color:var(--text-body);background:white;
+  font-weight:500;transition:all 0.18s;
+  user-select:none;-webkit-tap-highlight-color:transparent;
+}
+.opt-item:hover{border-color:rgba(75,0,130,0.3)}
+.opt-item.selected{
+  border-color:var(--indigo);
+  background:rgba(75,0,130,0.04);
+  color:var(--indigo);font-weight:700;
+}
+.radio-dot{
+  width:22px;height:22px;
+  border:2px solid rgba(75,0,130,0.2);
+  border-radius:50%;flex-shrink:0;
+  transition:all 0.18s;
+}
+.opt-item.selected .radio-dot{
+  background:var(--indigo);
+  border-color:var(--indigo);
+  box-shadow:inset 0 0 0 4px white;
+}
+.val-msg{
+  color:var(--berry);font-size:14px;
+  margin-top:8px;font-weight:700;
+  display:none;
+}
+.val-msg.show{display:block}
+
+/* CTA button for result */
+.result-cta-wrap{
+  background:var(--cream);
+  padding:32px 20px 40px;
+  text-align:center;
+  border-top:1px solid var(--border-soft);
+}
+.btn-result{
+  display:inline-block;
+  background:var(--berry);
+  color:white;
+  font-family:"Assistant",sans-serif;
+  font-size:clamp(18px,4.5vw,22px);
+  font-weight:800;
+  padding:18px 40px;border-radius:8px;
+  border:none;cursor:pointer;
+  box-shadow:0 8px 24px rgba(112,28,87,0.35);
+  transition:all 0.3s ease;
+  width:100%;max-width:440px;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn-result:hover{transform:translateY(-2px);background:var(--berry-dark);box-shadow:0 12px 32px rgba(112,28,87,0.5)}
+.btn-result.pulse-ready{animation:pulseResult 1.2s ease-in-out infinite}
+@keyframes pulseResult{
+  0%,100%{transform:scale(1);box-shadow:0 8px 24px rgba(112,28,87,0.35)}
+  50%{transform:scale(1.04);box-shadow:0 12px 32px rgba(112,28,87,0.55)}
+}
+
+/* ========================================
+   STICKY TOP BAR (logo + register button)
+======================================== */
+.top-bar{
+  position:fixed;top:0;left:0;right:0;
+  z-index:99999;
+  background:rgba(252,248,244,0.94);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(75,0,130,0.1);
+  box-shadow:0 2px 12px rgba(75,0,130,0.06);
+  padding:8px 16px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:56px;
+}
+@media(min-width:768px){
+  .top-bar{
+    max-width:820px;margin:0 auto;
+    left:0;right:0;
+  }
+  /* Center bar within max-width container */
+  body{position:relative}
+}
+.top-bar-logo{
+  height:40px;width:auto;display:block;
+}
+.top-bar-cta{
+  background:var(--berry);color:white;
+  border:none;border-radius:8px;
+  padding:9px 22px;
+  font-family:"Assistant",sans-serif;
+  font-size:14px;font-weight:800;
+  cursor:pointer;
+  box-shadow:0 4px 14px rgba(112,28,87,0.35);
+  transition:all 0.25s ease;
+  -webkit-tap-highlight-color:transparent;
+  white-space:nowrap;
+}
+.top-bar-cta:hover{transform:translateY(-1px);background:var(--berry-dark);box-shadow:0 6px 18px rgba(112,28,87,0.5)}
+.top-bar-cta:active{transform:scale(0.96)}
+
+/* Body padding to account for fixed bar */
+body{padding-top:56px}
+
+/* Section #2 (Hero text) - reduce top padding now that logo is gone */
+.hero-text{padding-top:24px}
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
 </head>
 <body>
 
+<!-- ============ STICKY TOP BAR ============ -->
+<div class="top-bar">
+  <img src="/360/site_images/logo_final.png" alt="MyPrime" class="top-bar-logo">
+  <button class="top-bar-cta" onclick="scrollToSecondForm()">הרשמה חינם</button>
+</div>
+
+
 <!-- COOKIE -->
 <div class="cookie-overlay" id="cookieOverlay"></div>
 <div class="cookie-popup" id="cookiePopup"><div class="cookie-popup-text">אתר זה משתמש בקוקיז בהתאם ל<a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות הפרטיות</a>.</div><button class="cookie-popup-btn" onclick="closeCookiePopup()">הבנתי</button></div>
 <script>function closeCookiePopup(){document.getElementById("cookiePopup").classList.add("cookie-hidden");document.getElementById("cookieOverlay").classList.add("cookie-hidden")}</script>
-
-<!-- ============ S1: LOGO (20% smaller, no glow bg) ============ -->
-<div class="logo-section">
-  <img src="/360/site_images/logo_final.png" alt="MyPrime">
-</div>
 
 <!-- ============ S2: HERO TEXT ============ -->
 <div class="hero-text">
@@ -285,7 +596,7 @@ body{font-family:"Open Sans",sans-serif;background:var(--cream);color:var(--text
 
 
 <!-- ============ S8: SECOND REGISTRATION FORM ============ -->
-<div class="reg-standalone">
+<div class="reg-standalone" id="secondForm">
   <div class="reg-standalone-inner">
     <h2>🎯 שרייני מקום במפגש החינמי</h2>
     <p class="sub">מלאי את הפרטים ונשמור לך מקום!</p>
@@ -311,16 +622,236 @@ body{font-family:"Open Sans",sans-serif;background:var(--cream);color:var(--text
   </div>
 </div>
 
-<!-- ============ PLACEHOLDER: rest of page coming next ============ -->
-<div style="background:#EDE3F4;padding:60px 20px;text-align:center">
-  <p style="font-size:18px;color:var(--indigo);font-weight:700">⬇️ שאר הסקשנים יתווספו בשלב הבא ⬇️</p>
-  <p style="font-size:14px;color:var(--text-mid);margin-top:8px">קוויז → תוצאות → תוכנית → סיפור → רופאות → מדיה → קשר</p>
+<!-- ============ S9: QUIZ INTRO ============ -->
+<div class="quiz-intro-section">
+  <div class="quiz-intro-tag">הערכה אישית</div>
+  <h2 class="quiz-intro-title">עוד לא בטוחה שהמפגש בשבילך?</h2>
+  <p class="quiz-intro-sub">עני על 3 שאלות קצרות<br>ותגלי באיזה שלב את נמצאת בתהליך השינוי ההורמונלי</p>
+  <button class="quiz-start-btn" onclick="startQuiz()">
+    <span>🎯 מוכנה? בואי נתחיל</span>
+    <span class="arrow">↓</span>
+  </button>
+  <p class="quiz-intro-note">* זהו כלי מידע בלבד ואינו תחליף לייעוץ רפואי או מקצועי</p>
 </div>
+
+<!-- Progress Bar (floating, outside quiz section) -->
+<div class="quiz-progress" id="quizProgress">
+  <div class="progress-track">
+    <div class="progress-node" id="pnode-1"></div>
+    <div class="progress-line" id="pline-1" style="--fill:0%"></div>
+    <div class="progress-node" id="pnode-2"></div>
+    <div class="progress-line" id="pline-2" style="--fill:0%"></div>
+    <div class="progress-node" id="pnode-3"></div>
+  </div>
+  <div class="progress-labels">
+    <span id="plabel-1" class="active">תסמינים</span>
+    <span id="plabel-2">גיל</span>
+    <span id="plabel-3">מחזור</span>
+  </div>
+</div>
+
+<!-- ============ S10: QUIZ (hidden until click) ============ -->
+<div class="quiz-section" id="quizSection">
+
+  <!-- Q1: Symptoms -->
+  <div class="q-block">
+    <div class="q-label"><span class="q-num">1</span>ספרי לי על התסמינים שמפריעים לך:</div>
+    <p class="q-sub">מה מוכר לך בתקופה האחרונה?</p>
+    <div class="chips-grid" id="symptoms-grid">
+      <div class="chip" data-cat="body" data-label="השמנה בטנית" onclick="toggleSym(this)"><span class="chip-emoji">🫃</span>השמנה בטנית</div>
+      <div class="chip" data-cat="energy" data-label="שינה גרועה" onclick="toggleSym(this)"><span class="chip-emoji">😴</span>שינה גרועה</div>
+      <div class="chip" data-cat="mood" data-label="שינויי מצב רוח" onclick="toggleSym(this)"><span class="chip-emoji">🌊</span>מצבי רוח</div>
+      <div class="chip" data-cat="body" data-label="עלייה במשקל" onclick="toggleSym(this)"><span class="chip-emoji">⚖️</span>עלייה במשקל</div>
+      <div class="chip" data-cat="vaso" data-label="גלי חום" onclick="toggleSym(this)"><span class="chip-emoji">🌡️</span>גלי חום</div>
+      <div class="chip" data-cat="vaso" data-label="הזעות לילה" onclick="toggleSym(this)"><span class="chip-emoji">😰</span>הזעות לילה</div>
+      <div class="chip" data-cat="energy" data-label="עייפות מתמשכת" onclick="toggleSym(this)"><span class="chip-emoji">😴</span>עייפות מתמשכת</div>
+      <div class="chip" data-cat="mood" data-label="עצבנות" onclick="toggleSym(this)"><span class="chip-emoji">😤</span>עצבנות</div>
+      <div class="chip" data-cat="mood" data-label="חרדה" onclick="toggleSym(this)"><span class="chip-emoji">😟</span>חרדה</div>
+      <div class="chip" data-cat="mood" data-label="ירידה במצב רוח" onclick="toggleSym(this)"><span class="chip-emoji">😞</span>ירידה במצב רוח</div>
+      <div class="chip" data-cat="cognitive" data-label="ערפול מחשבתי" onclick="toggleSym(this)"><span class="chip-emoji">🧠</span>ערפול מחשבתי</div>
+      <div class="chip" data-cat="cognitive" data-label="קושי להתרכז" onclick="toggleSym(this)"><span class="chip-emoji">💭</span>קושי להתרכז</div>
+      <div class="chip" data-cat="body" data-label="כאבי מפרקים" onclick="toggleSym(this)"><span class="chip-emoji">🦴</span>כאבי מפרקים</div>
+      <div class="chip" data-cat="body" data-label="ירידה בכוח" onclick="toggleSym(this)"><span class="chip-emoji">💪</span>ירידה בכוח</div>
+      <div class="chip" data-cat="body" data-label="נפיחות" onclick="toggleSym(this)"><span class="chip-emoji">🫧</span>נפיחות</div>
+      <div class="chip" data-cat="skin" data-label="יובש בעור" onclick="toggleSym(this)"><span class="chip-emoji">💧</span>יובש בעור</div>
+      <div class="chip" data-cat="skin" data-label="יובש בנרתיק" onclick="toggleSym(this)"><span class="chip-emoji">💧</span>יובש בנרתיק</div>
+      <div class="chip" data-cat="skin" data-label="שינויים בעור ובשיער" onclick="toggleSym(this)"><span class="chip-emoji">🔥</span>שינויים בעור ובשיער</div>
+      <div class="chip" data-cat="vaso" data-label="דפיקות לב" onclick="toggleSym(this)"><span class="chip-emoji">💓</span>דפיקות לב</div>
+      <div class="chip" data-cat="libido" data-label="ירידה בחשק המיני" onclick="toggleSym(this)"><span class="chip-emoji">❤️</span>ירידה בחשק המיני</div>
+    </div>
+    <!-- Adaptive counter -->
+    <div class="counter-wrap">
+      <p class="counter-msg" id="counter-msg">מה מוכר לך בתקופה האחרונה?</p>
+      <p class="counter-text">תסמינים שסימנת: <span class="counter-num" id="sym-count">0</span></p>
+    </div>
+    <!-- Curiosity teaser (appears after first chip) -->
+    <div class="curiosity-teaser" id="curiosity-teaser">
+      <p><span class="emoji">🔍</span>נשים עם התסמינים האלה בדרך כלל נמצאות בשלב מסוים של גיל המעבר.<br>עוד שתי שאלות קצרות ונראה לך בדיוק איפה את.</p>
+    </div>
+  </div>
+
+  <!-- Q2: Age -->
+  <div class="q-block">
+    <div class="q-label"><span class="q-num">2</span>מה טווח הגיל שלך?</div>
+    <div class="opts" id="age-opts">
+      <div class="opt-item" onclick="selectOpt('age','38_49',this)"><div class="radio-dot"></div> 38 עד 49</div>
+      <div class="opt-item" onclick="selectOpt('age','50_59',this)"><div class="radio-dot"></div> 50 עד 59</div>
+      <div class="opt-item" onclick="selectOpt('age','60_69',this)"><div class="radio-dot"></div> 60 עד 69</div>
+      <div class="opt-item" onclick="selectOpt('age','over70',this)"><div class="radio-dot"></div> 70 פלוס</div>
+    </div>
+    <p class="val-msg" id="val-age">בחרי גיל כדי להמשיך</p>
+  </div>
+
+  <!-- Q3: Cycle -->
+  <div class="q-block">
+    <div class="q-label"><span class="q-num">3</span>מה קורה עם המחזור שלך?</div>
+    <div class="opts" id="cycle-opts">
+      <div class="opt-item" onclick="selectOpt('cycle','regular',this)"><div class="radio-dot"></div> עדיין יש לי מחזור (סדיר או לא סדיר)</div>
+      <div class="opt-item" onclick="selectOpt('cycle','menopause',this)"><div class="radio-dot"></div> לא היה לי מחזור כבר יותר משנה</div>
+    </div>
+    <p class="val-msg" id="val-cycle">סמני את מצב המחזור כדי להמשיך</p>
+  </div>
+
+  <!-- Result button -->
+  <div class="result-cta-wrap">
+    <button class="btn-result" onclick="showResult()">הראי לי את התוצאה ←</button>
+    <p class="val-msg" id="val-main" style="text-align:center;margin-top:10px"></p>
+  </div>
+</div>
+
 
 <!-- FOOTER -->
 <footer class="site-footer"><nav class="footer-links" aria-label="קישורים משפטיים"><a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a7%d7%95%d7%a7%d7%99%d7%96/" target="_blank">מדיניות קוקיז</a><span class="footer-sep">|</span><a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות פרטיות</a><span class="footer-sep">|</span><a href="https://myprime.co.il/%d7%94%d7%a6%d7%94%d7%a8%d7%aa-%d7%a0%d7%92%d7%99%d7%a9%d7%95%d7%aa/" target="_blank">הצהרת נגישות</a><span class="footer-sep">|</span><a href="https://myprime.co.il/%d7%aa%d7%a7%d7%a0%d7%95%d7%9f/" target="_blank">תקנון האתר</a><span class="footer-sep">|</span><a href="https://myprime.ravpage.co.il/BITUL" target="_blank">ביטול עסקה</a><span class="footer-sep">|</span><span class="footer-brand">my prime ענת הראל</span><span class="footer-sep">|</span><span class="footer-version">INDEXW256B</span></nav></footer>
 
 <script>
+function scrollToSecondForm(){
+  var f=document.getElementById("secondForm");
+  if(f){
+    var y=f.getBoundingClientRect().top+window.pageYOffset-66;
+    window.scrollTo({top:y,behavior:"smooth"});
+  }
+}
+
+
+/* ===== QUIZ LOGIC ===== */
+var answers={age:null,cycle:null};
+var quizStarted=false;
+
+function startQuiz(){
+  var q=document.getElementById("quizSection");
+  var pb=document.getElementById("quizProgress");
+  if(q){
+    q.classList.add("show");
+    if(pb){pb.classList.add("show");pb.classList.remove("hidden-complete")}
+    document.body.classList.add("quiz-active");
+    quizStarted=true;
+    setTimeout(function(){q.scrollIntoView({behavior:"smooth",block:"start"})},100);
+  }
+}
+
+function updateProgress(step){
+  // step 1 = symptoms filled (at least 1)
+  // step 2 = age selected
+  // step 3 = cycle selected
+  var nodes=[document.getElementById("pnode-1"),document.getElementById("pnode-2"),document.getElementById("pnode-3")];
+  var lines=[document.getElementById("pline-1"),document.getElementById("pline-2")];
+  var labels=[document.getElementById("plabel-1"),document.getElementById("plabel-2"),document.getElementById("plabel-3")];
+  var symCount=document.querySelectorAll("#symptoms-grid .chip.selected").length;
+
+  if(symCount>0){nodes[0].classList.add("done");labels[0].classList.add("active")}
+  else{nodes[0].classList.remove("done")}
+
+  if(answers.age){nodes[1].classList.add("done");labels[1].classList.add("active");lines[0].style.setProperty("--fill","100%")}
+  else{nodes[1].classList.remove("done");lines[0].style.setProperty("--fill","0%");labels[1].classList.remove("active")}
+
+  if(answers.cycle){nodes[2].classList.add("done");labels[2].classList.add("active");lines[1].style.setProperty("--fill","100%")}
+  else{nodes[2].classList.remove("done");lines[1].style.setProperty("--fill","0%");labels[2].classList.remove("active")}
+}
+
+function updateCounterMessage(){
+  var count=document.querySelectorAll("#symptoms-grid .chip.selected").length;
+  var msg=document.getElementById("counter-msg");
+  if(count===0){msg.textContent="מה מוכר לך בתקופה האחרונה?";msg.classList.remove("active")}
+  else if(count<=2){msg.textContent="אפשר גם להוסיף עוד";msg.classList.add("active")}
+  else if(count<=5){msg.textContent="עוד משהו שמפריע לך?";msg.classList.add("active")}
+  else{msg.textContent="הגוף שלך באמת עובר הרבה";msg.classList.add("active")}
+}
+
+function selectOpt(g,v,el){
+  answers[g]=v;
+  var items=el.parentElement.getElementsByClassName("opt-item");
+  for(var i=0;i<items.length;i++)items[i].classList.remove("selected");
+  el.classList.add("selected");
+  document.getElementById("val-"+g).classList.remove("show");
+  updateProgress();
+  if(g==="age"){
+    setTimeout(function(){
+      var cb=document.getElementById("cycle-opts").closest(".q-block");
+      var y=cb.getBoundingClientRect().top+window.pageYOffset-100;
+      window.scrollTo({top:y,behavior:"smooth"});
+      checkPulse();
+    },200);
+  }else if(g==="cycle"){
+    setTimeout(function(){
+      checkPulse();
+      var btn=document.querySelector(".btn-result");
+      if(btn){
+        var y=btn.getBoundingClientRect().bottom+window.pageYOffset-window.innerHeight*0.85;
+        window.scrollTo({top:y,behavior:"smooth"});
+      }
+    },100);
+  }
+}
+
+function toggleSym(el){
+  el.classList.toggle("selected");
+  var cnt=document.querySelectorAll("#symptoms-grid .chip.selected").length;
+  var cntEl=document.getElementById("sym-count");
+  cntEl.textContent=cnt;
+  cntEl.classList.add("bump");
+  setTimeout(function(){cntEl.classList.remove("bump")},300);
+
+  // Show curiosity teaser after first chip
+  if(cnt===1 && el.classList.contains("selected")){
+    document.getElementById("curiosity-teaser").classList.add("show");
+  }
+
+  updateCounterMessage();
+  updateProgress();
+  // Gentle auto-scroll (keeps chip visible)
+  var r=el.getBoundingClientRect();
+  window.scrollBy({top:Math.round(80+(r.top/window.innerHeight)*180),behavior:"smooth"});
+}
+
+function checkPulse(){
+  if(answers.age&&answers.cycle){
+    var btn=document.querySelector(".btn-result");
+    if(btn&&!btn.classList.contains("pulse-ready")){
+      btn.classList.add("pulse-ready");
+      setTimeout(function(){
+        var y=btn.getBoundingClientRect().top+window.pageYOffset-window.innerHeight*0.4;
+        window.scrollTo({top:y,behavior:"smooth"});
+      },150);
+    }
+  }
+}
+
+function showResult(){
+  var btn=document.querySelector(".btn-result");
+  if(btn)btn.classList.remove("pulse-ready");
+  var valid=true;
+  if(!answers.age){document.getElementById("val-age").classList.add("show");valid=false}
+  if(!answers.cycle){document.getElementById("val-cycle").classList.add("show");valid=false}
+  if(!valid){document.getElementById("quizSection").scrollIntoView({behavior:"smooth"});return}
+  // Hide floating progress bar since quiz is complete
+  var pb=document.getElementById("quizProgress");
+  if(pb)pb.classList.add("hidden-complete");
+  document.body.classList.remove("quiz-active");
+  // Result section will be added in S11
+  alert("התוצאה תוצג כאן (S11 - הסקשן הבא)");
+}
+
+
 function showHiddenForm(){var f=document.getElementById("hiddenFormSection");if(f){f.classList.add("show");setTimeout(function(){f.scrollIntoView({behavior:"smooth",block:"start"})},100)}}
 function openFormModal(){localStorage.setItem("user_clicked_register","true");showHiddenForm()}
 function scrollTestimony(dir){var el=document.getElementById("testimony-scroll");if(!el)return;el.scrollBy({left:dir*el.offsetWidth,behavior:"smooth"})}
