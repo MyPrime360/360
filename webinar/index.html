@@ -977,7 +977,7 @@ body{padding-top:56px}
 .dr-quote-card{
   max-width:680px;margin:0 auto;
   background:white;border-radius:20px;
-  padding:28px 24px;
+  padding:22px 22px;
   border:1px solid rgba(75,0,130,0.1);
   box-shadow:0 8px 30px rgba(75,0,130,0.08);
   text-align:center;
@@ -1003,7 +1003,7 @@ body{padding-top:56px}
 .dr-quote-text{
   text-align:right;
   background:linear-gradient(135deg,rgba(75,0,130,0.04) 0%,rgba(112,28,87,0.04) 100%);
-  padding:22px 20px;border-radius:14px;
+  padding:18px 18px;border-radius:14px;
   border-right:4px solid var(--indigo);
   position:relative;
 }
@@ -1014,9 +1014,9 @@ body{padding-top:56px}
   font-weight:900;
 }
 .dr-quote-text p{
-  font-size:clamp(14px,3.5vw,16px);
+  font-size:clamp(15px,3.8vw,17px);
   color:var(--text-body);
-  line-height:1.75;margin-bottom:12px;
+  line-height:1.55;margin-bottom:8px;
   font-weight:500;
 }
 .dr-quote-text p:last-child{margin-bottom:0}
@@ -1059,7 +1059,7 @@ body{padding-top:56px}
 .story-intro strong{color:#FFC8DE;font-weight:700}
 .story-blocks{max-width:780px;margin:0 auto}
 .story-block{
-  display:flex;gap:28px;align-items:flex-start;
+  display:flex;gap:28px;align-items:center;
   margin-bottom:36px;
 }
 .story-block.reverse{flex-direction:row-reverse}
@@ -1300,6 +1300,48 @@ body{padding-top:56px}
   .dr-quote-text p{
     font-size:clamp(13px,3.5vw,15px) !important;
     line-height:1.75 !important;
+  }
+}
+
+/* ========================================
+   MOBILE TEXT SIZE INCREASES (round 2)
+======================================== */
+@media(max-width:767px){
+  /* Hero audience line - bigger */
+  .hero-audience{
+    font-size:clamp(17px,4.7vw,22px) !important;
+    line-height:1.55;
+  }
+  
+  /* Video title - bigger */
+  .video-title{
+    font-size:clamp(18px,4.6vw,22px) !important;
+    line-height:1.4;
+  }
+  
+  /* Quiz intro subtitle */
+  .quiz-intro-sub{
+    font-size:clamp(16px,4.2vw,20px) !important;
+    line-height:1.55;
+  }
+  
+  /* Story text - bigger (except closing) */
+  .story-intro{
+    font-size:clamp(16px,4.2vw,18px) !important;
+    line-height:1.75 !important;
+  }
+  .story-block .story-text,
+  .story-block .story-text p,
+  .story-block .story-text ol{
+    font-size:clamp(15px,3.9vw,17px) !important;
+    line-height:1.75 !important;
+  }
+  
+  /* Dr Noa quote - bigger and tighter spacing */
+  .dr-quote-text p{
+    font-size:clamp(15px,4vw,17px) !important;
+    line-height:1.55 !important;
+    margin-bottom:8px !important;
   }
 }
 </style>
@@ -1635,9 +1677,7 @@ body{padding-top:56px}
   </div>
 
   <p class="story-closing-v2">
-    כיום, אני רואה שליחות אדירה בהפצת הידע שרכשתי והשיטות שלמדתי והתנסיתי בהן בתחום<br>
-    ההתמודדות עם שלבי גיל המעבר,<br>
-    כי מגיע לנו להנות מהתקופה הזו — <strong style="color:#FFC8DE;font-weight:800">תקופת הפריים שלנו.</strong>
+    כיום, אני רואה שליחות אדירה בהפצת הידע שרכשתי והשיטות שלמדתי והתנסיתי בהן בתחום ההתמודדות עם שלבי גיל המעבר, כי מגיע לנו להנות מהתקופה הזו - <strong style="color:#FFC8DE;font-weight:800">תקופת הפריים שלנו.</strong>
   </p>
 </div>
 
@@ -1650,10 +1690,10 @@ body{padding-top:56px}
   <div class="dr-quote-card">
     <div class="dr-quote-text">
       <span class="quote-mark">"</span>
-      <p>תקופת גיל המעבר וטרום גיל המעבר, דווקא בגלל האתגרים הגופניים והנפשיים שהיא מזמנת, מהווה הזדמנות פז, לך, אישה יקרה, לעצור לרגע ולהתבונן — לדייק ולאזן את יחסייך עם גופך/נפשך/משפחתך/עבודתך.</p>
+      <p>תקופת גיל המעבר וטרום גיל המעבר, דווקא בגלל האתגרים הגופניים והנפשיים שהיא מזמנת, מהווה הזדמנות פז, לך, אישה יקרה, לעצור לרגע ולהתבונן - לדייק ולאזן את יחסייך עם גופך/נפשך/משפחתך/עבודתך.</p>
       <p>החזית הראשונה והחשובה ביותר היא התאמת אורח חיים נכון ובריא בשבילך. בבסיסו עומדים הנעת הגוף והזנתו הנכונה.</p>
       <p>לכן, בתור רופאת גיל המעבר, שמחתי לקחת חלק בפרויקט "מיי פריים 360" שעוסק בדיוק בנקודה זו!</p>
-      <p><strong>אישה יקרה — קחי את המושכות חזרה לידייך וצאי לדרך. אנחנו לצידך.</strong></p>
+      <p><strong>אישה יקרה - קחי את המושכות חזרה לידייך וצאי לדרך. אנחנו לצידך.</strong></p>
     </div>
   </div>
 </div>
