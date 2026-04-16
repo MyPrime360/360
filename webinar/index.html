@@ -1243,6 +1243,65 @@ body{padding-top:56px}
   /* Reg counter script iframe container - ensure full width */
   .reg-counter{margin:0 -4px 12px}
 }
+
+/* ========================================
+   S15 DR. NOA - NEW LAYOUT (photo inside title row)
+======================================== */
+.dr-title-row{
+  display:flex;
+  align-items:center;  /* vertically center photo with title */
+  gap:18px;
+  max-width:700px;
+  margin:0 auto 24px;
+  padding:0 8px;
+}
+.dr-title-photo{
+  width:90px;height:90px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+  border:3px solid rgba(75,0,130,0.15);
+  box-shadow:0 4px 16px rgba(75,0,130,0.15);
+  background:linear-gradient(135deg,#E0C8F0,#D8C0F0);
+}
+.dr-title-heading{
+  font-size:clamp(18px,4.5vw,26px);
+  font-weight:800;
+  color:var(--indigo);
+  line-height:1.35;
+  text-align:right;
+  flex:1;
+  min-width:0;
+}
+
+/* Mobile version */
+@media(max-width:767px){
+  .doctors-section{padding:32px 12px !important}
+  .dr-title-row{
+    gap:12px;
+    margin-bottom:18px;
+    padding:0 4px;
+  }
+  .dr-title-photo{
+    width:72px;height:72px;
+    border-width:2px;
+  }
+  .dr-title-heading{
+    font-size:clamp(15px,4vw,19px);
+    line-height:1.35;
+  }
+  .dr-quote-card{
+    padding:20px 14px !important;
+    margin:0 -4px;
+  }
+  .dr-quote-text{
+    padding:18px 14px !important;
+  }
+  .dr-quote-text p{
+    font-size:clamp(13px,3.5vw,15px) !important;
+    line-height:1.75 !important;
+  }
+}
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
 </head>
@@ -1584,12 +1643,11 @@ body{padding-top:56px}
 
 <!-- ============ S15: DR. NOA HOVAV - SINGLE EXPERT WITH QUOTE ============ -->
 <div class="doctors-section">
-  <div style="text-align:center">
-    <div class="doctors-tag">חוות דעת מקצועית</div>
-    <h2 class="doctors-title">ד"ר נעה חובב, רופאת גיל המעבר ומומחית ברפואת משפחה, ממליצה:</h2>
+  <div class="dr-title-row">
+    <img src="/360/site_images/noa1.jpg" alt="ד&quot;ר נעה חובב" class="dr-title-photo" onerror="this.style.display='none'">
+    <h2 class="dr-title-heading">ד"ר נעה חובב, רופאת גיל המעבר ומומחית ברפואת משפחה, ממליצה:</h2>
   </div>
   <div class="dr-quote-card">
-    <img src="/360/site_images/dr_noa.jpg" alt="ד&quot;ר נעה חובב" class="dr-quote-photo" onerror="this.style.display='none'">
     <div class="dr-quote-text">
       <span class="quote-mark">"</span>
       <p>תקופת גיל המעבר וטרום גיל המעבר, דווקא בגלל האתגרים הגופניים והנפשיים שהיא מזמנת, מהווה הזדמנות פז, לך, אישה יקרה, לעצור לרגע ולהתבונן — לדייק ולאזן את יחסייך עם גופך/נפשך/משפחתך/עבודתך.</p>
