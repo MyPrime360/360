@@ -1643,6 +1643,119 @@ body{padding-top:56px}
     margin-bottom:12px !important;
   }
 }
+
+/* ========================================
+   CTA GLOW EFFECT
+======================================== */
+.urgency-cta{
+  position:relative;
+  overflow:hidden;
+}
+.urgency-cta::before{
+  content:'';
+  position:absolute;
+  top:-2px;left:-2px;right:-2px;bottom:-2px;
+  background:linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,0.4) 40%,
+    rgba(255,255,255,0.6) 50%,
+    rgba(255,255,255,0.4) 60%,
+    transparent 100%
+  );
+  border-radius:inherit;
+  animation:shimmer 3s ease-in-out infinite;
+  pointer-events:none;
+  z-index:1;
+}
+@keyframes shimmer{
+  0%{transform:translateX(-120%)}
+  40%,100%{transform:translateX(120%)}
+}
+
+/* ========================================
+   ADDITIONAL MOBILE TIGHTENING
+======================================== */
+@media(max-width:767px){
+  /* Hero - tighter still */
+  .hero-text{padding:10px 14px 12px !important}
+  .hero-audience{margin-bottom:6px !important}
+  .hero-headline{
+    font-size:24px !important;
+    line-height:1.22 !important;
+    margin-bottom:0 !important;
+  }
+  
+  /* Urgency box - smaller "מקומות אחרונים" */
+  .urgency-box{
+    padding:10px 14px 12px !important;
+    margin:0 10px 8px !important;
+  }
+  .urgency-icon{
+    font-size:17px !important;
+    margin-bottom:8px !important;
+  }
+  
+  /* ===== Forms 2-4 (S8, S12, S17): match S4 padding ===== */
+  /* S4 hidden form has: margin:0 10px, padding:16px 10px */
+  /* Match this for all other forms */
+  .reg-standalone-inner{
+    padding:14px 10px !important;
+    margin:0 !important;
+  }
+  .result-form-wrap{
+    padding:14px 10px !important;
+    margin:0 !important;
+  }
+  .final-form-wrap{
+    padding:14px 10px !important;
+    margin:0 !important;
+  }
+  .form-purple{
+    padding:14px 10px !important;
+    margin:0 !important;
+  }
+  
+  /* ===== Story section - remove side padding completely ===== */
+  .story-section-v2{
+    padding:40px 0 !important;
+  }
+  .story-intro{
+    padding:0 12px !important;
+  }
+  .story-blocks{
+    padding:0 12px !important;
+  }
+  .story-block .story-text{
+    padding:0 4px !important;
+  }
+  .story-closing-v2{
+    padding:20px 12px !important;
+    /* Match same size as story body text */
+    font-size:22px !important;
+    font-weight:800;
+    line-height:1.5 !important;
+  }
+  
+  /* ===== Dr Noa - remove side padding, tighter lines ===== */
+  .doctors-section{
+    padding:28px 8px !important;
+  }
+  .dr-quote-card{
+    padding:14px 8px !important;
+    margin:0 !important;
+  }
+  .dr-quote-text{
+    padding:14px 10px !important;
+  }
+  .dr-quote-text p{
+    line-height:1.45 !important;
+    margin-bottom:6px !important;
+  }
+  .dr-title-row{
+    padding:0 4px !important;
+    gap:10px !important;
+  }
+}
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
 </head>
@@ -1670,7 +1783,7 @@ body{padding-top:56px}
 
 <!-- ============ S3: URGENCY BOX + CTA (CTA inside the box) ============ -->
 <div class="urgency-box">
-  <p class="urgency-icon">⏰ מקומות אחרונים במפגש החינמי הקרוב!</p>
+  <p class="urgency-icon">מקומות אחרונים במפגש החינמי הקרוב!</p>
   <button class="urgency-cta" onclick="openFormModal()">לחצי והרשמי עכשיו למפגש ולטיפים בחינם</button>
 </div>
 
