@@ -1265,10 +1265,10 @@ body{padding-top:56px}
   background:linear-gradient(135deg,#E0C8F0,#D8C0F0);
 }
 .dr-title-heading{
-  font-size:clamp(18px,4.5vw,26px);
+  font-size:clamp(24px,6vw,32px);
   font-weight:800;
   color:var(--indigo);
-  line-height:1.35;
+  line-height:1.25;
   text-align:right;
   flex:1;
   min-width:0;
@@ -2014,6 +2014,19 @@ body{padding-top:56px}
     margin-bottom:10px;
   }
 }
+
+/* WhatsApp icon + mobile line break */
+.wa-icon{width:22px;height:22px;vertical-align:middle;margin-left:6px;display:inline-block}
+.brk-mob{display:none}
+@media(max-width:767px){.brk-mob{display:inline}}
+
+/* DR. NOA TITLE - mobile override updated */
+@media(max-width:767px){
+  .dr-title-heading{
+    font-size:22px !important;
+    line-height:1.35 !important;
+  }
+}
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
 </head>
@@ -2357,7 +2370,7 @@ body{padding-top:56px}
     <div class="doctors-tag">חוות דעת מקצועית</div>
   </div>
   <div class="dr-title-row">
-    <img src="/360/site_images/NOA1.jpg" alt="ד&quot;ר נעה חובב" class="dr-title-photo" onerror="this.style.display='none'">
+    <img src="/360/site_images/NOA1.jpg" alt="ד&quot;ר נעה חובב" class="dr-title-photo">
     <h2 class="dr-title-heading">ד"ר נעה חובב, רופאת גיל המעבר ומומחית ברפואת משפחה, ממליצה:</h2>
   </div>
   <div class="dr-quote-card">
@@ -2365,7 +2378,7 @@ body{padding-top:56px}
       <span class="quote-mark">"</span>
       <p>תקופת גיל המעבר וטרום גיל המעבר, דווקא בגלל האתגרים הגופניים והנפשיים שהיא מזמנת, מהווה הזדמנות פז, לך, אישה יקרה, לעצור לרגע ולהתבונן - לדייק ולאזן את יחסייך עם גופך/נפשך/משפחתך/עבודתך.</p>
       <p>החזית הראשונה והחשובה ביותר היא התאמת אורח חיים נכון ובריא בשבילך. בבסיסו עומדים הנעת הגוף והזנתו הנכונה.</p>
-      <p>לכן, בתור רופאת גיל המעבר, שמחתי לקחת חלק בפרויקט "מיי פריים 360" שעוסק בדיוק בנקודה זו!</p>
+      <p><strong>לכן, בתור רופאת גיל המעבר, שמחתי לקחת חלק בפרויקט "מיי פריים 360" שעוסק בדיוק בנקודה זו!</strong></p>
       <p><strong>אישה יקרה - קחי את המושכות חזרה לידייך וצאי לדרך. אנחנו לצידך.</strong></p>
     </div>
   </div>
@@ -2426,7 +2439,7 @@ body{padding-top:56px}
 <div class="contact-section">
   <p class="contact-title">רוצה לדבר איתנו?<br>לחצי על הכפתור ונשמח לשוחח</p>
   <div class="contact-links">
-    <a class="contact-btn wa" href="https://wa.me/9720547304177" target="_blank">📱 WhatsApp — 054-7304177</a>
+    <a class="contact-btn wa" href="https://wa.me/9720547304177" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="wa-icon"> WhatsApp<br class="brk-mob">054-7304177</a>
     <a class="contact-btn email" href="mailto:info@myprime.co.il">📧 לחצי לשליחת מייל</a>
   </div>
 </div>
