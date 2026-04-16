@@ -1110,6 +1110,43 @@ body{padding-top:56px}
   color:#FFC8DE;
   line-height:1.5;
 }
+
+/* ========================================
+   MOBILE-SPECIFIC FIXES
+======================================== */
+
+/* Desktop-only line breaks */
+.brk-dt{display:none}
+@media(min-width:768px){.brk-dt{display:inline}}
+
+/* Mobile/Desktop counter scripts - show appropriate one */
+.counter-mobile{display:block}
+.counter-desktop{display:none}
+@media(min-width:768px){
+  .counter-mobile{display:none}
+  .counter-desktop{display:block}
+}
+
+/* Mobile form layout improvements */
+@media(max-width:767px){
+  /* Stack the form photo and content vertically on mobile */
+  .reg-layout{flex-direction:column;gap:0}
+  .reg-layout .reg-photo-col{
+    flex:none;width:100%;
+    order:-1;  /* Photo appears ABOVE form on mobile */
+    margin-bottom:12px;
+  }
+  .reg-layout .reg-photo-col img{
+    width:100%;max-width:280px;height:auto;max-height:320px;
+    border-radius:14px;margin:0 auto;
+  }
+  .reg-layout .reg-content{width:100%}
+
+  /* Tighten hero padding on mobile */
+  .hero-text{padding:20px 16px 24px}
+  .hero-audience{padding:0 4px}
+  .hero-headline{padding:0 4px}
+}
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
 </head>
@@ -1129,12 +1166,9 @@ body{padding-top:56px}
 
 <!-- ============ S2: HERO TEXT ============ -->
 <div class="hero-text">
-  <p class="hero-audience">לנשים 40+ 50+ שסובלות מעלייה במשקל, מצבי רוח,<br>הפרעות בשינה עייפות כרונית ועוד...</p>
+  <p class="hero-audience">לנשים 40+ 50+ שסובלות מעלייה במשקל, מצבי רוח,<br class="brk-dt"> הפרעות בשינה עייפות כרונית ועוד...</p>
   <h1 class="hero-headline">
-    בואי להדרכה <span class="pink">חינם</span> שתגלה לך את<br>
-    <span class="bold">השיטה הטבעית</span> להתמודדות<br>
-    עם תסמיני השינוי ההורמונלי<br>
-    ולשנות את חייך <span class="pink">תוך 10 שבועות בלבד!</span>
+    בואי להדרכה <span class="pink">חינם</span> שתגלה לך את <span class="bold">השיטה הטבעית</span> להתמודדות עם תסמיני השינוי ההורמונלי <span class="pink">ולשנות את חייך תוך 10 שבועות בלבד!</span>
   </h1>
 </div>
 
@@ -1149,8 +1183,11 @@ body{padding-top:56px}
   <h2 class="hidden-form-title">רוצה לקבל כבר עכשיו כלים להתמודדות<br>יעילה עם התסמינים שמטרידים אותך?</h2>
   <p class="hidden-form-gift">📢 <strong>מתנה שימושית למשתתפות המפגש</strong><br>מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה יכול להיות רלוונטי בגיל שלנו</p>
 
-  <div class="reg-counter">
+  <div class="reg-counter counter-desktop">
     <script type='text/javascript' src='//form2.ravpage.co.il/9ba0ca9db43f7db1f0afb068f47b08b3697F7D78' charset='UTF-8'></script>
+  </div>
+  <div class="reg-counter counter-mobile">
+    <script type='text/javascript' src='//form2.ravpage.co.il/912400ba30647b73706351300a3ae359697F8BB7' charset='UTF-8'></script>
   </div>
 
   <div class="form-purple">
@@ -1223,8 +1260,11 @@ body{padding-top:56px}
 <div class="reg-standalone" id="secondForm">
   <div class="reg-standalone-inner">
     <h2>🎯 שרייני מקום במפגש החינמי</h2>
-    <div class="reg-counter">
+    <div class="reg-counter counter-desktop">
       <script type='text/javascript' src='//form2.ravpage.co.il/9ba0ca9db43f7db1f0afb068f47b08b3697F7D78' charset='UTF-8'></script>
+    </div>
+    <div class="reg-counter counter-mobile">
+      <script type='text/javascript' src='//form2.ravpage.co.il/912400ba30647b73706351300a3ae359697F8BB7' charset='UTF-8'></script>
     </div>
 
     <div class="form-purple">
@@ -1369,8 +1409,11 @@ body{padding-top:56px}
     <h2>🎯 הרשמי עכשיו למפגש</h2>
     <p class="sub">גלי את השיטה שעוזרת לאלפי נשים כמוך</p>
 
-    <div class="reg-counter">
+    <div class="reg-counter counter-desktop">
       <script type='text/javascript' src='//form2.ravpage.co.il/9ba0ca9db43f7db1f0afb068f47b08b3697F7D78' charset='UTF-8'></script>
+    </div>
+    <div class="reg-counter counter-mobile">
+      <script type='text/javascript' src='//form2.ravpage.co.il/912400ba30647b73706351300a3ae359697F8BB7' charset='UTF-8'></script>
     </div>
 
     <div class="form-purple">
@@ -1488,8 +1531,11 @@ body{padding-top:56px}
     <h2 class="final-form-heading-above">🎯 אל תפספסי! שרייני מקום עכשיו</h2>
     <p class="final-form-gift">📢 <strong>מתנה שימושית למשתתפות המפגש</strong><br>מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה יכול להיות רלוונטי בגיל שלנו</p>
 
-    <div class="reg-counter">
+    <div class="reg-counter counter-desktop">
       <script type='text/javascript' src='//form2.ravpage.co.il/9ba0ca9db43f7db1f0afb068f47b08b3697F7D78' charset='UTF-8'></script>
+    </div>
+    <div class="reg-counter counter-mobile">
+      <script type='text/javascript' src='//form2.ravpage.co.il/912400ba30647b73706351300a3ae359697F8BB7' charset='UTF-8'></script>
     </div>
 
     <div class="form-purple">
