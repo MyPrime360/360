@@ -93,7 +93,7 @@ body{font-family:"Assistant",sans-serif;background:var(--cream);color:var(--text
 .reg-layout .reg-photo-col{flex:0 0 220px;display:flex;align-items:stretch;justify-content:center}
 .reg-layout .reg-photo-col img{width:220px;height:330px;border-radius:14px;object-fit:cover;object-position:center top;display:block;box-shadow:0 6px 20px rgba(0,0,0,0.2)}
 .reg-layout h3{font-size:clamp(18px,4.5vw,24px);font-weight:800;color:#ffffff;line-height:1.35;margin-bottom:4px}
-.reg-layout .bold-white{font-size:clamp(16px,4vw,20px);font-weight:800;color:white;line-height:1.3;margin-bottom:12px}
+.reg-layout .bold-white{font-size:clamp(16px,4vw,20px);font-weight:500;color:white;line-height:1.3;margin-bottom:12px}
 
 /* ===== VIDEO (minimal side padding to maximize size) ===== */
 .video-section{background:var(--cream);padding:32px 4px 36px;text-align:center;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)}
@@ -1030,6 +1030,86 @@ body{padding-top:56px}
   line-height:1.4;max-width:540px;
 }
 .final-form-wrap .final-form-gift strong{font-weight:800;color:var(--indigo)}
+
+/* ========================================
+   S14 STORY - Two column layout (like Rav Messer)
+======================================== */
+.story-section-v2{
+  background:#2a2a2a;
+  padding:56px 20px;
+  color:white;
+  border-top:1px solid var(--border-soft);
+}
+.story-title-v2{
+  font-size:clamp(28px,6vw,40px);
+  font-weight:800;
+  text-align:center;
+  margin-bottom:24px;
+  color:white;
+  line-height:1.2;
+}
+.story-intro{
+  max-width:780px;margin:0 auto 32px;
+  text-align:center;
+  font-size:clamp(15px,3.5vw,17px);
+  line-height:1.8;
+  color:rgba(255,255,255,0.92);
+  font-weight:500;
+}
+.story-intro strong{color:#FFC8DE;font-weight:700}
+.story-blocks{max-width:780px;margin:0 auto}
+.story-block{
+  display:flex;gap:28px;align-items:flex-start;
+  margin-bottom:36px;
+}
+.story-block.reverse{flex-direction:row-reverse}
+.story-block img{
+  flex:0 0 280px;
+  width:280px;height:auto;
+  max-height:380px;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+.story-block .story-text{
+  flex:1;min-width:0;
+  text-align:right;
+  font-size:clamp(14px,3.3vw,16px);
+  line-height:1.8;
+  color:rgba(255,255,255,0.92);
+  font-weight:500;
+}
+.story-block .story-text p{margin-bottom:14px}
+.story-block .story-text p:last-child{margin-bottom:0}
+.story-block .story-text strong{color:#FFC8DE;font-weight:700}
+.story-block .story-text ol{
+  padding-right:20px;
+  margin:10px 0;
+}
+.story-block .story-text ol li{margin-bottom:8px}
+
+/* Mobile: stack vertically */
+@media(max-width:640px){
+  .story-block{flex-direction:column;gap:18px}
+  .story-block.reverse{flex-direction:column}
+  .story-block img{
+    flex:none;width:100%;max-width:360px;
+    margin:0 auto;max-height:340px;
+  }
+  .story-block .story-text{width:100%}
+}
+
+.story-closing-v2{
+  max-width:780px;margin:28px auto 0;
+  padding:24px 20px;
+  border-top:1px solid rgba(255,255,255,0.15);
+  text-align:center;
+  font-size:clamp(17px,4vw,22px);
+  font-weight:800;
+  color:#FFC8DE;
+  line-height:1.5;
+}
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
 </head>
@@ -1143,8 +1223,6 @@ body{padding-top:56px}
 <div class="reg-standalone" id="secondForm">
   <div class="reg-standalone-inner">
     <h2>🎯 שרייני מקום במפגש החינמי</h2>
-    <p class="sub">מלאי את הפרטים ונשמור לך מקום!</p>
-
     <div class="reg-counter">
       <script type='text/javascript' src='//form2.ravpage.co.il/9ba0ca9db43f7db1f0afb068f47b08b3697F7D78' charset='UTF-8'></script>
     </div>
@@ -1312,63 +1390,57 @@ body{padding-top:56px}
   </div>
 </div>
 
-<!-- ============ S14: STORY (Anat's personal story - from original code) ============ -->
-<div class="story-section" style="display:block;background:#2a2a2a;padding:48px 20px;color:white;">
-  <h2 style="font-size:clamp(28px,6.5vw,44px);font-weight:900;text-align:center;margin-bottom:30px;color:white;">הסיפור האישי שלי</h2>
-  
-  <div style="max-width:800px;margin:0 auto;font-size:clamp(16px,3.8vw,20px);line-height:1.75;color:rgba(255,255,255,0.9);">
-    
-    <p style="margin-bottom:20px;">
-      היי! אני ענת, בת 55, מייסדת "מיי פריים" - תוכניות ליווי לנשים בגיל המעבר, מרצה על אורח חיים בריא ומאמנת להתפתחות אישית.
-    </p>
-    
-    <img src="/360/site_images/anat_portrait.jpg" alt="ענת הראל" style="width:100%;max-width:600px;height:auto;display:block;margin:30px auto;border-radius:8px;">
-    
-    <p style="margin-bottom:20px;">
-      אני עוסקת בתחום כבר 20 שנה ויותר וזה סיפור ההתמודדות שלי עם גיל המעבר ואיך נולד הקורס "מיי פריים 360" במיוחד עבורך:
-    </p>
-    
-    <p style="margin-bottom:20px;">
-      במהלך הקריירה שלי הגעתי לאלפי נשים בכל דרך אפשרית – מקבוצות וסדנאות כושר, דרך תוכניות אימון אונליין וכלה בהגשת תוכניות טלוויזיה רבות, כגון: "שעת אושר", "לחיות טוב", "גוף ונפש עם ענת הראל" ועוד. בעבר הייתי פרזנטורית של מותג דגני בוקר ושל "נייקי ישראל" וכיום אני בנבחרת המשפיעניות של "מכבי שירותי בריאות", "הודי'ס" ועוד.
-    </p>
-    
-    <p style="margin-bottom:20px;">
-      <strong>מאז ומעולם הרגשתי שיש לי שליחות חשובה,</strong> שאליה אני מתמסרת כל כולי – לגרום לכמה שיותר נשים להבין את ההשפעה של פעילות גופנית ותזונה מאוזנת על החיים שלהן.
-    </p>
-    
-    <p style="margin-bottom:20px;">
-      באמצע שנות ה-40 לחיי, ממש כשהרגשתי בשיא – משהו השתבש. שמתי לב למצבי רוח שמשתנים בקיצוניות, יכולת הריכוז שלי ירדה, השינה שלי נהייתה הרבה פחות רציפה ואיכותית, והגוף כבר לא הגיב באותו אופן לאימונים ולתזונה שהיו חלק בלתי נפרד מהשגרה שלי.
-    </p>
-    
-    <p style="margin-bottom:20px;">
-      לקח לי כמה חודשים של ריצות מרופא לרופא, כדי להבין שאני בסך הכול עוברת תהליך טבעי שכל אישה עוברת: שינוי הורמונלי שמתרחש בשלבים המוקדמים של גיל המעבר. הבנתי שאני לא לבד, שישנן נשים רבות שחוות יחד איתי את אותן התופעות בדיוק.
-    </p>
-    
-    <p style="margin-bottom:20px;">
-      התחלתי לברר וגיליתי ש:
-    </p>
-    
-    <ol style="margin:20px 0;padding-right:20px;">
-      <li style="margin-bottom:10px;">רוב הנשים לא מבינות שמה שעובר עליהן קשור להורמונים.</li>
-      <li style="margin-bottom:10px;">רוב הנשים מחפשות את הפתרון במקום הלא נכון.</li>
-      <li style="margin-bottom:10px;">רובנו מתביישות לדבר על זה — ואם אנחנו לא מדברות, איך נוכל לטפל בבעיה?</li>
-    </ol>
-    
-    <img src="/360/site_images/anat_sport.jpg" alt="ענת הראל" style="width:100%;max-width:600px;height:auto;display:block;margin:30px auto;border-radius:8px;">
-    
-    <p style="margin-bottom:20px;">
-      החלטתי ללמוד איך אפשר לעבור את זה אחרת, תוך שילוב כל מה שאני עוסקת בו כבר עשרים שנה. קראתי
-    </p>
-    
-    <p style="margin-bottom:20px;">
-      מחקרים, התייעצתי עם רופאות ותזונאיות מובילות ויצרתי שיטה שמטרתה לאפשר לנשים החל מטרום גיל המעבר לחיות חיים טובים יותר בכל התחומים: במראה החיצוני, בבריאות, ברמות האנרגיה, ובהתמודדות עם השינויים.
-    </p>
-    
-    <p style="margin-bottom:0;">
-      כיום, אני רואה שליחות אדירה בהפצת הידע שרכשתי והשיטות שלמדתי והתנסיתי בהן בתחום ההתמודדות עם שלבי גיל המעבר, כי מגיע לנו להנות מהתקופה הזו – <strong>תקופת הפריים שלנו.</strong>
-    </p>
-    
+<!-- ============ S14: STORY (Two-column layout like Rav Messer) ============ -->
+<div class="story-section-v2">
+  <h2 class="story-title-v2">הסיפור האישי שלי</h2>
+
+  <p class="story-intro">
+    היי! אני ענת הראל, בת 53, בעלת קבוצות אימון לנשים, מרצה על אורח חיים בריא ומאמנת להתפתחות אישית.<br>
+    אני עוסקת בתחום כבר 20 שנה ויותר וזה סיפור ההתמודדות שלי עם גיל המעבר ואיך נולדה תוכנית הליווי "מיי פריים 360":
+  </p>
+
+  <div class="story-blocks">
+
+    <!-- Block 1: sport photo on RIGHT + text on LEFT -->
+    <div class="story-block">
+      <img src="/360/site_images/anat_sport.jpg" alt="ענת הראל">
+      <div class="story-text">
+        <p>במהלך הקריירה שלי הגעתי לאלפי נשים בכל דרך אפשרית — מקבוצות וסדנאות כושר, דרך תוכניות אימון אונליין וכלה בהגשת תוכניות טלוויזיה רבות כגון: "שעת אושר", "לחיות טוב", "גוף ונפש עם ענת הראל" ועוד.</p>
+        <p>מאז ומעולם הרגשתי שיש לי שליחות חשובה, שאליה אני מתמסרת כל כולי — לגרום לכמה שיותר נשים להבין את ההשפעה של פעילות גופנית ותזונה מאוזנת על החיים שלהן: על הבריאות, על מצב הרוח, על המראה ועל התפקוד. המטרה שלי היא להעניק כלים יעילים, מבוססי מחקר, וללמד שיטות ליצירת הרגלי חיים בריאים.</p>
+      </div>
+    </div>
+
+    <!-- Block 2: portrait photo on LEFT + text on RIGHT (reverse) -->
+    <div class="story-block reverse">
+      <img src="/360/site_images/anat_portrait.jpg" alt="ענת הראל">
+      <div class="story-text">
+        <p>באמצע שנות ה-40 לחיי, ממש כשהרגשתי בשיא — משהו השתבש. שמתי לב למצבי רוח שמשתנים בקיצוניות, יכולת הריכוז שלי ירדה, השינה שלי נהייתה הרבה פחות רציפה ואיכותית, והגוף כבר לא הגיב באותו אופן לאימונים ולתזונה שהיו חלק בלתי נפרד מהשגרה שלי.</p>
+        <p>לקח לי כמה חודשים של ריצות מרופא לרופא, כדי להבין שאני בסך הכול עוברת תהליך טבעי שכל אישה עוברת: שינוי הורמונלי שמתרחש בשלבים המוקדמים של גיל המעבר.</p>
+        <p>הבנתי שאני לא לבד, שישנן נשים רבות שחוות יחד איתי את אותן התופעות בדיוק.</p>
+      </div>
+    </div>
+
+    <!-- Block 3: small portrait photo on RIGHT + text on LEFT -->
+    <div class="story-block">
+      <img src="/360/site_images/anat_sport2.jpg" alt="ענת הראל" onerror="this.src='/360/site_images/anat_sport.jpg'">
+      <div class="story-text">
+        <p><strong>התחלתי לברר וגיליתי ש:</strong></p>
+        <ol>
+          <li>רוב הנשים לא מבינות שמה שעובר עליהן קשור להורמונים.</li>
+          <li>רוב הנשים מחפשות את הפתרון במקום הלא נכון.</li>
+          <li>רובנו מתביישות לדבר על זה — ואם אנחנו לא מדברות, איך נוכל לטפל בבעיה?</li>
+        </ol>
+        <p>החלטתי ללמוד איך אפשר לעבור את זה אחרת, תוך שילוב כל מה שאני עוסקת בו כבר עשרים שנה. קראתי מחקרים, התייעצתי עם רופאות ותזונאיות מובילות ויצרתי שיטה שמטרתה לאפשר לנשים החל מטרום גיל המעבר לחיות חיים טובים יותר בכל התחומים: במראה החיצוני, בבריאות, ברמות האנרגיה, ובהתמודדות עם השינויים.</p>
+      </div>
+    </div>
+
   </div>
+
+  <p class="story-closing-v2">
+    כיום, אני רואה שליחות אדירה בהפצת הידע שרכשתי והשיטות שלמדתי והתנסיתי בהן בתחום<br>
+    ההתמודדות עם שלבי גיל המעבר,<br>
+    כי מגיע לנו להנות מהתקופה הזו — <strong style="color:#FFC8DE;font-weight:800">תקופת הפריים שלנו.</strong>
+  </p>
 </div>
 
 <!-- ============ S15: DR. NOA HOVAV - SINGLE EXPERT WITH QUOTE ============ -->
