@@ -2424,27 +2424,48 @@ body{padding-top:56px}
   .urgency-action-title{font-size:17px}
 }
 
-/* Hero Anat photo next to headline */
+/* Hero Anat photo - rectangle alongside headline */
 .hero-headline-row{
   display:flex;
-  align-items:center;
-  gap:14px;
+  align-items:stretch;
+  gap:18px;
+  max-width:820px;
+  margin:0 auto;
 }
-.hero-anat-photo{
-  width:80px;height:80px;
-  border-radius:50%;
+.hero-anat-rect{
+  flex:0 0 160px;
+  width:160px;
+  height:auto;
   object-fit:cover;
   object-position:center top;
-  flex-shrink:0;
-  border:3px solid rgba(75,0,130,0.15);
-  box-shadow:0 4px 14px rgba(75,0,130,0.12);
+  border-radius:14px;
+  box-shadow:0 6px 20px rgba(75,0,130,0.15);
+  border:2px solid rgba(75,0,130,0.1);
 }
 @media(max-width:767px){
-  .hero-headline-row{gap:10px}
-  .hero-anat-photo{
-    width:70px;height:70px;
-    border-width:2px;
+  .hero-headline-row{gap:12px}
+  .hero-anat-rect{
+    flex:0 0 110px;
+    width:110px;
+    border-radius:12px;
   }
+}
+
+/* Social proof line in urgency box */
+.urgency-social-line{
+  font-size:13px;
+  font-weight:600;
+  color:rgba(255,255,255,0.8);
+  text-align:center;
+  line-height:1.35;
+  margin-bottom:4px;
+}
+.urgency-social-line strong{
+  color:white;
+  font-weight:800;
+}
+@media(max-width:767px){
+  .urgency-social-line{font-size:14px}
 }
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
@@ -2466,12 +2487,12 @@ body{padding-top:56px}
 <!-- ============ S2: HERO TEXT ============ -->
 <div class="hero-text">
   <p class="hero-audience">לנשים 40+ 50+ שסובלות מעלייה במשקל, מצבי רוח,<br class="brk-dt"> הפרעות בשינה עייפות כרונית ועוד...</p>
-  <p class="hero-audience" style="color:var(--berry)"><strong>עשרות אלפי נשים</strong> כבר גילו את השיטה - עכשיו תורך!</p>
+  
   <div class="hero-headline-row">
-    <img src="/360/site_images/anat_portrait.jpg" alt="ענת הראל" class="hero-anat-photo">
     <h1 class="hero-headline">
       בואי להדרכה <span class="pink">חינם</span> שתגלה לך את <span class="bold">השיטה הטבעית</span> להתמודדות עם תסמיני השינוי ההורמונלי <span class="pink">ולשנות את חייך תוך 10 שבועות בלבד!</span>
     </h1>
+    <img src="/360/site_images/HERO_ANAT.jpg" alt="ענת הראל" class="hero-anat-rect">
   </div>
 </div>
 
@@ -2479,6 +2500,7 @@ body{padding-top:56px}
 <div class="urgency-box-v2">
   <div class="urgency-split">
     <div class="urgency-proof-side">
+      <p class="urgency-social-line"><strong>עשרות אלפי נשים</strong> כבר גילו את השיטה - עכשיו תורך!</p>
       <div class="urgency-ring-wrap">
         <svg viewBox="0 0 100 100" class="urgency-ring">
           <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="6"/>
