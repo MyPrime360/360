@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "w3v658be6s");
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X6TKRSCNKS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X6TKRSCNKS');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>מפגש זום חינם - ענת הראל MyPrime</title>
@@ -105,7 +119,7 @@ body{font-family:"Assistant",sans-serif;background:var(--cream);color:var(--text
 
 /* ===== "AT LO CHAYEVET" SECTION ===== */
 .no-suffer-section{
-  background:linear-gradient(135deg,var(--indigo) 0%,#5B0C9E 100%);
+  background:#2D1854;
   padding:44px 20px;
   text-align:center;
 }
@@ -195,15 +209,15 @@ body{font-family:"Assistant",sans-serif;background:var(--cream);color:var(--text
   margin-bottom:16px;
 }
 .quiz-intro-title{
-  font-size:clamp(24px,6vw,36px);
+  font-size:clamp(26px,7vw,38px);
   font-weight:800;color:var(--indigo);
   line-height:1.2;margin-bottom:12px;
 }
 .quiz-intro-sub{
-  font-size:clamp(15px,3.8vw,18px);
+  font-size:clamp(20px,5vw,26px);
   color:var(--text-mid);
-  font-weight:500;line-height:1.6;
-  max-width:520px;margin:0 auto 28px;
+  font-weight:600;line-height:1.5;
+  max-width:560px;margin:0 auto 28px;
 }
 .quiz-start-btn{
   display:inline-flex;align-items:center;gap:10px;
@@ -278,7 +292,7 @@ body{font-family:"Assistant",sans-serif;background:var(--cream);color:var(--text
   font-size:10px;font-weight:700;
   color:var(--text-mid);
 }
-.progress-labels span{text-align:center;flex:1}
+.progress-labels span{flex:1}.progress-labels span:first-child{text-align:right}.progress-labels span:nth-child(2){text-align:center}.progress-labels span:last-child{text-align:left}
 .progress-labels span.active{color:var(--indigo)}
 
 /* When quiz is active, push content down to make room for progress bar */
@@ -2056,6 +2070,247 @@ body{padding-top:56px}
     margin:0 14px 8px !important;
   }
 }
+
+/* ========================================
+   PROGRESS BAR - LABEL + ANIMATED ARROW
+======================================== */
+.progress-label{
+  text-align:center;
+  font-size:12px;
+  font-weight:700;
+  color:var(--indigo);
+  margin-bottom:8px;
+  letter-spacing:1px;
+  opacity:0.7;
+}
+
+/* Arrow animation - pulse/bounce when step is ready to advance */
+.progress-arrow{
+  transition:opacity 0.4s ease;
+}
+.progress-arrow.animate{
+  animation:arrowPulse 1.2s ease-in-out infinite;
+}
+@keyframes arrowPulse{
+  0%,100%{transform:translate(-50%,-50%) translateX(0);opacity:0.5}
+  50%{transform:translate(-50%,-50%) translateX(-4px);opacity:1}
+}
+
+/* ========================================
+   PROGRESS BAR - NEXT NODE PULSE
+======================================== */
+.progress-node.next-pulse{
+  animation:nodePulse 1.5s ease-in-out infinite;
+  border-color:var(--berry);
+}
+@keyframes nodePulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(112,28,87,0.4);transform:scale(1)}
+  50%{box-shadow:0 0 0 8px rgba(112,28,87,0);transform:scale(1.15)}
+}
+
+/* Tighten hero to urgency gap */
+.hero-text{padding-bottom:10px !important}
+
+/* Video title - heading size */
+.video-title{
+  font-size:clamp(22px,5.5vw,28px) !important;
+  font-weight:800 !important;
+}
+
+/* ========================================
+   SYMPTOM INTENSITY METER
+======================================== */
+.intensity-meter{margin:16px 0 20px}
+.intensity-label{
+  font-size:clamp(14px,3.5vw,16px);
+  font-weight:700;color:var(--indigo);
+  margin-bottom:10px;
+}
+.intensity-bar-bg{
+  height:14px;
+  background:rgba(75,0,130,0.08);
+  border-radius:10px;
+  overflow:hidden;
+  position:relative;
+}
+.intensity-bar-fill{
+  height:100%;
+  border-radius:10px;
+  width:0%;
+  transition:width 1.2s ease-out;
+  background:linear-gradient(90deg,#4CAF50 0%,#FFC107 40%,#FF9800 65%,#E0197D 100%);
+}
+.intensity-scale{
+  display:flex;
+  justify-content:space-between;
+  margin-top:6px;
+  font-size:11px;
+  font-weight:600;
+  color:var(--text-mid);
+}
+
+/* Thicker result arrow */
+.arrow-icon-thick{
+  font-size:36px;
+  font-weight:900;
+  color:var(--berry);
+  animation:bounceDown 1.4s ease-in-out infinite;
+  text-align:center;
+}
+.scroll-to-form-arrow{margin:12px 0 8px}
+
+/* Tighten space above video */
+.video-section{padding-top:16px !important}
+
+/* ========================================
+   SVG GAUGE (from original code)
+======================================== */
+.score-wrap{margin-bottom:16px}
+.gauge-text-row{display:flex;align-items:center;gap:20px;text-align:center}
+.gauge-col{flex-shrink:0;text-align:center;min-width:140px}
+.gauge-text-col{flex:1;text-align:center}
+@media(max-width:600px){
+  .gauge-text-row{flex-direction:column-reverse;align-items:stretch;gap:8px}
+  .gauge-col{min-width:unset}
+  .gauge-text-col{text-align:center}
+}
+.score-label{font-size:12px;font-weight:700;color:#8A70A0;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:8px}
+.gauge-wrap{position:relative;width:140px;height:78px;margin:0 auto 8px}
+.gauge-svg{width:100%;height:100%}
+.gauge-needle{transform-origin:110px 110px;transform:rotate(-85deg)}
+.score-badge{display:inline-block;padding:8px 24px;border-radius:20px;font-size:15px;font-weight:800;margin-top:6px}
+.score-badge.low{background:#FFF4E6;color:#C05000}
+.score-badge.medium{background:#FFE4CC;color:#C04000}
+.score-badge.high{background:#FEE2E2;color:#DC2626}
+
+/* ========================================
+   S5: VALUE PROPOSITION + SOCIAL PROOF (animated)
+======================================== */
+.value-section{
+  background:linear-gradient(180deg,var(--cream) 0%,#F5ECEF 100%);
+  padding:48px 20px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.value-section::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:200px;height:200px;
+  background:radial-gradient(circle,rgba(75,0,130,0.04) 0%,transparent 70%);
+  border-radius:50%;pointer-events:none;
+}
+.value-title{
+  font-size:clamp(26px,6.5vw,36px);
+  font-weight:800;
+  color:var(--indigo);
+  margin-bottom:28px;
+  line-height:1.2;
+}
+
+/* Value cards */
+.value-cards{
+  max-width:640px;
+  margin:0 auto 32px;
+  display:flex;flex-direction:column;
+  gap:10px;
+}
+.value-card{
+  display:flex;align-items:center;gap:14px;
+  background:white;
+  border-radius:14px;
+  padding:16px 18px;
+  text-align:right;
+  box-shadow:0 2px 12px rgba(75,0,130,0.06);
+  border:1px solid rgba(75,0,130,0.06);
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.value-card.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.value-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(75,0,130,0.12);
+  border-color:rgba(75,0,130,0.15);
+}
+.vc-icon{
+  font-size:28px;
+  flex-shrink:0;
+  width:46px;height:46px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(75,0,130,0.06),rgba(112,28,87,0.06));
+  border-radius:12px;
+}
+.vc-text{
+  font-size:clamp(15px,3.8vw,18px);
+  font-weight:600;
+  color:var(--text-body);
+  line-height:1.5;
+  flex:1;
+}
+
+/* Staggered animation delays */
+.vc-1{transition-delay:0.05s}
+.vc-2{transition-delay:0.12s}
+.vc-3{transition-delay:0.19s}
+.vc-4{transition-delay:0.26s}
+.vc-5{transition-delay:0.33s}
+
+/* Proof circle */
+.value-proof-wrap{
+  display:flex;align-items:center;justify-content:center;
+  gap:18px;
+  margin-top:8px;
+}
+.value-proof-circle{
+  position:relative;
+  width:110px;height:110px;
+  flex-shrink:0;
+}
+.proof-ring{width:100%;height:100%}
+.proof-ring-fill{
+  transition:stroke-dashoffset 2s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.proof-number-inside{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+}
+.proof-big{
+  font-size:36px;
+  font-weight:800;
+  color:var(--berry);
+  line-height:1;
+}
+.proof-pct{
+  font-size:18px;
+  font-weight:800;
+  color:var(--berry);
+}
+.value-proof-label{
+  font-size:clamp(15px,3.8vw,18px);
+  font-weight:700;
+  color:var(--indigo);
+  text-align:right;
+  line-height:1.5;
+}
+
+@media(max-width:767px){
+  .value-section{padding:32px 14px}
+  .value-title{font-size:24px;margin-bottom:20px}
+  .value-cards{gap:8px}
+  .value-card{padding:12px 14px;gap:10px;border-radius:12px}
+  .vc-icon{width:38px;height:38px;font-size:22px;border-radius:10px}
+  .vc-text{font-size:16px;font-weight:500;line-height:1.45}
+  .value-proof-wrap{flex-direction:column;gap:10px}
+  .value-proof-circle{width:100px;height:100px}
+  .proof-big{font-size:32px}
+  .proof-pct{font-size:16px}
+  .value-proof-label{text-align:center;font-size:16px}
+}
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
 </head>
@@ -2076,13 +2331,11 @@ body{padding-top:56px}
 <!-- ============ S2: HERO TEXT ============ -->
 <div class="hero-text">
   <p class="hero-audience">לנשים 40+ 50+ שסובלות מעלייה במשקל, מצבי רוח,<br class="brk-dt"> הפרעות בשינה עייפות כרונית ועוד...</p>
+  <p class="hero-audience" style="color:var(--berry)"><strong>עשרות אלפי נשים</strong> כבר גילו את השיטה - עכשיו תורך!</p>
   <h1 class="hero-headline">
     בואי להדרכה <span class="pink">חינם</span> שתגלה לך את <span class="bold">השיטה הטבעית</span> להתמודדות עם תסמיני השינוי ההורמונלי <span class="pink">ולשנות את חייך תוך 10 שבועות בלבד!</span>
   </h1>
 </div>
-
-<!-- Social proof line -->
-<p class="social-proof-line"><strong>עשרות אלפי נשים</strong> כבר גילו את השיטה - עכשיו תורך!</p>
 
 <!-- ============ S3: URGENCY BOX + CTA (CTA inside the box) ============ -->
 <div class="urgency-box">
@@ -2111,17 +2364,50 @@ body{padding-top:56px}
         </div>
       </div>
       <div class="reg-photo-col">
-        <img src="/360/site_images/anat_form1.jpg" alt="ענת הראל" onerror="this.src='/360/site_images/anat_portrait.jpg'">
+        <img src="/360/site_images/TOFES1.jpg" alt="ענת הראל">
       </div>
     </div>
   </div>
 </div>
 
-<!-- ============ S5: VIDEO (wide, minimal side padding) ============ -->
-<div class="video-section">
-  <p class="video-title">לצפייה במסר אישי מענת הראל <span class="video-arrow">👇</span></p>
-  <div class="video-wrap">
-    <iframe src="https://player.vimeo.com/video/857842522?h=90d3dc2c5e&badge=0&autoplay=0&loop=0&autopause=1" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<!-- ============ S5: "מה תקבלי במפגש" + SOCIAL PROOF ============ -->
+<div class="value-section" id="valueSection">
+  <h2 class="value-title">מה תקבלי במפגש?</h2>
+  <div class="value-cards">
+    <div class="value-card vc-1">
+      <div class="vc-icon">🔍</div>
+      <div class="vc-text">למה מה שניסית עד היום לא עבד - ואיך לתקן את זה</div>
+    </div>
+    <div class="value-card vc-2">
+      <div class="vc-icon">⚡</div>
+      <div class="vc-text">טיפים פרקטיים שתוכלי ליישם כבר מהיום</div>
+    </div>
+    <div class="value-card vc-3">
+      <div class="vc-icon">🧬</div>
+      <div class="vc-text">איך לזהות בדיוק מה הגוף שלך עובר עכשיו ולמה</div>
+    </div>
+    <div class="value-card vc-4">
+      <div class="vc-icon">💡</div>
+      <div class="vc-text">השינוי הקטן שמשנה הכל - ורוב הנשים לא יודעות עליו</div>
+    </div>
+    <div class="value-card vc-5">
+      <div class="vc-icon">🤝</div>
+      <div class="vc-text">איך לא להישאר עם זה לבד</div>
+    </div>
+  </div>
+  <div class="value-proof-wrap">
+    <div class="value-proof-circle">
+      <svg viewBox="0 0 120 120" class="proof-ring">
+        <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(75,0,130,0.08)" stroke-width="8"/>
+        <circle cx="60" cy="60" r="52" fill="none" stroke="var(--berry)" stroke-width="8" stroke-linecap="round"
+          stroke-dasharray="327" stroke-dashoffset="327" class="proof-ring-fill"
+          transform="rotate(-90 60 60)"/>
+      </svg>
+      <div class="proof-number-inside">
+        <span class="proof-big" id="proofCounter">0</span><span class="proof-pct">%</span>
+      </div>
+    </div>
+    <p class="value-proof-label">מהמשתתפות דיווחו<br>שקיבלו ערך במפגש</p>
   </div>
 </div>
 
@@ -2210,6 +2496,7 @@ body{padding-top:56px}
 
 <!-- Progress Bar (floating, outside quiz section) -->
 <div class="quiz-progress" id="quizProgress">
+  <p class="progress-label">ההתקדמות שלך</p>
   <div class="progress-track">
     <div class="progress-node" id="pnode-1"></div>
     <div class="progress-line" id="pline-1" style="--fill:0%"><span class="progress-arrow"></span></div>
@@ -2301,17 +2588,35 @@ body{padding-top:56px}
     <h3 class="stage-name" id="stage-name"></h3>
     <p class="stage-desc" id="stage-desc"></p>
     <div class="result-divider"></div>
-    <p class="result-headline" id="result-headline"></p>
-    <p class="result-text" id="result-text"></p>
+    <div class="score-wrap" id="score-wrap">
+      <div class="gauge-text-row">
+        <div class="gauge-col">
+          <div class="score-label">עוצמת ההשפעה</div>
+          <div class="gauge-wrap">
+            <svg class="gauge-svg" viewBox="0 0 220 120" style="overflow:visible">
+              <path d="M 20 110 A 90 90 0 0 1 73 27" fill="none" stroke="#FECBA1" stroke-width="18" stroke-linecap="round"/>
+              <path d="M 73 27 A 90 90 0 0 1 147 27" fill="none" stroke="#F97316" stroke-width="18" stroke-linecap="round"/>
+              <path d="M 147 27 A 90 90 0 0 1 200 110" fill="none" stroke="#DC2626" stroke-width="18" stroke-linecap="round"/>
+              <line id="gauge-needle" x1="110" y1="110" x2="110" y2="30" stroke="#1E1030" stroke-width="3" stroke-linecap="round" class="gauge-needle"/>
+              <circle cx="110" cy="110" r="7" fill="#1E1030"/>
+            </svg>
+          </div>
+          <div class="score-badge" id="score-badge"></div>
+        </div>
+        <div class="gauge-text-col">
+          <p class="result-headline" id="result-headline"></p>
+          <p class="result-text" id="result-text"></p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="personal-list" id="personalList"></div>
 
-  <div class="result-prime-banner">✨ את בפריים שלך ומגיע לך ליהנות מהחיים! ✨</div>
+  <div class="result-prime-banner">יש מה לעשות - וזה לא מסובך כמו שאת חושבת</div>
 
-  <div class="scroll-to-form-arrow">
-    <p>יש מה לעשות - וזה לא מסובך כמו שאת חושבת</p>
-    <div class="arrow-icon">↓</div>
+  <div class="scroll-to-form-arrow" style="margin:8px 0 4px">
+    <div style="font-size:36px;font-weight:900;color:var(--berry);animation:bounceDown 1.4s ease-in-out infinite;text-align:center">↓</div>
   </div>
 </div>
 
@@ -2350,7 +2655,7 @@ body{padding-top:56px}
   <h2 class="story-title-v2">הסיפור האישי שלי</h2>
 
   <p class="story-intro">
-    היי! אני ענת הראל, בת 53, בעלת קבוצות אימון לנשים, מרצה על אורח חיים בריא ומאמנת להתפתחות אישית.<br>
+    היי! אני ענת הראל, בת 55, בעלת קבוצות אימון לנשים, מרצה על אורח חיים בריא ומאמנת להתפתחות אישית.<br>
     אני עוסקת בתחום כבר 20 שנה ויותר וזה סיפור ההתמודדות שלי עם גיל המעבר ואיך נולדה תוכנית הליווי "מיי פריים 360":
   </p>
 
@@ -2472,7 +2777,7 @@ body{padding-top:56px}
   <p class="contact-title">רוצה לדבר איתנו?<br>לחצי על הכפתור ונשמח לשוחח</p>
   <div class="contact-links">
     <a class="contact-btn wa" href="https://wa.me/9720547304177" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="wa-icon"> WhatsApp<br class="brk-mob">054-7304177</a>
-    <a class="contact-btn email" href="mailto:info@myprime.co.il">📧 לחצי לשליחת מייל</a>
+    <a class="contact-btn email" href="/cdn-cgi/l/email-protection#89e0e7efe6c9e4f0f9fbe0e4eca7eae6a7e0e5">📧 לחצי לשליחת מייל</a>
   </div>
 </div>
 
@@ -2487,14 +2792,14 @@ body{padding-top:56px}
       <div class="exit-popup-gift-text">מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה רלוונטי בגיל שלנו</div>
     </div>
     <div class="exit-popup-form">
-      <script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script>
+      <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" defer></script><script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script>
     </div>
   </div>
 </div>
 
 
 <!-- FOOTER -->
-<footer class="site-footer"><nav class="footer-links" aria-label="קישורים משפטיים"><a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a7%d7%95%d7%a7%d7%99%d7%96/" target="_blank">מדיניות קוקיז</a><span class="footer-sep">|</span><a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות פרטיות</a><span class="footer-sep">|</span><a href="https://myprime.co.il/%d7%94%d7%a6%d7%94%d7%a8%d7%aa-%d7%a0%d7%92%d7%99%d7%a9%d7%95%d7%aa/" target="_blank">הצהרת נגישות</a><span class="footer-sep">|</span><a href="https://myprime.co.il/%d7%aa%d7%a7%d7%a0%d7%95%d7%9f/" target="_blank">תקנון האתר</a><span class="footer-sep">|</span><a href="https://myprime.ravpage.co.il/BITUL" target="_blank">ביטול עסקה</a><span class="footer-sep">|</span><span class="footer-brand">my prime ענת הראל</span><span class="footer-sep">|</span><span class="footer-version">INDEXW256B</span></nav></footer>
+<footer class="site-footer"><nav class="footer-links" aria-label="קישורים משפטיים"><a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a7%d7%95%d7%a7%d7%99%d7%96/" target="_blank">מדיניות קוקיז</a><span class="footer-sep">|</span><a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות פרטיות</a><span class="footer-sep">|</span><a href="https://myprime.co.il/%d7%94%d7%a6%d7%94%d7%a8%d7%aa-%d7%a0%d7%92%d7%99%d7%a9%d7%95%d7%aa/" target="_blank">הצהרת נגישות</a><span class="footer-sep">|</span><a href="https://myprime.co.il/%d7%aa%d7%a7%d7%a0%d7%95%d7%9f/" target="_blank">תקנון האתר</a><span class="footer-sep">|</span><a href="https://myprime.ravpage.co.il/BITUL" target="_blank">ביטול עסקה</a><span class="footer-sep">|</span><span class="footer-brand">my prime ענת הראל</span></nav></footer>
 
 <script>
 function scrollToSecondForm(){
@@ -2518,27 +2823,50 @@ function startQuiz(){
     if(pb){pb.classList.add("show");pb.classList.remove("hidden-complete")}
     document.body.classList.add("quiz-active");
     quizStarted=true;
-    setTimeout(function(){var y=q.getBoundingClientRect().top+window.pageYOffset-120;window.scrollTo({top:y,behavior:"smooth"})},100);
+    setTimeout(function(){var y=q.getBoundingClientRect().top+window.pageYOffset-140;window.scrollTo({top:y,behavior:"smooth"})},100);
   }
 }
 
 function updateProgress(step){
-  // step 1 = symptoms filled (at least 1)
-  // step 2 = age selected
-  // step 3 = cycle selected
   var nodes=[document.getElementById("pnode-1"),document.getElementById("pnode-2"),document.getElementById("pnode-3")];
   var lines=[document.getElementById("pline-1"),document.getElementById("pline-2")];
   var labels=[document.getElementById("plabel-1"),document.getElementById("plabel-2"),document.getElementById("plabel-3")];
+  var arrows=document.querySelectorAll(".progress-arrow");
   var symCount=document.querySelectorAll("#symptoms-grid .chip.selected").length;
 
-  if(symCount>0){nodes[0].classList.add("done");labels[0].classList.add("active")}
-  else{nodes[0].classList.remove("done")}
+  // Reset all animations
+  arrows.forEach(function(a){a.classList.remove("animate")});
+  nodes.forEach(function(n){n.classList.remove("next-pulse")});
 
-  if(answers.age){nodes[1].classList.add("done");labels[1].classList.add("active");lines[0].style.setProperty("--fill","100%")}
-  else{nodes[1].classList.remove("done");lines[0].style.setProperty("--fill","0%");labels[1].classList.remove("active")}
+  if(symCount>0){
+    nodes[0].classList.add("done");labels[0].classList.add("active");
+    if(!answers.age){
+      if(arrows[0])arrows[0].classList.add("animate");
+      nodes[1].classList.add("next-pulse");
+    }
+  }else{nodes[0].classList.remove("done")}
 
-  if(answers.cycle){nodes[2].classList.add("done");labels[2].classList.add("active");lines[1].style.setProperty("--fill","100%")}
-  else{nodes[2].classList.remove("done");lines[1].style.setProperty("--fill","0%");labels[2].classList.remove("active")}
+  if(answers.age){
+    nodes[1].classList.add("done");labels[1].classList.add("active");
+    lines[0].style.setProperty("--fill","100%");
+    if(!answers.cycle){
+      if(arrows[1])arrows[1].classList.add("animate");
+      nodes[2].classList.add("next-pulse");
+    }
+  }else{
+    nodes[1].classList.remove("done");
+    lines[0].style.setProperty("--fill","0%");
+    labels[1].classList.remove("active");
+  }
+
+  if(answers.cycle){
+    nodes[2].classList.add("done");labels[2].classList.add("active");
+    lines[1].style.setProperty("--fill","100%");
+  }else{
+    nodes[2].classList.remove("done");
+    lines[1].style.setProperty("--fill","0%");
+    labels[2].classList.remove("active");
+  }
 }
 
 function updateCounterMessage(){
@@ -2658,6 +2986,37 @@ function showResult(){
   document.getElementById("result-headline").textContent=headline;
   document.getElementById("result-text").textContent=text;
 
+  // SVG Gauge needle rotation
+  var rotation;
+  if(count===0){rotation=-85}
+  else if(count===1){rotation=-60}
+  else if(count<=4){rotation=Math.round(-40+(count-2)*20)}
+  else{rotation=Math.min(85,Math.round((count-5)*14))}
+
+  var needle=document.getElementById("gauge-needle");
+  if(needle){
+    needle.style.transition="none";
+    needle.style.transform="rotate(-85deg)";
+    var obs=new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting){
+        setTimeout(function(){
+          needle.style.transition="transform 1.4s cubic-bezier(0.34,1.3,0.64,1)";
+          needle.style.transform="rotate("+rotation+"deg)";
+        },200);
+        obs.disconnect();
+      }
+    },{threshold:0.5});
+    obs.observe(document.getElementById("score-wrap"));
+  }
+
+  // Badge
+  var badge=document.getElementById("score-badge");
+  if(badge){
+    if(count<=1){badge.textContent="השפעה חלקית";badge.className="score-badge low"}
+    else if(count<=4){badge.textContent="השפעה בינונית";badge.className="score-badge medium"}
+    else{badge.textContent="הגוף שלך מדבר אלייך";badge.className="score-badge high"}
+  }
+
   // Personalized "at lo chayevet" list
   var cm={
     "השמנה בטנית":{e:"🫃",t:"את לא חייבת לקבל את העלייה בהיקף הבטן!"},
@@ -2772,5 +3131,49 @@ function openFormModal(){localStorage.setItem("user_clicked_register","true");sh
 function scrollTestimony(dir){var el=document.getElementById("testimony-scroll");if(!el)return;el.scrollBy({left:dir*el.offsetWidth,behavior:"smooth"})}
 </script>
 
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"afcd9eb843fe458ca7f4d86d6e7adbe6","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
+<script>
+// Value cards scroll animation + proof counter
+(function(){
+  var cards=document.querySelectorAll('.value-card');
+  var proofRing=document.querySelector('.proof-ring-fill');
+  var proofCounter=document.getElementById('proofCounter');
+  var animated=false;
+
+  function animateOnScroll(){
+    // Cards fade in
+    cards.forEach(function(card){
+      var rect=card.getBoundingClientRect();
+      if(rect.top<window.innerHeight*0.88){
+        card.classList.add('visible');
+      }
+    });
+
+    // Proof counter + ring
+    if(!animated&&proofRing){
+      var rect=proofRing.getBoundingClientRect();
+      if(rect.top<window.innerHeight*0.85){
+        animated=true;
+        // Ring animation: 327 = full circumference, 93% = 327 * 0.07 = 22.89 offset
+        proofRing.style.strokeDashoffset='22.89';
+        // Counter animation
+        var current=0;
+        var target=93;
+        var step=function(){
+          current+=2;
+          if(current>target)current=target;
+          if(proofCounter)proofCounter.textContent=current;
+          if(current<target)requestAnimationFrame(step);
+        };
+        setTimeout(step,400);
+      }
+    }
+  }
+
+  window.addEventListener('scroll',animateOnScroll,{passive:true});
+  setTimeout(animateOnScroll,300);
+})();
+</script>
 </body>
 </html>
