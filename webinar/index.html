@@ -2546,6 +2546,143 @@ body{padding-top:56px}
   pointer-events:none;
   z-index:1;
 }
+
+/* ========================================
+   URGENCY COMPACT - single streamlined box
+======================================== */
+.urgency-compact{
+  max-width:700px;
+  margin:0 12px 10px;
+  background:var(--indigo);
+  border-radius:14px;
+  padding:14px 18px;
+  text-align:center;
+  box-shadow:0 4px 16px rgba(75,0,130,0.2);
+}
+.uc-top{
+  font-size:clamp(12px,3vw,14px);
+  color:rgba(255,255,255,0.8);
+  font-weight:600;
+  line-height:1.4;
+  margin-bottom:8px;
+}
+.uc-top strong{color:#FFC8DE;font-weight:800;font-size:clamp(14px,3.5vw,16px)}
+.uc-main{
+  font-size:clamp(17px,4.5vw,22px);
+  font-weight:800;
+  color:white;
+  line-height:1.3;
+  margin-bottom:6px;
+}
+.uc-sub{
+  font-size:clamp(13px,3.3vw,15px);
+  font-weight:500;
+  color:rgba(255,255,255,0.75);
+  line-height:1.4;
+}
+@media(max-width:767px){
+  .urgency-compact{margin:0 8px 8px;padding:12px 14px;border-radius:12px}
+  .uc-top{font-size:13px;margin-bottom:6px}
+  .uc-main{font-size:17px}
+  .uc-sub{font-size:13px}
+}
+
+/* Clean form intro text */
+.spots-line{
+  text-align:center;
+  font-size:clamp(16px,4vw,20px);
+  font-weight:800;
+  color:var(--berry);
+  margin:0 16px 10px;
+  line-height:1.3;
+}
+.form-headline{
+  text-align:center;
+  font-size:clamp(20px,5vw,28px);
+  font-weight:800;
+  color:var(--indigo);
+  line-height:1.3;
+  margin:0 16px 6px;
+}
+.form-headline-sub{
+  font-weight:600;
+  margin-bottom:14px;
+}
+@media(max-width:767px){
+  .spots-line{font-size:16px;margin:0 12px 8px}
+  .form-headline{font-size:20px;margin:0 12px 4px}
+  .form-headline-sub{margin-bottom:10px}
+}
+
+/* ========================================
+   URGENCY BOX V3 - split, title outside
+======================================== */
+.urgency-box-v3{
+  max-width:700px;
+  margin:0 12px 10px;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 4px 18px rgba(75,0,130,0.12);
+}
+.ubv3-split{
+  display:flex;
+  align-items:stretch;
+}
+.ubv3-text{
+  flex:1;
+  background:linear-gradient(135deg,#FCE4F2 0%,#F3E8FF 100%);
+  padding:18px 20px;
+  text-align:right;
+}
+.ubv3-main{
+  font-size:clamp(18px,4.5vw,24px);
+  font-weight:600;
+  color:var(--indigo);
+  line-height:1.3;
+  margin-bottom:8px;
+}
+.ubv3-sub{
+  font-size:clamp(18px,4.5vw,24px);
+  font-weight:600;
+  color:var(--indigo);
+  line-height:1.3;
+}
+.ubv3-proof{
+  flex:0 0 160px;
+  background:var(--indigo);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:16px 12px;
+  gap:8px;
+}
+.ubv3-ring{
+  position:relative;
+  width:68px;height:68px;
+}
+.ubv3-ring svg{width:100%;height:100%}
+.ubv3-num{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+}
+.ubv3-93{font-size:26px;font-weight:800;color:white}
+.ubv3-pct{font-size:13px;font-weight:800;color:#FFC8DE}
+.ubv3-proof-text{
+  font-size:12px;font-weight:600;
+  color:rgba(255,255,255,0.85);
+  text-align:center;line-height:1.35;
+}
+
+@media(max-width:767px){
+  .urgency-box-v3{margin:0 8px 8px}
+  .ubv3-text{padding:14px 14px}
+  .ubv3-main{font-size:17px;margin-bottom:6px}
+  .ubv3-sub{font-size:17px}
+  .ubv3-proof{flex:0 0 110px;padding:12px 8px;gap:6px}
+  .ubv3-ring{width:52px;height:52px}
+  .ubv3-93{font-size:20px}
+  .ubv3-pct{font-size:10px}
+  .ubv3-proof-text{font-size:11px}
+}
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
 </head>
@@ -2575,24 +2712,23 @@ body{padding-top:56px}
 </div>
 
 <!-- ============ S3: URGENCY BOX + CTA (CTA inside the box) ============ -->
-<div class="urgency-box-v2">
-  <div class="urgency-split">
-    <div class="urgency-proof-side">
-      <div class="urgency-ring-wrap">
-        <svg viewBox="0 0 100 100" class="urgency-ring">
+<p class="spots-line">מקומות אחרונים במפגש הקרוב!</p>
+<div class="urgency-box-v3">
+  <div class="ubv3-split">
+    <div class="ubv3-text">
+      <p class="ubv3-main">רוצה לקבל כבר עכשיו כלים להתמודדות יעילה עם התסמינים שמטרידים אותך?</p>
+      <p class="ubv3-sub">שרייני את מקומך עכשיו במפגש הזום הקרוב (ללא עלות)</p>
+    </div>
+    <div class="ubv3-proof">
+      <div class="ubv3-ring">
+        <svg viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="6"/>
           <circle cx="50" cy="50" r="42" fill="none" stroke="#FFC8DE" stroke-width="6" stroke-linecap="round"
             stroke-dasharray="264" stroke-dashoffset="18.5" transform="rotate(-90 50 50)"/>
         </svg>
-        <div class="urgency-ring-num"><span class="urgency-93">93</span><span class="urgency-pct">%</span></div>
+        <div class="ubv3-num"><span class="ubv3-93">93</span><span class="ubv3-pct">%</span></div>
       </div>
-      <p class="urgency-proof-text">מהמשתתפות יצאו<br>עם כלים שעוזרים להן</p>
-    </div>
-    <div class="urgency-divider"></div>
-    <div class="urgency-action-side">
-      <p class="urgency-action-title">מקומות אחרונים במפגש הקרוב!</p>
-      <p class="urgency-headline">רוצה לקבל כבר עכשיו כלים להתמודדות יעילה עם התסמינים שמטרידים אותך?</p>
-      <p class="urgency-sub">שרייני את מקומך עכשיו במפגש הזום הקרוב (ללא עלות)</p>
+      <p class="ubv3-proof-text">מהמשתתפות יצאו<br>עם כלים שעוזרים להן</p>
     </div>
   </div>
 </div>
