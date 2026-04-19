@@ -2401,36 +2401,31 @@ body{padding-top:56px}
 /* Mobile */
 @media(max-width:767px){
   .urgency-box-v2{margin:0 8px 10px}
-  .urgency-split{flex-direction:column}
+  .urgency-split{flex-direction:row}
   .urgency-proof-side{
-    flex:none;
-    padding:14px 16px;
-    text-align:center;
+    flex:0 0 35%;
+    padding:12px 8px;
+    gap:6px;
   }
-  .urgency-social-line{
-    font-size:15px !important;
-    margin-bottom:8px;
-  }
-  .urgency-ring-wrap{
-    width:52px;height:52px;
-    display:inline-block;
-    vertical-align:middle;
-    margin-left:10px;
-  }
+  .urgency-social-line{display:none !important}
+  .urgency-ring-wrap{width:50px;height:50px}
   .urgency-93{font-size:20px}
   .urgency-pct{font-size:10px}
   .urgency-proof-text{
-    font-size:15px;
-    display:inline;
-    vertical-align:middle;
-    line-height:1.35;
+    font-size:11px;
+    text-align:center;
+    line-height:1.3;
   }
   .urgency-divider{
-    width:auto;height:1px;
-    background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);
+    width:1px;height:auto;
+    background:linear-gradient(180deg,transparent,rgba(255,255,255,0.2),transparent);
   }
-  .urgency-action-side{padding:12px 14px}
-  .urgency-action-title{font-size:17px}
+  .urgency-action-side{
+    flex:1;
+    padding:12px 10px;
+  }
+  .urgency-action-title{font-size:15px;margin-bottom:8px}
+  .urgency-cta{font-size:16px !important;padding:10px 16px !important}
 }
 
 /* Hero Anat photo - rectangle alongside headline */
@@ -2452,11 +2447,17 @@ body{padding-top:56px}
   border:2px solid rgba(75,0,130,0.1);
 }
 @media(max-width:767px){
-  .hero-headline-row{gap:12px}
+  .hero-headline-row{gap:6px}
   .hero-anat-rect{
-    flex:0 0 110px;
-    width:110px;
-    border-radius:12px;
+    flex:0 0 100px;
+    width:100px;
+    min-height:140px;
+    border-radius:10px;
+    align-self:center;
+  }
+  .hero-headline{
+    flex:1;
+    min-width:0;
   }
 }
 
@@ -2506,10 +2507,10 @@ body{padding-top:56px}
 </div>
 
 <!-- ============ S3: URGENCY BOX + CTA (CTA inside the box) ============ -->
+<p class="social-proof-line"><strong>עשרות אלפי נשים</strong> כבר גילו את השיטה - עכשיו תורך!</p>
 <div class="urgency-box-v2">
   <div class="urgency-split">
     <div class="urgency-proof-side">
-      <p class="urgency-social-line"><strong>עשרות אלפי נשים</strong> כבר גילו את השיטה - עכשיו תורך!</p>
       <div class="urgency-ring-wrap">
         <svg viewBox="0 0 100 100" class="urgency-ring">
           <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="6"/>
