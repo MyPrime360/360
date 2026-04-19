@@ -83,7 +83,7 @@ body{font-family:"Assistant",sans-serif;background:var(--cream);color:var(--text
 
 /* ===== HIDDEN FORM (opens on CTA click) ===== */
 .hidden-form-section{
-  display:none;
+  display:block;
   background:linear-gradient(135deg,#FCE4F2 0%,#F3E8FF 50%,#EDE0FF 100%);
   padding:20px 12px;margin:0 12px 16px;
   border:3px solid var(--indigo);
@@ -2477,6 +2477,24 @@ body{padding-top:56px}
 @media(max-width:767px){
   .urgency-social-line{font-size:14px}
 }
+
+/* Social proof above value title */
+.value-social-line{
+  font-size:clamp(15px,3.8vw,18px);
+  font-weight:700;
+  color:var(--berry);
+  text-align:center;
+  margin-bottom:8px;
+  line-height:1.4;
+}
+.value-social-line strong{font-weight:800;color:var(--indigo)}
+
+/* Gift card highlight */
+.vc-gift{
+  background:linear-gradient(135deg,#FCE4F2 0%,#F3E8FF 100%) !important;
+  border-color:rgba(112,28,87,0.15) !important;
+}
+.vc-gift .vc-text strong{color:var(--indigo);font-weight:800}
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
 </head>
@@ -2485,9 +2503,8 @@ body{padding-top:56px}
 <!-- ============ STICKY TOP BAR ============ -->
 <div class="top-bar">
   <img src="/360/site_images/logo_final.png" alt="MyPrime" class="top-bar-logo">
-  <button class="top-bar-cta" onclick="scrollToSecondForm()">הרשמה למפגש</button>
+  <button class="top-bar-cta" onclick="scrollToSecondForm()">להרשמה למפגש</button>
 </div>
-
 
 <!-- COOKIE -->
 <div class="cookie-overlay" id="cookieOverlay"></div>
@@ -2507,7 +2524,6 @@ body{padding-top:56px}
 </div>
 
 <!-- ============ S3: URGENCY BOX + CTA (CTA inside the box) ============ -->
-<p class="social-proof-line"><strong>עשרות אלפי נשים</strong> כבר גילו את השיטה - עכשיו תורך!</p>
 <div class="urgency-box-v2">
   <div class="urgency-split">
     <div class="urgency-proof-side">
@@ -2524,7 +2540,7 @@ body{padding-top:56px}
     <div class="urgency-divider"></div>
     <div class="urgency-action-side">
       <p class="urgency-action-title">מקומות אחרונים במפגש הקרוב!</p>
-      <button class="urgency-cta" onclick="openFormModal()">לחצי והרשמי עכשיו למפגש ולטיפים בחינם</button>
+      <button class="urgency-cta" onclick="document.getElementById('hiddenFormSection').scrollIntoView({behavior:'smooth',block:'start'})">לחצי והרשמי עכשיו למפגש ולטיפים בחינם</button>
     </div>
   </div>
 </div>
@@ -2532,7 +2548,7 @@ body{padding-top:56px}
 <!-- ============ S4: HIDDEN FORM (opens on click) ============ -->
 <div class="hidden-form-section" id="hiddenFormSection">
   <h2 class="hidden-form-title">רוצה לקבל כבר עכשיו כלים להתמודדות<br class="brk-dt"> יעילה עם התסמינים שמטרידים אותך?</h2>
-  <p class="hidden-form-gift">📢 <strong>מתנה שימושית למשתתפות המפגש</strong><br>מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה יכול להיות רלוונטי בגיל שלנו</p>
+  
 
   <div class="reg-counter counter-desktop">
     <script type='text/javascript' src='//form2.ravpage.co.il/9ba0ca9db43f7db1f0afb068f47b08b3697F7D78' charset='UTF-8'></script>
@@ -2558,6 +2574,7 @@ body{padding-top:56px}
 
 <!-- ============ S5: "מה תקבלי במפגש" + SOCIAL PROOF ============ -->
 <div class="value-section" id="valueSection">
+  <p class="value-social-line"><strong>עשרות אלפי נשים</strong> כבר גילו את השיטה - עכשיו תורך!</p>
   <h2 class="value-title">מה תקבלי במפגש?</h2>
   <div class="value-cards">
     <div class="value-card vc-1">
@@ -2612,7 +2629,6 @@ body{padding-top:56px}
   <style>#testimony-scroll::-webkit-scrollbar{display:none;}</style>
 
 
-
 <!-- ============ S8: SECOND REGISTRATION FORM ============ -->
 <div class="reg-standalone" id="secondForm">
   <div class="reg-standalone-inner">
@@ -2642,7 +2658,6 @@ body{padding-top:56px}
 </div>
 
 
-
 <!-- ============ S6: "AT LO CHAYEVET" ============ -->
 <div class="no-suffer-section">
   <h2 class="no-suffer-title">תוכנית הליווי "מיי פריים 360" תוכננה עבורך, כדי שתוכלי <em>לעבור את גיל המעבר אחרת!</em></h2>
@@ -2656,7 +2671,6 @@ body{padding-top:56px}
   </div>
   <div class="prime-banner">✨ את בפריים שלך ומגיע לך ליהנות מהחיים! ✨</div>
 </div>
-
 
 <!-- ============ S9: QUIZ INTRO ============ -->
 <div class="quiz-intro-section">
@@ -2755,7 +2769,6 @@ body{padding-top:56px}
     <p class="val-msg" id="val-main" style="text-align:center;margin-top:10px"></p>
   </div>
 </div>
-
 
 <!-- ============ S11: QUIZ RESULT (hidden until quiz complete) ============ -->
 <div class="result-section" id="resultSection">
@@ -2973,7 +2986,6 @@ body{padding-top:56px}
   </div>
 </div>
 
-
 <!-- FOOTER -->
 <footer class="site-footer"><nav class="footer-links" aria-label="קישורים משפטיים"><a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a7%d7%95%d7%a7%d7%99%d7%96/" target="_blank">מדיניות קוקיז</a><span class="footer-sep">|</span><a href="https://myprime.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank">מדיניות פרטיות</a><span class="footer-sep">|</span><a href="https://myprime.co.il/%d7%94%d7%a6%d7%94%d7%a8%d7%aa-%d7%a0%d7%92%d7%99%d7%a9%d7%95%d7%aa/" target="_blank">הצהרת נגישות</a><span class="footer-sep">|</span><a href="https://myprime.co.il/%d7%aa%d7%a7%d7%a0%d7%95%d7%9f/" target="_blank">תקנון האתר</a><span class="footer-sep">|</span><a href="https://myprime.ravpage.co.il/BITUL" target="_blank">ביטול עסקה</a><span class="footer-sep">|</span><span class="footer-brand">my prime ענת הראל</span></nav></footer>
 
@@ -2985,7 +2997,6 @@ function scrollToSecondForm(){
     window.scrollTo({top:y,behavior:"smooth"});
   }
 }
-
 
 /* ===== QUIZ LOGIC ===== */
 var answers={age:null,cycle:null};
@@ -3300,7 +3311,6 @@ function closeExitPopup(){
 document.getElementById("exitPopup").addEventListener("click",function(e){
   if(e.target===this)closeExitPopup();
 });
-
 
 function showHiddenForm(){var f=document.getElementById("hiddenFormSection");if(f){f.classList.add("show");setTimeout(function(){var y=f.getBoundingClientRect().top+window.pageYOffset-70;window.scrollTo({top:y,behavior:"smooth"})},100)}}
 function openFormModal(){localStorage.setItem("user_clicked_register","true");showHiddenForm()}
