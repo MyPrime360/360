@@ -2683,6 +2683,19 @@ body{padding-top:56px}
   .ubv3-pct{font-size:10px}
   .ubv3-proof-text{font-size:11px}
 }
+
+/* Mobile: hide "רוצה לקבל" line + old form section, show inline form */
+@media(max-width:767px){
+  .ubv3-main{display:none !important}
+  .hidden-form-section{display:none !important}
+  .mobile-inline-form{display:block !important}
+}
+@media(min-width:768px){
+  .mobile-inline-form{display:none}
+}
+.mobile-inline-form{
+  margin:0 8px 10px;
+}
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
 </head>
@@ -2729,6 +2742,22 @@ body{padding-top:56px}
         <div class="ubv3-num"><span class="ubv3-93">93</span><span class="ubv3-pct">%</span></div>
       </div>
       <p class="ubv3-proof-text">מהמשתתפות יצאו<br>עם כלים שעוזרים להן</p>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE INLINE FORM (after שרייני, mobile only) -->
+<div class="mobile-inline-form">
+  <div class="reg-counter counter-mobile">
+    <script type='text/javascript' src='//form2.ravpage.co.il/17f7c79be7718d06df698b3a4f68f26c69E4DDA3' charset='UTF-8'></script>
+  </div>
+  <div class="form-purple">
+    <div class="reg-layout">
+      <div class="reg-content">
+        <div class="embedded-form">
+          <script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -2781,9 +2810,9 @@ body{padding-top:56px}
       <div class="vc-icon">💡</div>
       <div class="vc-text">השינוי הקטן שמשנה הכל - ורוב הנשים לא יודעות עליו</div>
     </div>
-    <div class="value-card vc-5">
-      <div class="vc-icon">🤝</div>
-      <div class="vc-text">איך לא להישאר עם זה לבד</div>
+    <div class="value-card vc-5 vc-gift">
+      <div class="vc-icon">📢</div>
+      <div class="vc-text"><strong>מתנה שימושית למשתתפות המפגש</strong><br>מדריך תוספי תזונה שיעשה לך סדר ויעזור לך להבין מה יכול להיות רלוונטי בגיל שלנו</div>
     </div>
   </div>
 </div>
