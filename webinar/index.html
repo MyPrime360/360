@@ -2673,7 +2673,8 @@ body{padding-top:56px}
 /* Mobile: hide "רוצה לקבל" line + old form section, show inline form */
 @media(max-width:767px){
   .ubv3-main{display:none !important}
-  .hidden-form-section{display:none !important}
+  .hidden-form-section{display:block !important}
+  .hidden-form-section .reg-counter{display:none !important}
   .mobile-inline-form{display:block !important}
 }
 @media(min-width:768px){
@@ -2681,6 +2682,17 @@ body{padding-top:56px}
 }
 .mobile-inline-form{
   margin:0 8px 10px;
+}
+
+/* Form inside urgency box - mobile only */
+.ubv3-inline-form{display:none}
+@media(max-width:767px){
+  .ubv3-inline-form{display:block;margin-top:8px}
+  .ubv3-inline-form .reg-counter{margin:0 0 4px}
+  .ubv3-inline-form .embedded-form{margin:0}
+  
+  /* Remove old mobile-inline-form styles */
+  .mobile-inline-form{display:none !important}
 }
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
@@ -2717,6 +2729,11 @@ body{padding-top:56px}
     <div class="ubv3-text">
       <p class="ubv3-main">רוצה לקבל כבר עכשיו כלים להתמודדות יעילה עם התסמינים שמטרידים אותך?</p>
       <p class="ubv3-sub">שרייני את מקומך עכשיו במפגש הזום הקרוב (ללא עלות)</p>
+      <div class="ubv3-inline-form">
+        <div class="reg-counter counter-mobile">
+          <script type='text/javascript' src='//form2.ravpage.co.il/17f7c79be7718d06df698b3a4f68f26c69E4DDA3' charset='UTF-8'></script>
+        </div>
+      </div>
     </div>
     <div class="ubv3-proof">
       <div class="ubv3-ring">
@@ -2732,21 +2749,7 @@ body{padding-top:56px}
   </div>
 </div>
 
-<!-- MOBILE INLINE FORM (after שרייני, mobile only) -->
-<div class="mobile-inline-form">
-  <div class="reg-counter counter-mobile">
-    <script type='text/javascript' src='//form2.ravpage.co.il/17f7c79be7718d06df698b3a4f68f26c69E4DDA3' charset='UTF-8'></script>
-  </div>
-  <div class="form-purple">
-    <div class="reg-layout">
-      <div class="reg-content">
-        <div class="embedded-form">
-          <script type="text/javascript" src="//form2.ravpage.co.il/6fa2eac86e9a3c2a351bc77a9736c94e69C06AB6" charset="UTF-8"></script>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <!-- ============ S4: HIDDEN FORM (opens on click) ============ -->
 <div class="hidden-form-section" id="hiddenFormSection">
