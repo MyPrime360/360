@@ -2731,7 +2731,7 @@ body{padding-top:56px}
   .ubv3-inline-form .reg-counter > script + *,
   .ubv3-inline-form .reg-counter > div{
     position:relative !important;
-    top:-25px !important;
+    top:-35px !important;
   }
   .ubv3-sub{margin:0 !important;font-size:13px !important;line-height:1.3 !important}
 }
@@ -2748,6 +2748,45 @@ body{padding-top:56px}
     margin:0;
     line-height:1.2;
   }
+}
+
+/* Counter transparent background */
+@media(max-width:767px){
+  .ubv3-inline-form .reg-counter,
+  .ubv3-inline-form .reg-counter *{
+    background:transparent !important;
+    background-color:transparent !important;
+  }
+}
+
+/* Tighten form section padding on mobile */
+@media(max-width:767px){
+  .hidden-form-section{
+    padding:0 8px !important;
+    margin:0 !important;
+  }
+  .hidden-form-section .form-purple{
+    padding:8px 8px !important;
+    margin:0 !important;
+    border-radius:12px 12px 12px 12px !important;
+  }
+}
+
+/* Counter transparent background */
+@media(max-width:767px){
+  .ubv3-inline-form .reg-counter,
+  .ubv3-inline-form .reg-counter *{
+    background:transparent !important;
+    background-color:transparent !important;
+  }
+}
+
+/* Form top padding removal on mobile */
+@media(max-width:767px){
+  .hidden-form-section{padding-top:0 !important;margin-top:0 !important}
+  .hidden-form-section .form-purple{padding-top:6px !important;margin-top:0 !important}
+  .mobile-inline-form{margin-top:0 !important;padding-top:0 !important}
+  .mobile-inline-form .form-purple{padding-top:6px !important}
 }
 </style>
 <script>window.interdeal={"sitekey":"9fd8fd0dea32e6467b980149c24d3899","Position":"Left","Menulang":"HE","domains":{"js":"https://js.nagich.co.il/","acc":"https://access.nagich.co.il/"},"btnStyle":{"vPosition":["50%",null],"scale":["0.6","0.6"],"icon":{"type":11,"shape":"circle","outline":false}}};(function(d,h,b){var s=d.createElement("script");s.src=interdeal.domains.js+"core/4.5.12/accessibility.js";s.defer=true;s.integrity="sha512-QHRb6G6oDd5olis2Cry60Jf8LsyOtVE0nD9n2LcY20fodiZahlu99srQ3UNKvosE/tZrQ2Fs4CeAPX+MCZpg7w==";s.crossOrigin="anonymous";s.setAttribute("data-cfasync",true);b?b.appendChild(s):h.appendChild(s)})(document,document.head,document.body);</script>
